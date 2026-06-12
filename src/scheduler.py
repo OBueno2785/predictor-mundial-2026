@@ -1,20 +1,17 @@
-"""Scheduler de autoajuste (Fase 3).
+"""Scheduler de autoajuste: un job T-60min por partido, nada más.
 
-- Job diario 06:00 (America/Lima): reingesta + reentrenamiento +
-  regeneración de PREDICCIONES.md + copia histórica + reprogramación
-  de los jobs T-60.
-- Job T-60min por partido: pipeline completo con debate (cuotas frescas,
-  alineaciones y noticias de último minuto). El JSON timestampeado en
-  outputs/debates/ es la predicción congelada.
+60 minutos antes de cada kickoff se ejecuta el pipeline completo con la
+última información disponible: reingesta (resultados recientes, cuotas
+frescas), reentrenamiento del Dixon-Coles y debate multiagente. El JSON
+timestampeado en outputs/debates/ es la predicción congelada.
 
 Uso:  py -m src.scheduler [--dry-run]
 
 El proceso debe quedar abierto (consola dedicada, o Task Scheduler de
-Windows con disparador "al iniciar sesión"). Si la máquina estuvo apagada,
-al arrancar se reingesta todo y se reprograman los partidos pendientes.
+Windows con disparador "al iniciar sesión"). Al arrancar refresca el
+fixture y programa los partidos pendientes.
 """
 import logging
-import shutil
 import subprocess
 import sys
 from datetime import datetime, timedelta, timezone
@@ -28,7 +25,6 @@ from src.predict import DATA, OUT, ROOT
 PY = ROOT / ".venv" / "Scripts" / "python.exe"
 T_MINUS = timedelta(minutes=60)
 TZ = "America/Lima"
-HORA_DIARIA = 6
 
 OUT.mkdir(exist_ok=True)
 logging.basicConfig(
@@ -77,37 +73,31 @@ def programar_t60(sched: BlockingScheduler) -> int:
     return n
 
 
-def job_diario(sched: BlockingScheduler) -> None:
-    log.info("=== Job diario: reingesta + reentrenamiento ===")
-    if _run("src.predict"):
-        ts = datetime.now().strftime("%Y%m%d_%H%M")
-        hist = OUT / "history"
-        hist.mkdir(exist_ok=True)
-        shutil.copy2(OUT / "predicciones_grupos.csv",
-                     hist / f"predicciones_{ts}.csv")
-    programar_t60(sched)
-
-
 def main() -> None:
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     dry = "--dry-run" in sys.argv
 
+    try:
+        fixtures.download(DATA / "fixtures_wc2026.json")
+        log.info("fixture refrescado")
+    except Exception as e:
+        log.warning("no se pudo refrescar el fixture, uso caché (%s)", e)
+
     executors = {"default": ThreadPoolExecutor(2)}
     sched = BlockingScheduler(timezone=TZ, executors=executors,
                               job_defaults={"coalesce": True})
-    sched.add_job(job_diario, "cron", hour=HORA_DIARIA, minute=0,
-                  args=[sched], id="diario")
+    n = programar_t60(sched)
 
     if dry:
-        programar_t60(sched)
         print("\n--- DRY RUN: jobs programados ---")
         for j in sorted(sched.get_jobs(), key=lambda j: str(j.trigger)):
             print(f"  {j.id:<12} -> {j.trigger}")
         return
 
-    job_diario(sched)  # arranque: datos frescos + programación inicial
-    log.info("Scheduler activo (diario %02d:00 %s + T-60 por partido). Ctrl+C para salir.",
-             HORA_DIARIA, TZ)
+    if n == 0:
+        log.info("No hay partidos pendientes; nada que programar.")
+        return
+    log.info("Scheduler activo: %d jobs T-60. Ctrl+C para salir.", n)
     sched.start()
 
 

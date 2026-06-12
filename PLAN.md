@@ -129,8 +129,7 @@ Se calibran **dos cosas por separado**: (a) el prior del Dixon-Coles y (b) el ou
 
 | Job | Cuándo | Qué hace |
 |---|---|---|
-| **Diario** | 06:00 hora local | Ingesta de resultados de ayer → reentrena Dixon-Coles → refresca cuotas/Elo/noticias → regenera predicciones preliminares de los partidos de hoy y mañana → recalibra si toca |
-| **T-60min** | 60 min antes de cada kickoff | Alineaciones confirmadas + últimas cuotas + noticias de última hora → re-ejecuta el debate completo → **predicción final congelada** (inmutable, con hash de los datos usados) |
+| **T-60min** (único job) | 60 min antes de cada kickoff | Reingesta (resultados recientes, cuotas frescas, fixture) → reentrena Dixon-Coles → alineaciones y noticias de última hora vía agentes → debate → **predicción final congelada** en `outputs/debates/` |
 
 - Implementación: **APScheduler** en un proceso persistente (lee el fixture y programa los jobs T-60min automáticamente). Alternativa si la máquina no está siempre encendida: Task Scheduler de Windows o un cron en una VM/Cloud Run barato.
 - Cada ejecución se versiona en SQLite: `(partido, timestamp, version, prior, deltas, p_final, datos_snapshot_id)`. Permite ver cómo evolucionó la predicción y auditar al juez.
