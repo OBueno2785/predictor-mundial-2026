@@ -1,0 +1,74 @@
+name: t60-predictor
+
+on:
+  schedule:
+    - cron: "7 * * * *"
+  workflow_dispatch:
+    inputs:
+      match:
+        description: "Número de partido (vacío = ventana T-60 automática)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: t60
+  cancel-in-progress: false
+
+jobs:
+  t60:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Configurar entorno
+        run: echo "ODDS_API_KEY=${{ secrets.ODDS_API_KEY }}" > .env
+
+      - name: Detectar partidos en ventana
+        id: ventana
+        run: |
+          if [ -n "${{ github.event.inputs.match }}" ]; then
+            echo "matches=${{ github.event.inputs.match }}" >> "$GITHUB_OUTPUT"
+          else
+            python -m src.t60_window | tee window.txt
+            matches=$(grep -oP 'MATCH_NUMBER: \K\d+' window.txt | tr '\n' ' ' || true)
+            echo "matches=$matches" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Instalar Claude Code
+        if: steps.ventana.outputs.matches != ''
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: Debate y predicción final
+        if: steps.ventana.outputs.matches != ''
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: |
+          for m in ${{ steps.ventana.outputs.matches }}; do
+            python -m src.debate_match "$m"
+          done
+
+      - name: Actualizar tabla global
+        if: steps.ventana.outputs.matches != ''
+        run: python -m src.predict
+
+      - name: Publicar resultados
+        if: steps.ventana.outputs.matches != ''
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add PREDICCIONES.md outputs/
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "bot: prediccion T-60 (partido(s) ${{ steps.ventana.outputs.matches }})"
+          git pull --rebase origin main
+          git push

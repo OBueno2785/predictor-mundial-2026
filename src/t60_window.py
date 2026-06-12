@@ -1,8 +1,9 @@
-"""Partidos con kickoff dentro de la ventana T-60 (45 a 105 min desde ahora).
+"""Partidos con kickoff dentro de la ventana T-60 (40 a 100 min desde ahora).
 
-Pensado para el agente cloud programado cada hora: con esa ventana de 60 min
-cada partido cae exactamente en una ejecución. Imprime el contexto completo
-(prior, cuotas, forma) listo para el debate.
+Pensado para un cron horario al minuto :07 (GitHub Actions): la ventana de
+60 min hace que cada partido caiga exactamente en una ejecución (kickoffs
+:00 quedan a +53 min, :30 a +83) y tolera ~13 min de retraso del runner.
+Imprime el contexto completo (prior, cuotas, forma) listo para el debate.
 
 Uso:  python -m src.t60_window [--next]   (--next: el próximo partido pendiente,
                                             ignorando la ventana — para pruebas)
@@ -15,8 +16,8 @@ from src.debate_match import build_context
 from src.ingest import fixtures
 from src.predict import DATA
 
-VENTANA_MIN = timedelta(minutes=45)
-VENTANA_MAX = timedelta(minutes=105)
+VENTANA_MIN = timedelta(minutes=40)
+VENTANA_MAX = timedelta(minutes=100)
 
 
 def main() -> None:
