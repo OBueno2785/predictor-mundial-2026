@@ -38,17 +38,20 @@ class DixonColesModel:
     n_matches: int = 0
     teams: list = field(default_factory=list)
 
-    def rates(self, home: str, away: str, adv_side: int = 0):
-        """adv_side: +1 ventaja para home, -1 para away, 0 neutral."""
+    def rates(self, home: str, away: str, adv_side: int = 0,
+              delta_home: float = 0.0, delta_away: float = 0.0):
+        """adv_side: +1 ventaja para home, -1 para away, 0 neutral.
+        delta_*: ajustes en log-xG provenientes del debate multiagente."""
         adv_h = self.home_adv if adv_side == 1 else 0.0
         adv_a = self.home_adv if adv_side == -1 else 0.0
-        lam = np.exp(self.intercept + adv_h + self.attack[home] - self.defense[away])
-        mu = np.exp(self.intercept + adv_a + self.attack[away] - self.defense[home])
+        lam = np.exp(self.intercept + adv_h + self.attack[home] - self.defense[away] + delta_home)
+        mu = np.exp(self.intercept + adv_a + self.attack[away] - self.defense[home] + delta_away)
         return lam, mu
 
     def score_matrix(self, home: str, away: str, adv_side: int = 0,
+                     delta_home: float = 0.0, delta_away: float = 0.0,
                      max_goals: int = MAX_GOALS) -> np.ndarray:
-        lam, mu = self.rates(home, away, adv_side)
+        lam, mu = self.rates(home, away, adv_side, delta_home, delta_away)
         goals = np.arange(max_goals + 1)
         P = np.outer(poisson.pmf(goals, lam), poisson.pmf(goals, mu))
         for (i, j), tau in _tau_factors(lam, mu, self.rho).items():

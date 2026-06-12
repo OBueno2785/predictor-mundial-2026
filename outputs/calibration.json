@@ -1,0 +1,17 @@
+{
+ "temperature": 1.0081616733378647,
+ "n_matches": 244,
+ "tournaments": [
+  "Mundial 2022",
+  "Copa Asia 2024",
+  "AFCON 2024",
+  "Euro 2024",
+  "Copa Am\u00e9rica 2024",
+  "Copa Oro 2025",
+  "AFCON 2025"
+ ],
+ "rps_raw": 0.17555167258803375,
+ "rps_cal": 0.17557478434975657,
+ "log_loss_raw": 0.9325194050167842,
+ "log_loss_cal": 0.9325108558455204
+}

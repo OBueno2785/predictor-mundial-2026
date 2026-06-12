@@ -1,13 +1,16 @@
-"""Pipeline Fase 1: ingesta → Dixon-Coles → predicciones de fase de grupos.
+"""Pipeline base: ingesta → Dixon-Coles → predicciones calibradas de grupos.
 
 Uso:  py -m src.predict  [--offline]
 """
+import json
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
+import numpy as np
 import pandas as pd
 
+from src.calibration import temperature
 from src.ingest import elo, fixtures, results
 from src.model import dixon_coles
 
@@ -140,6 +143,13 @@ def main() -> None:
 
     print("[3/4] Prediciendo 72 partidos de fase de grupos")
     preds = predict_groups(model, fx)
+
+    cal_path = OUT / "calibration.json"
+    if cal_path.exists():
+        T = json.loads(cal_path.read_text())["temperature"]
+        probs = temperature.apply(preds[["p_home", "p_draw", "p_away"]].to_numpy(), T)
+        preds[["p_home", "p_draw", "p_away"]] = np.round(probs, 4)
+        print(f"  Probabilidades 1X2 calibradas (T={T:.3f}, de outputs/calibration.json)")
 
     print("[4/4] Escribiendo salidas")
     OUT.mkdir(exist_ok=True)
