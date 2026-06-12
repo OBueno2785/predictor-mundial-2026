@@ -110,7 +110,11 @@ def main():
     ts = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M")
     dest = DEBATES / f"match_{match_number}_{ts}.json"
     ctx_save = dict(ctx)
-    ctx_save["final"] = {"p_home": float(ph), "p_draw": float(pdr), "p_away": float(pa)}
+    ctx_save["final"] = {
+        "p_home": float(ph), "p_draw": float(pdr), "p_away": float(pa),
+        "score_pred": f"{top[0][0]}-{top[0][1]}",
+        "top_scores": "; ".join(f"{i}-{j} ({p:.1%})" for i, j, p in top),
+    }
     debate.guardar(resultado, ctx_save, dest)
 
     v = resultado.veredicto

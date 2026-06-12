@@ -39,7 +39,11 @@ def main() -> None:
                            delta_home=dh, delta_away=da)
     ph, pdr, pa = model.outcome_probs(P)
     top = model.top_scores(P, 3)
-    ctx["final"] = {"p_home": float(ph), "p_draw": float(pdr), "p_away": float(pa)}
+    ctx["final"] = {
+        "p_home": float(ph), "p_draw": float(pdr), "p_away": float(pa),
+        "score_pred": f"{top[0][0]}-{top[0][1]}",
+        "top_scores": "; ".join(f"{i}-{j} ({p:.1%})" for i, j, p in top),
+    }
 
     resultado = debate.ResultadoDebate(veredicto=veredicto, delta_home=dh, delta_away=da)
     DEBATES.mkdir(parents=True, exist_ok=True)

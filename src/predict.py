@@ -92,6 +92,41 @@ def predict_groups(model: dixon_coles.DixonColesModel, fx: pd.DataFrame) -> pd.D
     return pd.DataFrame(rows).sort_values("match").reset_index(drop=True)
 
 
+def aplicar_debates(preds: pd.DataFrame) -> pd.DataFrame:
+    """Sobrescribe con la predicción final del último debate de cada partido."""
+    preds["ajustada"] = False
+    debates_dir = OUT / "debates"
+    if not debates_dir.exists():
+        return preds
+    ultimos = {}
+    for f in sorted(debates_dir.glob("match_*.json")):  # orden => último gana
+        try:
+            ultimos[int(f.stem.split("_")[1])] = json.loads(f.read_text(encoding="utf-8"))
+        except (ValueError, json.JSONDecodeError, IndexError):
+            continue
+    n = 0
+    for m, data in ultimos.items():
+        fin = data.get("final")
+        if not fin:
+            continue
+        if str(data.get("veredicto", {}).get("resumen", "")).startswith("Degradado"):
+            continue
+        mask = preds["match"] == m
+        if not mask.any():
+            continue
+        preds.loc[mask, ["p_home", "p_draw", "p_away"]] = [
+            round(fin["p_home"], 4), round(fin["p_draw"], 4), round(fin["p_away"], 4)]
+        if fin.get("score_pred"):
+            preds.loc[mask, "score_pred"] = fin["score_pred"]
+        if fin.get("top_scores"):
+            preds.loc[mask, "top_scores"] = fin["top_scores"]
+        preds.loc[mask, "ajustada"] = True
+        n += 1
+    if n:
+        print(f"  {n} partido(s) con predicción final ajustada por el panel")
+    return preds
+
+
 def write_markdown(preds: pd.DataFrame, model: dixon_coles.DixonColesModel) -> Path:
     ts = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     lines = [
@@ -100,20 +135,22 @@ def write_markdown(preds: pd.DataFrame, model: dixon_coles.DixonColesModel) -> P
         f"Generado: {ts} · Modelo: Dixon-Coles ({model.n_matches} partidos de "
         f"entrenamiento, ventaja localía={model.home_adv:.3f}, rho={model.rho:.4f})",
         "",
-        "Probabilidades del modelo estadístico base (prior). El ajuste por cuotas,"
-        " lesiones y debate multiagente se incorpora en la Fase 2.",
+        "Probabilidades del prior estadístico calibrado. Los partidos marcados con"
+        " **✓ panel** muestran la predicción final ajustada por el debate"
+        " multiagente + cuotas de mercado (job T-60 min antes del kickoff).",
         "",
     ]
     for g in sorted(preds["group"].unique()):
         lines += [f"## {g}", "",
-                  "| # | Fecha (UTC) | Partido | 1 | X | 2 | Pred. | Top marcadores | Real |",
-                  "|---|---|---|---|---|---|---|---|---|"]
+                  "| # | Fecha (UTC) | Partido | 1 | X | 2 | Pred. | Top marcadores | Real | Panel |",
+                  "|---|---|---|---|---|---|---|---|---|---|"]
         for r in preds[preds["group"] == g].itertuples():
             fecha = r.date_utc.strftime("%d-%m %H:%M")
+            panel = "✓ panel" if r.ajustada else "—"
             lines.append(
                 f"| {r.match} | {fecha} | {r.home} vs {r.away} | {r.p_home:.0%} | "
                 f"{r.p_draw:.0%} | {r.p_away:.0%} | {r.score_pred} | {r.top_scores} | "
-                f"{r.real or '—'} |")
+                f"{r.real or '—'} | {panel} |")
         lines.append("")
     dest = ROOT / "PREDICCIONES.md"
     dest.write_text("\n".join(lines), encoding="utf-8")
@@ -150,6 +187,8 @@ def main() -> None:
         probs = temperature.apply(preds[["p_home", "p_draw", "p_away"]].to_numpy(), T)
         preds[["p_home", "p_draw", "p_away"]] = np.round(probs, 4)
         print(f"  Probabilidades 1X2 calibradas (T={T:.3f}, de outputs/calibration.json)")
+
+    preds = aplicar_debates(preds)
 
     print("[4/4] Escribiendo salidas")
     OUT.mkdir(exist_ok=True)
