@@ -79,7 +79,7 @@ Librerías: `numpy`, `scipy.optimize` (MLE con la verosimilitud de Dixon-Coles),
 
 ## 5. Capa 3 — Debate multiagente (Claude API)
 
-Modelo: **`claude-opus-4-8`** en todos los roles, con `thinking={"type": "adaptive"}` y `output_config={"effort": "high"}`. SDK oficial `anthropic` (Python). Salidas estructuradas con `client.messages.parse()` + Pydantic.
+Transporte: **Claude Code en modo headless** (`claude -p`), autenticado con la suscripción del usuario — sin costo por token, consume cuota del plan. Debatientes con `sonnet` y Juez con `opus` (configurable vía `DEBATE_MODEL` / `DEBATE_MODEL_JUEZ`). Por defecto 1 ronda de debate; `--rounds 2` activa réplicas. Los agentes de noticias usan la búsqueda web integrada (WebSearch). El veredicto del Juez se emite como JSON validado con Pydantic. Si la cuota se agota a mitad de debate, el pipeline degrada al prior sin ajuste (nunca se queda sin predicción).
 
 ### Roles
 
@@ -102,9 +102,9 @@ Modelo: **`claude-opus-4-8`** en todos los roles, con `thinking={"type": "adapti
 
 Regla dura: si el juez no encuentra información nueva relevante (sin lesiones, mercado estable), `δ = 0` y la predicción es el prior calibrado. El debate ajusta, no reemplaza.
 
-### Costo estimado
+### Costo
 
-~10 llamadas/partido × (≈5K tokens in + 1K out) con caching ⇒ ~US$0.30–0.50 por partido. Fase de grupos completa (72 partidos × 2 ejecuciones: diaria + T-60min) ⇒ **~US$50–80**. Torneo completo ⇒ **~US$80–120**. La Batches API (-50%) no sirve para el job T-60min (latencia hasta 1 h), pero sí para backtesting masivo.
+Sin costo monetario por token: las ~7–9 llamadas por partido consumen cuota de la suscripción de Claude Code. Si la cuota del plan resultara insuficiente en días con muchos partidos, las opciones son reducir a 1 ronda de debate, debatir solo partidos con discrepancia modelo-mercado > 5 pp, o volver a la API de pago.
 
 ---
 

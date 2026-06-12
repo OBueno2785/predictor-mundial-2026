@@ -1,14 +1,22 @@
 """Orquestación del debate multiagente sobre el prior del Dixon-Coles.
 
-Flujo: ronda 1 (agentes en paralelo) → ronda 2 (réplicas) → Juez (salida
-estructurada con deltas acotados en log-xG) → recomputo de la matriz de
-marcadores con los ritmos ajustados.
+Transporte: Claude Code en modo headless (`claude -p`), autenticado con la
+suscripción del usuario — NO requiere ANTHROPIC_API_KEY ni paga por token
+(consume cuota del plan). Los agentes de noticias usan la búsqueda web
+integrada de Claude Code (WebSearch).
+
+Flujo: ronda 1 (agentes en paralelo) → ronda 2 (réplicas) → Juez (JSON
+validado con Pydantic, deltas acotados en log-xG) → matriz de marcadores
+recalculada con los ritmos ajustados.
 """
 import json
+import os
+import re
+import shutil
+import subprocess
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass, field
 
-import anthropic
 import numpy as np
 from dotenv import load_dotenv
 
@@ -17,10 +25,21 @@ from src.agents.schemas import DELTA_MAX, VeredictoJuez
 
 load_dotenv()
 
-MODEL = "claude-opus-4-8"
-MAX_TOKENS_AGENT = 1500
-MAX_TOKENS_JUEZ = 1500
-WEB_SEARCH = [{"type": "web_search_20260209", "name": "web_search", "max_uses": 4}]
+# sonnet para los debatientes (cuota ~5x menor), opus para el Juez
+MODEL = os.environ.get("DEBATE_MODEL", "sonnet")
+MODEL_JUEZ = os.environ.get("DEBATE_MODEL_JUEZ", "opus")
+TIMEOUT_S = 600
+MAX_WORKERS = 4
+
+
+class CuotaAgotada(RuntimeError):
+    """Límite de sesión de la suscripción de Claude Code (HTTP 429)."""
+
+JSON_JUEZ = """
+
+Responde ÚNICAMENTE con un objeto JSON válido (sin markdown, sin texto extra):
+{"delta_log_xg_home": <número>, "delta_log_xg_away": <número>,
+ "confianza": "alta"|"media"|"baja", "factores": [<strings>], "resumen": <string>}"""
 
 
 @dataclass
@@ -32,19 +51,44 @@ class ResultadoDebate:
     usage: dict = field(default_factory=dict)
 
 
-def _texto(response) -> str:
-    return "\n".join(b.text for b in response.content if b.type == "text")
+def _claude_exe() -> str:
+    exe = shutil.which("claude")
+    if not exe:
+        raise RuntimeError("CLI 'claude' no encontrado en PATH. Instalar Claude Code "
+                           "o agregarlo al PATH para ejecutar el debate.")
+    return exe
 
 
-def _acumular_usage(usage_total: dict, response) -> None:
-    u = response.usage
-    usage_total["input"] = usage_total.get("input", 0) + u.input_tokens
-    usage_total["output"] = usage_total.get("output", 0) + u.output_tokens
-    usage_total["cache_read"] = usage_total.get("cache_read", 0) + (u.cache_read_input_tokens or 0)
+def _call_claude(prompt: str, allow_web: bool = False, max_turns: int = 12,
+                 model: str = MODEL) -> tuple[str, dict]:
+    cmd = [_claude_exe(), "-p", "--output-format", "json",
+           "--model", model, "--max-turns", str(max_turns)]
+    if allow_web:
+        cmd += ["--allowedTools", "WebSearch,WebFetch"]
+    r = subprocess.run(cmd, input=prompt, capture_output=True, text=True,
+                       encoding="utf-8", timeout=TIMEOUT_S)
+    try:
+        data = json.loads(r.stdout)
+    except (json.JSONDecodeError, TypeError):
+        data = {}
+    if data.get("api_error_status") == 429:
+        raise CuotaAgotada(data.get("result", "límite de sesión alcanzado"))
+    if r.returncode != 0:
+        raise RuntimeError(f"claude -p falló ({r.returncode}): "
+                           f"{(r.stderr or r.stdout)[:500]}")
+    if data.get("is_error"):
+        raise RuntimeError(f"claude -p devolvió error: {data.get('result', '')[:500]}")
+    return data.get("result", ""), data
+
+
+def _acumular_usage(total: dict, meta: dict) -> None:
+    total["llamadas"] = total.get("llamadas", 0) + 1
+    total["duracion_ms"] = total.get("duracion_ms", 0) + meta.get("duration_ms", 0)
+    total["turnos"] = total.get("turnos", 0) + meta.get("num_turns", 0)
 
 
 def render_contexto(ctx: dict) -> str:
-    """Contexto compartido del partido (bloque cacheado del prefijo)."""
+    """Contexto compartido del partido para todos los agentes."""
     lines = [
         f"# Partido: {ctx['home']} vs {ctx['away']}",
         f"{ctx['group']} · {ctx['fecha']} · {ctx['estadio']} ({ctx['sede_pais']})",
@@ -71,89 +115,70 @@ def render_contexto(ctx: dict) -> str:
     return "\n".join(lines)
 
 
-def _llamada_agente(client, system: str, contexto: str, tarea: str,
-                    historial: list | None = None, tools: list | None = None):
-    messages = list(historial or [])
-    if not messages:
-        messages.append({"role": "user", "content": [
-            {"type": "text", "text": contexto, "cache_control": {"type": "ephemeral"}},
-            {"type": "text", "text": tarea},
-        ]})
-    else:
-        messages.append({"role": "user", "content": tarea})
-    kwargs = {}
-    if tools:
-        kwargs["tools"] = tools
-    return client.messages.create(
-        model=MODEL, max_tokens=MAX_TOKENS_AGENT,
-        thinking={"type": "adaptive"}, system=system,
-        messages=messages, **kwargs)
+def _parse_veredicto(texto: str) -> VeredictoJuez:
+    s = texto.strip()
+    s = re.sub(r"^```(json)?|```$", "", s, flags=re.MULTILINE).strip()
+    m = re.search(r"\{.*\}", s, flags=re.DOTALL)
+    if not m:
+        raise ValueError(f"El Juez no devolvió JSON: {texto[:300]}")
+    return VeredictoJuez(**json.loads(m.group(0)))
 
 
-def run_debate(ctx: dict, rounds: int = 2, client=None) -> ResultadoDebate:
-    client = client or anthropic.Anthropic()
+def run_debate(ctx: dict, rounds: int = 2) -> ResultadoDebate:
     contexto = render_contexto(ctx)
     usage_total = {}
+    tarea_r1 = "Emite tu análisis inicial del partido según tu rol."
 
     roles = [
-        ("Estadístico", prompts.ESTADISTICO, None),
-        ("Plantel/Noticias", prompts.PLANTEL, WEB_SEARCH),
-        ("Sentimiento", prompts.SENTIMIENTO, WEB_SEARCH),
+        ("Estadístico", prompts.ESTADISTICO, False),
+        ("Plantel/Noticias", prompts.PLANTEL, True),
+        ("Sentimiento", prompts.SENTIMIENTO, True),
     ]
     if ctx.get("odds"):
-        roles.insert(1, ("Mercado", prompts.MERCADO, None))
+        roles.insert(1, ("Mercado", prompts.MERCADO, False))
 
-    tarea_r1 = "Emite tu análisis inicial del partido según tu rol."
     rondas = {}
 
     def _ronda1(rol):
-        nombre, system, tools = rol
-        r = _llamada_agente(client, system, contexto, tarea_r1, tools=tools)
-        return nombre, r
+        nombre, system, web = rol
+        texto, meta = _call_claude(
+            f"{system}\n\n{contexto}\n\n{tarea_r1}",
+            allow_web=web, max_turns=12 if web else 4)
+        return nombre, texto, meta
 
-    with ThreadPoolExecutor(max_workers=4) as ex:
-        r1 = dict(ex.map(_ronda1, roles))
-    for nombre, resp in r1.items():
-        _acumular_usage(usage_total, resp)
-    rondas["ronda1"] = {n: _texto(r) for n, r in r1.items()}
+    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as ex:
+        r1 = list(ex.map(_ronda1, roles))
+    for _, _, meta in r1:
+        _acumular_usage(usage_total, meta)
+    rondas["ronda1"] = {n: t for n, t, _ in r1}
 
     posiciones_finales = rondas["ronda1"]
     if rounds >= 2:
         def _ronda2(rol):
-            nombre, system, tools = rol
+            nombre, system, web = rol
             otras = "\n\n".join(f"### {n}\n{t}" for n, t in rondas["ronda1"].items()
                                 if n != nombre)
-            historial = [
-                {"role": "user", "content": [
-                    {"type": "text", "text": contexto, "cache_control": {"type": "ephemeral"}},
-                    {"type": "text", "text": tarea_r1},
-                ]},
-                {"role": "assistant", "content": rondas["ronda1"][nombre]},
-            ]
-            r = _llamada_agente(client, system, contexto,
-                                prompts.REPLICA.format(posiciones=otras),
-                                historial=historial, tools=tools)
-            return nombre, r
+            prompt = (f"{system}\n\n{contexto}\n\n"
+                      f"## Tu análisis inicial\n{rondas['ronda1'][nombre]}\n\n"
+                      + prompts.REPLICA.format(posiciones=otras))
+            texto, meta = _call_claude(prompt, allow_web=web,
+                                       max_turns=8 if web else 4)
+            return nombre, texto, meta
 
-        with ThreadPoolExecutor(max_workers=4) as ex:
-            r2 = dict(ex.map(_ronda2, roles))
-        for nombre, resp in r2.items():
-            _acumular_usage(usage_total, resp)
-        rondas["ronda2"] = {n: _texto(r) for n, r in r2.items()}
+        with ThreadPoolExecutor(max_workers=MAX_WORKERS) as ex:
+            r2 = list(ex.map(_ronda2, roles))
+        for _, _, meta in r2:
+            _acumular_usage(usage_total, meta)
+        rondas["ronda2"] = {n: t for n, t, _ in r2}
         posiciones_finales = rondas["ronda2"]
 
     panel = "\n\n".join(f"### {n}\n{t}" for n, t in posiciones_finales.items())
-    juicio = client.messages.parse(
-        model=MODEL, max_tokens=MAX_TOKENS_JUEZ,
-        thinking={"type": "adaptive"}, system=prompts.JUEZ,
-        messages=[{"role": "user", "content": [
-            {"type": "text", "text": contexto, "cache_control": {"type": "ephemeral"}},
-            {"type": "text", "text": f"## Posiciones finales del panel\n\n{panel}\n\n"
-                                     "Emite tu veredicto."},
-        ]}],
-        output_format=VeredictoJuez)
-    _acumular_usage(usage_total, juicio)
-    veredicto = juicio.parsed_output
+    texto, meta = _call_claude(
+        f"{prompts.JUEZ}\n\n{contexto}\n\n## Posiciones finales del panel\n\n{panel}"
+        f"\n\nEmite tu veredicto.{JSON_JUEZ}",
+        allow_web=False, max_turns=4, model=MODEL_JUEZ)
+    _acumular_usage(usage_total, meta)
+    veredicto = _parse_veredicto(texto)
 
     dh = float(np.clip(veredicto.delta_log_xg_home, -DELTA_MAX, DELTA_MAX))
     da = float(np.clip(veredicto.delta_log_xg_away, -DELTA_MAX, DELTA_MAX))
@@ -166,6 +191,8 @@ def guardar(resultado: ResultadoDebate, ctx: dict, dest) -> None:
         "partido": f"{ctx['home']} vs {ctx['away']}",
         "fecha": str(ctx["fecha"]),
         "prior": {k: ctx[k] for k in ["xg_home", "xg_away", "p_home", "p_draw", "p_away"]},
+        "odds": ctx.get("odds"),
+        "final": ctx.get("final"),
         "veredicto": resultado.veredicto.model_dump(),
         "delta_aplicado": {"home": resultado.delta_home, "away": resultado.delta_away},
         "rondas": resultado.rondas,

@@ -4,12 +4,25 @@ Requiere ODDS_API_KEY en .env. Si no hay key devuelve None y el pipeline
 sigue sin la señal de mercado (el Agente Mercado se omite del debate).
 """
 import os
+import unicodedata
 
 import numpy as np
 import requests
 
 SPORT_KEY = "soccer_fifa_world_cup"
 URL = f"https://api.the-odds-api.com/v4/sports/{SPORT_KEY}/odds"
+
+# alias (ya en minúsculas y sin acentos) -> nombre del dataset martj42
+ALIASES = {
+    "usa": "united states",
+    "czechia": "czech republic",
+    "korea republic": "south korea",
+    "ir iran": "iran",
+    "cote d'ivoire": "ivory coast",
+    "cabo verde": "cape verde",
+    "turkiye": "turkey",
+    "congo dr": "dr congo",
+}
 
 
 def fetch_all() -> list | None:
@@ -24,7 +37,9 @@ def fetch_all() -> list | None:
 
 
 def _normalize(name: str) -> str:
-    return name.lower().replace("south korea", "korea").strip()
+    s = unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode()
+    s = s.lower().replace("&", "and").strip()
+    return ALIASES.get(s, s)
 
 
 def implied_probs(events: list, home: str, away: str) -> dict | None:
