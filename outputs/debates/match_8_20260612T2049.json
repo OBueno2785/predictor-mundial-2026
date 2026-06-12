@@ -1,0 +1,35 @@
+{
+ "partido": "Qatar vs Switzerland",
+ "fecha": "2026-06-13 19:00:00+00:00",
+ "prior": {
+  "xg_home": 0.6721947107266794,
+  "xg_away": 2.942503697261548,
+  "p_home": 0.05409614306069213,
+  "p_draw": 0.11848413897456693,
+  "p_away": 0.8274197179647409
+ },
+ "odds": {
+  "p_home": 0.07016813706185798,
+  "p_draw": 0.14904145598520044,
+  "p_away": 0.7807904069529414,
+  "n_bookies": 24
+ },
+ "final": {
+  "p_home": 0.05409614306069213,
+  "p_draw": 0.11848413897456693,
+  "p_away": 0.8274197179647409
+ },
+ "veredicto": {
+  "delta_log_xg_home": 0.0,
+  "delta_log_xg_away": 0.0,
+  "confianza": "baja",
+  "factores": [],
+  "resumen": "Degradado: error en debate: claude -p falló (1): {\"type\":\"result\",\"subtype\":\"success\",\"is_error\":true,\"api_error_status\":null,\"duration_ms\":154,\"duration_api_ms\":0,\"num_turns\":1,\"result\":\"Not logged in · Please run /login\",\"stop_reason\":\"stop_sequence\",\"session_id\":\"18079105-8bd2-4156-8adb-1e14f7fe23f2\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral"
+ },
+ "delta_aplicado": {
+  "home": 0.0,
+  "away": 0.0
+ },
+ "rondas": {},
+ "usage": {}
+}
