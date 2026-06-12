@@ -1,6 +1,6 @@
 # Predicciones — Fase de Grupos Mundial 2026
 
-Generado: 2026-06-12 20:57 UTC · Modelo: Dixon-Coles (7915 partidos de entrenamiento, ventaja localía=0.231, rho=-0.0505)
+Generado: 2026-06-12 21:14 UTC · Modelo: Dixon-Coles (7915 partidos de entrenamiento, ventaja localía=0.231, rho=-0.0505)
 
 Probabilidades del modelo estadístico base (prior). El ajuste por cuotas, lesiones y debate multiagente se incorpora en la Fase 2.
 
@@ -46,7 +46,7 @@ Probabilidades del modelo estadístico base (prior). El ajuste por cuotas, lesio
 | 31 | 20-06 04:00 | Turkey vs Paraguay | 37% | 31% | 32% | 1-1 | 1-1 (14.1%); 1-0 (12.2%); 0-0 (12.0%) | — |
 | 32 | 19-06 19:00 | United States vs Australia | 33% | 29% | 38% | 1-1 | 1-1 (13.7%); 0-1 (10.9%); 0-0 (9.8%) | — |
 | 59 | 26-06 02:00 | Turkey vs United States | 41% | 25% | 34% | 1-1 | 1-1 (11.5%); 2-1 (8.8%); 1-2 (7.9%) | — |
-| 60 | 26-06 02:00 | Paraguay vs Australia | 30% | 35% | 34% | 0-0 | 0-0 (18.8%); 0-1 (15.4%); 1-0 (14.2%) | — |
+| 60 | 26-06 02:00 | Paraguay vs Australia | 31% | 35% | 34% | 0-0 | 0-0 (18.8%); 0-1 (15.4%); 1-0 (14.2%) | — |
 
 ## Group E
 
@@ -79,7 +79,7 @@ Probabilidades del modelo estadístico base (prior). El ajuste por cuotas, lesio
 | 39 | 21-06 19:00 | Belgium vs Iran | 53% | 26% | 21% | 1-0 | 1-0 (12.6%); 1-1 (12.4%); 2-0 (10.5%) | — |
 | 40 | 22-06 01:00 | New Zealand vs Egypt | 17% | 33% | 50% | 0-1 | 0-1 (21.1%); 0-0 (19.8%); 0-2 (12.2%) | — |
 | 63 | 27-06 03:00 | Egypt vs Iran | 28% | 33% | 39% | 0-0 | 0-0 (15.7%); 0-1 (15.1%); 1-1 (14.0%) | — |
-| 64 | 27-06 03:00 | New Zealand vs Belgium | 6% | 18% | 76% | 0-2 | 0-2 (17.2%); 0-1 (15.8%); 0-3 (12.3%) | — |
+| 64 | 27-06 03:00 | New Zealand vs Belgium | 6% | 18% | 76% | 0-2 | 0-2 (17.3%); 0-1 (15.8%); 0-3 (12.3%) | — |
 
 ## Group H
 
