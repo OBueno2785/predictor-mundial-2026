@@ -1,6 +1,6 @@
 # Predicciones — Fase de Grupos Mundial 2026
 
-Generado: 2026-06-15 14:53 UTC · Modelo: Dixon-Coles (7925 partidos de entrenamiento, ventaja localía=0.228, rho=-0.0513)
+Generado: 2026-06-15 15:14 UTC · Modelo: Dixon-Coles (7925 partidos de entrenamiento, ventaja localía=0.228, rho=-0.0513)
 
 Probabilidades del prior estadístico calibrado. Los partidos marcados con **✓ panel** muestran la predicción final ajustada por el debate multiagente + cuotas de mercado (job T-60 min antes del kickoff).
 
@@ -74,8 +74,8 @@ Probabilidades del prior estadístico calibrado. Los partidos marcados con **✓
 
 | # | Fecha (UTC) | Partido | 1 | X | 2 | Pred. | Top marcadores | Real | Panel |
 |---|---|---|---|---|---|---|---|---|---|
-| 15 | 16-06 01:00 | Iran vs New Zealand | 59% | 27% | 13% | 1-0 | 1-0 (18.9%); 2-0 (14.4%); 0-0 (13.7%) | — | — |
-| 16 | 15-06 19:00 | Belgium vs Egypt | 57% | 27% | 16% | 1-0 | 1-0 (16.2%); 2-0 (12.8%); 1-1 (12.0%) | — | — |
+| 15 | 16-06 01:00 | Iran vs New Zealand | 55% | 28% | 17% | 1-0 | 1-0 (18.8%); 0-0 (14.5%); 2-0 (13.6%) | — | ✓ panel |
+| 16 | 15-06 19:00 | Belgium vs Egypt | 58% | 26% | 16% | 1-0 | 1-0 (16.6%); 2-0 (12.5%); 0-0 (12.5%) | — | ✓ panel |
 | 39 | 21-06 19:00 | Belgium vs Iran | 53% | 26% | 21% | 1-0 | 1-0 (12.6%); 1-1 (12.5%); 2-0 (10.5%) | — | — |
 | 40 | 22-06 01:00 | New Zealand vs Egypt | 17% | 34% | 50% | 0-1 | 0-1 (21.0%); 0-0 (19.8%); 0-2 (12.1%) | — | — |
 | 63 | 27-06 03:00 | Egypt vs Iran | 28% | 33% | 39% | 0-0 | 0-0 (15.6%); 0-1 (15.2%); 1-1 (14.0%) | — | — |
@@ -85,8 +85,8 @@ Probabilidades del prior estadístico calibrado. Los partidos marcados con **✓
 
 | # | Fecha (UTC) | Partido | 1 | X | 2 | Pred. | Top marcadores | Real | Panel |
 |---|---|---|---|---|---|---|---|---|---|
-| 13 | 15-06 22:00 | Saudi Arabia vs Uruguay | 11% | 29% | 61% | 0-1 | 0-1 (22.2%); 0-0 (16.9%); 0-2 (15.7%) | — | — |
-| 14 | 15-06 16:00 | Spain vs Cape Verde | 89% | 9% | 2% | 3-0 | 3-0 (14.9%); 2-0 (14.4%); 4-0 (11.5%) | — | — |
+| 13 | 15-06 22:00 | Saudi Arabia vs Uruguay | 12% | 26% | 62% | 0-1 | 0-1 (22.3%); 0-0 (18.4%); 0-2 (14.6%) | — | ✓ panel |
+| 14 | 15-06 16:00 | Spain vs Cape Verde | 89% | 8% | 3% | 2-0 | 2-0 (15.2%); 3-0 (14.9%); 4-0 (11.0%) | — | ✓ panel |
 | 37 | 21-06 22:00 | Uruguay vs Cape Verde | 67% | 25% | 9% | 1-0 | 1-0 (20.8%); 2-0 (17.1%); 0-0 (13.6%) | — | — |
 | 38 | 21-06 16:00 | Spain vs Saudi Arabia | 84% | 12% | 4% | 2-0 | 2-0 (16.3%); 3-0 (14.5%); 1-0 (12.0%) | — | — |
 | 65 | 27-06 00:00 | Cape Verde vs Saudi Arabia | 29% | 34% | 37% | 0-0 | 0-0 (17.2%); 0-1 (15.4%); 1-1 (14.0%) | — | — |

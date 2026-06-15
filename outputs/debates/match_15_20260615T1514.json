@@ -1,0 +1,57 @@
+{
+ "partido": "Iran vs New Zealand",
+ "fecha": "2026-06-16 01:00:00+00:00",
+ "prior": {
+  "xg_home": 1.4829261315689475,
+  "xg_away": 0.5483381952205314,
+  "p_home": 0.5968608715654107,
+  "p_draw": 0.2725102102899499,
+  "p_away": 0.1306289181446395
+ },
+ "odds": {
+  "p_home": 0.5351307294377522,
+  "p_draw": 0.27318751489677956,
+  "p_away": 0.1916817556654682,
+  "n_bookies": 24
+ },
+ "model_final": {
+  "p_home": 0.5653964849220204,
+  "p_draw": 0.28709280310603663,
+  "p_away": 0.147510711971943
+ },
+ "blend_weight_market": 0.5,
+ "final": {
+  "p_home": 0.5502636071798863,
+  "p_draw": 0.2801401590014081,
+  "p_away": 0.1695962338187056,
+  "score_pred": "1-0",
+  "top_scores": "1-0 (18.8%); 0-0 (14.5%); 2-0 (13.6%)"
+ },
+ "veredicto": {
+  "delta_log_xg_home": -0.06,
+  "delta_log_xg_away": 0.05,
+  "confianza": "media",
+  "factores": [
+   "Defensores iraníes de liga local (Mohammadi, Khalilzadeh, Hajsafi) sin partidos de club desde marzo 2026 por suspensión de la liga: ~3 meses sin ritmo competitivo, eleva riesgo de gol en contra (no modelable por Dixon-Coles)",
+   "Jahanbakhsh en duda física (late fitness test) y Azmoun excluido del plantel: merma puntual de recursos ofensivos iraníes",
+   "Desgaste logístico verificado de Irán: base en Tijuana con vuelos por partido y 15 miembros de federación con visa denegada, afecta preparación"
+  ],
+  "resumen": "Mantengo a Irán como claro favorito alineado con el prior. Aplico ajustes leves por información no precificable que el modelo no ve: el bloque defensivo iraní (jugadores de liga local) llega sin ritmo de club tras 3 meses de liga suspendida, lo que eleva el xG de NZ (+0.05); y las dudas ofensivas (Jahanbakhsh/Azmoun) sumadas al caos logístico (base en México, vuelos, visas denegadas) recortan levemente el ritmo de gol iraní (-0.06). No ajusto hacia el mercado: estos factores son señal residual concreta y reciente, no la discrepancia con cuotas."
+ },
+ "delta_aplicado": {
+  "home": -0.06,
+  "away": 0.05
+ },
+ "rondas": {
+  "ronda1": {
+   "Estadístico": "## Agente Estadístico — Iran vs New Zealand\n\n### Validación del prior\n\nEl prior ya refleja correctamente la asimetría de fuerzas: xG 1.48 vs 0.55 es un ratio de 2.7x, consistente con la diferencia de forma observada (2.2 GF/0.6 GC vs 0.8 GF/2.0 GC).\n\n### Lo que los datos dicen — sin narrativa\n\n**Forma reciente Iran** es la más sólida del torneo para cualquier equipo Grupo G: 4W-1L-0D en los últimos 5, diferencial goles +8. El único dato negativo es la derrota 1-2 vs Nigeria (selección de mayor calibre). Los rivales recientes (Mali, Gambia, Costa Rica) son débiles, pero el modelo ya descuenta eso vía rankings FIFA.\n\n**Forma reciente NZ** es alarmante: 1W-3L-0D, concediendo 2.0 GC/partido. Pero el 0-4 vs Haití es el dato que requiere atención — Haití no es equipo élite; sugiere problemas defensivos estructurales, no solo enfrentamiento contra rivales superiores. El 4-1 vs Chile es un outlier claro.\n\n### Discrepancia modelo vs mercado\n\nEl mercado mueve a NZ de 13.1% → 19.2% (+6.1pp) y recorta a Iran de 59.7% → 53.5% (-6.2pp). Eso es un movimiento material. Como agente estadístico, la pregunta es: **¿qué ve el mercado que el modelo no ve?**\n\nHipótesis verificables:\n- Convocatoria/lesionados Iran: no hay señal pública de bajas relevantes\n- Condición física NZ vs un viaje largo: especulativo, sin dato cuantificable\n- El 4-1 vs Chile recibe peso excesivo en el mercado (sesgo de recencia)\n\nNo encuentro evidencia cuantificable que justifique el descuento de 6pp al favor Iran. La forma reciente, si acaso, **refuerza** el prior en lugar de erosionarlo.\n\n### Sin señal nueva que mueva el prior\n\nLos datos de forma son coherentes con las probabilidades del modelo. El gap mercado-modelo parece ruido de recencia (Chile outlier) más que información genuina.\n\n---\n\n**POSICION: mantener prior — magnitud nula**",
+   "Plantel/Noticias": "---\n\n## Análisis de Plantel y Noticias — Iran vs New Zealand (16-jun-2026)\n\n### Iran\n\n**Participación:** Confirmada por FIFA a pesar de la declaración del ministro de deportes. El partido se juega.\n\n**Ausencias y dudas:**\n- **Sardar Azmoun** — excluido del plantel definitivo por razones políticas (reportes de deslealtad al gobierno). No es titularísimo pero sí un recurso ofensivo importante.\n- **Alireza Jahanbakhsh** — \"late fitness test\" previo al partido. Si no llega, Irán pierde su principal amenaza por banda derecha. ([Sports Mole](https://www.sportsmole.co.uk/football/iran/world-cup-2026/preview/iran-vs-new-zealand-prediction-team-news-lineups_599122.html))\n- **Hajsafi, Mohammadi, Khalilzadeh (defensores del campeonato local)** — sin actividad de club desde **marzo 2026** porque la liga iraní fue suspendida tras los ataques. Tres meses sin competencia real antes del primer partido del Mundial. Éste es el factor más relevante que el modelo no puede capturar. ([RotoWire](https://www.rotowire.com/soccer/article/iran-vs-new-zealand-preview-predicted-lineups-team-news-tactical-analysis-2026-world-cup-group-g-118098))\n\n**Alineación probable (4-3-3):** Beiranvand; Yousefi, Khalilzadeh, Nemati, Mohammadi; Ezatolahi, Ghoddos, Mohebi; Ghayedi, **Taremi**, Hosseinzadeh.\n\n---\n\n### New Zealand\n\n**Chris Wood** (45 goles en 90 caps, máximo goleador histórico) — regresó de lesión de rodilla en abril, se espera que **arranque de titular**. Venía limitado (3 goles en 15 partidos al volver), pero disponible. ([Squawka](https://www.squawka.com/en/news/world-cup/new-zealand-world-cup-2026-fixtures-squad-analysis/))\n\n**Ryan Thomas** — no estará disponible para el primer partido.\n\n**Alineación probable (4-3-3):** Crocombe; T. Smith, Boxall, Bindon, Cacace; Bell, Stamenić, Just; Singh, **Wood**, Garbett.\n\n---\n\n### Señal neta\n\n| Factor | Dirección | Peso |\n|---|---|---|\n| Defensas iraníes sin ritmo de club (3 meses) | +NZ / +goles | Moderado |\n| Jahanbakhsh dudoso | -Irán ofensivo | Leve |\n| Azmoun fuera del plantel | -Irán profundidad | Leve |\n| Wood disponible para NZ | +NZ | Leve (venía mermado) |\n| Liga iraní suspendida → preparación física irregular | +NZ / +goles | Leve |\n\nEl mercado ya incorporó parte de esto moviendo a NZ de 13.1% → 19.2% (+6 pp). La señal residual no absorbida por el mercado es principalmente la **falta de ritmo competitivo de los defensores iraníes de liga local**, que el Dixon-Coles no puede modelar.\n\n---\n\n**POSICION: más goles — magnitud leve**\n\nLa baja forma competitiva del bloque defensivo iraní (Mohammadi, Khalilzadeh, Hajsafi sin partidos de club desde marzo) eleva el riesgo de gol en contra, aunque Irán sigue siendo claro favorito al resultado. No hay suficiente señal para mover la victoria iraní de forma significativa más allá de lo que el mercado ya refleja.\n\n---\n\n**Sources:**\n- [Sports Mole — Iran vs New Zealand preview/lineups](https://www.sportsmole.co.uk/football/iran/world-cup-2026/preview/iran-vs-new-zealand-prediction-team-news-lineups_599122.html)\n- [RotoWire — predicted lineups & team news](https://www.rotowire.com/soccer/article/iran-vs-new-zealand-preview-predicted-lineups-team-news-tactical-analysis-2026-world-cup-group-g-118098)\n- [FIFA confirms Iran will play all group-stage matches in US](https://www.foxnews.com/outkick-sports/fifa-confirms-iran-play-2026-world-cup-group-stage-matches-us-soil-despite-tensions)\n- [Gulf News — Iranian sports minister statement](https://gulfnews.com/sport/iranian-sports-minister-under-no-circumstances-can-we-participate-in-the-world-cup-1.500471791)\n- [Squawka — New Zealand World Cup 2026 analysis](https://www.squawka.com/en/news/world-cup/new-zealand-world-cup-2026-fixtures-squad-analysis/)\n- [Goal.com — Iran squad World Cup 2026](https://www.goal.com/en/lists/iran-squad-world-cup-2026/blt67c2d5d938254c59)",
+   "Sentimiento": "---\n\n## Análisis de Sentimiento — Iran vs New Zealand\n\n### Iran: señal fuerte y verificable de distracción geopolítica extrema\n\nFuentes múltiples (Al Jazeera, ABC7, CNN, The National, Gulf News) confirman un contexto sin precedentes:\n\n- **Base en Tijuana**: Iran entrenó y se aloja en México por restricciones de visado, desplazándose en vuelo para cada partido.\n- **15 miembros de la federación denegados**: Personal técnico y administrativo no pudo entrar a EE.UU. Logística severamente afectada.\n- **Guerra de fondo**: Primera vez en la historia del Mundial que el país anfitrión está en conflicto bélico con un participante. El ministro de deporte iraní llegó a declarar que \"bajo ninguna circunstancia podemos participar\" (luego participaron, bajo presión FIFA).\n- **Protestas en SoFi Stadium**: La comunidad iraní-americana está dividida; se esperan manifestaciones masivas en el exterior del estadio.\n- **Demanda rechazada por FIFA**: Iran pidió cambio de sede o garantías adicionales; FIFA lo descartó.\n\nMensaje público del equipo (Taremi, Ghalenoei): deliberadamente unificador y \"apolítico\" — señal de que la presión es real y la están gestionando activamente. Puede galvanizar, pero el desgaste logístico es objetivo.\n\n### New Zealand: sentimiento positivo pero contenido\n\n- Primera Copa del Mundo desde 2010 — entusiasmo genuino, sin presión de resultado.\n- Ben Old: \"tenemos muy buenas posibilidades de ganar.\" Mentalidad suelta, juegan con libertad.\n- La derrota 0-4 ante Haití está siendo racionalizada por el grupo (\"fuimos contra rivales más duros\"), lo que puede ser autoengaño o resiliencia real.\n- Sin distracción extradeportiva apreciable.\n\n### Calibración con mercado\n\nEl mercado ya movió a Iran de 59.7% (modelo) a 53.5% — una corrección de ~6 pp que probablemente incorpora parte del descuento geopolítico. El diferencial entre modelo y mercado es la mayor señal de que el ruido extra-deportivo ya está siendo parcialmente priceado.\n\n### Señal neta\n\nLa distracción de Iran es verificable, extrema y persistente, pero: (a) el mercado ya lo ha descontado parcialmente, y (b) la adversidad compartida puede cohesionar equipos. El efecto neto como agente de sentimiento es un ajuste leve adicional más allá de lo que el mercado ya refleja.\n\n---\n\n**POSICION: favorecer visita — magnitud leve**\n\n---\n\nSources:\n- [Iran arrive in Los Angeles with aim of 'bringing joy to all Iranians' | The National](https://www.thenationalnews.com/news/us/2026/06/15/war-casts-shadow-over-irans-world-cup-opener-in-los-angeles/)\n- [Iran's Ghalenoei, Taremi decry US treatment before first World Cup game | Al Jazeera](https://www.aljazeera.com/sports/2026/6/15/irans-ghalenoei-taremi-decry-us-treatment-before-first-world-cup-game/)\n- [15 Iranian soccer federation members denied US visas | ABC7 Los Angeles](https://abc7.com/live-updates/world-cup-2026-southern-california-gears-tournament-ahead-matches-sofi-stadium/19277087/)\n- ['Who are we cheering for?' Iranian Americans face their most complicated World Cup | CNN](https://www.cnn.com/2026/06/14/sport/iran-world-cup)\n- [All Whites navigate new challenges ahead of opener against Iran | RNZ News](https://www.rnz.co.nz/news/sport/598198/all-whites-navigate-new-challenges-ahead-of-fifa-world-cup-opener-against-iran)"
+  }
+ },
+ "usage": {
+  "llamadas": 4,
+  "duracion_ms": 222455,
+  "turnos": 14
+ }
+}

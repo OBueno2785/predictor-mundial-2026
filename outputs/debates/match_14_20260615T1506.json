@@ -1,0 +1,56 @@
+{
+ "partido": "Spain vs Cape Verde",
+ "fecha": "2026-06-15 16:00:00+00:00",
+ "prior": {
+  "xg_home": 3.0962937812636064,
+  "xg_away": 0.4072364183464031,
+  "p_home": 0.890187486375766,
+  "p_draw": 0.08573160448065041,
+  "p_away": 0.0240809091435839
+ },
+ "odds": {
+  "p_home": 0.9053175003695153,
+  "p_draw": 0.06627098641557085,
+  "p_away": 0.028411513214913846,
+  "n_bookies": 24
+ },
+ "model_final": {
+  "p_home": 0.8769287548530882,
+  "p_draw": 0.09569491032110193,
+  "p_away": 0.02737633482580977
+ },
+ "blend_weight_market": 0.5,
+ "final": {
+  "p_home": 0.8911231276113017,
+  "p_draw": 0.08098294836833639,
+  "p_away": 0.02789392402036181,
+  "score_pred": "2-0",
+  "top_scores": "2-0 (15.2%); 3-0 (14.9%); 4-0 (11.0%)"
+ },
+ "veredicto": {
+  "delta_log_xg_home": -0.05,
+  "delta_log_xg_away": 0.0,
+  "confianza": "media",
+  "factores": [
+   "Alineación confirmada España (hoy 15/06): Lamine Yamal y Nico Williams fuera del once por gestión de carga/recuperación isquiotibial; entran Baena y Ferran Torres, techo ofensivo algo menor en los primeros 60-70'",
+   "Logan Costa (CB titular Cabo Verde) regresa oxidado de rotura de LCA, lo que compensa parcialmente y frena un ajuste mayor a la baja"
+  ],
+  "resumen": "Único dato no capturado por el prior: España arranca sin sus dos extremos más letales (Yamal y Williams) en el once, confirmado hoy. Reduce levemente el volumen de gol esperado del local, pero ambos están disponibles desde el banquillo y el central oxidado de Cabo Verde (Costa, vuelta de LCA) compensa en parte. Ajuste leve a la baja en log-xG local; sin cambios para Cabo Verde. Las probabilidades de resultado se mantienen robustas."
+ },
+ "delta_aplicado": {
+  "home": -0.05,
+  "away": 0.0
+ },
+ "rondas": {
+  "ronda1": {
+   "Estadístico": "## Agente Estadístico — Spain vs Cape Verde\n\n**El prior ya hace el trabajo pesado.** Un xG de 3.10 vs 0.41 refleja una brecha de calidad que lleva años acumulándose en datos de ranking, goles esperados y resultados. No hay narrativa del partido que justifique ignorar esa señal base.\n\n**Forma reciente de España — sin alarma:**\nLos tres empates recientes generan ruido, pero el contexto importa: el 0-0 con Egipto y el 1-1 con Irak son rivales de nivel similar o inferior al que España encontraría en este partido. El modelo ajusta por calidad de rival; si no ajusta correctamente, el RPS de 0.176 lo mostraría. No lo muestra. El 3-0 contra Serbia y el 3-1 contra Perú confirman que el motor ofensivo funciona contra rivales con presencia real.\n\n**Cape Verde — la derrota 0-3 contra Bermuda es señal negativa real:**\nBermuda no es rival de nivel internacional. Perder 0-3 contra ellos semanas antes del Mundial es un dato concreto, no narrativa. Refuerza que el 0.41 xG que el modelo les asigna no es generoso.\n\n**Mercado vs modelo:**\n90.5% (mercado) vs 89.0% (modelo) — diferencia de 1.5 pp. Dentro del ruido de margen de casas. No hay divergencia accionable.\n\n**Situación de grupo:**\nAmbos equipos en 0 pts, ambos con incentivos plenos para ganar. Sin rotación, sin desincentivos. Neutral para cualquier ajuste.\n\n**Señal nueva:** ninguna cuantificable fuera de lo ya capturado.\n\n---\n\nPOSICION: mantener prior — magnitud nula",
+   "Plantel/Noticias": "---\n\n## Análisis — Agente de Plantel y Noticias: España vs. Cabo Verde\n\n**Partido:** Grupo H · 15 jun 2026 · 16:00 UTC · Atlanta\n\n---\n\n### 1. Lesiones y suspensiones\n\n**España — señal importante:**\n\n| Jugador | Estado | Impacto |\n|---|---|---|\n| Lamine Yamal | Fuera del once titular (lesión isquio bíceps izquierdo, recuperándose) | ⚠️ Alto |\n| Nico Williams | Fuera del once titular (isquiotibiales) | ⚠️ Alto |\n| Fabián Ruiz | Disponible (tuvo molestias en rodilla en primavera) | Neutro |\n| Rodri | Disponible (monitorizado por historial de lesiones) | Neutro |\n\nYamal y Williams están **en el banquillo** pero no en el once. De la Fuente no quiere arriesgar una recaída en el primer partido. Podrían entrar en la segunda parte si el partido lo requiere.\n\n**Cabo Verde — señal secundaria:**\n\n| Jugador | Estado | Impacto |\n|---|---|---|\n| Logan Costa (CB titular, Villarreal) | Disponible, pero vuelve de rotura de LCA (julio 2025, regresó como suplente el 17/05/26) | ⚠️ Moderado |\n| Ryan Mendes (capitán, 36 a.) | Sin novedades | Neutro |\n| Resto de la plantilla | Sin lesiones ni suspensiones reportadas | Neutro |\n\nCosta es el mejor central de Cabo Verde; lleva menos de un mes jugando minutos reales tras 10 meses de baja. Estará en el once pero con ritmo de competición muy limitado.\n\n---\n\n### 2. Alineación confirmada España\n\n> **Fuente confirmada (okdiario / Yahoo Sports / WST, hoy 15/06):**\n\n**Unai Simón — Porro, Cubarsi, Laporte, Cucurella — Rodri, Fabián Ruiz, Pedri — Ferran Torres, Oyarzabal, Baena**\n\nCuatro del Barça en el once (Cubarsi, Pedri, Ferran Torres + ¿Gavi?). Yamal y Williams en el banquillo, disponibles para entrar.\n\n---\n\n### 3. Conflictos internos / clima de vestuario\n\nSin señal detectada en ninguna de las dos selecciones.\n\n---\n\n### 4. Fatiga / descanso\n\n- España: primer partido del torneo, descansados. No hay viajes de larga distancia recientes.\n- Cabo Verde: primer partido del torneo, idem. La única carga relevante es el amistoso del 6 de junio vs. Bermuda (9 días de margen).\n\n---\n\n### 5. Incentivos de grupo\n\nAmbos equipos arrancan el torneo (0 pts). No hay escenarios de rotación ni de \"ya estamos clasificados\". Los dos saldrán con todo. Sin señal adicional respecto al prior del modelo.\n\n---\n\n### Síntesis\n\nEl dato central es la **ausencia de Yamal y Williams del once inicial**. Son los dos extremos más peligrosos de España y el modelo probablemente los asume disponibles para generar un xG de 3.10. Con Ferran Torres y Baena en su lugar (calidad real pero un escalón por debajo), el techo ofensivo de España en los primeros 60-70 minutos es algo menor. La contrapartida es que Logan Costa llega oxidado de su retorno de LCA, lo que expone a Cabo Verde por dentro. Ambos factores se compensan parcialmente.\n\nLas probabilidades de victoria española (89 % modelo, 90.5 % mercado) son robustas y no hay señal para moverlas. El ajuste es en el volumen de goles esperado.\n\n**POSICION: menos goles — magnitud leve**\n\n---\n\nSources:\n- [Yamal, Williams available for Spain's opening match | Al Jazeera](https://www.aljazeera.com/sports/2026/6/8/yamal-williams-to-be-available-for-spains-opening-world-cup-match)\n- [Yamal not in Spain starting XI vs Cape Verde | Yahoo Sports](https://sports.yahoo.com/articles/yamal-not-spains-world-cup-212632854.html)\n- [Alineación España vs Cabo Verde — Baena toma la delantera | okdiario](https://okdiario.com/mundial/alineacion-espana-contra-cabo-verde-baena-toma-delantera-18495103)\n- [Spain vs Cape Verde – Team News & Predicted Lineups | Sports Mole](https://www.sportsmole.co.uk/football/spain/world-cup-2026/team-news/spain-vs-cape-verde-injury-suspension-list-predicted-xis_599108.html)\n- [Spain vs Cape Verde projected lineups | World Soccer Talk](https://worldsoccertalk.com/world-cup/is-lamine-yamal-playing-spain-vs-cape-verde-projected-lineups-for-the-2026-world-cup-group-h-game/)\n- [Cape Verde squad breakdown | World Soccer Talk](https://worldsoccertalk.com/amp/world-cup/cape-verde-2026-world-cup-preview-squad-breakdown-key-player-and-tactical-analysis/)\n- [Logan Costa ACL recovery / Cape Verde squad | worldcuppass.com](https://worldcuppass.com/cape-verde-world-cup-squad-2026/)",
+   "Sentimiento": "---\n\n## Agente de Sentimiento — España vs Cabo Verde · 15 jun 2026\n\n### España\n\n**Señal relevante: exclusión histórica del Real Madrid**\nPor primera vez en la historia mundialista de España, el equipo viaja sin ningún jugador del Real Madrid. De la Fuente lo defiende como decisión técnica (\"selección perfecta\"), pero genera fractura mediática notable en España — prensa madridista crítica, prensa barcelonista eufórica. El riesgo es ruido político, no fragmentación del vestuario; el técnico aparece tranquilo y sólido en conferencias.\n\n**Lamine Yamal: gestión de carga**\nDe la Fuente confirmó en rueda de prensa previa al partido que Yamal \"tendrá minutos en la segunda parte\" y que está recuperado de una lesión. Esto sugiere que no sale de inicio o que se le limita — señal de gestión de carga, no de crisis anímica.\n\n**Balance España**: ambiente de autoconfianza con ruido mediático latente por la cuestión Real Madrid. No alcanza nivel de disrupción real en el vestuario.\n\n---\n\n### Cabo Verde\n\n**Señal relevante: derrota 0-3 vs Bermuda nueve días antes del Mundial**\nEl dato de forma indica pérdida 0-3 frente a Bermuda el 6 de junio. Si se confirma literalmente (y no es inversión de marcador), es un resultado que alarmaría a cualquier hinchada: Bermuda ronda el puesto 185 FIFA. Prensa caboverdiana probablemente en modo \"ajuste\" precompetición, pero la narrativa oficial del DT Bubista sigue siendo \"venimos a competir, no a participar\".\n\n**Contrapeso histórico**: primera Copa del Mundo de la historia del país. El ambiente en el archipiélago y entre la diáspora es de celebración genuina, lo que puede añadir adrenalina, no presión negativa.\n\n**Balance Cabo Verde**: narrativa emocional positiva (histórico) pero con señal de forma física/táctica preocupante si la derrota ante Bermuda es real. Dos fuerzas que se anulan.\n\n---\n\n### Valoración global\n\nNo hay señal de sentimiento suficientemente extrema o verificada en múltiples fuentes para proponer ajuste. El ruido Real Madrid en España es real pero no llega a nivel de fractura grupal. La euforia caboverdiana no compensa el abismo de nivel. El prior de 89%/8.6%/2.4% absorbe correctamente la asimetría.\n\n**POSICION: mantener prior — magnitud nula**\n\n---\n\nSources:\n- [Spain World Cup 2026 squad confirmed: no Real Madrid players — ESPN](https://www.espn.com/soccer/story/_/id/48870392/spain-world-cup-2026-squad-confirmed-lamine-yamal-stars-no-real-madrid-players)\n- [Spain boss defends 'perfect' World Cup squad without Real Madrid players — ESPN](https://www.espn.com/soccer/story/_/id/48956714/spain-boss-defends-perfect-world-cup-squad-real-madrid-players)\n- [Spain Faces the 2026 World Cup Without Real Madrid Players for the First Time in History — beIN SPORTS](https://www.beinsports.com/en-us/soccer/fifa-world-cup-2026/articles/spain-faces-the-2026-world-cup-without-real-madrid-players-for-the-first-time-in-world-cup-history-2026-05-25)\n- [Spain vs Cape Verde — Al Jazeera](https://www.aljazeera.com/sports/2026/6/15/world-cup-2026-spain-vs-cape-verde-prediction-schedules-latest-news)\n- [Cape Verde 2026 World Cup preview — World Soccer Talk](https://worldsoccertalk.com/amp/world-cup/cape-verde-2026-world-cup-preview-squad-breakdown-key-player-and-tactical-analysis/)\n- [Preview: Spain vs Cape Verde — Sports Mole](https://www.sportsmole.co.uk/football/spain/world-cup-2026/preview/spain-vs-cape-verde-prediction-team-news-lineups_599107.html)"
+  }
+ },
+ "usage": {
+  "llamadas": 4,
+  "duracion_ms": 322079,
+  "turnos": 19
+ }
+}
