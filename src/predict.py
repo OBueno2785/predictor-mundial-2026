@@ -195,7 +195,10 @@ def main() -> None:
     csv_path = OUT / "predicciones_grupos.csv"
     preds.to_csv(csv_path, index=False, encoding="utf-8")
     md_path = write_markdown(preds, model)
-    print(f"  {csv_path}\n  {md_path}")
+    from src import groups
+    pos_path = ROOT / "POSICIONES.md"
+    pos_path.write_text(groups.standings_markdown(fx), encoding="utf-8")
+    print(f"  {csv_path}\n  {md_path}\n  {pos_path}")
 
     jugados = preds[preds["played"]]
     if not jugados.empty:

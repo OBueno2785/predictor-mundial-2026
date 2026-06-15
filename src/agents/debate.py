@@ -101,9 +101,15 @@ def render_contexto(ctx: dict) -> str:
         "",
         f"## Forma reciente {ctx['home']} (últimos 5)",
         ctx["form_home"],
+        f"  promedio: {ctx.get('form5_home', '—')}",
         "",
         f"## Forma reciente {ctx['away']} (últimos 5)",
         ctx["form_away"],
+        f"  promedio: {ctx.get('form5_away', '—')}",
+        "",
+        "## Situación de grupo (incentivos)",
+        f"- {ctx['home']}: posición {ctx.get('pos_home', '—')} · {ctx.get('outlook_home', '—')}",
+        f"- {ctx['away']}: posición {ctx.get('pos_away', '—')} · {ctx.get('outlook_away', '—')}",
     ]
     if ctx.get("odds"):
         o = ctx["odds"]

@@ -1,6 +1,6 @@
 # Predicciones — Fase de Grupos Mundial 2026
 
-Generado: 2026-06-15 14:44 UTC · Modelo: Dixon-Coles (7925 partidos de entrenamiento, ventaja localía=0.228, rho=-0.0513)
+Generado: 2026-06-15 14:53 UTC · Modelo: Dixon-Coles (7925 partidos de entrenamiento, ventaja localía=0.228, rho=-0.0513)
 
 Probabilidades del prior estadístico calibrado. Los partidos marcados con **✓ panel** muestran la predicción final ajustada por el debate multiagente + cuotas de mercado (job T-60 min antes del kickoff).
 

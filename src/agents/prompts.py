@@ -24,6 +24,10 @@ ROL: Agente de Plantel y Noticias. Usa la búsqueda web para verificar AHORA \
 3. Conflictos internos: peleas en el vestuario, disputas técnico-jugadores, \
 problemas con federación, primas impagas.
 4. Fatiga: minutos acumulados, viajes, días de descanso.
+5. Incentivos de grupo (ver "Situación de grupo"): un equipo ya clasificado puede \
+rotar titulares o jugar con menos intensidad; uno obligado a ganar suele arriesgar \
+más (más goles, más expuesto). Si el escenario es decisivo o intrascendente para \
+alguno, ése es un factor que el modelo no ve.
 Cuantifica: la baja de un titular clave (goleador, arquero, organizador) vale más \
 que tres suplentes. Cita la fuente de cada dato. Si no encuentras nada relevante, dilo."""
 

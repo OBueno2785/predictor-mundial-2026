@@ -11,7 +11,7 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-from src import blend
+from src import blend, groups
 from src.agents import debate
 from src.ingest import fixtures, odds, results
 from src.model import dixon_coles
@@ -50,6 +50,15 @@ def build_context(match_number: int, offline: bool):
     except Exception as e:
         print(f"  Cuotas: error ({e}) — el Agente Mercado se omite")
 
+    tabla = groups.group_table(fx, m["group"])
+    def _pos(team):
+        r = tabla[tabla["team"] == team]
+        return f"{int(r['pos'].iloc[0])}º, {int(r['pts'].iloc[0])} pts, DG {int(r['dg'].iloc[0]):+d}" \
+            if not r.empty else "—"
+    def _f5(team):
+        f = groups.last5(hist, team)
+        return f"{f['racha']} · {f['ppg']:.2f} pts/p · {f['gf']:.1f} GF / {f['ga']:.1f} GC por partido"
+
     ventaja = m["home_team"] if side == 1 else (m["away_team"] if side == -1 else None)
     ctx = {
         "match_number": match_number,
@@ -62,6 +71,10 @@ def build_context(match_number: int, offline: bool):
         "top_scores": "; ".join(f"{i}-{j} ({p:.1%})" for i, j, p in top),
         "form_home": results.recent_form(hist, m["home_team"]),
         "form_away": results.recent_form(hist, m["away_team"]),
+        "form5_home": _f5(m["home_team"]), "form5_away": _f5(m["away_team"]),
+        "pos_home": _pos(m["home_team"]), "pos_away": _pos(m["away_team"]),
+        "outlook_home": groups.outlook_text(fx, m["home_team"]),
+        "outlook_away": groups.outlook_text(fx, m["away_team"]),
         "odds": cuotas,
     }
     return ctx, model, side
