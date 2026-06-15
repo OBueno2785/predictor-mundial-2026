@@ -129,13 +129,14 @@ def run_debate(ctx: dict, rounds: int = 2) -> ResultadoDebate:
     usage_total = {}
     tarea_r1 = "Emite tu análisis inicial del partido según tu rol."
 
+    # El mercado se incorpora mecánicamente después del debate (src.blend),
+    # por eso NO hay agente de Mercado aquí: sería doble conteo. El panel se
+    # enfoca en información que el mercado aún no refleja.
     roles = [
         ("Estadístico", prompts.ESTADISTICO, False),
         ("Plantel/Noticias", prompts.PLANTEL, True),
         ("Sentimiento", prompts.SENTIMIENTO, True),
     ]
-    if ctx.get("odds"):
-        roles.insert(1, ("Mercado", prompts.MERCADO, False))
 
     rondas = {}
 
@@ -192,6 +193,8 @@ def guardar(resultado: ResultadoDebate, ctx: dict, dest) -> None:
         "fecha": str(ctx["fecha"]),
         "prior": {k: ctx[k] for k in ["xg_home", "xg_away", "p_home", "p_draw", "p_away"]},
         "odds": ctx.get("odds"),
+        "model_final": ctx.get("model_final"),
+        "blend_weight_market": ctx.get("blend_weight_market"),
         "final": ctx.get("final"),
         "veredicto": resultado.veredicto.model_dump(),
         "delta_aplicado": {"home": resultado.delta_home, "away": resultado.delta_away},

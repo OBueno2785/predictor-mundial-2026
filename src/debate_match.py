@@ -11,6 +11,7 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
+from src import blend
 from src.agents import debate
 from src.ingest import fixtures, odds, results
 from src.model import dixon_coles
@@ -99,19 +100,29 @@ def main():
                                     resumen=f"Degradado: {degraded}"),
             delta_home=0.0, delta_away=0.0)
 
-    print("[3/3] Predicción final ajustada")
+    print("[3/3] Predicción final: modelo+debate, mezclado con mercado")
     P = model.score_matrix(ctx["home"], ctx["away"], adv_side=side,
                            delta_home=resultado.delta_home,
                            delta_away=resultado.delta_away)
     ph, pdr, pa = model.outcome_probs(P)
     top = model.top_scores(P, 3)
 
+    # Mezcla mecánica con el mercado (el debate ya no incorpora cuotas)
+    market = None
+    if ctx.get("odds"):
+        o = ctx["odds"]
+        market = [o["p_home"], o["p_draw"], o["p_away"]]
+    blended, usa_mkt = blend.blend_market([ph, pdr, pa], market)
+    bh, bd, ba = (float(x) for x in blended)
+
     DEBATES.mkdir(parents=True, exist_ok=True)
     ts = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M")
     dest = DEBATES / f"match_{match_number}_{ts}.json"
     ctx_save = dict(ctx)
+    ctx_save["model_final"] = {"p_home": float(ph), "p_draw": float(pdr), "p_away": float(pa)}
+    ctx_save["blend_weight_market"] = blend.W_MARKET if usa_mkt else 0.0
     ctx_save["final"] = {
-        "p_home": float(ph), "p_draw": float(pdr), "p_away": float(pa),
+        "p_home": bh, "p_draw": bd, "p_away": ba,
         "score_pred": f"{top[0][0]}-{top[0][1]}",
         "top_scores": "; ".join(f"{i}-{j} ({p:.1%})" for i, j, p in top),
     }
@@ -123,8 +134,14 @@ def main():
     for f in v.factores:
         print(f"    - {f}")
     print(f"  {v.resumen}")
-    print(f"  Prior:  {ctx['p_home']:.1%} / {ctx['p_draw']:.1%} / {ctx['p_away']:.1%}")
-    print(f"  Final:  {ph:.1%} / {pdr:.1%} / {pa:.1%}")
+    print(f"  Prior modelo:    {ctx['p_home']:.1%} / {ctx['p_draw']:.1%} / {ctx['p_away']:.1%}")
+    print(f"  Modelo+debate:   {ph:.1%} / {pdr:.1%} / {pa:.1%}")
+    if usa_mkt:
+        print(f"  Mercado (24c):   {market[0]:.1%} / {market[1]:.1%} / {market[2]:.1%}")
+        print(f"  FINAL (mezcla):  {bh:.1%} / {bd:.1%} / {ba:.1%}  "
+              f"(peso mercado {blend.W_MARKET:.0%})")
+    else:
+        print(f"  FINAL:           {bh:.1%} / {bd:.1%} / {ba:.1%}  (sin cuotas)")
     print(f"  Marcadores: {'; '.join(f'{i}-{j} ({p:.1%})' for i, j, p in top)}")
     u = resultado.usage
     print(f"  {u.get('llamadas', 0)} llamadas a claude · "

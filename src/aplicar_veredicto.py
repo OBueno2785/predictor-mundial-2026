@@ -11,6 +11,7 @@ from datetime import datetime, timezone
 
 import numpy as np
 
+from src import blend
 from src.agents import debate
 from src.agents.schemas import DELTA_MAX, VeredictoJuez
 from src.debate_match import DEBATES, build_context
@@ -39,8 +40,18 @@ def main() -> None:
                            delta_home=dh, delta_away=da)
     ph, pdr, pa = model.outcome_probs(P)
     top = model.top_scores(P, 3)
+
+    market = None
+    if ctx.get("odds"):
+        o = ctx["odds"]
+        market = [o["p_home"], o["p_draw"], o["p_away"]]
+    blended, usa_mkt = blend.blend_market([ph, pdr, pa], market)
+    bh, bd, ba = (float(x) for x in blended)
+
+    ctx["model_final"] = {"p_home": float(ph), "p_draw": float(pdr), "p_away": float(pa)}
+    ctx["blend_weight_market"] = blend.W_MARKET if usa_mkt else 0.0
     ctx["final"] = {
-        "p_home": float(ph), "p_draw": float(pdr), "p_away": float(pa),
+        "p_home": bh, "p_draw": bd, "p_away": ba,
         "score_pred": f"{top[0][0]}-{top[0][1]}",
         "top_scores": "; ".join(f"{i}-{j} ({p:.1%})" for i, j, p in top),
     }
@@ -52,8 +63,11 @@ def main() -> None:
     debate.guardar(resultado, ctx, dest)
 
     print(f"{ctx['home']} vs {ctx['away']}")
-    print(f"  Prior:  {ctx['p_home']:.1%} / {ctx['p_draw']:.1%} / {ctx['p_away']:.1%}")
-    print(f"  Final:  {ph:.1%} / {pdr:.1%} / {pa:.1%}  (deltas {dh:+.3f}/{da:+.3f})")
+    print(f"  Prior:         {ctx['p_home']:.1%} / {ctx['p_draw']:.1%} / {ctx['p_away']:.1%}")
+    print(f"  Modelo+debate: {ph:.1%} / {pdr:.1%} / {pa:.1%}  (deltas {dh:+.3f}/{da:+.3f})")
+    if usa_mkt:
+        print(f"  Mercado:       {market[0]:.1%} / {market[1]:.1%} / {market[2]:.1%}")
+    print(f"  FINAL:         {bh:.1%} / {bd:.1%} / {ba:.1%}")
     print(f"  Marcadores: {'; '.join(f'{i}-{j} ({p:.1%})' for i, j, p in top)}")
     print(f"  Guardado: {dest}")
 
