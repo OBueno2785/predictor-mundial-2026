@@ -62,7 +62,7 @@ def main() -> None:
         real = outcome(r.home_score, r.away_score)
         side = adv_side(r)
         fuente = "out-of-sample"
-        prior = final = None
+        prior = final = market = None
 
         if r.match_number in debates and debates[r.match_number].get("prior"):
             d = debates[r.match_number]
@@ -72,6 +72,9 @@ def main() -> None:
                     d.get("veredicto", {}).get("resumen", "")).startswith("Degradado"):
                 f = d["final"]
                 final = np.array([f["p_home"], f["p_draw"], f["p_away"]])
+            o = d.get("odds")
+            if o:
+                market = np.array([o["p_home"], o["p_draw"], o["p_away"]])
             fuente = "debate congelado"
         else:
             if r.home_team in model_oos.attack and r.away_team in model_oos.attack:
@@ -84,7 +87,8 @@ def main() -> None:
         filas.append({
             "match": r.match_number,
             "partido": f"{r.home_team} {int(r.home_score)}-{int(r.away_score)} {r.away_team}",
-            "real": real, "prior": prior, "final": final, "fuente": fuente,
+            "real": real, "prior": prior, "final": final, "market": market,
+            "fuente": fuente,
         })
 
     print(f"\n{'=' * 70}\nEVALUACIÓN — {len(filas)} partidos de grupos jugados\n{'=' * 70}\n")
@@ -144,6 +148,18 @@ def main() -> None:
         print(f"  {'LogLoss':16} {metrics.log_loss(pr, ou):>8.3f} {metrics.log_loss(fi, ou):>8.3f}")
     else:
         print("\nEFECTO DE LOS AJUSTES: ningún partido jugado tenía debate congelado válido.")
+
+    # ¿Le ganamos al mercado? Subconjunto con cuotas guardadas
+    con_mkt = [f for f in validos if f.get("market") is not None and f["final"] is not None]
+    if con_mkt:
+        ou = np.array([f["real"] for f in con_mkt])
+        pr = np.array([f["prior"] for f in con_mkt])
+        fi = np.array([f["final"] for f in con_mkt])
+        mk = np.array([f["market"] for f in con_mkt])
+        print(f"\nVS MERCADO (n={len(con_mkt)} con cuotas) — RPS (menor = mejor):")
+        print(f"  prior modelo: {metrics.rps(pr, ou):.4f}")
+        print(f"  mercado:      {metrics.rps(mk, ou):.4f}")
+        print(f"  FINAL mezcla: {metrics.rps(fi, ou):.4f}")
 
 
 if __name__ == "__main__":
