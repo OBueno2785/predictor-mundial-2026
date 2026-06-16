@@ -1,0 +1,57 @@
+{
+ "partido": "Austria vs Jordan",
+ "fecha": "2026-06-17 04:00:00+00:00",
+ "prior": {
+  "xg_home": 1.8111905894312406,
+  "xg_away": 0.8220125458794071,
+  "p_home": 0.6024722875688211,
+  "p_draw": 0.2374292108753286,
+  "p_away": 0.16009850155585031
+ },
+ "odds": {
+  "p_home": 0.7063744052545332,
+  "p_draw": 0.18494416909881103,
+  "p_away": 0.10868142564665571,
+  "n_bookies": 24
+ },
+ "model_final": {
+  "p_home": 0.6024758953097414,
+  "p_draw": 0.24227290902184023,
+  "p_away": 0.15525119566841855
+ },
+ "blend_weight_market": 0.65,
+ "final": {
+  "p_home": 0.6700099267738561,
+  "p_draw": 0.20500922807187127,
+  "p_away": 0.12498084515427271,
+  "score_pred": "1-0",
+  "top_scores": "1-0 (13.4%); 2-0 (12.3%); 1-1 (11.4%)"
+ },
+ "veredicto": {
+  "delta_log_xg_home": -0.03,
+  "delta_log_xg_away": -0.06,
+  "confianza": "media",
+  "factores": [
+   "Austria: baja confirmada de Christoph Baumgartner (mediocampista creativo clave, fuera del Mundial) reduce levemente la generación ofensiva pese a la motivación máxima",
+   "Jordan: ausencias ofensivas confirmadas de Yazan Al-Naimat (8 goles en clasificación AFC, rotura de LCA) e Ibrahim Sabra, más Ali Olwan y el capitán Ehsan Haddad regresando de larga inactividad sin ritmo de competición",
+   "Defensa de Jordan porosa verificada en preparación (1-4 vs Suiza, 0-2 vs Colombia) refuerza la dirección del prior"
+  ],
+  "resumen": "El prior es defendible y la mayor parte de la señal ya es estructural. Aplico ajustes pequeños: la baja de Baumgartner recorta marginalmente el ritmo de Austria, mientras que el plantel ofensivo mermado de Jordan (Al-Naimat y Sabra fuera, Olwan/Haddad oxidados) reduce algo más su xG esperado. No ajusto hacia el nivel del mercado; solo incorporo bajas concretas y verificadas que apuntan en una sola dirección."
+ },
+ "delta_aplicado": {
+  "home": -0.03,
+  "away": -0.06
+ },
+ "rondas": {
+  "ronda1": {
+   "Estadístico": "## Agente Estadístico — Austria vs Jordan\n\n**Evaluación del prior frente a los datos observables**\n\nEl modelo asigna Austria 60.2% con xG 1.81–0.82. Los datos de forma presentados son *consistentes* con ese prior, no lo contradicen:\n\n- Austria 2.0 GF / 0.4 GC (últimos 5) → alineado con xG ofensivo 1.81 y defensa sólida\n- Jordan 1.4 GF / 2.6 GC (últimos 5) → alineado con xG concedido alto\n\n**Señales que el modelo ya captura:** ratings de ataque/defensa de ambos equipos están construidos sobre exactamente este tipo de historial. El form reciente no es información nueva; es el input del modelo.\n\n**La brecha modelo vs mercado es el punto crítico:** el mercado paga 70.6% para Austria vs 60.2% del modelo — una diferencia de ~10pp. Eso es grande. Para que sea racional, el mercado debería estar incorporando:\n\n1. Noticias de plantilla (lesiones/bajas Jordan) que no están en el brief\n2. Un ajuste por calidad de rivales — Jordan perdió ante Colombia y Suiza (rivales fuertes), lo cual puede inflar artificialmente su GC promedio\n3. Narrativa del torneo (\"Jordan no tiene nivel mundialista\")\n\n**Mi posición escéptica:** el ítem 2 merece atención cuantitativa. Los dos resultados más pesados de Jordan (0-2 vs Colombia, 1-4 vs Suiza) son contra selecciones top-20 FIFA. Si descuentas esos dos partidos y miras solo los empates contra Nigeria y Costa Rica, Jordan muestra cierta competitividad a nivel medio. El modelo probablemente ya ajusta por esto implícitamente al usar los ratings ponderados.\n\nSin información nueva de plantilla o táctica, el 70.6% del mercado me parece sobreajustado por narrativa. El prior 60.2% es defendible.\n\n**Sin señal nueva cuantificable desde este brief que justifique alejarse del prior.**\n\n---\n\nPOSICION: mantener prior — magnitud nula",
+   "Plantel/Noticias": "---\n\n## Agente de Plantel y Noticias — Austria vs Jordan\n\n### Austria\n\n**Baja confirmada de peso:** Christoph Baumgartner (RB Leipzig) se lesionó el músculo del muslo derecho durante el calentamiento previo al amistoso vs Túnez (1-jun). **Se pierde todo el Mundial.** Era el mediocampista más creativo de Austria, el organizador entre líneas. Lo reemplaza Dejan Ljubičić, ausente de la selección durante 3 años. Esta baja ya era pública antes del torneo y el mercado la tiene en precio.\n\n**Plantel disponible (sin bajas adicionales):** Alaba, Laimer, Sabitzer, Arnautovic todos aptos. Rangnick no reporta problemas de lesiones en los días previos. Sin conflictos internos reportados.\n\n**Incentivos:** Primer partido del torneo. Grupo con Argentina y Argelia, lo que hace que los 3 puntos vs Jordan sean prácticamente obligatorios para tener opciones. Motivación máxima, sin rotaciones esperadas.\n\n---\n\n### Jordan\n\n**Bajas de ataque antes del torneo (confirmadas):**\n- **Yazan Al-Naimat** — delantero, **8 goles en la clasificación AFC**, se pierde el Mundial por rotura de LCA (Copa Árabe, diciembre). Baja muy significativa: era el segundo mejor anotador del equipo.\n- **Ibrahim Sabra** — joven delantero prometedor, baja por lesión tardía tras convocarse inicialmente.\n\n**Recuperados con interrogante de forma:**\n- **Ali Olwan** (9 goles en eliminatorias AFC, tercer goleador de toda la AFC) — regresa de lesión, volvió a la lista. No está claro cuántos minutos lleva encima.\n- **Capitán Ehsan Haddad** — casi un año de baja, regresa apenas recuperado.\n\n**Preparación deficiente:** Dos amistosos en territorio estadounidense antes del torneo: derrota 1-4 vs Suiza y 0-2 vs Colombia. Problemas defensivos graves, múltiples ocasiones concedidas.\n\n**Sin conflictos internos ni fatiga acumulada relevante** (no han jugado en el torneo aún).\n\n**Primera Copa del Mundo de Jordan en su historia** — debut histórico con plantel mermado en ataque.\n\n---\n\n### Señal neta\n\nLa baja de Baumgartner debilita la creatividad de Austria, pero el mercado ya la incorporó (subida de 60.2% → 70.6%). Lo que el mercado **puede estar subestimando** es que Jordan también llega **muy debilitado en ataque**: Al-Naimat (8 goles en clasificación) y Sabra ausentes, más Olwan y Haddad regresando de meses de inactividad. Jordan mostró además una defensa porosa en preparación. Los dos factores negativos de Jordan (bajas ofensivas + mala preparación defensiva) van en la misma dirección que el prior del modelo.\n\nNo hay señal nueva que favorezca a Jordan. El mercado ya se movió fuerte hacia Austria y ese movimiento está fundamentalmente justificado por los datos de plantel.\n\n**POSICION: favorecer local (Austria) — magnitud leve** *(el mercado ya recoge la mayor parte de la señal; la baja ofensiva de Jordan añade un margen adicional no totalmente en precio)*\n\n---\n\nSources:\n- [Austria pierde a Christoph Baumgartner para el Mundial 2026 - ClaroSports](https://www.clarosports.com/futbol/mundial-2026/austria-pierde-a-christoph-baumgartner-para-el-mundial-2026-por-lesion/)\n- [Dejan Ljubičić reemplaza a Baumgartner - La Nacion](https://www.lanacion.com.ar/deportes/futbol/la-seleccion-de-austria-anuncio-un-cambio-en-su-plantel-y-cito-despues-de-tres-anos-de-ausencia-a-nid11062026/)\n- [Al Tamari headlines Jordan's squad - FIFA](https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/jordan-preliminary-squad)\n- [Jordan World Cup 2026 preview - Al Jazeera](https://www.aljazeera.com/sports/2026/6/6/jordan-world-cup-2026-preview-players-to-watch-group-matches-and-squad)\n- [Predicted lineups Austria vs Jordan - Sports Mole](https://www.sportsmole.co.uk/football/austria/world-cup-2026/preview/austria-vs-jordan-prediction-team-news-lineups_599171.html)\n- [Austria vs Jordan preview - ESPN](https://www.espn.com/soccer/story/_/id/49058237/fifa-world-cup-2026-austria-vs-jordan-tv-channel-how-watch-kickoff-live-stream-referee-predicted-line-ups)",
+   "Sentimiento": "## Agente de Sentimiento — Austria vs Jordan\n\n### Austria\n\n**Clima: positivo con tensión de expectativa**\n\nPrimer Mundial en 28 años: múltiples fuentes (UEFA, Goal, BigD Soccer) resaltan que la clasificación es histórica para el país. Jugadores como Mwene lo describen como \"un sueño hecho realidad\". ~3.000 aficionados asistieron al entrenamiento abierto en California, señal de energía del grupo y euforia. Rangnick renovó hasta 2028 antes del torneo, lo que proyecta estabilidad y evita ruidos internos.\n\n**Señal negativa concreta**: Christoph Baumgartner (mediocampista ofensivo clave) se lesionó el muslo derecho en el calentamiento previo al amistoso contra Túnez (1 jun) y fue reemplazado en la convocatoria por Ljubicic. Está fuera del torneo. Esto es información estructural más que de sentimiento puro, pero la prensa austríaca sí lo cubre como golpe al plan de Rangnick. Nota: Austria igual ganó 1-0 a Túnez sin él.\n\n**Declaración Rangnick**: \"Nadie en nuestro equipo se toma este partido a la ligera\". Señal de control del vestuario ante riesgo de confianza excesiva.\n\n---\n\n### Jordan\n\n**Clima: euforia histórica, pero presión acumulada por resultados**\n\nPrimera participación mundialista de su historia: su prensa y Al Jazeera cubren el hito con orgullo. El técnico Sellami citó a Argelia 1982 y Senegal 2002 como inspiración (\"tenemos derecho a soñar\"), lo que genera moral positiva pero también revela un encuadre de underdog resignado más que convicción.\n\n**Contrapeso negativo**: dos resultados de pretemporada muy malos (0-2 vs Colombia, 1-4 vs Suiza) seguidos de empates. El discurso esperanzador del entrenador no coincide con lo que muestran los resultados. Foros y prensa internacional lo registran como equipo \"de mérito histórico, flojo en cancha\". No hay señales de crisis interna, pero sí de bajo nivel colectivo verificado en múltiples resultados.\n\n---\n\n### Resumen de sentimiento\n\n| | Austria | Jordan |\n|---|---|---|\n| Moral grupal | Alta (hito histórico, fans, estabilidad técnica) | Mixta (orgullo histórico, dudas por forma) |\n| Presión externa | Moderada (se espera que ganen el grupo) | Baja (nadie les exige) |\n| Ruidos internos | Ninguno relevante | Ninguno verificado |\n| Señal nueva sobre prior | Baja Baumgartner (táctico > sentimiento) | Discurso de \"underdog soñador\" consistente con su rol |\n\nLa baja de Baumgartner es real y verificable, pero corresponde más al agente táctico. Desde el sentimiento puro, Austria lleva una moral superior claramente sostenida por múltiples fuentes; Jordan entra sin crisis pero con cinco partidos sin ganar que pesan en la narrativa externa. El ajuste no es extremo, pero va en una sola dirección.\n\n**POSICION: favorecer local (Austria) — magnitud leve**\n\n---\n\nSources:\n- [Austria at the World Cup 2026 - BigD Soccer](https://www.bigdsoccer.com/austria-2026-world-cup-preview/)\n- [Austria vs Jordan Preview - RotoWire](https://www.rotowire.com/soccer/article/austria-vs-jordan-preview-predicted-lineups-team-news-tactical-analysis-2026-world-cup-group-j-118225)\n- [Jordan World Cup 2026 preview - Al Jazeera](https://www.aljazeera.com/sports/2026/6/6/jordan-world-cup-2026-preview-players-to-watch-group-matches-and-squad)\n- [La lista oficial de Rangnick para el Mundial 2026 - beIN Sports ES](https://www.beinsports.com/es-us/football/copa-mundial-de-la-fifa-2026/articles/la-lista-oficial-de-ralf-rangnick-y-austria-para-la-copa-mundial-de-la-fifa-2026-2026-05-18)\n- [Austria vs Jordania EN VIVO - Infobae](https://www.infobae.com/deportes/2026/06/16/austria-vs-jordania-en-vivo-por-el-mundial-2026-hora-tv-formaciones-y-todo-lo-que-hay-que-saber/)"
+  }
+ },
+ "usage": {
+  "llamadas": 4,
+  "duracion_ms": 278243,
+  "turnos": 16
+ }
+}

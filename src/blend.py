@@ -14,12 +14,14 @@ datos (hoy se filtran con MIN_MATCHES).
 
 PESO DEL MERCADO (W_MARKET): provisional. El mercado es un benchmark fuerte,
 pero el peso óptimo solo se fija con datos. Cada predicción registra las tres
-señales (modelo / mercado / mezcla) para ajustarlo tras ~30-40 partidos. Hasta
-entonces 0.5 (equiponderado), que es la opción robusta por defecto.
+señales (modelo / mercado / mezcla) para ajustarlo tras ~30-40 partidos.
+Ajustado de 0.5 a 0.65 el 15-jun-2026: en los primeros 8 partidos con cuotas el
+mercado (RPS 0.180) batió al prior (0.200) y a la mezcla 50/50 (0.191), así que
+se le da más peso. Pendiente de fijar formalmente con más muestra.
 """
 import numpy as np
 
-W_MARKET = 0.5
+W_MARKET = 0.65
 
 
 def linear_pool(probs_list, weights) -> np.ndarray:
