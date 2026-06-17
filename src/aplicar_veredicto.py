@@ -6,6 +6,7 @@ Uso:  python -m src.aplicar_veredicto <match> <delta_home> <delta_away>
 
 Los deltas se acotan a ±0.25 (mismo tope que el debate local).
 """
+import json
 import sys
 from datetime import datetime, timezone
 
@@ -14,7 +15,11 @@ import numpy as np
 from src import blend
 from src.agents import debate
 from src.agents.schemas import DELTA_MAX, VeredictoJuez
+from src.calibration import temperature
 from src.debate_match import DEBATES, build_context
+from src.predict import OUT
+
+OUT_CAL = OUT / "calibration.json"
 
 
 def main() -> None:
@@ -41,11 +46,13 @@ def main() -> None:
     ph, pdr, pa = model.outcome_probs(P)
     top = model.top_scores(P, 3)
 
+    T = json.loads(OUT_CAL.read_text(encoding="utf-8"))["temperature"]
+    mf_cal = temperature.apply(np.array([ph, pdr, pa]), T)
     market = None
     if ctx.get("odds"):
         o = ctx["odds"]
         market = [o["p_home"], o["p_draw"], o["p_away"]]
-    blended, usa_mkt = blend.blend_market([ph, pdr, pa], market)
+    blended, usa_mkt = blend.blend_market(mf_cal, market)
     bh, bd, ba = (float(x) for x in blended)
 
     ctx["model_final"] = {"p_home": float(ph), "p_draw": float(pdr), "p_away": float(pa)}

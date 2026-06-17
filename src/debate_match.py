@@ -13,6 +13,7 @@ from pathlib import Path
 
 from src import blend, groups
 from src.agents import debate
+from src.calibration import temperature
 from src.ingest import fixtures, odds, results
 from src.model import dixon_coles
 from src.predict import DATA, OUT, adv_side, build_training, ingest
@@ -117,16 +118,22 @@ def main():
     P = model.score_matrix(ctx["home"], ctx["away"], adv_side=side,
                            delta_home=resultado.delta_home,
                            delta_away=resultado.delta_away)
-    ph, pdr, pa = model.outcome_probs(P)
+    ph, pdr, pa = model.outcome_probs(P)   # modelo+debate, crudo (sin temperatura)
     top = model.top_scores(P, 3)
 
-    # Mezcla mecánica con el mercado (el debate ya no incorpora cuotas)
+    # Calibración (temperature) sobre el modelo+debate, luego mezcla con mercado.
+    # model_final se guarda CRUDO; la T se aplica al consumirlo (consistente con
+    # fit_market_weight y reblend).
+    import numpy as np
+    T = json.loads((OUT / "calibration.json").read_text(encoding="utf-8"))["temperature"]
+    mf_cal = temperature.apply(np.array([ph, pdr, pa]), T)
     market = None
     if ctx.get("odds"):
         o = ctx["odds"]
         market = [o["p_home"], o["p_draw"], o["p_away"]]
-    blended, usa_mkt = blend.blend_market([ph, pdr, pa], market)
+    blended, usa_mkt = blend.blend_market(mf_cal, market)
     bh, bd, ba = (float(x) for x in blended)
+    ch, cd, ca = (float(x) for x in mf_cal)
 
     DEBATES.mkdir(parents=True, exist_ok=True)
     ts = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M")
@@ -148,7 +155,7 @@ def main():
         print(f"    - {f}")
     print(f"  {v.resumen}")
     print(f"  Prior modelo:    {ctx['p_home']:.1%} / {ctx['p_draw']:.1%} / {ctx['p_away']:.1%}")
-    print(f"  Modelo+debate:   {ph:.1%} / {pdr:.1%} / {pa:.1%}")
+    print(f"  Modelo+debate:   {ch:.1%} / {cd:.1%} / {ca:.1%}")
     if usa_mkt:
         print(f"  Mercado (24c):   {market[0]:.1%} / {market[1]:.1%} / {market[2]:.1%}")
         print(f"  FINAL (mezcla):  {bh:.1%} / {bd:.1%} / {ba:.1%}  "

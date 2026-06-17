@@ -1,0 +1,61 @@
+{
+ "partido": "Portugal vs DR Congo",
+ "fecha": "2026-06-17 17:00:00+00:00",
+ "prior": {
+  "xg_home": 1.687083854109802,
+  "xg_away": 0.5082170566540988,
+  "p_home": 0.6586334386190067,
+  "p_draw": 0.23960080287384067,
+  "p_away": 0.10176575850715272
+ },
+ "odds": {
+  "p_home": 0.7513136157477953,
+  "p_draw": 0.16911259537765325,
+  "p_away": 0.07957378887455133,
+  "n_bookies": 22
+ },
+ "model_final": {
+  "p_home": 0.6889578319961481,
+  "p_draw": 0.22270432191371675,
+  "p_away": 0.08833784609013537
+ },
+ "blend_weight_market": 0.8,
+ "final": {
+  "p_home": 0.7359132715900003,
+  "p_draw": 0.18133042135644703,
+  "p_away": 0.08275630705355262,
+  "score_pred": "1-0",
+  "top_scores": "1-0 (17.9%); 2-0 (16.5%); 0-0 (10.8%)"
+ },
+ "veredicto": {
+  "delta_log_xg_home": 0.06,
+  "delta_log_xg_away": -0.05,
+  "confianza": "media",
+  "factores": [
+   "DR Congo pierde a Rocky Bushiri (CB titular) por lesión de Aquiles confirmada; su reemplazo Tshibola es de perfil mediocampista, debilitando la línea defensiva ante un ataque de élite (sube ritmo de gol de Portugal)",
+   "Yoane Wissa (delantero principal de DR Congo) regresa de lesión de rodilla con escaso ritmo competitivo (1 gol en toda la temporada, primera competencia desde sep-2024), reduciendo la amenaza ofensiva congoleña",
+   "Portugal llega sin bajas relevantes, plantel intacto y Ronaldo titular confirmado"
+  ],
+  "resumen": "Información nueva no precificada y asimétrica: DR Congo pierde un central titular (Bushiri) y arranca con su goleador (Wissa) a medio gas, mientras Portugal llega intacto. Ajuste leve que sube el log-xG de Portugal (+0.06) y baja el de DR Congo (-0.05), sin perseguir el nivel del mercado. Confianza media: factores concretos y verificados pero de impacto moderado."
+ },
+ "delta_aplicado": {
+  "home": 0.06,
+  "away": -0.05
+ },
+ "rondas": {
+  "ronda1": {
+   "Estadístico": "## Agente Estadístico — Portugal vs DR Congo\n\n**Defensa del prior: 65.9% / 24.0% / 10.2%**\n\n### ¿Qué ya captura el modelo?\n\nEl Dixon-Coles ingiere resultados históricos con decaimiento temporal, por lo que las fuerzas ofensiva y defensiva de ambos equipos ya están codificadas. El xG 1.69-0.51 refleja una diferencia de nivel sustancial y es coherente con la realidad del fútbol africano vs europeo de élite.\n\n### Revisión de la forma reciente\n\n**Portugal (3.0 GF / 0.6 GC):** la muestra de 5 partidos incluye Nigeria, Chile, USA, México y Armenia. Es un calendario mixto. El 9-1 vs Armenia infla la media de goles anotados. Quitando ese outlier: 2.0 GF/p — más en línea con lo que el modelo produce (1.69 xG). Sin señal de sobrerendimiento sistemático.\n\n**DR Congo (0.8 GF / 0.6 GC):** defensivamente sólidos en la muestra, pero el 0-0 vs Dinamarca y el 1-2 vs Chile son la referencia más informativa. Ambos resultados sugieren que contra rivales de nivel UEFA/CONMEBOL, su techo ofensivo es bajo. Consistente con el xG 0.51 del modelo.\n\n### La brecha con el mercado\n\nEl mercado asigna **75.1%** a Portugal vs **65.9%** del modelo — diferencia de **+9.2 pp**. Esa brecha necesita justificación concreta. Las hipótesis posibles:\n\n- Información de alineaciones (¿Ronaldo titular confirmado vs posible rotación de Congo?)\n- Sesgo público hacia favoritos en fase de grupos\n- Información nueva sobre lesiones\n\nSin verificar alguno de estos factores, el movimiento del mercado es ruido hasta demostrar lo contrario.\n\n### Señales ausentes\n\nNo hay en los datos provistos: lesiones de titulares, suspensiones, condiciones climáticas en Houston, o rotaciones confirmadas que justifiquen mover el prior en ninguna dirección.\n\n**POSICION: mantener prior — magnitud nula**",
+   "Plantel/Noticias": "---\n\n## Agente de Plantel y Noticias — Portugal vs DR Congo (17 jun, Houston)\n\n### Portugal\n\n**Lesiones / suspensiones:** Sin bajas relevantes en el plantel convocado. Palhinha, Pedro Gonçalves y Mateus Fernandes no están en la lista final, pero es decisión técnica (no injury). Ronaldo titularísimo.\n\n**Alineación probable (4-2-3-1):** Diogo Costa; Cancelo, Rúben Dias, Gonçalo Inácio, Nuno Mendes; doble pivote (Vitinha/R. Horta sustituto); Bernardo, Bruno Fernandes, Leão; Ronaldo.\n\n**Conflictos / fatiga:** Sin señal nueva.\n\n---\n\n### DR Congo\n\n**Baja confirmada — Rocky Bushiri (CB, Hibernian):** descartado por lesión de Aquiles sufrida en el último partido de liga. Era defensa central del XI tipo; su sustituto es Aaron Tshibola, jugador de perfil mediocampista. Baja de impacto moderado en una línea defensiva que ya encajó ante Chile.\nFuente: [Flashscore](https://www.flashscore.com/news/soccer-world-cup-dr-congo-forced-into-world-cup-squad-change-after-bushiri-ruled-out-through-injury/23onHCCs/)\n\n**Yoane Wissa (Newcastle, delantero principal):** incluido en la convocatoria tras regresar de lesión de rodilla; solo marcó 1 gol en toda la temporada de Premier League. Es su primera gran competencia desde septiembre 2024. Titular esperado pero con dudas de ritmo y continuidad.\nFuente: [Yahoo Sports](https://sports.yahoo.com/articles/dr-congo-predicted-lineup-team-050000981.html)\n\n**Alineación probable (4-3-3):** Mpasi; Kalulu, Mbemba, Batubinsika, Masuaku; Moutoussamy, Pickel, Kayembe; Elia, Wissa, Bakambu.\n\n**Conflictos / fatiga:** Sin señal nueva.\n\n---\n\n### Síntesis\n\nEl modelo ya descuenta la brecha de calidad. La información nueva es **bidireccional y asimétrica**: Portugal llega intacto; DR Congo pierde un central titular (Bushiri) justo antes del debut y arranca con su máximo goleador a medio gas. Ambos factores abonan a que Portugal genere más daño del previsto y a que DR Congo defienda con menos solidez. No hay nada que mueva en la dirección contraria.\n\n**POSICION: favorecer local (Portugal) — magnitud leve** *(el modelo ya tiene a Portugal favorito; la baja de Bushiri y la duda sobre Wissa refuerzan ligeramente esa dirección, especialmente en mercado de goles/línea de resultado de Portugal)*\n\nSources:\n- [Portugal vs DR Congo Preview – RotoWire](https://www.rotowire.com/soccer/article/portugal-vs-dr-congo-preview-predicted-lineups-team-news-tactical-analysis-2026-world-cup-group-k-118360)\n- [DR Congo predicted lineup vs Portugal – Yahoo Sports](https://sports.yahoo.com/articles/dr-congo-predicted-lineup-team-050000981.html)\n- [Bushiri ruled out – Flashscore](https://www.flashscore.com/news/soccer-world-cup-dr-congo-forced-into-world-cup-squad-change-after-bushiri-ruled-out-through-injury/23onHCCs/)\n- [DR Congo squad – Heavy.com](https://heavy.com/sports/soccer/world-cup/dr-congo-announces-squad-world-cup/)\n- [DR Congo alineación posible – beIN Sports](https://www.beinsports.com/es-us/football/copa-mundial-de-la-fifa-2026/articles/las-posibles-alineaciones-de-rd-congo-para-enfrentar-a-portugal-en-la-copa-mundial-de-la-fifa-2026-2026-06-17)",
+   "Sentimiento": "---\n\n## Análisis de Sentimiento — Portugal vs DR Congo\n\n### Portugal\n\n**Señal dominante: el efecto Diogo Jota**\n\nLa muerte de Jota en accidente de tráfico (julio 2025) generó inicialmente preocupación por el impacto en el vestuario, pero todas las fuentes coinciden en que su memoria está funcionando como factor de unión, no de desorientación. Martínez declaró públicamente: *\"Diogo has become a real inspiration inside this group — a light that reminds us to be present every day.\"* El equipo porta pulseras conmemorativas en cada entrenamiento y se refieren a él como el \"+1\" del grupo. Esto está verificado en múltiples medios (FourFourTwo, Yahoo Sports, Fox Sports, Goal).\n\nEsta narrativa colectiva es inusual: la tragedia se ha convertido en un pegamento emocional real y visible, no en discurso de prensa vacío.\n\n**Señal secundaria: ciclo de confianza post-Champions**\nNuno Mendes, João Neves, Vitinha y Gonçalo Ramos llegan al torneo recién salidos de ganar la Champions con PSG. Inyección de confianza reciente para el núcleo del equipo.\n\n**Ronaldo, partido de apertura de su último Mundial probable:** carga emocional alta, históricamente rinde en momentos de alta tensión mediática.\n\n---\n\n### DR Congo\n\n**Señal: presión histórica — arma de doble filo**\n\n52 años sin aparecer en un Mundial. La narrativa mediática es de euforia nacional pero también de enorme expectativa para jugadores que nunca han jugado a este nivel. Clasificaron de forma ajustada (1-0 ante Jamaica en playoff). Fuentes especializadas los describen como \"confiados\", pero la confianza declarada antes de un primer partido histórico es más performance mediática que señal real.\n\n**Sin señales negativas de vestuario** — no hay filtraciones de tensión interna, disputas o problemas con Desabre.\n\n---\n\n### Síntesis\n\nEl clima alrededor de Portugal es genuinamente cohesionado y con motivación extra verificable. El efecto Jota es el tipo de señal blanda que un modelo estadístico no puede capturar. No es ruido: está corroborado en declaraciones del técnico, comportamiento visible del grupo y cobertura sostenida.\n\nEl mercado ya ha movido a Portugal hasta 75% (vs 65.9% del modelo), parte de ese gap podría reflejar exactamente esta percepción. Marginalmente hay señal, pero el mercado probablemente ya la absorbió en parte.\n\n**POSICION: favorecer local (Portugal) — magnitud leve**\n\n---\n\nSources:\n- [Roberto Martinez Explains How Portugal Is Carrying Diogo Jota's Dream Into 2026 World Cup](https://sports.yahoo.com/articles/roberto-martinez-explains-portugal-carrying-111144595.html)\n- [Diogo Jota has become a real inspiration inside this group — FourFourTwo](https://www.fourfourtwo.com/person/player/diogo-jota-has-become-a-real-inspiration-inside-this-group-hes-a-light-that-reminds-us-all-to-be-present-every-day-because-tomorrow-is-never-guaranteed-roberto-martinez-on-the-impact-of-diogo-jotas-death-on-his-portugal-squad)\n- [Portugal's World Cup Squad Will Wear Wristbands Honoring Diogo Jota — FOX Sports](https://www.foxsports.com/stories/soccer/cristiano-ronaldo-portugal-stars-wear-special-diogo-jota-tribute-wristbands-as-they-train-ahead-of-world-cup-opener)\n- [EXCLUSIVE: Former West Ham star says D.R. Congo confident ahead of World Cup push — Soccerway](https://www.soccerway.com/news/soccer-world-cup-exclusive-former-west-ham-star-says-d-r-congo-confident-ahead-of-world-cup-push/jBO71Rxo)\n- [Portugal vs. DR Congo — SI.com Preview](https://www.si.com/soccer/portugal-vs-dr-congo-world-cup-preview-predictions-lineups-6-17-26)"
+  }
+ },
+ "usage": {
+  "llamadas": 4,
+  "duracion_ms": 198527,
+  "turnos": 15
+ },
+ "reblend": {
+  "T": 1.0508015758717122,
+  "w_market": 0.8
+ }
+}

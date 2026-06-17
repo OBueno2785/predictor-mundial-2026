@@ -1,0 +1,59 @@
+{
+ "partido": "England vs Croatia",
+ "fecha": "2026-06-17 20:00:00+00:00",
+ "prior": {
+  "xg_home": 1.3847535371074913,
+  "xg_away": 0.7426931593666968,
+  "p_home": 0.5155980446966454,
+  "p_draw": 0.29024841946229984,
+  "p_away": 0.19415353584105488
+ },
+ "odds": {
+  "p_home": 0.5609960945649172,
+  "p_draw": 0.2568895016024417,
+  "p_away": 0.182114403832641,
+  "n_bookies": 23
+ },
+ "model_final": {
+  "p_home": 0.5215083547072847,
+  "p_draw": 0.29036811684192876,
+  "p_away": 0.18812352845078648
+ },
+ "blend_weight_market": 0.8,
+ "final": {
+  "p_home": 0.5512700578172284,
+  "p_draw": 0.2642054717865657,
+  "p_away": 0.18452447039620587,
+  "score_pred": "1-0",
+  "top_scores": "1-0 (16.2%); 0-0 (12.8%); 1-1 (12.8%)"
+ },
+ "veredicto": {
+  "delta_log_xg_home": 0.0,
+  "delta_log_xg_away": -0.03,
+  "confianza": "media",
+  "factores": [
+   "Modrić (cerebro de Croacia, 41 años) juega con máscara tras cirugía de pómulo de abril; merma física en duelos y cabeceo limita marginalmente la creación croata"
+  ],
+  "resumen": "El prior se mantiene casi intacto. La brecha con el mercado (+4.5pp a England) NO se persigue por mandato anti-doble-conteo. El único factor con sustancia física es la merma funcional de Modrić, pero es conocida desde abril y muy probablemente ya está incorporada al mercado; aplico solo un -0.03 testimonial al ritmo de Croacia. Las 'dudas' de Rice/Saka son gestión mediática estándar (sin ajuste); las bajas inglesas (Livramento, Branthwaite, Grealish) son suplentes de bajo impacto. Sin conflictos internos ni alineaciones sorpresa no precificadas. Confianza media por ausencia de señal nueva relevante."
+ },
+ "delta_aplicado": {
+  "home": 0.0,
+  "away": -0.03
+ },
+ "rondas": {
+  "ronda1": {
+   "Estadístico": "## Agente Estadístico — England vs Croatia\n\n**El prior ya captura lo relevante.**\n\n**Brecha modelo vs mercado:** El mercado pone a England en 56.1% vs el modelo en 51.6% (+4.5pp). Eso es una divergencia moderada, no trivial. Antes de ajustar, la pregunta correcta es: *¿qué información concreta justifica ese +4.5pp?*\n\n**Forma reciente — lectura fría:**\n\n- England (1.4 GF / 0.4 GC): los 3 puntos de la muestra vienen contra Costa Rica y New Zealand. El único oponente de nivel es Japan (derrota 0-1). La media de 1.4 GF no es explosiva.\n- Croatia (1.6 GF / 1.8 GC): la defensa concede, pero los 3 goles encajados contra Brazil solos sesgan la media. Contra Slovenia ganaron 2-1; contra Belgium perdieron 0-2. Muestra ruidosa.\n\nEl modelo Dixon-Coles ya pondera por fuerza de rival vía los parámetros de ataque/defensa. No hay señal de forma que el modelo no pueda haber absorbido.\n\n**Incentivos de grupo:** Ambos equipos arrancan con 0 pts — ningún incentivo para rotar ni para jugar conservador. Esto no genera asimetría respecto al prior.\n\n**xG esperado 1.38 vs 0.74:** England ya sale como favorito claro. La brecha de mercado (+4.5pp) puede reflejar dinero público en England más que información nueva. Sin datos concretos de bajas o cambios tácticos, perseguir esa brecha es ruido.\n\n---\n\nPOSICION: mantener prior — magnitud nula",
+   "Plantel/Noticias": "---\n\n## Agente de Plantel y Noticias — England vs Croatia (17-jun-2026)\n\n### England\n\n| Jugador | Estado | Impacto |\n|---|---|---|\n| Tino Livramento | **BAJA** — lesión de pantorrilla en entrenamiento, reemplazado por Trevoh Chalobah | Medio (lateral derecho suplente) |\n| Jaden Branthwaite | **BAJA** — lesión muscular de muslo severa (abril) | Bajo (3er CB) |\n| Jack Grealish | **BAJA** — lesión de pie, no convocado | Bajo (extremo suplente) |\n| Declan Rice | **Duda leve** — molestias al final de temporada; se espera que juegue | Crítico si cayera; pero todo indica que estará disponible |\n| Bukayo Saka | **Duda leve** — llegó sin ritmo óptimo; se espera que juegue | Alto |\n\n**Sin suspendidos.** XI probable: Pickford; James, Stones, Konsa, O'Reilly; Anderson, Rice; Madueke/Saka, Bellingham, Gordon; Kane.\n\n---\n\n### Croatia\n\n| Jugador | Estado | Impacto |\n|---|---|---|\n| Luka Modrić | **Disponible** — fractura multifragmentaria de pómulo izquierdo (cirugía en abril), juega con máscara protectora | **ALTO** — cerebro del equipo, 41 años, su duelo físico estará limitado |\n| Duje Caleta-Car | Dudoso leve — se perdió los amistosos; volvió a entrenar, previsto en la convocatoria | Medio (CB de rotación) |\n| Joško Gvardiol | **DISPONIBLE** — regresa tras fractura de tibia; Dalić confirmó que inicia | Positivo para Croacia |\n\n**Sin suspendidos.** XI probable: Livakovic; Sutalo, Vuskovic, Gvardiol; Stanisic, Modrić, Kovacic, Perisic; Sucic, Baturina; Musa.\n\n---\n\n### Señales clave\n\n1. **Modrić con máscara**: La fractura de pómulo con cirugía en abril es el dato más relevante. A sus 41 años, llevar máscara limita su cabeceo y puede restarle confianza en duelos aéreos/físicos. Su capacidad de presionar y moverse en zonas de disputa estará por debajo del 100%. Es el organizador central de Croacia — cualquier merma es desproporcionadamente costosa para ellos.\n\n2. **Rice y Saka: sin señal real** — las \"dudas\" son gestión mediática estándar de pretemporada de torneo. No hay indicios de que vayan a ser baja o titularidad reducida.\n\n3. **Gvardiol disponible**: Señal positiva para Croacia, recuperado de una lesión grave. Puede compensar marginalmente la merma de Modrić en la salida desde atrás.\n\n4. **Sin conflictos internos, sin problemas de federación** — no encontré nada en ninguno de los dos equipos.\n\n5. **Incentivos de grupo**: Primer partido de grupo para ambos, 0 puntos. Sin razón para rotar ni gestionar esfuerzo. Ambos equipos saldrán a ganar.\n\n6. **Descanso / fatiga**: Jornada de apertura del torneo para los dos. Sin acumulación de minutos en el Mundial todavía.\n\n---\n\n### Resumen cuantitativo\n\nEl modelo da a England 51.6% y el mercado 56.1% (+4.5 pp a favor de England). La información de plantel **justifica parcialmente** esa brecha: la baja funcional parcial de Modrić es real y el modelo no puede ver el estado físico post-cirugía. No hay señal que contrarreste al prior en dirección contraria.\n\n**POSICION: favorecer local (England) — magnitud leve**\n\n---\n\nSources:\n- [Sports Mole — England vs Croatia injury/suspension list](https://www.sportsmole.co.uk/football/england/world-cup-2026/injuries-and-suspensions/rice-saka-latest-england-vs-croatia-injury-suspension-list-and-return-dates_599165.html)\n- [Sports Mole — Predicted XIs](https://www.sportsmole.co.uk/football/england/world-cup-2026/news/england-vs-croatia-injury-suspension-list-predicted-xis_599301.html)\n- [ESPN — WC 2026 injuries tracker](https://www.espn.com/soccer/story/_/id/48572979/2026-fifa-world-cup-injuries-tracker-which-stars-miss-latest-info)\n- [Al Jazeera — Modrić facial surgery](https://www.aljazeera.com/sports/2026/4/28/croatias-modric-undergoes-facial-surgery-but-aims-to-be-fit-for-world-cup)\n- [Sky Sports — Livramento lesión](https://www.skysports.com/football/news/12016/13554613/world-cup-2026-tino-livramento-suffers-hamstring-injury-and-replaced-by-trevoh-chalobah-in-england-squad)\n- [ESPN — England predicted lineup](https://www.espn.com/soccer/story/_/id/49060512/england-predicted-line-world-cup-opener-croatia)",
+   "Sentimiento": "---\n\n## Agente de Sentimiento — England vs Croatia (17 jun 2026)\n\n### England\n\n**Clima positivo pero con ruido interno.**\n\nLa prensa inglesa llega al torneo con optimismo genuino: ocho victorias en ocho en clasificación, 22-0 en goles, y Tuchel proyectando confianza pública. Los resultados de preparación (3-0 a Costa Rica, 1-0 a Nueva Zelanda) refuerzan ese tono.\n\nSin embargo, la convocatoria genera malestar mediático significativo: Palmer, Foden, Trent Alexander-Arnold y Maguire fueron descartados en lo que varios medios describen como \"la convocatoria más sorprendente desde 1998\". Esta controversia está instalada en la prensa inglesa, aunque por ahora no hay señales visibles de fractura interna: el equipo rindió bien en los amistosos y Tuchel ha gestionado el mensaje hacia afuera.\n\n**Señal neta:** presión mediática moderada-alta pero contrarrestada por buenos resultados. Sin señal de crisis real.\n\n### Croatia\n\n**Narrativa de \"último baile\" con Modrić — doble filo.**\n\nEl tema central en la prensa croata y global es que este es el quinto y último Mundial de Modrić (40 años). ESPN, beIN Sports y Yahoo Sports tienen piezas extensas sobre ello. La narrativa puede ser motivadora (jugar por el legado), pero también carga con presión emocional y visibilidad excesiva sobre un jugador veterano.\n\nBrozović y Vida ya retiraron de la selección tras la Euro 2024, donde Croacia tuvo una actuación muy pobre (eliminada en grupos). La prensa especializada destaca la **vulnerabilidad defensiva** (sin portería en cero en sus últimos 6 partidos, 10 goles recibidos) como el talón de Aquiles actual, algo que los medios croatas también reconocen abiertamente.\n\n**Señal neta:** moral mixta — motivación emocional por despedida de Modrić vs. presión de expectativa y desgaste de plantel. El sentimiento croata no es el de un equipo hambriento que busca revancha; es más el de un equipo que sabe que el ciclo termina aquí.\n\n### Síntesis\n\nNinguna de las señales es extrema, pero la combinación es ligeramente favorable a Inglaterra:\n- Croacia arrastra el lastre mediático de Euro 2024 y el ruido emocional de la despedida.\n- El ruido inglés (omisiones) no parece haber penetrado en el vestuario.\n- El mercado ya se movió de 51.6% a 56.1% para England — una parte de esta señal puede estar ya absorbida.\n\n**POSICION: favorecer local — magnitud leve**\n\n---\n\nSources:\n- [England vs Croatia World Cup 2026 – TNT Sports](https://www.tntsports.co.uk/betting/tips/england-vs-croatia-prediction-tips-and-odds-world-cup-2026/)\n- [The End of an Era: Luka Modrić Could Retire After the World Cup – beIN SPORTS](https://www.beinsports.com/en-us/soccer/fifa-world-cup-2026/articles/the-end-of-an-era-luka-modri-could-retire-after-the-world-cup-2026-05-27)\n- [World Cup Last Dance: Modrić still at top of his game – ESPN](https://www.espn.com/soccer/story/_/id/49093130/world-cup-last-dance-croatia-living-legend-luka-modric-top-game)\n- [Modric leaning towards retirement decision after 2026 World Cup – Yahoo Sports](https://sports.yahoo.com/articles/modric-leaning-towards-retirement-decision-201000742.html)\n- [England World Cup squad: Ruthless Tuchel leaves big names out – Sky Sports](https://www.skysports.com/football/news/12016/13543455/england-world-cup-squad-announcement-ruthless-thomas-tuchel-leaves-big-names-out-of-26-man-squad)\n- [Preview: England vs Croatia – Sports Mole](https://www.sportsmole.co.uk/football/england/world-cup-2026/preview/england-vs-croatia-prediction-team-news-lineups_599262.html)"
+  }
+ },
+ "usage": {
+  "llamadas": 4,
+  "duracion_ms": 225208,
+  "turnos": 15
+ },
+ "reblend": {
+  "T": 1.0508015758717122,
+  "w_market": 0.8
+ }
+}

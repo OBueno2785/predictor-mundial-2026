@@ -1,0 +1,61 @@
+{
+ "partido": "Ghana vs Panama",
+ "fecha": "2026-06-17 23:00:00+00:00",
+ "prior": {
+  "xg_home": 1.2121884591015033,
+  "xg_away": 1.0867611366051027,
+  "p_home": 0.3823010008451762,
+  "p_draw": 0.2973286255567912,
+  "p_away": 0.3203703735980324
+ },
+ "odds": {
+  "p_home": 0.407866839245386,
+  "p_draw": 0.2994320217465672,
+  "p_away": 0.2927011390080468,
+  "n_bookies": 24
+ },
+ "model_final": {
+  "p_home": 0.35546300339682607,
+  "p_draw": 0.3052800228628269,
+  "p_away": 0.339256973740347
+ },
+ "blend_weight_market": 0.8,
+ "final": {
+  "p_home": 0.39717197039516067,
+  "p_draw": 0.30086728258452644,
+  "p_away": 0.3019607470203129,
+  "score_pred": "1-1",
+  "top_scores": "1-1 (14.1%); 0-0 (11.7%); 1-0 (11.6%)"
+ },
+ "veredicto": {
+  "delta_log_xg_home": -0.08,
+  "delta_log_xg_away": 0.0,
+  "confianza": "media",
+  "factores": [
+   "Thomas Partey ausente EXCLUSIVAMENTE para este partido: visa canadiense denegada y apelación rechazada el 16-jun (podrá jugar vs Inglaterra en EE.UU.). Señal fresca de 24h que el mercado todavía no refleja (Ghana 40.8%, por encima del prior). Reemplazo Owusu es un escalón inferior en el mediocampo.",
+   "Kudus y Salisu: bajas de temporada ya absorbidas por modelo y mercado; NO se ajusta por ellas para evitar doble conteo.",
+   "Carrasquilla (Panamá) en duda por groin, pero hizo trabajo con el grupo el 16-jun: presencia probable, impacto menor; sin ajuste a la visita."
+  ],
+  "resumen": "Único factor no precificado: la baja de Partey solo para este partido, confirmada a 24h. Reduzco levemente el ritmo de gol de Ghana (-0.08). La duda de Carrasquilla es menor y probablemente juega, sin ajuste a Panamá."
+ },
+ "delta_aplicado": {
+  "home": -0.08,
+  "away": 0.0
+ },
+ "rondas": {
+  "ronda1": {
+   "Estadístico": "## Agente Estadístico — Ghana vs Panamá\n\n**Defensa del prior**\n\nEl modelo asigna Ghana 38.2% / Panamá 32.0% con xG 1.21–1.09. La divergencia con el mercado es de apenas +2.6pp a favor de Ghana y -2.7pp a Panamá — dentro del ruido normal de margen/bookmaker.\n\n**Forma reciente: señal real o ya capturada**\n\nLa forma de Ghana (LLLLD, 0.6 GF / 2.2 GC) es llamativa, pero Dixon-Coles pondera partidos recientes con mayor peso en sus parámetros de fuerza. Esos resultados ya alimentan el prior. El modelo no le asigna a Ghana la probabilidad de favorito — solo 38.2% en cancha neutral — lo que sugiere que la debilidad defensiva ghanesa ya está incorporada.\n\nLa forma de Panamá (1.60 pts/p) merece escrutinio de calidad rival: victoria 4-2 vs República Dominicana (selección CONCACAF baja), derrota 2-6 vs Brasil, empates vs Bosnia y Sudáfrica. No es una secuencia que señale equipo en ascenso claro.\n\n**Puntos de escepticismo**\n\n- La derrota 1-5 de Ghana vs Austria es el único resultado que podría estar subrepresentado si ocurrió fuera de la ventana principal del modelo. Pero incluso así, los parámetros de xGC ya reflejan una defensa porosa.\n- Los incentivos son perfectamente simétricos (ambos con 0 pts, primer partido del grupo). No hay información diferencial que genere asimetría de motivación.\n- Cancha neutral: sin corrección de localía, el modelo es más limpio, no más impreciso.\n\n**Conclusión**\n\nSin evidencia cuantificable externa al modelo. La divergencia mercado-modelo es pequeña y en dirección Ghana, probablemente por sesgo de nombre más que por información nueva.\n\nPOSICION: mantener prior — magnitud nula",
+   "Plantel/Noticias": "---\n\n## Análisis de Plantel y Noticias — Ghana vs Panamá (17 jun, 23:00 UTC)\n\n### Ghana — Bajas confirmadas\n\n**Tres titulares fuera, impacto muy alto:**\n\n1. **Mohammed Kudus** — BAJA TOTAL. Quad + recaída de isquiotibial desde enero 2026. Ausente de toda la convocatoria mundialista. Era el eje del ataque ghanés, goleador clave en la clasificación. Fuente: [beIN Sports](https://www.beinsports.com/en-us/soccer/fifa-world-cup-2026/articles/mohammed-kudus-ruled-out-of-the-2026-world-cup-as-ghana-loses-one-of-its-biggest-stars-ahead-of-the-tournament-2026-05-26), [Ghana Soccer Net](https://ghanasoccernet.com/injured-mohammed-kudus-excluded-from-ghanas-world-cup-preparations-squad)\n\n2. **Mohammed Salisu** — BAJA TOTAL. Rotura de LCA en enero 2026, ~9 meses de recuperación. Mejor CB europeo de Ghana. Fuente: búsqueda confirmada.\n\n3. **Thomas Partey** — BAJA PARA ESTE PARTIDO. Denegado el visado canadiense por causas judiciales (7 cargos de violación en UK, juicio pendiente). Apeló; la Corte Federal canadiense rechazó el recurso el 16 de junio. Podrá jugar en EE.UU. (partido vs Inglaterra, 23 jun). Fuente: [Al Jazeera](https://www.aljazeera.com/sports/2026/6/13/thomas-partey-denied-entry-into-canada-will-miss-ghanas-world-cup-opener), [ESPN](https://www.espn.com/soccer/story/_/id/49086399/thomas-partey-miss-ghana-world-cup-opener-visa-appeal-rejected), [Sky Sports](https://www.skysports.com/football/news/17243/13553454/world-cup-2026-thomas-partey-refused-entry-to-canada-ahead-of-ghana-match-with-panama)\n\n**Impacto acumulado:** Ghana pierde al mejor delantero, al mejor mediocampista y a un CB titular. La alineación probable incluye a Elisha Owusu (Auxerre) en lugar de Partey, un escalón de calidad significativo.\n\n---\n\n### Panamá — Duda relevante\n\n**Adalberto Carrasquilla** — DUDA (groin injury en la final de Liga MX). En el entrenamiento del 16 de junio realizó trabajo diferenciado con el equipo médico, incorporándose tarde a la sesión. Es el organizador creativo clave de Panamá. Si no llega al 100%, afecta la construcción de juego, pero su presencia física (aunque limitada) es más probable que su ausencia total. Fuente: [Newsroom Panama](https://newsroompanama.com/2026/06/16/panamas-world-cup-debut-june-17-the-boys-are-completing-their-final-rehearsal-in-canada/)\n\n---\n\n### Conflictos internos / Fatiga / Incentivos de grupo\n\n- **Ghana:** El caso Partey genera distracción institucional y mediática justo en el debut. El equipo ha tenido que reorganizar el mediocampo de último momento. Sin señal de conflictos adicionales.\n- **Panamá:** Sin señales de conflictos internos. Segundo debut mundialista histórico (el primero fue Rusia 2018); hay motivación extra documentada.\n- **Incentivos de grupo:** Ambos tienen 0 puntos, partido completamente abierto, sin incentivos para rotar o bajar intensidad.\n\n---\n\n### Síntesis\n\nEl modelo parte de Ghana ligeramente favorito (38.2% vs 32.0%), basado en un plantel completo. La realidad es un Ghana sin sus tres mejores jugadores: el atacante estrella, el ancla del mediocampo y un CB titular. La forma reciente de Ghana es además la peor del grupo (LLLLD, 0.6 GF/p). Panamá llega con plantel más completo y mejor forma reciente (1.60 pts/p). La única duda panajeña (Carrasquilla) es menor en magnitud relativa a las tres bajas ghanesas.\n\nEl mercado (Ghana 40.8%) no parece haber absorbido completamente el impacto combinado de Kudus + Salisu + Partey simultáneamente. Hay señal real aquí.\n\n**POSICION: favorecer visita — moderada**",
+   "Sentimiento": "---\n\n## Análisis de Sentimiento — Ghana vs Panamá\n\n### Ghana: señales negativas verificables y acumuladas\n\n**Kudus y Salisu fuera por lesión.** La prensa ghanesa describe la ausencia de Kudus como \"el golpe más devastador a las ambiciones del país.\" Salisu (defensor titular) también se pierde el torneo por ACL. El término que repiten varias fuentes independientes (GHANAsoccernet, ModernGhana, beIN Sports): \"squad balance fractured.\"\n\n**Partey denegado en Canadá — el disruptor más fresco.** Thomas Partey no pudo entrar a Canadá (cargos penales pendientes en el Reino Unido) y perdió la apelación el 16 de junio, a menos de 24 horas del partido. Al Jazeera, ESPN, Sky Sports y Radio-Canadá lo cubrieron ampliamente. Este evento es reciente, concreto y crea dos problemas simultáneos: pérdida de un centrocampista clave para *este partido específico* (puede jugar vs Inglaterra en EE.UU.) y un distractor mediático de alto voltaje para el campamento ghanés justo antes del debut.\n\n**Ambiente general en Ghana:** sin victoria desde octubre 2025, forma LLLLD incluyendo una goleada 1-5 ante Austria. La prensa local no ofrece narrativa de resiliencia, sino de crisis.\n\n---\n\n### Panamá: señales moderadamente positivas\n\nChristiansen mostró seguridad calibrada en rueda de prensa previa (\"el equipo está en gran forma, lleno de entusiasmo\"). Cientos de aficionados panameños acudieron a recibir a la selección en Toronto — ventaja de ambiente simbólica en cancha neutral. El entrenador reconoció el peligro ghanés pero sin ansiedad. Calificación CONCACAF invicta con solo 4 goles encajados en 8 partidos. No hay señales de fricciones internas ni ausencias significativas reportadas.\n\n---\n\n### Evaluación neta\n\nEl delta de sentimiento es asimétrico y verificable en múltiples fuentes:\n\n| Señal | Ghana | Panamá |\n|---|---|---|\n| Ausencias estelares | Kudus + Salisu (conocidas) | Ninguna |\n| Disruptor tardío | Partey denegado (16-jun, fresco) | Ninguno |\n| Clima de prensa | Pesimismo / crisis | Neutro-positivo |\n| Ambiente en sede | Neutral | Apoyo local de aficionados |\n\nEl caso Partey es la única señal que el modelo estadístico casi con certeza no capturó: ocurrió el 13-16 de junio, afecta exclusivamente a *este partido* (puede entrar a EE.UU.), y genera distracción directa en el campamento a 24h del debut. El resto (Kudus, forma) probablemente ya está absorbido por el mercado.\n\n**POSICION: favorecer visita — magnitud leve**\n\nLa señal Partey es verificable y reciente, pero el modelo y el mercado ya recogen parte del deterioro ghanés. El ajuste es leve, no moderado, porque el sentimiento positivo de Panamá no es eufórico sino funcional, y los datos blandos por sí solos raramente mueven más de 2-3 puntos porcentuales.\n\n---\n\nSources:\n- [Thomas Partey denied entry to Canada — Al Jazeera](https://www.aljazeera.com/sports/2026/6/13/thomas-partey-denied-entry-into-canada-will-miss-ghanas-world-cup-opener)\n- [Partey loses appeal, will not play in Toronto — Waking the Red](https://wakingthered.com/2026/06/16/24354/ghanas-thomas-partey-loses-appeal-after-entry-into-canada-denied-will-not-play-in-toronto-vs-panama/)\n- [How injuries fractured Ghana's squad balance — GHANAsoccernet](https://ghanasoccernet.com/the-price-of-casualties-how-injuries-fractured-ghanas-world-cup-2026-squad-balance)\n- [Kudus ruled out — beIN Sports](https://www.beinsports.com/en-us/soccer/fifa-world-cup-2026/articles/mohammed-kudus-ruled-out-of-the-2026-world-cup-as-ghana-loses-one-of-its-biggest-stars-ahead-of-the-tournament-2026-05-26)\n- [Panama coach wary but confident — GHANAsoccernet](https://ghanasoccernet.com/world-cup-2026-panama-coach-thomas-christiansen-wary-of-ghana-but-confident-ahead-of-opener)"
+  }
+ },
+ "usage": {
+  "llamadas": 4,
+  "duracion_ms": 250626,
+  "turnos": 18
+ },
+ "reblend": {
+  "T": 1.0508015758717122,
+  "w_market": 0.8
+ }
+}

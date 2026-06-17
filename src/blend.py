@@ -15,13 +15,27 @@ datos (hoy se filtran con MIN_MATCHES).
 PESO DEL MERCADO (W_MARKET): provisional. El mercado es un benchmark fuerte,
 pero el peso óptimo solo se fija con datos. Cada predicción registra las tres
 señales (modelo / mercado / mezcla) para ajustarlo tras ~30-40 partidos.
-Ajustado de 0.5 a 0.65 el 15-jun-2026: en los primeros 8 partidos con cuotas el
-mercado (RPS 0.180) batió al prior (0.200) y a la mezcla 50/50 (0.191), así que
-se le da más peso. Pendiente de fijar formalmente con más muestra.
+El peso vive en outputs/blend_config.json (versionado) y lo fija por datos
+src.fit_market_weight (minimiza RPS sobre los partidos jugados, con tope de
+movimiento por corrida). Si no existe el archivo, default 0.65.
 """
+import json
+from pathlib import Path
+
 import numpy as np
 
-W_MARKET = 0.65
+_CFG = Path(__file__).resolve().parent.parent / "outputs" / "blend_config.json"
+DEFAULT_W_MARKET = 0.65
+
+
+def _load_w() -> float:
+    try:
+        return float(json.loads(_CFG.read_text(encoding="utf-8"))["w_market"])
+    except Exception:
+        return DEFAULT_W_MARKET
+
+
+W_MARKET = _load_w()
 
 
 def linear_pool(probs_list, weights) -> np.ndarray:

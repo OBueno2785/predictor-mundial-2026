@@ -78,19 +78,19 @@ Clasifican los 2 primeros de cada grupo + los 8 mejores terceros.
 
 | Pos | Equipo | PJ | Pts | GF | GC | DG | Escenario |
 |---|---|---|---|---|---|---|---|
-| 1 | **France** | 0 | 0 | 0 | 0 | +0 | próximo vs Senegal: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
-| 2 | **Iraq** | 0 | 0 | 0 | 0 | +0 | próximo vs Norway: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
-| 3 | Norway | 0 | 0 | 0 | 0 | +0 | próximo vs Iraq: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
-| 4 | Senegal | 0 | 0 | 0 | 0 | +0 | próximo vs France: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
+| 1 | **Norway** | 1 | 3 | 4 | 1 | +3 | próximo vs Senegal: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
+| 2 | **France** | 1 | 3 | 3 | 1 | +2 | próximo vs Iraq: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
+| 3 | Senegal | 1 | 0 | 1 | 3 | -2 | próximo vs Norway: gana→sigue con opciones; empata→sigue con opciones; pierde→queda fuera del top-2 |
+| 4 | Iraq | 1 | 0 | 1 | 4 | -3 | próximo vs France: gana→sigue con opciones; empata→sigue con opciones; pierde→queda fuera del top-2 |
 
 ## Group J
 
 | Pos | Equipo | PJ | Pts | GF | GC | DG | Escenario |
 |---|---|---|---|---|---|---|---|
-| 1 | **Algeria** | 0 | 0 | 0 | 0 | +0 | próximo vs Argentina: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
-| 2 | **Argentina** | 0 | 0 | 0 | 0 | +0 | próximo vs Algeria: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
-| 3 | Austria | 0 | 0 | 0 | 0 | +0 | próximo vs Jordan: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
-| 4 | Jordan | 0 | 0 | 0 | 0 | +0 | próximo vs Austria: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
+| 1 | **Argentina** | 1 | 3 | 3 | 0 | +3 | próximo vs Austria: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
+| 2 | **Austria** | 1 | 3 | 3 | 1 | +2 | próximo vs Argentina: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
+| 3 | Jordan | 1 | 0 | 1 | 3 | -2 | próximo vs Algeria: gana→sigue con opciones; empata→sigue con opciones; pierde→queda fuera del top-2 |
+| 4 | Algeria | 1 | 0 | 0 | 3 | -3 | próximo vs Jordan: gana→sigue con opciones; empata→sigue con opciones; pierde→queda fuera del top-2 |
 
 ## Group K
 

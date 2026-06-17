@@ -34,6 +34,11 @@ jobs:
       - name: Configurar entorno
         run: echo "ODDS_API_KEY=${{ secrets.ODDS_API_KEY }}" > .env
 
+      - name: Auto-ajuste (recalibrar T + peso de mercado con resultados al día)
+        run: |
+          python -m src.recalibrate || true
+          python -m src.fit_market_weight || true
+
       - name: Detectar partidos en ventana
         id: ventana
         run: |
