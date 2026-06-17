@@ -39,7 +39,8 @@ JSON_JUEZ = """
 
 Responde ÚNICAMENTE con un objeto JSON válido (sin markdown, sin texto extra):
 {"delta_log_xg_home": <número>, "delta_log_xg_away": <número>,
- "confianza": "alta"|"media"|"baja", "factores": [<strings>], "resumen": <string>}"""
+ "confianza": "alta"|"media"|"baja", "bajas_confirmadas": true|false,
+ "factores": [<strings>], "resumen": <string>}"""
 
 
 @dataclass

@@ -26,16 +26,21 @@ import numpy as np
 
 _CFG = Path(__file__).resolve().parent.parent / "outputs" / "blend_config.json"
 DEFAULT_W_MARKET = 0.65
+# Peso EFECTIVO del debate cuando detecta ausencias confirmadas de titulares.
+# Normalmente el debate pesa (1-W_MARKET); ante bajas sube a este valor, sumando
+# el efecto del debate (model-prior) por encima de la mezcla normal.
+DEFAULT_W_DEBATE_OVERRIDE = 0.50
 
 
-def _load_w() -> float:
+def _cfg(key: str, default: float) -> float:
     try:
-        return float(json.loads(_CFG.read_text(encoding="utf-8"))["w_market"])
+        return float(json.loads(_CFG.read_text(encoding="utf-8"))[key])
     except Exception:
-        return DEFAULT_W_MARKET
+        return default
 
 
-W_MARKET = _load_w()
+W_MARKET = _cfg("w_market", DEFAULT_W_MARKET)
+W_DEBATE_OVERRIDE = _cfg("w_debate_override", DEFAULT_W_DEBATE_OVERRIDE)
 
 
 def linear_pool(probs_list, weights) -> np.ndarray:
@@ -52,6 +57,21 @@ def blend_market(model_probs, market_probs, w_market: float = W_MARKET):
     if market_probs is None:
         return model_probs / model_probs.sum(), False
     return linear_pool([model_probs, market_probs], [1 - w_market, w_market]), True
+
+
+def blend_final(model_cal, prior_cal, market_probs, bajas: bool = False):
+    """Mezcla final. Normal: (1-W_MARKET)·modelo + W_MARKET·mercado.
+    Ante bajas confirmadas, suma el EFECTO del debate (modelo−prior) con peso
+    extra, de modo que el efecto de la ausencia pese W_DEBATE_OVERRIDE en vez de
+    (1−W_MARKET) — moviendo el final EN LA DIRECCIÓN que implica la baja."""
+    blended, usa = blend_market(model_cal, market_probs)
+    if usa and bajas and prior_cal is not None:
+        extra = max(W_DEBATE_OVERRIDE - (1 - W_MARKET), 0.0)
+        b = np.array(blended, float) + extra * (np.array(model_cal, float)
+                                                 - np.array(prior_cal, float))
+        b = np.clip(b, 1e-9, None)
+        blended = b / b.sum()
+    return blended, usa
 
 
 def rescale_matrix(P, target_1x2) -> np.ndarray:

@@ -66,4 +66,9 @@ reciente NO justifican ajuste.
 3. Rango permitido por delta: [-0.25, +0.25]. Una baja de un titular clave \
 típicamente vale 0.05-0.12; una crisis interna grave 0.10-0.20.
 4. Si los agentes reportan "sin señal nueva", tu veredicto es delta 0 con \
-confianza alta. No inventes ajustes para parecer útil."""
+confianza alta. No inventes ajustes para parecer útil.
+5. `bajas_confirmadas`: ponlo en true SOLO si tu ajuste se debe a lesiones, \
+suspensiones o ausencias CONFIRMADAS de jugadores TITULARES (no dudas, no rumores, \
+no factores blandos como moral o presión). Cuando es true, tu ajuste pesará más \
+de lo habitual en la predicción final, así que sé estricto: una baja real y \
+verificada de un titular, no una especulación."""

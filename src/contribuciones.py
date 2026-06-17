@@ -20,12 +20,12 @@ import numpy as np
 from src import blend
 from src.calibration import temperature
 from src.predict import OUT
+from src.reblend import _bajas_confirmadas
 
 
 def main():
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     T = json.loads((OUT / "calibration.json").read_text(encoding="utf-8"))["temperature"]
-    w = blend.W_MARKET  # peso vigente, aplicado a todos para ver el régimen ACTUAL
 
     por_match = {}
     for f in sorted((OUT / "debates").glob("match_*.json")):
@@ -43,17 +43,22 @@ def main():
         sys.exit("Sin debates con las 3 señales.")
 
     filas = []
+    n_override = 0
     for m, d in por_match.items():
+        bajas = _bajas_confirmadas(d)
+        n_override += bajas
+        # peso efectivo del debate: normal (1-W_MARKET), o W_DEBATE_OVERRIDE ante bajas
+        w_deb = blend.W_DEBATE_OVERRIDE if bajas else (1 - blend.W_MARKET)
         prior = np.array([d["prior"]["p_home"], d["prior"]["p_draw"], d["prior"]["p_away"]])
         mf = np.array([d["model_final"]["p_home"], d["model_final"]["p_draw"], d["model_final"]["p_away"]])
         o = d["odds"]
         market = np.array([o["p_home"], o["p_draw"], o["p_away"]])
         prior_cal = temperature.apply(prior, T)
         model_cal = temperature.apply(mf, T)
-        debate_term = (1 - w) * (model_cal - prior_cal)
-        market_term = w * (market - prior_cal)
+        debate_term = w_deb * (model_cal - prior_cal)
+        market_term = blend.W_MARKET * (market - prior_cal)
         filas.append({
-            "match": m, "partido": d["partido"], "w": w,
+            "match": m, "partido": d["partido"], "bajas": bajas,
             "debate_pp": float(np.abs(debate_term).sum() / 2 * 100),   # pp movidos (L1/2)
             "market_pp": float(np.abs(market_term).sum() / 2 * 100),
         })
@@ -62,9 +67,11 @@ def main():
     mkt = np.mean([r["market_pp"] for r in filas])
     activos = [r for r in filas if r["debate_pp"] > 0.5]
 
-    print(f"Peso de mercado actual w = {w:.2f}  →  canal del modelo (1−w) = {1 - w:.2f}")
-    print(f"  Techo ESTRUCTURAL del debate en el final: {(1 - w) * 100:.0f}%")
-    print(f"  (todo el debate ocurre dentro de ese {(1 - w) * 100:.0f}%)\n")
+    print(f"Peso normal del debate: {(1 - blend.W_MARKET) * 100:.0f}% "
+          f"(mercado {blend.W_MARKET * 100:.0f}%)")
+    print(f"  Override por bajas confirmadas: el debate sube a "
+          f"{blend.W_DEBATE_OVERRIDE * 100:.0f}%")
+    print(f"  Partidos con override activo: {n_override}/{len(filas)}\n")
 
     print(f"Movimiento REAL sobre el 1X2 final (promedio de {len(filas)} partidos con debate):")
     print(f"  Debate  : {deb:.2f} pp")
@@ -77,9 +84,10 @@ def main():
         top = max(activos, key=lambda r: r["debate_pp"])
         print(f"  Mayor efecto del debate: {top['partido']} ({top['debate_pp']:.1f} pp)\n")
 
-    print(f"  {'#':<4}{'partido':<34}{'debate(pp)':>11}{'mercado(pp)':>12}")
+    print(f"  {'#':<4}{'partido':<34}{'debate(pp)':>11}{'mercado(pp)':>12}  bajas")
     for r in sorted(filas, key=lambda r: -r["debate_pp"]):
-        print(f"  {r['match']:<4}{r['partido']:<34}{r['debate_pp']:>11.2f}{r['market_pp']:>12.2f}")
+        print(f"  {r['match']:<4}{r['partido']:<34}{r['debate_pp']:>11.2f}"
+              f"{r['market_pp']:>12.2f}  {'⚑' if r['bajas'] else ''}")
 
 
 if __name__ == "__main__":

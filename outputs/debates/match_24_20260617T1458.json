@@ -59,11 +59,13 @@
  },
  "reblend": {
   "T": 1.0508015758717122,
-  "w_market": 0.8
+  "w_market": 0.8,
+  "override_bajas": false
  },
  "model_rates": {
   "lam": 0.5548152621398821,
   "mu": 1.5118792234667202,
   "rho": -0.0539936634229318
- }
+ },
+ "override_bajas": false
 }

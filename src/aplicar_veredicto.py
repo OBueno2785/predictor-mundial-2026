@@ -38,6 +38,7 @@ def main() -> None:
     veredicto = VeredictoJuez(
         delta_log_xg_home=dh, delta_log_xg_away=da,
         confianza=_opt("--confianza", "media"),
+        bajas_confirmadas="--bajas" in sys.argv,
         factores=factores, resumen=_opt("--resumen", "veredicto externo"))
 
     ctx, model, side = build_context(match_number, offline=True)
@@ -48,17 +49,19 @@ def main() -> None:
 
     T = json.loads(OUT_CAL.read_text(encoding="utf-8"))["temperature"]
     mf_cal = temperature.apply(np.array([ph, pdr, pa]), T)
+    prior_cal = temperature.apply(np.array([ctx["p_home"], ctx["p_draw"], ctx["p_away"]]), T)
     market = None
     if ctx.get("odds"):
         o = ctx["odds"]
         market = [o["p_home"], o["p_draw"], o["p_away"]]
-    blended, usa_mkt = blend.blend_market(mf_cal, market)
+    blended, usa_mkt = blend.blend_final(mf_cal, prior_cal, market, veredicto.bajas_confirmadas)
     bh, bd, ba = (float(x) for x in blended)
     resumen = blend.score_summary(blend.rescale_matrix(P, [bh, bd, ba]), 3)
 
     ctx["model_final"] = {"p_home": float(ph), "p_draw": float(pdr), "p_away": float(pa)}
     ctx["model_rates"] = {"lam": float(lam), "mu": float(mu), "rho": float(model.rho)}
     ctx["blend_weight_market"] = blend.W_MARKET if usa_mkt else 0.0
+    ctx["override_bajas"] = bool(veredicto.bajas_confirmadas and usa_mkt)
     ctx["final"] = {"p_home": bh, "p_draw": bd, "p_away": ba, **resumen}
 
     resultado = debate.ResultadoDebate(veredicto=veredicto, delta_home=dh, delta_away=da)

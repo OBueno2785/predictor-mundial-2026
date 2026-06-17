@@ -1,6 +1,6 @@
 # Predicciones — Fase de Grupos Mundial 2026
 
-Generado: 2026-06-17 15:30 UTC · Modelo: Dixon-Coles (7933 partidos de entrenamiento, ventaja localía=0.227, rho=-0.0540)
+Generado: 2026-06-17 15:53 UTC · Modelo: Dixon-Coles (7933 partidos de entrenamiento, ventaja localía=0.227, rho=-0.0540)
 
 Probabilidades del prior estadístico calibrado. Los partidos marcados con **✓ panel** muestran la predicción final ajustada por el debate multiagente + cuotas de mercado (job T-60 min antes del kickoff).
 
@@ -118,7 +118,7 @@ Probabilidades del prior estadístico calibrado. Los partidos marcados con **✓
 
 | # | Fecha (UTC) | Partido | 1 | X | 2 | xG | Pred. | Top marcadores | Real | Panel |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 23 | 17-06 17:00 | Portugal vs DR Congo | 74% | 18% | 8% | 1.9-0.5 | 1-0 | 1-0 (19.2%); 2-0 (17.6%); 3-0 (10.5%) | — | ✓ panel |
+| 23 | 17-06 17:00 | Portugal vs DR Congo | 74% | 18% | 8% | 1.9-0.5 | 1-0 | 1-0 (19.4%); 2-0 (17.8%); 3-0 (10.6%) | — | ✓ panel |
 | 24 | 18-06 02:00 | Uzbekistan vs Colombia | 11% | 21% | 68% | 0.5-1.6 | 0-1 | 0-1 (20.9%); 0-2 (16.3%); 0-0 (10.6%) | — | ✓ panel |
 | 47 | 23-06 17:00 | Portugal vs Uzbekistan | 63% | 25% | 12% | 1.7-0.6 | 1-0 | 1-0 (17.1%); 2-0 (15.1%); 0-0 (10.9%) | — | — |
 | 48 | 24-06 02:00 | Colombia vs DR Congo | 59% | 28% | 13% | 1.5-0.5 | 1-0 | 1-0 (19.1%); 2-0 (14.7%); 0-0 (13.7%) | — | — |
@@ -129,7 +129,7 @@ Probabilidades del prior estadístico calibrado. Los partidos marcados con **✓
 
 | # | Fecha (UTC) | Partido | 1 | X | 2 | xG | Pred. | Top marcadores | Real | Panel |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 21 | 17-06 23:00 | Ghana vs Panama | 40% | 30% | 30% | 1.2-1.0 | 1-1 | 1-1 (13.9%); 1-0 (13.0%); 0-0 (11.6%) | — | ✓ panel |
+| 21 | 17-06 23:00 | Ghana vs Panama | 39% | 30% | 31% | 1.2-1.0 | 1-1 | 1-1 (14.0%); 1-0 (12.7%); 0-0 (11.7%) | — | ✓ panel |
 | 22 | 17-06 20:00 | England vs Croatia | 55% | 26% | 18% | 1.4-0.7 | 1-0 | 1-0 (17.1%); 2-0 (12.3%); 0-0 (11.7%) | — | ✓ panel |
 | 45 | 23-06 20:00 | England vs Ghana | 78% | 17% | 5% | 2.3-0.4 | 2-0 | 2-0 (17.8%); 1-0 (15.3%); 3-0 (13.4%) | — | — |
 | 46 | 23-06 23:00 | Panama vs Croatia | 10% | 19% | 71% | 0.7-2.2 | 0-2 | 0-2 (13.8%); 0-1 (12.0%); 0-3 (10.2%) | — | — |

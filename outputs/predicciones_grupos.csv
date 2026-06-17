@@ -19,9 +19,9 @@ match,group,date_utc,location,home,away,xg_home,xg_away,p_home,p_draw,p_away,sco
 18,Group I,2026-06-16 22:00:00+00:00,Boston Stadium,Iraq,Norway,0.61,2.26,0.0764,0.1586,0.765,0-2,0-2 (14.8%); 0-1 (14.1%); 0-3 (10.1%),True,1-4,True
 19,Group J,2026-06-17 01:00:00+00:00,Kansas City Stadium,Argentina,Algeria,1.8,0.52,0.6696,0.219,0.1114,1-0,1-0 (18.0%); 2-0 (16.1%); 0-0 (11.1%),True,3-0,True
 20,Group J,2026-06-17 04:00:00+00:00,San Francisco Bay Area Stadium,Austria,Jordan,1.94,0.81,0.67,0.205,0.125,1-0,1-0 (13.4%); 2-0 (12.3%); 1-1 (11.4%),True,3-1,True
-21,Group L,2026-06-17 23:00:00+00:00,Toronto Stadium,Ghana,Panama,1.18,1.03,0.3972,0.3009,0.302,1-1,1-1 (13.9%); 1-0 (13.0%); 0-0 (11.6%),False,,True
+21,Group L,2026-06-17 23:00:00+00:00,Toronto Stadium,Ghana,Panama,1.17,1.04,0.3895,0.3031,0.3073,1-1,1-1 (14.0%); 1-0 (12.7%); 0-0 (11.7%),False,,True
 22,Group L,2026-06-17 20:00:00+00:00,Dallas Stadium,England,Croatia,1.43,0.71,0.5513,0.2642,0.1845,1-0,1-0 (17.1%); 2-0 (12.3%); 0-0 (11.7%),False,,True
-23,Group K,2026-06-17 17:00:00+00:00,Houston Stadium,Portugal,DR Congo,1.87,0.46,0.7359,0.1813,0.0828,1-0,1-0 (19.2%); 2-0 (17.6%); 3-0 (10.5%),False,,True
+23,Group K,2026-06-17 17:00:00+00:00,Houston Stadium,Portugal,DR Congo,1.89,0.46,0.7448,0.1765,0.0787,1-0,1-0 (19.4%); 2-0 (17.8%); 3-0 (10.6%),False,,True
 24,Group K,2026-06-18 02:00:00+00:00,Mexico City Stadium,Uzbekistan,Colombia,0.51,1.63,0.1089,0.2145,0.6766,0-1,0-1 (20.9%); 0-2 (16.3%); 0-0 (10.6%),False,,True
 25,Group A,2026-06-18 16:00:00+00:00,Atlanta Stadium,Czech Republic,South Africa,1.49,0.88,0.5016,0.2789,0.2194,1-0,1-0 (13.3%); 1-1 (12.9%); 2-0 (10.4%),False,,False
 26,Group B,2026-06-18 19:00:00+00:00,Los Angeles Stadium,Switzerland,Bosnia and Herzegovina,1.96,0.67,0.6586,0.2205,0.1209,2-0,2-0 (13.8%); 1-0 (13.6%); 1-1 (10.0%),False,,False
