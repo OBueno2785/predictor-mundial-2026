@@ -41,10 +41,10 @@ def main() -> None:
         factores=factores, resumen=_opt("--resumen", "veredicto externo"))
 
     ctx, model, side = build_context(match_number, offline=True)
-    P = model.score_matrix(ctx["home"], ctx["away"], adv_side=side,
-                           delta_home=dh, delta_away=da)
+    lam, mu = model.rates(ctx["home"], ctx["away"], adv_side=side,
+                          delta_home=dh, delta_away=da)
+    P = dixon_coles.matrix_from_rates(lam, mu, model.rho)
     ph, pdr, pa = model.outcome_probs(P)
-    top = model.top_scores(P, 3)
 
     T = json.loads(OUT_CAL.read_text(encoding="utf-8"))["temperature"]
     mf_cal = temperature.apply(np.array([ph, pdr, pa]), T)
@@ -54,14 +54,12 @@ def main() -> None:
         market = [o["p_home"], o["p_draw"], o["p_away"]]
     blended, usa_mkt = blend.blend_market(mf_cal, market)
     bh, bd, ba = (float(x) for x in blended)
+    resumen = blend.score_summary(blend.rescale_matrix(P, [bh, bd, ba]), 3)
 
     ctx["model_final"] = {"p_home": float(ph), "p_draw": float(pdr), "p_away": float(pa)}
+    ctx["model_rates"] = {"lam": float(lam), "mu": float(mu), "rho": float(model.rho)}
     ctx["blend_weight_market"] = blend.W_MARKET if usa_mkt else 0.0
-    ctx["final"] = {
-        "p_home": bh, "p_draw": bd, "p_away": ba,
-        "score_pred": f"{top[0][0]}-{top[0][1]}",
-        "top_scores": "; ".join(f"{i}-{j} ({p:.1%})" for i, j, p in top),
-    }
+    ctx["final"] = {"p_home": bh, "p_draw": bd, "p_away": ba, **resumen}
 
     resultado = debate.ResultadoDebate(veredicto=veredicto, delta_home=dh, delta_away=da)
     DEBATES.mkdir(parents=True, exist_ok=True)
@@ -75,7 +73,8 @@ def main() -> None:
     if usa_mkt:
         print(f"  Mercado:       {market[0]:.1%} / {market[1]:.1%} / {market[2]:.1%}")
     print(f"  FINAL:         {bh:.1%} / {bd:.1%} / {ba:.1%}")
-    print(f"  Marcadores: {'; '.join(f'{i}-{j} ({p:.1%})' for i, j, p in top)}")
+    print(f"  Marcadores: {resumen['top_scores']}  · xG {resumen['xg_home']:.2f}-"
+          f"{resumen['xg_away']:.2f} · por 2+: {resumen['p_home_by2']:.0%}/{resumen['p_away_by2']:.0%}")
     print(f"  Guardado: {dest}")
 
 

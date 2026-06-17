@@ -27,6 +27,17 @@ def _tau_factors(lam, mu, rho):
     }
 
 
+def matrix_from_rates(lam: float, mu: float, rho: float,
+                      max_goals: int = MAX_GOALS) -> np.ndarray:
+    """Matriz de marcadores Dixon-Coles a partir de los ritmos de gol y rho.
+    Independiente del modelo entrenado (la usa src.reblend sin reentrenar)."""
+    goals = np.arange(max_goals + 1)
+    P = np.outer(poisson.pmf(goals, lam), poisson.pmf(goals, mu))
+    for (i, j), tau in _tau_factors(lam, mu, rho).items():
+        P[i, j] *= max(tau, 1e-10)
+    return P / P.sum()
+
+
 @dataclass
 class DixonColesModel:
     attack: dict
@@ -52,11 +63,7 @@ class DixonColesModel:
                      delta_home: float = 0.0, delta_away: float = 0.0,
                      max_goals: int = MAX_GOALS) -> np.ndarray:
         lam, mu = self.rates(home, away, adv_side, delta_home, delta_away)
-        goals = np.arange(max_goals + 1)
-        P = np.outer(poisson.pmf(goals, lam), poisson.pmf(goals, mu))
-        for (i, j), tau in _tau_factors(lam, mu, self.rho).items():
-            P[i, j] *= max(tau, 1e-10)
-        return P / P.sum()
+        return matrix_from_rates(lam, mu, self.rho, max_goals)
 
     def outcome_probs(self, P: np.ndarray):
         p_home = np.tril(P, -1).sum()

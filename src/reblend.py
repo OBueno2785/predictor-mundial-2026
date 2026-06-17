@@ -16,6 +16,7 @@ import numpy as np
 from src import blend
 from src.calibration import temperature
 from src.ingest import fixtures
+from src.model import dixon_coles
 from src.predict import DATA, OUT
 
 
@@ -47,11 +48,25 @@ def reblend(match: int, T: float, w: float) -> str | None:
         d["blend_weight_market"] = 0.0
     base = d.get("final") or {}
     base.update({"p_home": float(fin[0]), "p_draw": float(fin[1]), "p_away": float(fin[2])})
+    # marcador consistente con la prob final; si no hay ritmos guardados,
+    # reconstruirlos reentrenando una vez (preserva la transcripción del debate)
+    rates = d.get("model_rates")
+    if not rates and d.get("delta_aplicado"):
+        from src.debate_match import build_context
+        ctx, model, side = build_context(match, offline=True)
+        da = d["delta_aplicado"]
+        lam, mu = model.rates(ctx["home"], ctx["away"], adv_side=side,
+                              delta_home=da["home"], delta_away=da["away"])
+        rates = {"lam": float(lam), "mu": float(mu), "rho": float(model.rho)}
+        d["model_rates"] = rates
+    if rates:
+        P = dixon_coles.matrix_from_rates(rates["lam"], rates["mu"], rates["rho"])
+        base.update(blend.score_summary(blend.rescale_matrix(P, fin), 3))
     d["final"] = base
     d["reblend"] = {"T": T, "w_market": w}
     f.write_text(json.dumps(d, ensure_ascii=False, indent=1), encoding="utf-8")
     return (f"  {d['partido']}: final {fin[0]:.1%}/{fin[1]:.1%}/{fin[2]:.1%} "
-            f"(T={T:.3f}, w={w:.2f})")
+            f"score {base.get('score_pred','?')} (T={T:.3f}, w={w:.2f})")
 
 
 def main() -> None:

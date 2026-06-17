@@ -120,6 +120,9 @@ def aplicar_debates(preds: pd.DataFrame) -> pd.DataFrame:
             preds.loc[mask, "score_pred"] = fin["score_pred"]
         if fin.get("top_scores"):
             preds.loc[mask, "top_scores"] = fin["top_scores"]
+        if fin.get("xg_home") is not None:
+            preds.loc[mask, "xg_home"] = fin["xg_home"]
+            preds.loc[mask, "xg_away"] = fin["xg_away"]
         preds.loc[mask, "ajustada"] = True
         n += 1
     if n:
@@ -142,15 +145,15 @@ def write_markdown(preds: pd.DataFrame, model: dixon_coles.DixonColesModel) -> P
     ]
     for g in sorted(preds["group"].unique()):
         lines += [f"## {g}", "",
-                  "| # | Fecha (UTC) | Partido | 1 | X | 2 | Pred. | Top marcadores | Real | Panel |",
-                  "|---|---|---|---|---|---|---|---|---|---|"]
+                  "| # | Fecha (UTC) | Partido | 1 | X | 2 | xG | Pred. | Top marcadores | Real | Panel |",
+                  "|---|---|---|---|---|---|---|---|---|---|---|"]
         for r in preds[preds["group"] == g].itertuples():
             fecha = r.date_utc.strftime("%d-%m %H:%M")
             panel = "✓ panel" if r.ajustada else "—"
             lines.append(
                 f"| {r.match} | {fecha} | {r.home} vs {r.away} | {r.p_home:.0%} | "
-                f"{r.p_draw:.0%} | {r.p_away:.0%} | {r.score_pred} | {r.top_scores} | "
-                f"{r.real or '—'} | {panel} |")
+                f"{r.p_draw:.0%} | {r.p_away:.0%} | {r.xg_home:.1f}-{r.xg_away:.1f} | "
+                f"{r.score_pred} | {r.top_scores} | {r.real or '—'} | {panel} |")
         lines.append("")
     dest = ROOT / "PREDICCIONES.md"
     dest.write_text("\n".join(lines), encoding="utf-8")

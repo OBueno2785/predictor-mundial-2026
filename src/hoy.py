@@ -48,7 +48,7 @@ def main() -> None:
             "  (prior del modelo)"
         print(f"      1 {p.p_home:.0%}  ·  X {p.p_draw:.0%}  ·  2 {p.p_away:.0%}   "
               f"→ marcador probable {p.score_pred}{panel}")
-        print(f"      top: {p.top_scores}\n")
+        print(f"      xG {p.xg_home:.1f}-{p.xg_away:.1f}  ·  top: {p.top_scores}\n")
 
 
 if __name__ == "__main__":

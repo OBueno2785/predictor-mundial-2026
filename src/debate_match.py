@@ -115,16 +115,15 @@ def main():
             delta_home=0.0, delta_away=0.0)
 
     print("[3/3] Predicción final: modelo+debate, mezclado con mercado")
-    P = model.score_matrix(ctx["home"], ctx["away"], adv_side=side,
-                           delta_home=resultado.delta_home,
-                           delta_away=resultado.delta_away)
+    import numpy as np
+    lam, mu = model.rates(ctx["home"], ctx["away"], adv_side=side,
+                          delta_home=resultado.delta_home, delta_away=resultado.delta_away)
+    P = dixon_coles.matrix_from_rates(lam, mu, model.rho)
     ph, pdr, pa = model.outcome_probs(P)   # modelo+debate, crudo (sin temperatura)
-    top = model.top_scores(P, 3)
 
     # Calibración (temperature) sobre el modelo+debate, luego mezcla con mercado.
     # model_final se guarda CRUDO; la T se aplica al consumirlo (consistente con
     # fit_market_weight y reblend).
-    import numpy as np
     T = json.loads((OUT / "calibration.json").read_text(encoding="utf-8"))["temperature"]
     mf_cal = temperature.apply(np.array([ph, pdr, pa]), T)
     market = None
@@ -135,17 +134,18 @@ def main():
     bh, bd, ba = (float(x) for x in blended)
     ch, cd, ca = (float(x) for x in mf_cal)
 
+    # El marcador refleja la prob FINAL (debate + mercado), no solo el modelo
+    P_final = blend.rescale_matrix(P, [bh, bd, ba])
+    resumen = blend.score_summary(P_final, 3)
+
     DEBATES.mkdir(parents=True, exist_ok=True)
     ts = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M")
     dest = DEBATES / f"match_{match_number}_{ts}.json"
     ctx_save = dict(ctx)
     ctx_save["model_final"] = {"p_home": float(ph), "p_draw": float(pdr), "p_away": float(pa)}
+    ctx_save["model_rates"] = {"lam": float(lam), "mu": float(mu), "rho": float(model.rho)}
     ctx_save["blend_weight_market"] = blend.W_MARKET if usa_mkt else 0.0
-    ctx_save["final"] = {
-        "p_home": bh, "p_draw": bd, "p_away": ba,
-        "score_pred": f"{top[0][0]}-{top[0][1]}",
-        "top_scores": "; ".join(f"{i}-{j} ({p:.1%})" for i, j, p in top),
-    }
+    ctx_save["final"] = {"p_home": bh, "p_draw": bd, "p_away": ba, **resumen}
     debate.guardar(resultado, ctx_save, dest)
 
     v = resultado.veredicto
@@ -162,7 +162,10 @@ def main():
               f"(peso mercado {blend.W_MARKET:.0%})")
     else:
         print(f"  FINAL:           {bh:.1%} / {bd:.1%} / {ba:.1%}  (sin cuotas)")
-    print(f"  Marcadores: {'; '.join(f'{i}-{j} ({p:.1%})' for i, j, p in top)}")
+    print(f"  Marcadores: {resumen['top_scores']}")
+    print(f"  xG final {resumen['xg_home']:.2f}-{resumen['xg_away']:.2f} · "
+          f"gana local por 2+: {resumen['p_home_by2']:.0%} · "
+          f"visita por 2+: {resumen['p_away_by2']:.0%}")
     u = resultado.usage
     print(f"  {u.get('llamadas', 0)} llamadas a claude · "
           f"{u.get('duracion_ms', 0) / 60000:.1f} min acumulados de agentes")

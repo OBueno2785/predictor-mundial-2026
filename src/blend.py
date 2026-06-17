@@ -52,3 +52,42 @@ def blend_market(model_probs, market_probs, w_market: float = W_MARKET):
     if market_probs is None:
         return model_probs / model_probs.sum(), False
     return linear_pool([model_probs, market_probs], [1 - w_market, w_market]), True
+
+
+def rescale_matrix(P, target_1x2) -> np.ndarray:
+    """Reescala las regiones (local/empate/visita) de la matriz de marcadores
+    para que sus sumas igualen target_1x2=(p_home,p_draw,p_away), preservando la
+    forma dentro de cada región. Así el marcador refleja la prob FINAL (debate +
+    mercado), no solo el modelo+debate."""
+    P = np.array(P, dtype=float)
+    lower = np.tril(P, -1)            # gana local
+    diag = np.diag(np.diag(P))        # empate
+    upper = np.triu(P, 1)             # gana visita
+    out = np.zeros_like(P)
+    for region, target in ((lower, target_1x2[0]), (diag, target_1x2[1]),
+                           (upper, target_1x2[2])):
+        s = region.sum()
+        if s > 0:
+            out += region * (target / s)
+    return out / out.sum()
+
+
+def score_summary(P, n_top: int = 3) -> dict:
+    """Resumen de marcadores de una matriz: marcador modal, top-n, goles
+    esperados y P(el favorito gana por 2+)."""
+    P = np.array(P, dtype=float)
+    dim = P.shape[0]
+    flat = sorted(((P[i, j], i, j) for i in range(dim) for j in range(dim)), reverse=True)
+    top = [(i, j, p) for p, i, j in flat[:n_top]]
+    idx = np.arange(dim)
+    xg_home = float((P.sum(axis=1) * idx).sum())
+    xg_away = float((P.sum(axis=0) * idx).sum())
+    margen = idx[:, None] - idx[None, :]
+    p_home_2 = float(P[margen >= 2].sum())
+    p_away_2 = float(P[margen <= -2].sum())
+    return {
+        "score_pred": f"{top[0][0]}-{top[0][1]}",
+        "top_scores": "; ".join(f"{i}-{j} ({p:.1%})" for i, j, p in top),
+        "xg_home": round(xg_home, 2), "xg_away": round(xg_away, 2),
+        "p_home_by2": round(p_home_2, 4), "p_away_by2": round(p_away_2, 4),
+    }
