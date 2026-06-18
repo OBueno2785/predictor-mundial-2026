@@ -1,6 +1,6 @@
 # Predicciones — Fase de Grupos Mundial 2026
 
-Generado: 2026-06-18 15:09 UTC · Modelo: Dixon-Coles (7937 partidos de entrenamiento, ventaja localía=0.226, rho=-0.0542)
+Generado: 2026-06-18 15:36 UTC · Modelo: Dixon-Coles (7937 partidos de entrenamiento, ventaja localía=0.226, rho=-0.0542)
 
 Probabilidades del prior estadístico calibrado. Los partidos marcados con **✓ panel** muestran la predicción final ajustada por el debate multiagente + cuotas de mercado (job T-60 min antes del kickoff).
 
@@ -10,8 +10,8 @@ Probabilidades del prior estadístico calibrado. Los partidos marcados con **✓
 |---|---|---|---|---|---|---|---|---|---|---|
 | 1 | 11-06 19:00 | Mexico vs South Africa | 62% | 25% | 14% | 1.7-0.6 | 1-0 | 1-0 (15.9%); 2-0 (14.0%); 1-1 (11.0%) | 2-0 | — |
 | 2 | 12-06 02:00 | South Korea vs Czech Republic | 37% | 29% | 34% | 1.3-1.2 | 1-1 | 1-1 (13.5%); 1-0 (9.9%); 0-1 (9.3%) | 2-1 | — |
-| 25 | 18-06 16:00 | Czech Republic vs South Africa | 50% | 28% | 22% | 1.5-0.9 | 1-0 | 1-0 (13.3%); 1-1 (13.0%); 2-0 (10.4%) | — | — |
-| 28 | 19-06 01:00 | Mexico vs South Korea | 47% | 29% | 25% | 1.4-0.9 | 1-1 | 1-1 (13.4%); 1-0 (13.1%); 0-0 (10.6%) | — | — |
+| 25 | 18-06 16:00 | Czech Republic vs South Africa | 53% | 27% | 20% | 1.6-0.9 | 1-1 | 1-1 (12.9%); 1-0 (11.9%); 2-0 (10.4%) | — | ✓ panel |
+| 28 | 19-06 01:00 | Mexico vs South Korea | 46% | 29% | 25% | 1.5-1.1 | 1-1 | 1-1 (13.9%); 1-0 (10.0%); 2-1 (9.1%) | — | ✓ panel |
 | 53 | 25-06 01:00 | Czech Republic vs Mexico | 23% | 27% | 49% | 1.0-1.5 | 1-1 | 1-1 (12.8%); 0-1 (12.0%); 0-2 (9.7%) | — | — |
 | 54 | 25-06 01:00 | South Africa vs South Korea | 21% | 29% | 50% | 0.8-1.4 | 0-1 | 0-1 (14.7%); 1-1 (13.0%); 0-0 (11.5%) | — | — |
 
@@ -21,8 +21,8 @@ Probabilidades del prior estadístico calibrado. Los partidos marcados con **✓
 |---|---|---|---|---|---|---|---|---|---|---|
 | 3 | 12-06 19:00 | Canada vs Bosnia and Herzegovina | 57% | 26% | 17% | 1.7-0.8 | 1-0 | 1-0 (14.0%); 2-0 (12.2%); 1-1 (11.8%) | 1-1 | — |
 | 8 | 13-06 19:00 | Qatar vs Switzerland | 7% | 14% | 79% | 0.7-2.7 | 0-2 | 0-2 (12.3%); 0-3 (11.3%); 0-1 (8.7%) | 1-1 | — |
-| 26 | 18-06 19:00 | Switzerland vs Bosnia and Herzegovina | 66% | 22% | 12% | 2.0-0.7 | 2-0 | 2-0 (13.8%); 1-0 (13.6%); 1-1 (10.0%) | — | — |
-| 27 | 18-06 22:00 | Canada vs Qatar | 70% | 19% | 11% | 2.3-0.8 | 2-0 | 2-0 (12.2%); 1-0 (10.1%); 3-0 (9.5%) | — | — |
+| 26 | 18-06 19:00 | Switzerland vs Bosnia and Herzegovina | 62% | 23% | 15% | 2.0-0.8 | 2-0 | 2-0 (11.4%); 1-1 (11.0%); 1-0 (10.0%) | — | ✓ panel |
+| 27 | 18-06 22:00 | Canada vs Qatar | 74% | 17% | 9% | 2.6-0.9 | 2-0 | 2-0 (10.2%); 3-0 (9.1%); 2-1 (8.8%) | — | ✓ panel |
 | 51 | 24-06 19:00 | Switzerland vs Canada | 44% | 28% | 28% | 1.5-1.1 | 1-1 | 1-1 (13.1%); 1-0 (10.7%); 2-1 (9.1%) | — | — |
 | 52 | 24-06 19:00 | Bosnia and Herzegovina vs Qatar | 45% | 28% | 27% | 1.4-1.0 | 1-1 | 1-1 (13.3%); 1-0 (11.5%); 0-0 (9.2%) | — | — |
 

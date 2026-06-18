@@ -1,0 +1,61 @@
+{
+ "partido": "Switzerland vs Bosnia and Herzegovina",
+ "fecha": "2026-06-18 19:00:00+00:00",
+ "prior": {
+  "xg_home": 1.9605028293867546,
+  "xg_away": 0.6715073746115702,
+  "p_home": 0.673701399663948,
+  "p_draw": 0.21302460693217634,
+  "p_away": 0.11327399340387578
+ },
+ "odds": {
+  "p_home": 0.6158862407412491,
+  "p_draw": 0.23154835939993196,
+  "p_away": 0.152565399858819,
+  "n_bookies": 24
+ },
+ "model_final": {
+  "p_home": 0.682218135617292,
+  "p_draw": 0.21103089308215234,
+  "p_away": 0.10675097130055555
+ },
+ "blend_weight_market": 0.95,
+ "final": {
+  "p_home": 0.6185412759847531,
+  "p_draw": 0.2308531296527751,
+  "p_away": 0.15060559436247184,
+  "score_pred": "2-0",
+  "top_scores": "2-0 (11.4%); 1-1 (11.0%); 1-0 (10.0%)",
+  "xg_home": 2.02,
+  "xg_away": 0.81,
+  "p_home_by2": 0.4121,
+  "p_away_by2": 0.042
+ },
+ "veredicto": {
+  "delta_log_xg_home": 0.0,
+  "delta_log_xg_away": -0.05,
+  "confianza": "media",
+  "bajas_confirmadas": false,
+  "factores": [
+   "Kolašinac (carrilero izquierdo titular de Bosnia) dudoso por golpe ante Canadá el 12/jun — debilita la estructura defensiva y la salida por banda",
+   "Džeko relegado al banco por molestia en el hombro: Bosnia pierde a su rematador de área de referencia, reduciendo su amenaza ofensiva ya pobre (0.8 GF)"
+  ],
+  "resumen": "Recorto levemente el ritmo de gol de Bosnia (-0.05) por información reciente del plantel que el modelo no ve: Kolašinac dudoso y Džeko sin titularidad por lesión, ambos degradan su ya escasa producción ofensiva. No toco a Suiza: la 'tensión de vestuario' es un factor blando, no verificado y posiblemente energizante, que no justifica ajuste según las reglas. bajas_confirmadas=false porque Kolašinac es duda (no baja confirmada) y Džeko entra desde el banco, no está ausente."
+ },
+ "delta_aplicado": {
+  "home": 0.0,
+  "away": -0.05
+ },
+ "rondas": {
+  "ronda1": {
+   "Estadístico": "## Agente Estadístico — Análisis inicial\n\n### Defensa del prior\n\nEl modelo asigna 67.4% a Suiza con xG 1.96 vs 0.67. Esa brecha de ~2.9:1 en xG está sustentada por datos históricos de rendimiento relativo, no por narrativa. El RPS 0.176 en 244 partidos es el ancla: no se abandona sin evidencia cuantificable.\n\n### Brecha modelo-mercado\n\nEl mercado descuenta ~5.8pp a Suiza (67.4% → 61.6%) y añade ~4pp a Bosnia. Eso es una señal, no ruido. Las posibles causas en orden de probabilidad:\n\n1. **Bajas o lesiones no reflejadas en el modelo** — sin confirmación, no es accionable\n2. **Forma reciente infraestimada por el modelo** — revisable con los datos provistos\n3. **Overreaction del mercado a Bosnia** — posible; 5 empates seguidos son llamativos visualmente\n\n### Lo que dicen los datos de forma\n\n**Suiza** (1.80 GF / 1.40 GC, 1.20 pts/p): Empates vs Qatar y Australia son preocupantes cualitativamente, pero cuantitativamente la media de goles a favor sigue siendo >1.5. La derrota vs Alemania (3-4) cargó los GC.\n\n**Bosnia** (0.80 GF / 0.80 GC, 1.00 pts/p): Cinco empates consecutivos, incluyendo 1-1 vs Italia. El 0.8 GF es **consistente** con el xG que el modelo les asigna (0.67). No hay disonancia: Bosnia no genera y no recibe.\n\n### Punto crítico para los otros agentes\n\nEl xG 0.67 de Bosnia no es un error del modelo; los propios datos de forma lo corroboran. Cualquier argumento para subir a Bosnia necesita mostrar *por qué generarían más xG contra Suiza que contra Italia o Canadá*, no solo que \"juegan bien en defensa\".\n\nLa brecha mercado-modelo existe, pero 5.8pp puede vivir dentro de la incertidumbre normal hasta que haya una baja confirmada de peso en Suiza.\n\n---\n\n**POSICION: mantener prior — magnitud nula**",
+   "Plantel/Noticias": "---\n\n## Análisis de Plantel y Noticias — Switzerland vs Bosnia and Herzegovina\n\n### Switzerland\n\n**Sin bajas confirmadas.** Plantilla completa disponible. El único ruido es de gestión ofensiva: Ndoye rindió por debajo vs Qatar y Yakin evalúa meterle Okafor por izquierda; Sow podría entrar por Aebischer. Son rotaciones de forma, no lesiones. XI esperado: Kobel; Zakaria, Elvedi, Akanji, Rodríguez; Freuler, Xhaka, Aebischer/Sow; Ndoye/Okafor, Vargas, Embolo.\n\n**Contexto MD1:** Empataron 1-1 con Qatar por un autogol en el 94' — resultado que distorsiona la imagen; Suiza dominó. Sin señal de fatiga relevante (los partidos son cada 6 días).\n\n### Bosnia and Herzegovina\n\n**Dos alertas concretas:**\n\n1. **Sead Kolašinac (DFN):** salió con un golpe al final del partido vs Canada (12/jun). Fuente: Sports Mole. Estado: *dudoso* para hoy. Es el lateral/carrilero izquierdo titular — pieza clave en su estructura defensiva de línea de 4. Si no juega, entra un reemplazante de menor nivel.\n\n2. **Edin Džeko (DEL, 40 años):** **no arrancó de titular vs Canada** por una lesión en el hombro previa al torneo. Fuente: Bolavip/beIN Sports. Džeko es su referencia histórica y líder; su suplencia implica que el sistema ofensivo (Demirović + Lukić) tiene menos amenaza en el área. A los 40 y con molestias, su rol parece ser impacto desde el banco.\n\n3. **Pre-torneo:** ya perdieron a Hadžikić y Čelik (lesionados) antes del arranque. Reemplazados por Jurkas y Malić.\n\n**Forma ofensiva real:** 5 empates consecutivos, 0.8 GF/partido, 0 victorias. Cuando no tienen a Džeko titular, carecen de rematador de área de referencia.\n\n### Incentivos de grupo\n\nGrupo B completamente igualado (todos con 1 pt tras MD1). Ambos equipos necesitan ganar para despegarse, no hay equipo con incentivo de \"guardar energía\". Sin sesgo táctico por clasificación.\n\n### Síntesis cuantitativa\n\n| Factor | Dirección | Magnitud |\n|---|---|---|\n| Kolašinac dudoso (DFN Bosnia) | Favorece Suiza | Leve |\n| Džeko no titular (DEL Bosnia) | Favorece Suiza + menos goles Bosnia | Leve-Moderada |\n| Suiza sin bajas | Neutral | — |\n| Grupo abierto, ambos incentivados | Neutral | — |\n\nEl mercado ya descuenta algo al modelo (61.6% vs 67.4% para Suiza), probablemente por el récord defensivo de Bosnia. Pero las dudas de Kolašinac y el rol reducido de Džeko son información reciente que el mercado integra parcialmente. El prior del modelo me parece bien orientado; la brecha modelo-mercado no amerita corrección fuerte.\n\n---\n\n**POSICION: favorecer local — magnitud leve**\n\nSources:\n- [Switzerland vs Bosnia-Herzegovina injury, suspension list, predicted XIs - Sports Mole](https://www.sportsmole.co.uk/football/switzerland/world-cup-2026/team-news/switzerland-vs-bosnia-herzegovina-injury-suspension-list-predicted-xis_599361.html)\n- [Kolasinac to miss out - predicted Bosnia-Herzegovina XI vs Switzerland - Sports Mole](https://www.sportsmole.co.uk/football/bosnia-herzegovina/world-cup-2026/predicted-lineups/kolasinac-to-miss-out-predicted-bosnia-herzegovina-xi-vs-switzerland_599385.html)\n- [Bosnia vs Switzerland Predicted Lineup: Will Džeko and Kolašinac Play? - beIN SPORTS](https://www.beinsports.com/en-us/soccer/fifa-world-cup-2026/articles/bosnia-and-herzegovina-s-predicted-lineup-vs-switzerland-at-the-2026-fifa-world-cup-2026-06-18)\n- [Why is Edin Dzeko not starting for Bosnia vs Canada - Bolavip](https://bolavip.com/en/world-cup/why-is-edin-dzeko-not-starting-for-bosnia-and-herzegovina-vs-canada-at-the-2026-world-cup)\n- [2026 FIFA World Cup Group B - Wikipedia](https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_Group_B)",
+   "Sentimiento": "---\n\n## Agente de Sentimiento: Switzerland vs Bosnia and Herzegovina\n\n### Switzerland — señal negativa moderada-leve\n\nLa señal más relevante es confirmada por múltiples fuentes (Washington Post, Fox Sports, cadenas regionales AP wire): **reportes de tensión en el vestuario suizo** tras el empate contra Qatar. La narrativa específica:\n\n- Granit Xhaka criticó duramente al equipo en público y privado tras el 1-1 con Qatar (gol en propia puerta en el min. 94).\n- Remo Freuler salió a desmentirlo, pero con un lenguaje defensivo: *\"si eres demasiado sensible, quizás el fútbol no es para ti\"* — lo que en general confirma que existe fricción real.\n- El técnico Yakin aparece descripto como \"optimista\" frente a una partida de 0-1 en el grupo Y tensión interna — postura defensiva habitual en ruedas de prensa de contención de daños.\n- La derrota del empate fue traumática: la propia del minuto 94 fue el 4º gol más tardío en igualar un partido en la historia del Mundial.\n\n**Calidad de la señal:** verificable en múltiples medios independientes, no solo rumores de foro. Sí tiene sustancia.\n\n### Bosnia — sin señal negativa relevante\n\n- Džeko tenía una molestia en el hombro y no fue titular vs Canada; Tabakovic tampoco arrancó. Si alguno de los dos sigue con molestias para hoy, su ataque se achata notablemente. Pero esto es más señal de equipo que de sentimiento.\n- El ambiente general alrededor de Bosnia es de **underdog sereno y confiado**: clasificaron eliminando a Italia en playoffs, y el equipo rodea este Mundial con orgullo nacional, no con presión de resultado.\n- No hay reportes de fricciones internas, tensiones con el cuerpo técnico ni controversias mediáticas.\n\n### Calibración de magnitud\n\nLa tensión suiza es real pero no es crisis terminal. Este equipo tiene experiencia de Mundiales y octavos de final. La fricción post-Qatar puede incluso actuar como energizante (\"tienen que demostrar\"). El mercado ya descuenta ~6 puntos porcentuales respecto al prior del modelo (67.4% → 61.6%), probablemente capturando parte de esto. Que el modelo no incorpora la tensión de vestuario es cierto, pero la magnitud residual es pequeña.\n\n---\n\n**POSICION: favorecer visita — magnitud leve**\n\n---\n\nSources:\n- [Switzerland under early pressure | FIFA World Cup 2026](https://www.fifa.com/en/articles/switzerland-bosnia-yakin-freuler)\n- [Switzerland devastated as 'proud' Qatar win 1st World Cup point — ESPN](https://www.espn.com/soccer/story/_/id/49053969/switzerland-qatar-world-cup-2026)\n- [Switzerland says it can handle early pressure amid reports of dressing room tension — Washington Post](https://www.washingtonpost.com/sports/soccer/2026/06/18/world-cup-switzerland-bosnia-herzegovina/13862d7a-6acf-11f1-830e-133d20cadd28_story.html)\n- [Switzerland Coach 'Optimistic' Amid 0-1 World Cup Start, Dressing Room Tension — Fox Sports](https://www.foxsports.com/stories/soccer/2026-fifa-world-cup-switzerland-bosnia-herzegovina)\n- [Canada 1-1 Bosnia-Herzegovina: Co-hosts earn first World Cup point — ESPN](https://www.espn.com/soccer/story/_/id/49041213/canada-bosnia-herzegovina-live-world-cup-2026-latest-updates-commentary-score-result)"
+  }
+ },
+ "usage": {
+  "llamadas": 4,
+  "duracion_ms": 262812,
+  "turnos": 18
+ }
+}

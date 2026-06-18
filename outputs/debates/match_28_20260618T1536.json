@@ -1,0 +1,60 @@
+{
+ "partido": "Mexico vs South Korea",
+ "fecha": "2026-06-19 01:00:00+00:00",
+ "prior": {
+  "xg_home": 1.3912217122463155,
+  "xg_away": 0.9219034124879203,
+  "p_home": 0.47119046033146184,
+  "p_draw": 0.2866050205356932,
+  "p_away": 0.24220451913284508
+ },
+ "odds": {
+  "p_home": 0.4652791394664721,
+  "p_draw": 0.2929977317991933,
+  "p_away": 0.24172312873433444,
+  "n_bookies": 24
+ },
+ "model_final": {
+  "p_home": 0.4572577524210947,
+  "p_draw": 0.28504849726923986,
+  "p_away": 0.2576937503096654
+ },
+ "blend_weight_market": 0.95,
+ "final": {
+  "p_home": 0.4586009885174552,
+  "p_draw": 0.2919932934322219,
+  "p_away": 0.24940571805032302,
+  "score_pred": "1-1",
+  "top_scores": "1-1 (13.9%); 1-0 (10.0%); 2-1 (9.1%)",
+  "xg_home": 1.54,
+  "xg_away": 1.09,
+  "p_home_by2": 0.2384,
+  "p_away_by2": 0.0983
+ },
+ "veredicto": {
+  "delta_log_xg_home": 0.0,
+  "delta_log_xg_away": 0.06,
+  "confianza": "media",
+  "bajas_confirmadas": true,
+  "factores": [
+   "César Montes (CB titular de México) suspendido por roja vs Sudáfrica; lo reemplaza Edson Álvarez, volante reconvertido a central no natural, debilitando la zaga local y elevando el ritmo de gol esperado de Corea"
+  ],
+  "resumen": "Único ajuste por información concreta: la suspensión confirmada de Montes obliga a improvisar a Álvarez en el eje central de México, lo que sube ligeramente el xG de Corea (+0.06). La duda de Quiñones no está confirmada y no se computa. La controversia mediática de Corea (boicot por las burlas a Son) es de efecto ambiguo —puede cohesionar o distraer— y los factores de ambiente/moral son blandos, así que no muevo el xG por ellos. No anclo al mercado: el delta refleja solo el impacto defensivo de una baja real de titular."
+ },
+ "delta_aplicado": {
+  "home": 0.0,
+  "away": 0.06
+ },
+ "rondas": {
+  "ronda1": {
+   "Estadístico": "## Análisis Estadístico — Mexico vs South Korea\n\n### Alineación modelo-mercado\n\nLa diferencia entre el prior y el mercado es de **0.6 pp en local, 0.6 pp en empate, 0.0 pp en visita**. Esto es ruido, no señal. El mercado de 24 casas ya procesó toda la información pública disponible y llega al mismo lugar que Dixon-Coles. No hay divergencia que explotar.\n\n### Forma reciente: contexto de rivales\n\nMéxico: 2.2 GF / 0.4 GC suena impresionante, pero los rivales recientes son Sudáfrica, Australia, Ghana. Serbia (5-1) es el único oponente de nivel medio-alto. El 1-1 vs Bélgica, el único rival de élite, es el dato más informativo — y no apunta a desborde ofensivo.\n\nCorea: el 0-4 vs Costa de Marfil y 0-1 vs Austria preocupan, pero el 5-0 vs Trinidad and Tobago infla la media. La ventana de 5 partidos tiene demasiado ruido de calidad de rival para extraer señal limpia de nivel defensivo.\n\n### Ventaja de localía\n\nYa está incorporada en el prior. Guadalajara es casa fuerte para México y el modelo lo refleja (47.1%). No hay argumento para amplificarla sin datos de densidad de público o condiciones climáticas específicas que escapen al modelo.\n\n### Incentivos simétricos\n\nAmbos equipos tienen 3 pts y opciones abiertas. No hay asimetría de incentivos que distorsione el esfuerzo esperado en ninguna dirección.\n\n### Veredicto\n\nEl prior es robusto. El mercado lo ratifica. La forma reciente de ambos equipos no escapa al rango de varianza esperada para sus niveles de rating respectivos.\n\n**POSICION: mantener prior — magnitud nula**",
+   "Plantel/Noticias": "Ya tengo suficiente información. Redacto el análisis.\n\n---\n\n## Agente de Plantel y Noticias — México vs Corea del Sur (19 jun 2026)\n\n### 1. Suspensiones y lesiones\n\n**México**\n- **César Montes: SUSPENDIDO** (roja directa vs Sudáfrica). Es el CB titular derecho. Lo reemplaza **Edson Álvarez**, volante defensivo reconvertido a central. El modelo no conoce esta baja: Álvarez no es CB natural; hay riesgo de descuidos en marcaje y salida de balón comprometida en la zaga. Baja de impacto **moderado-alto**. (Fuente: [Sports Mole](https://www.sportsmole.co.uk/football/mexico/world-cup-2026/predicted-lineups/who-replaces-montes-after-red-card-predicted-mexico-xi-for-world-cup-2026-clash_599404.html))\n- **Julián Quiñones: DUDA** (salió con golpe vs Sudáfrica, fue el goleador del torneo). Sería reemplazado por Alexis Vega. Perder al delantero que anotó y fue el más activo es una baja de impacto **leve-moderado**. Los indicios apuntan a que jugaría, pero no está descartado. (Fuente: [SI.com](https://www.si.com/soccer/mexico-vs-south-korea-world-cup-preview-predictions-lineups-6-18-26))\n\n**Corea del Sur**\n- Sin suspensiones. Sin lesiones frescas del partido vs Chequia. Kim Tae-Hyeon y Bae Jun-Ho volvieron al entrenamiento grupal. (Fuente: [ESPN](https://www.espn.com/soccer/story/_/id/49079638/mexico-vs-south-korea-fifa-world-cup-2026-tv-channel-how-watch-kick-live-stream-injury-predicted-line-ups))\n\n---\n\n### 2. Alineación probable\n\n**México (4-3-3 o 4-4-2):** Rangel; Sánchez, Álvarez, Vásquez, Gallardo; Lira, Fidalgo, Mora; Alvarado, Jiménez, Quiñones (o Vega).\n\n**Corea del Sur (4-3-3 o 3-4-3):** Kim Seung-Gyu; Lee Gi-Hyuk, Kim Min-Jae, Lee Han-Beom; Seol, Paik, Hwang In-Beom, Lee Tae-Seok; Lee Kang-In, Son Heung-Min, Oh Hyeon-Gyu.\n\n---\n\n### 3. Conflicto interno — Corea del Sur\n\n**Señal relevante**: el 7 de junio se filtró un video de periodistas coreanos burlándose del servicio militar de **Son Heung-min**. El plantel declaró boicot a los medios coreanos; un oficial de prensa del equipo renunció. (Fuentes: [Al Jazeera](https://www.aljazeera.com/sports/2026/6/16/south-korea-world-cup-squad-at-odds-with-media-over-son-heung-min-mockery), [Yahoo Sports](https://sports.yahoo.com/soccer/article/2026-world-cup-south-korea-reportedly-stages-team-media-blackout-after-son-heung-min-mocked-for-his-military-service-005409431.html))\n\nEfecto neto: **ambiguo**. El boicot mediático muestra fractura entre plantel y prensa, pero suele generar efecto cohesionador (\"todos contra el mundo\"). Históricamente este tipo de controversias motiva más al grupo que lo divide. No es una señal de desunión interna entre jugadores.\n\nAdicionalmente, el ejército mexicano derribó un dron que sobrevolaba el entrenamiento de Corea en Guadalajara — hecho sin efecto deportivo, pero indica el nivel de tensión logístico del ambiente.\n\n---\n\n### 4. Fatiga y descanso\n\nAmbos equipos jugaron el 11–12 de junio; el partido es el 19, con 7–8 días de descanso. **Paridad total** en este eje, sin señal nueva.\n\n---\n\n### 5. Incentivos de grupo\n\nAmbos llevan 3 pts y diferencia de gol similar. Nadie está clasificado ni eliminado; ambos necesitan puntos. El modelo ya sabe esto (sección \"Situación de grupo\"). Sin señal adicional.\n\n---\n\n### Síntesis\n\nEl dato más valioso que el modelo no tiene es la **baja de Montes + Álvarez improvisado de CB**. Esto debilita la línea defensiva de México y aumenta la probabilidad de que Corea genere al menos una llegada de peligro. Corea llega sin bajas y con Son Heung-min (creador, 9 asistencias en MLS 2026) como eje ofensivo. El mercado (46.5% México) ya recortó un poco la ventaja del modelo (47.1%), probablemente descontando la suspensión de Montes, pero la duda de Quiñones es información más fresca.\n\nEl vector neto apunta a **más goles** (defensa central de México debilitada, Corea sin lesiones y con hambre de puntos), sin mover drásticamente el 1X2.\n\n---\n\n**POSICION: más goles — magnitud leve**",
+   "Sentimiento": "---\n\n## Análisis de Sentimiento — México vs Corea del Sur\n\n### México\n\n**Clima previo al torneo: frío.** Múltiples columnas de opinión describían a una afición desconectada, sin euforia, con el propio Aguirre señalado como responsable del divorcio. Señal negativa que el modelo no captaría.\n\n**Giro tras el 2-0 a Sudáfrica.** La victoria inaugural invirtió el estado de ánimo bruscamente. La prensa internacional celebró el resultado, y Aguirre fue recibido en Guadalajara con una recepción que él mismo calificó de \"verdaderamente extraordinaria\". Jugadores conviviendo con aficionados, clases suspendidas en Jalisco el día del partido, Fan Fest habilitado para 20.000 personas en Plaza Liberación.\n\n**Señal neta México: positiva y verificable.** El entusiasmo local en Guadalajara parece por encima de un partido de fase de grupos típico. El Estadio Akron (sin pista de atletismo, graderío empinado) amplifica el ruido. La localía ya está en el prior, pero el *grado* de movilización ciudadana sugiere un ambiente superior a la media.\n\n---\n\n### Corea del Sur\n\n**Señal dominante: controversia mediática interna.** El 7 de junio, durante un entrenamiento abierto, periodistas coreanos se burlaron del servicio militar de Son Heung-min (capitán). El clip filtrado causó \"gran conmoción\" en el grupo. Consecuencias verificadas en múltiples fuentes:\n\n- Boicot colectivo de los jugadores a los medios domésticos.\n- Entrevistas programadas canceladas.\n- El secretario del cuerpo de prensa coreano dimitió.\n- Al Jazeera, Yahoo Sports, TNT Sports, NBC LA, Sportskeeda y The Sun cubren el incidente de forma independiente.\n\n**Efecto ambiguo pero con sesgo negativo.** La controversia puede cohesionar al grupo (\"mentalidad de asedio\") o crear ruido distractor en vísperas de un partido clave. El historial en torneos sugiere que equipos con disputas externas abiertas *antes* del partido tienden a rendir por debajo. Que el boicot siga activo el día 18 (no se resolvió) pesa más que el posible efecto unificador.\n\n**Factor menor adicional:** Las fuerzas militares mexicanas derribaron un dron cerca del campo de entrenamiento de Corea del Sur en Guadalajara — incidente operativo que suma perturbación al entorno del equipo visitante.\n\n**Factor amortiguador:** El fenómeno \"Coreano Hermano\" (vínculo afectivo entre aficiones mexicana y coreana desde 2002) reduce la hostilidad ambiental que podría sufrir el visitante. El estadio no será un ambiente adverso extremo para Corea.\n\n---\n\n### Síntesis\n\n| Dimensión | México | Corea del Sur |\n|---|---|---|\n| Moral interna | Alta (giro post-SA) | Perturbada (boicot mediático) |\n| Presión/ambiente | Muy favorable (Guadalajara en fiesta) | Distracción activa verificada |\n| Narrativa pública | Esperanza renovada | Controversia Son sin resolver |\n\nEl modelo ya descuenta la ventaja local estándar. La señal incremental aquí es: entorno de México excepcionalmente favorable + entorno de Corea anormalmente perturbado. Ambas señales apuntan en la misma dirección, aunque ninguna es extrema individualmente.\n\n**POSICION: favorecer local — magnitud leve**\n\n---\n\nSources:\n- [El Universal: México abre el Mundial con gris victoria sobre Sudáfrica](https://www.eluniversal.com.mx/deportes/la-seleccion-mexicana-abre-el-mundial-con-una-gris-victoria-sobre-sudafrica/)\n- [El Informador: Aguirre destaca respaldo de la afición en Guadalajara](https://www.informador.mx/deportes/mundial-2026-aguirre-destaca-el-respaldo-de-la-aficion-a-la-seleccion-mexicana-guadalajara-tambien-es-nuestra-casa-20260617-0226.html)\n- [Al Jazeera: South Korea at odds with media over Son Heung-min mockery](https://www.aljazeera.com/sports/2026/6/16/south-korea-world-cup-squad-at-odds-with-media-over-son-heung-min-mockery)\n- [Yahoo Sports: South Korea stages media blackout after Son mocked](https://sports.yahoo.com/soccer/article/2026-world-cup-south-korea-reportedly-stages-team-media-blackout-after-son-heung-min-mocked-for-his-military-service-005409431.html)\n- [NPR: 'Coreano Hermano' — fan love between Mexico and South Korea](https://www.npr.org/2026/06/17/nx-s1-5835229/mexico-south-korea-world-cup-fans-coreano-hermano)\n- [El Informador: Fan Fest Guadalajara México vs Corea](https://www.informador.mx/jalisco/mundial-2026--fan-fest-en-guadalajara-por-mexico-vs.-corea-del-sur-tendra-estas-actividades-20260618-0041.html)\n- [Outlook India: Dron derribado cerca del campo de entrenamiento de Corea](https://www.outlookindia.com/sports/football/fifa-world-cup-2026-mexican-military-shoots-down-drone-south-koreas-training-camp-guadalajara)"
+  }
+ },
+ "usage": {
+  "llamadas": 4,
+  "duracion_ms": 269214,
+  "turnos": 18
+ }
+}

@@ -1,0 +1,60 @@
+{
+ "partido": "Canada vs Qatar",
+ "fecha": "2026-06-18 22:00:00+00:00",
+ "prior": {
+  "xg_home": 2.3289207558771152,
+  "xg_away": 0.770449893900422,
+  "p_home": 0.7187404765925015,
+  "p_draw": 0.17912415690917147,
+  "p_away": 0.10213536649832705
+ },
+ "odds": {
+  "p_home": 0.7406509458521451,
+  "p_draw": 0.1715487004824698,
+  "p_away": 0.0878003536653851,
+  "n_bookies": 24
+ },
+ "model_final": {
+  "p_home": 0.7267675696625919,
+  "p_draw": 0.17453119412292342,
+  "p_away": 0.0987012362144847
+ },
+ "blend_weight_market": 0.95,
+ "final": {
+  "p_home": 0.7392483455760208,
+  "p_draw": 0.17206882392171602,
+  "p_away": 0.08868283050226321,
+  "score_pred": "2-0",
+  "top_scores": "2-0 (10.2%); 3-0 (9.1%); 2-1 (8.8%)",
+  "xg_home": 2.64,
+  "xg_away": 0.87,
+  "p_home_by2": 0.5362,
+  "p_away_by2": 0.0274
+ },
+ "veredicto": {
+  "delta_log_xg_home": 0.02,
+  "delta_log_xg_away": 0.0,
+  "confianza": "media",
+  "bajas_confirmadas": false,
+  "factores": [
+   "Alphonso Davies confirmado disponible desde el banco (Marsch, 17-jun): no jugó el partido 1, así que el modelo no lo incorporó; aporta desborde ofensivo tardío sin alterar el XI inicial"
+  ],
+  "resumen": "Único delta nuevo no capturado por el modelo: regreso de Davies como recurso de impacto desde la banca para Canadá. Es un activo ofensivo marginal y de minutos finales, no un cambio de titular, por lo que el ajuste es mínimo (+0.02). Qatar sin bajas ni señales nuevas (delta 0). Estadístico y Sentimiento coinciden en mantener prior; la asimetría de presión y la euforia qatarí ya están implícitas en la localía y el rating. No ajusto hacia el mercado pese a su +2.2 pp para evitar doble conteo."
+ },
+ "delta_aplicado": {
+  "home": 0.02,
+  "away": 0.0
+ },
+ "rondas": {
+  "ronda1": {
+   "Estadístico": "## Agente Estadístico — Canadá vs Qatar\n\n### Contraste modelo vs mercado\n\nEl mercado se mueve apenas **+2.2 pp** a favor de Canadá respecto al prior (74.1 vs 71.9%). Esa diferencia está dentro del ruido habitual de margen y construcción de línea. No hay señal de información privada en el mercado que el modelo no capture.\n\n### Forma reciente: ¿señal real o ruido?\n\n**Canadá (1.2 GF/partido vs 2.33 xG del modelo):**  \nLa brecha parece grande, pero Dixon-Coles usa ratings de fuerza acumulados, no promedios de 5 partidos. Los rivales recientes (Bosnia, Irlanda, Uzbekistán, Túnez, Islandia) son de calidad media-baja; 4 empates en 5 sugiere dificultad para matar partidos, pero no invalida la ventaja estructural contra Qatar.\n\n**Qatar (0.4 GF/partido):**  \nConsistente con el 0.77 xG asignado. El modelo ya descuenta una diferencia de fuerza ofensiva marcada. El 0-0 vs El Salvador y el 0-1 vs Irlanda no añaden información nueva que el rating no recoja.\n\n### Incentivos de grupo\n\nAmbos equipos aún tienen opciones con cualquier resultado — incentivo simétrico, sin distorsión táctica que justifique ajuste de goles.\n\n### Flag menor (sin acción)\n\nLa tasa de conversión de Canadá (1.2 real vs 2.33 proyectado) merece atención si un agente contextual aporta datos de xG real reciente. Sin eso, es ruido de muestra pequeña, no evidencia de sobreestimación del modelo.\n\n### Veredicto\n\nEl prior de 71.9/17.9/10.2 está bien sostenido. El mercado lo confirma con ajuste marginal. Sin información nueva cuantificable (lesiones clave, cambios tácticos confirmados), cualquier ajuste sería ruido narrativo.\n\n**POSICION: mantener prior — magnitud nula**",
+   "Plantel/Noticias": "---\n\n## Agente de Plantel y Noticias — Canada vs Qatar (18-jun-2026, 22:00 UTC)\n\n### 1. Lesiones / Bajas\n\n**Canada**\n| Jugador | Rol | Estado |\n|---|---|---|\n| Alphonso Davies | Capitán / lateral izq. / desborde | Disponible — **no arranca, entra como recurso desde banca** |\n| Moise Bombito | CB titular | Disponible — muy improbable que arranque (\"noticeable hitch\" al correr) |\n| Marcelo Flores | Extremo creativo | Fuera de la nómina definitiva (rotura LCA con Tigres) |\n\nDavies confirmado por Marsch el 17-jun: *\"He's been in training this week, and he'll be available tomorrow\"* — tono que no anticipa titularidad. No juega por Canadá desde marzo 2025 (rotura LCA Nations League). Bombito en entrenamiento modificado; Marsch positivo pero prudente.\n\n**Qatar**\nSin bajas reportadas. Plantilla completa disponible. Sin señal nueva negativa.\n\n---\n\n### 2. Alineación probable\n\n**Canada (4-4-2):** Crépeau — Johnston, Cornelius, De Fougerolles, Laryea — Buchanan, Eustaquio, Kone, Millar — J. David, Larin\n*(Davies como opción de impacto desde el banco)*\n\n**Qatar (4-3-3):** Abunada — Al-Oui, Miguel, Khoukhi, H. Ahmed — Gaber, Laye, Madibo — Junior, Ali, Afif\n\n---\n\n### 3. Conflictos internos / clima de grupo\n\nSin señal. Ningún medio reporta fricciones internas en ninguno de los dos equipos.\n\n---\n\n### 4. Fatiga / Descanso\n\n- Canadá: jugó el 12-jun (6 días de descanso) — normal.\n- Qatar: jugó el 13-jun (5 días de descanso) — normal.\n- Sin vuelos largos ni acumulación de minutos relevante para titulares.\n\n---\n\n### 5. Incentivos de grupo\n\nEmpate total en Grupo B (todos a 1 pt). Ambos equipos en situación simétrica: ganar abre camino claro, empatar mantiene opciones, perder complica pero no elimina. Sin incentivo asimétrico que genere rotación o baja intensidad.\n\n---\n\n### Síntesis\n\nLa única señal nueva es la disponibilidad de **Davies desde el banco** — el modelo no pudo incorporar esto al armar el prior (él no jugó el partido 1). Es un activo real: entra si Canadá necesita un desborde, lo que incrementa marginalmente la capacidad ofensiva tardía. Sin embargo, no altera el XI inicial ni el patrón táctico de base. Qatar no tiene novedades negativas.\n\nEl mercado ya cotiza a Canadá en 74.1% vs 71.9% del modelo, posiblemente reflejando en parte esta noticia.\n\n---\n\n**POSICION: favorecer local — magnitud leve**\n*(Davies disponible desde banca es el único delta nuevo; el resto del XI de Canadá es el mismo del partido 1 y Qatar llega sin bajas)*\n\n---\n\nSources:\n- [CBC Sports — Davies y Bombito disponibles vs Qatar](https://www.cbc.ca/sports/soccer/worldcup/fifa-canada-world-cup-alphonso-davies-june-17-9.7239101)\n- [ESPN — Davies fit and available for Canada vs Qatar](https://www.espn.com/soccer/story/_/id/49103614/alphonso-davies-fit-available-play-canada-world-cup-qatar)\n- [TSN — Bombito walking gingerly](https://www.tsn.ca/soccer/fifa-world-cup/article/canmnts-bombito-walks-off-pitch-gingerly-after-playing-38-minutes-against-uzbekistan/)\n- [Sports Mole — Team News & Predicted XIs](https://www.sportsmole.co.uk/football/canada/world-cup-2026/team-news/canada-vs-qatar-injury-suspension-list-predicted-xis_599326.html)\n- [RotoWire — Preview & Predicted Lineups](https://www.rotowire.com/soccer/article/canada-vs-qatar-preview-predicted-lineups-team-news-tactical-analysis-2026-world-cup-group-b-118506)",
+   "Sentimiento": "## Análisis de Sentimiento — Canada vs Qatar\n\n### Canada\n\n**Señales capturadas:**\n\n- **Presión mediática / expectativas de local:** La prensa canadiense enmarca el empate contra Bosnia como \"un punto histórico\" pero simultáneamente como resultado insuficiente para un anfitrión. El propio Marsch reconoció públicamente: *\"tengo que sacar más de algunos titulares y lograr una mejor actuación desde el inicio\"* — autocrítica inusualmente directa antes de un segundo partido.\n\n- **Tensión interna (Larin):** Cyle Larin no empezó vs Bosnia y expresó su malestar. Aunque entró y marcó, el episodio muestra fricción en el vestuario sobre el once inicial. No es una crisis, pero es ruido.\n\n- **Home crowd:** El ambiente en BC Place (Vancouver esta vez) sigue siendo un activo real. La afición canadiense es eufórica y el apoyo es genuino, no forzado.\n\n- **Tono general:** Mezcla de orgullo (primer punto histórico) + ansiedad por no haber ganado. Expectativa de victoria clara vs Qatar es casi unánime en medios canadienses — lo que convierte el partido en una trampa de presión si el resultado se complica.\n\n### Qatar\n\n**Señales capturadas:**\n\n- **Euforia controlada post-Suiza:** El empate 1-1 (gol de Khoukhi en el descuento) fue celebrado como una victoria moral. Lopetegui: *\"tenemos derecho a soñar, Qatar no va a parar\"* y *\"la presión no está en nuestra mente.\"* El mensaje público es de equipo liberado, sin nada que perder.\n\n- **Framing como \"oportunidad de oro\":** Múltiples medios qataríes y el cuerpo técnico presentan explícitamente este partido como una chance histórica, no como un partido perdido de antemano. Esto construye motivación, no relajación.\n\n- **Desventaja logística menor:** Qatar tuvo un día menos de recuperación y viaja a Vancouver. Señal física leve-negativa, no relevante para sentimiento pero reduce su ventaja anímica real.\n\n- **Sin señales de fisuras internas:** No se reporta disconformidad con el esquema, lesiones sensibles ni conflictos mediáticos en el bando qatarí.\n\n### Síntesis\n\nEl único patrón verificable y no trivial es la **asimetría de presión**: Canadá carga con el peso de ser anfitrión favorito con una actuación inaugural que decepcionó internamente, mientras Qatar llega con una mentalidad de underdog eufórico que celebra el empate vs Suiza como plataforma. Esta dinámica es real y aparece en múltiples fuentes independientes (FIFA.com, The National, 101greatgoals, mlssoccer.com).\n\nSin embargo, el modelo ya descuenta la localía y la diferencia de nivel. La presión sobre Canadá ya está implícita en el prior (~72%). La euforia qatarí es genuina pero no indica un cambio estructural de nivel. Ninguna señal es extrema.\n\n**POSICION: mantener prior — magnitud nula**\n\n---\n\nSources:\n- [Canada's 2026 World Cup: Bosnia draw sets up critical Qatar clash | MLSSoccer.com](https://www.mlssoccer.com/news/canada-s-2026-world-cup-bosnia-draw-sets-up-critical-qatar-clash)\n- [Canada vs Qatar prediction – World Cup 2026 | Football Whispers](https://footballwhispers.com/blog/canada-vs-qatar-prediction-betting-tips-preview-world-cup-2026/)\n- [Qatar confident ahead of Group B showdown with Canada | FIFA](https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/qatar-canada-lopetegui-hatem)\n- [World Cup boss Lopetegui warns Canada: 'A point is a dream and Qatar will keep dreaming'](https://www.101greatgoals.com/football/world-cup-news/qatar-canada-lopetegui/)\n- [Canada v Qatar: Lopetegui's team sense golden chance | The National](https://www.thenationalnews.com/sport/world-cup-2026/2026/06/17/canada-v-qatar-julen-lopeteguis-team-sense-golden-chance-against-co-hosts/)\n- [Canada 1-1 Bosnia-Herzegovina – ESPN](https://www.espn.com/soccer/match/_/gameId/760416/bosnia-herzegovina-canada)"
+  }
+ },
+ "usage": {
+  "llamadas": 4,
+  "duracion_ms": 248711,
+  "turnos": 18
+ }
+}

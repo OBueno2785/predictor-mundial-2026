@@ -1,0 +1,62 @@
+{
+ "partido": "Czech Republic vs South Africa",
+ "fecha": "2026-06-18 16:00:00+00:00",
+ "prior": {
+  "xg_home": 1.4826906785478435,
+  "xg_away": 0.879824187521934,
+  "p_home": 0.5064651314249178,
+  "p_draw": 0.2767408887477366,
+  "p_away": 0.21679397982734558
+ },
+ "odds": {
+  "p_home": 0.5218271953556047,
+  "p_draw": 0.27080705999359694,
+  "p_away": 0.2073657446507983,
+  "n_bookies": 24
+ },
+ "model_final": {
+  "p_home": 0.5342877662255598,
+  "p_draw": 0.27706439133610883,
+  "p_away": 0.18864784243833133
+ },
+ "blend_weight_market": 0.95,
+ "final": {
+  "p_home": 0.5258789348264916,
+  "p_draw": 0.2713735666025059,
+  "p_away": 0.2027474985710024,
+  "score_pred": "1-1",
+  "top_scores": "1-1 (12.9%); 1-0 (11.9%); 2-0 (10.4%)",
+  "xg_home": 1.61,
+  "xg_away": 0.89,
+  "p_home_by2": 0.2916,
+  "p_away_by2": 0.0671
+ },
+ "veredicto": {
+  "delta_log_xg_home": 0.0,
+  "delta_log_xg_away": -0.13,
+  "confianza": "alta",
+  "bajas_confirmadas": true,
+  "factores": [
+   "Themba Zwane (capitán y '10' creativo) suspendido 3 partidos por roja vs México — baja confirmada de titular",
+   "Sphephelo Sithole (mediocentro) suspendido 1 partido — baja confirmada de titular para este encuentro",
+   "República Checa sin bajas ni suspensiones nuevas: delta 0"
+  ],
+  "resumen": "Sudáfrica pierde simultáneamente a su único desequilibrante (Zwane, sanción de 3 partidos potencialmente no precificada del todo) y a su motor central (Sithole), para un equipo que ya generaba solo 0.6 GF/partido. Recorto el log-xG visitante en 0.13 por bajas confirmadas de dos titulares. Ignoro la narrativa de trauma psicológico/presión externa (señal blanda, riesgo de doble conteo) y no ajusto hacia el mercado. Local sin novedades: delta 0."
+ },
+ "delta_aplicado": {
+  "home": 0.0,
+  "away": -0.13
+ },
+ "rondas": {
+  "ronda1": {
+   "Estadístico": "## Agente Estadístico — Czech Republic vs South Africa\n\n### Validación del prior\n\n**Convergencia modelo-mercado es casi perfecta.** La diferencia máxima entre el modelo y las casas es de 1.6pp (Czech Republic: 50.6% vs 52.2%). Con 24 casas en la mediana, esta brecha es ruido de margen, no señal. No hay información de precio que el modelo esté ignorando.\n\n### Forma reciente: ¿hay señal nueva?\n\nCzech Republic: 2.4 GF / 1.6 GC — perfil ofensivo consistente con xG 1.48 del modelo. La derrota ante South Korea (primer partido del grupo, 6 días antes) es un solo partido contra un rival de mayor nivel histórico; no es evidencia de deterioro estructural. No ajusta el prior.\n\nSouth Africa: 0.6 GF / 1.0 GC en los últimos 5 — exactamente lo que el xG 0.88 del modelo refleja. Derrota 0-2 vs México también coherente. Sin anomalía.\n\n### Incentivos simétricos\n\nAmbos equipos tienen 0 pts y necesitan resultado positivo. El efecto \"ambos atacan\" y el efecto \"ambos no pueden permitirse perder\" se cancelan mutuamente. No hay asimetría de incentivos que desplace probabilidades en una dirección.\n\n### Advertencia de escepticismo\n\nCualquier ajuste narrativo aquí —\"Czech Republic viene de perder\", \"South Africa no anota\"— está *ya en los datos de forma* que alimentaron el modelo. El modelo produce xG 1.48 vs 0.88 leyendo exactamente esos patrones ofensivos/defensivos. Proponer un ajuste sobre esa base sería doble conteo.\n\n---\n\n**POSICION: mantener prior — magnitud nula**",
+   "Plantel/Noticias": "Tengo suficiente información. Procedo al análisis final.\n\n---\n\n## Agente de Plantel y Noticias — Czech Republic vs South Africa\n\n### Señales encontradas\n\n**SUDÁFRICA — Dos bajas por sanción (señal fuerte)**\n\n- **Themba Zwane** (capitán, mediocampista ofensivo): **suspensión de 3 partidos** por conducta violenta contra México (golpe a Alvarado, minuto 84). Se pierde el resto de la fase de grupos. Es el jugador más creativo del equipo y referente del vestuario. Ausencia de máximo impacto. Fuente: [Goal.com](https://www.goal.com/en-gh/lists/south-africa-star-miss-rest-world-cup-group-stage-three-game-ban-following-red-card-against-mexico/blt83a9c04b80264173), [SoccerLaduma](https://www.soccerladuma.co.za/psl/bafana-world-cup/fifa-confirm-three-game-ban-for-themba-zwane)\n\n- **Sphephelo Sithole** (mediocampista central): **suspensión de 1 partido** (primera roja del Mundial, DOGSO vs México). Se pierde únicamente este partido. Fuente: [Briefly.co.za](https://briefly.co.za/sports/football/244431-world-cup-2026-fifa-extended-themba-zwanes-suspension-sphephelo-sitholes/), [AfricaSoccer](https://africasoccer.com/world-cup-2026-zwane-and-sithole-ruled-out-for-czech-clash-as-fifa-confirms-one-match-bans-after-mexico-red-cards/)\n\nCoach Hugo Broos debe reconfigurar el mediocampo y el ataque desde cero: pierde simultáneamente al creador y al motor central.\n\n**REPÚBLICA CHECA — Sin novedades relevantes**\n\nSin suspensiones ni lesiones nuevas confirmadas post-partido vs Corea del Sur. Adam Hlozek, que llegó tocado al torneo, está disponible. Schick, Souček, Coufal disponibles. Fuente: [Sports Mole](https://www.sportsmole.co.uk/football/czech-republic/world-cup-2026/team-news/czech-republic-vs-south-africa-injury-suspension-list_599414.html), [ESPN](https://www.espn.com/soccer/story/_/id/49079982/fifa-world-cup-2026-czechia-vs-south-africa-channel-how-watch-kickoff-live-stream-referee-predicted-line-ups)\n\n---\n\n### Valoración cuantitativa\n\nEl modelo ya captura la diferencia estructural de plantillas. Lo que **no puede ver** es que Sudáfrica llega con dos titulares menos (mediocentro + '10'). Para un equipo que ya generaba solo 0.6 GF/partido con el plantel completo, perder a su único jugador de desequilibrio individual reduce materialmente su capacidad ofensiva. Estimo reducción de xG de Sudáfrica en ~0.10–0.15 goles esperados, lo que refuerza la probabilidad de victoria checa y acorta marcadores (más 1-0, menos empates con goles).\n\nEl mercado (52.2% local vs 50.6% del modelo) ya anticipa levemente esto, pero la magnitud de la sanción de Zwane — 3 partidos, no 1 — es información que puede no estar completamente incorporada.\n\n---\n\n**POSICION: favorecer local — magnitud moderada**\n\nSources:\n- [Sports Mole - Team News](https://www.sportsmole.co.uk/football/czech-republic/world-cup-2026/team-news/czech-republic-vs-south-africa-injury-suspension-list_599414.html)\n- [Goal.com - Zwane 3-game ban](https://www.goal.com/en-gh/lists/south-africa-star-miss-rest-world-cup-group-stage-three-game-ban-following-red-card-against-mexico/blt83a9c04b80264173)\n- [SoccerLaduma - Zwane ban confirmed](https://www.soccerladuma.co.za/psl/bafana-world-cup/fifa-confirm-three-game-ban-for-themba-zwane)\n- [Briefly.co.za - Zwane vs Sithole bans explained](https://briefly.co.za/sports/football/244431-world-cup-2026-fifa-extended-themba-zwanes-suspension-sphephelo-sitholes/)\n- [ESPN - Match preview & lineups](https://www.espn.com/soccer/story/_/id/49079982/fifa-world-cup-2026-czechia-vs-south-africa-channel-how-watch-kickoff-live-stream-referee-predicted-line-ups)",
+   "Sentimiento": "Tengo suficiente material. Paso a sintetizar.\n\n---\n\n## Agente de Sentimiento — Czech Republic vs South Africa\n\n### Czech Republic\n\nEl clima mediático checo es de **presión controlada pero manejable**. El entrenador Miroslav Koubek declaró públicamente \"no estoy nervioso, lo llamo tensión sana\" y enfatizó el \"máximo deseo de conseguir los 3 puntos\". Tono de buen sentido: derrota ante Corea del Sur fue remontada (iban 1-0 arriba hasta el 67'), no un colapso. Prensa checa lo lee como partido que se puede/debe ganar. Sin crisis interna visible.\n\n### South Africa — señal fuerte y verificable\n\nAquí hay múltiples capas negativas que convergen:\n\n1. **Bajas por suspensión confirmadas:** Themba Zwane (3 partidos, incluido este) y Sphephelo Sithole fuera. Dos titulares del mediocampo ausentes — no es sentimiento, es hecho duro.\n2. **Trauma psicológico del debut:** Partido vs México descrito como *\"disasterclass\"*, studioespañol dijo \"South Africa didn't offer anything\". Pundits sudafricanos en silencio absoluto en cámara. El resultado se convirtió en meme continental.\n3. **Presión política/social externa:** La derrota se fusionó con el debate de violencia xenófoba en Sudáfrica; países africanos vecinos pidieron públicamente la derrota de Bafana. El equipo llega con peso extradeportivo significativo.\n4. **Respuesta oficial defensiva:** SAFA publicó nota justificando el resultado; el gobierno respondió al \"backlash nacional\". Señal de que el ambiente es tenso incluso en el propio país.\n\nEl único contrapunto: el coach Broos mantiene el discurso de \"aún hay todo por jugar\", que es la postura obligada, pero sin apoyo sustancial de resultados.\n\n### Veredicto de sentimiento\n\nLa señal de Czech Republic es neutra-leve positiva (presión sin crisis). La señal de South Africa es **moderada-fuerte negativa**: combinación de bajas confirmadas de titulares + trauma psicológico + presión externa. Esto supera el umbral de \"señal blanda\" porque tiene base verificable en múltiples fuentes (SAFA, Daily Maverick, kickoff.com, SoccerLaduma, The South African).\n\n**POSICION: favorecer local — magnitud moderada**\n\n---\n\nSources:\n- [South Africa play Czechia, seeks first World Cup win after Mexico defeat — Al Jazeera](https://www.aljazeera.com/sports/2026/6/17/south-africa-plays-czechia-seeks-first-world-cup-win-after-mexico-defeat)\n- [Czechia Boss: We Have The Utmost Desire To Get 3 Points — Soccer Laduma](https://www.soccerladuma.co.za/international/2026-fifa-world-cup/czechia-boss-miroslav-koubek-we-have-the-utmost-desire-to-get-3-points-against-south-africa)\n- [FIFA confirm three-game ban for Themba Zwane — Soccer Laduma](https://www.soccerladuma.co.za/psl/bafana-world-cup/fifa-confirm-three-game-ban-for-themba-zwane)\n- [Bafana Bafana's opening match drought continues after Mexico horror show — Daily Maverick](https://www.dailymaverick.co.za/article/2026-06-12-bafana-bafanas-opening-match-drought-in-world-cups-continues-after-mexico-horror-show/)\n- [South Africa's Government Responds to a Nation Under Fire — The Africana Voice](https://www.africanavoice.com/sports/fifa-world-cup-2026/south-africa-mexico-world-cup-defeat)\n- [Red card suspensions explained — Kickoff.com](https://www.kickoff.com/psl/sa-national-teams/bafana-bafana-red-card-rules-explained)"
+  }
+ },
+ "usage": {
+  "llamadas": 4,
+  "duracion_ms": 200145,
+  "turnos": 18
+ }
+}
