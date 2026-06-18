@@ -15,5 +15,7 @@
  "log_loss_raw": 0.9325194050167842,
  "log_loss_cal": 0.9325108558455204,
  "n_mundial": 24,
- "fuente": "backtest + Mundial (out-of-sample)"
+ "fuente": "backtest + Mundial (out-of-sample)",
+ "goals_mult": 1.1216814696104367,
+ "goals_n": 24
 }

@@ -19,17 +19,17 @@
   "p_draw": 0.29036811684192876,
   "p_away": 0.18812352845078648
  },
- "blend_weight_market": 0.8,
+ "blend_weight_market": 0.95,
  "final": {
-  "p_home": 0.5512700578172284,
-  "p_draw": 0.2642054717865657,
-  "p_away": 0.18452447039620587,
+  "p_home": 0.5586153315364474,
+  "p_draw": 0.2587015086852849,
+  "p_away": 0.1826831597782676,
   "score_pred": "1-0",
-  "top_scores": "1-0 (17.1%); 2-0 (12.3%); 0-0 (11.7%)",
-  "xg_home": 1.43,
-  "xg_away": 0.71,
-  "p_home_by2": 0.2749,
-  "p_away_by2": 0.0541
+  "top_scores": "1-0 (14.4%); 1-1 (12.0%); 2-0 (11.7%)",
+  "xg_home": 1.58,
+  "xg_away": 0.8,
+  "p_home_by2": 0.2982,
+  "p_away_by2": 0.0579
  },
  "veredicto": {
   "delta_log_xg_home": 0.0,
@@ -57,8 +57,8 @@
   "turnos": 15
  },
  "reblend": {
-  "T": 1.0508015758717122,
-  "w_market": 0.8,
+  "T": 1.0449191987949356,
+  "w_market": 0.95,
   "override_bajas": false
  },
  "model_rates": {

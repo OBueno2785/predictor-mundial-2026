@@ -82,7 +82,8 @@ def reblend(match: int, T: float, w: float) -> str | None:
         rates = {"lam": float(lam), "mu": float(mu), "rho": float(model.rho)}
         d["model_rates"] = rates
     if rates:
-        P = dixon_coles.matrix_from_rates(rates["lam"], rates["mu"], rates["rho"])
+        g = json.loads((OUT / "calibration.json").read_text(encoding="utf-8")).get("goals_mult", 1.0)
+        P = dixon_coles.matrix_from_rates(rates["lam"] * g, rates["mu"] * g, rates["rho"])
         base.update(blend.score_summary(blend.rescale_matrix(P, fin), 3))
     d["final"] = base
     d["reblend"] = {"T": T, "w_market": blend.W_MARKET, "override_bajas": bool(bajas)}

@@ -124,7 +124,9 @@ def main():
     # Calibración (temperature) sobre el modelo+debate, luego mezcla con mercado.
     # model_final se guarda CRUDO; la T se aplica al consumirlo (consistente con
     # fit_market_weight y reblend).
-    T = json.loads((OUT / "calibration.json").read_text(encoding="utf-8"))["temperature"]
+    cal = json.loads((OUT / "calibration.json").read_text(encoding="utf-8"))
+    T = cal["temperature"]
+    g = cal.get("goals_mult", 1.0)
     mf_cal = temperature.apply(np.array([ph, pdr, pa]), T)
     prior_cal = temperature.apply(np.array([ctx["p_home"], ctx["p_draw"], ctx["p_away"]]), T)
     bajas = bool(getattr(resultado.veredicto, "bajas_confirmadas", False))
@@ -136,8 +138,10 @@ def main():
     bh, bd, ba = (float(x) for x in blended)
     ch, cd, ca = (float(x) for x in mf_cal)
 
-    # El marcador refleja la prob FINAL (debate + mercado), no solo el modelo
-    P_final = blend.rescale_matrix(P, [bh, bd, ba])
+    # El marcador usa la matriz con calibración de goles (×g) reescalada a la
+    # prob FINAL (debate + mercado): el 1X2 no cambia, solo el reparto de goles.
+    P_score = dixon_coles.matrix_from_rates(lam * g, mu * g, model.rho)
+    P_final = blend.rescale_matrix(P_score, [bh, bd, ba])
     resumen = blend.score_summary(P_final, 3)
 
     DEBATES.mkdir(parents=True, exist_ok=True)

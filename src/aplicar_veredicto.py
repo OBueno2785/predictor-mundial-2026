@@ -47,7 +47,8 @@ def main() -> None:
     P = dixon_coles.matrix_from_rates(lam, mu, model.rho)
     ph, pdr, pa = model.outcome_probs(P)
 
-    T = json.loads(OUT_CAL.read_text(encoding="utf-8"))["temperature"]
+    cal = json.loads(OUT_CAL.read_text(encoding="utf-8"))
+    T, g = cal["temperature"], cal.get("goals_mult", 1.0)
     mf_cal = temperature.apply(np.array([ph, pdr, pa]), T)
     prior_cal = temperature.apply(np.array([ctx["p_home"], ctx["p_draw"], ctx["p_away"]]), T)
     market = None
@@ -56,7 +57,8 @@ def main() -> None:
         market = [o["p_home"], o["p_draw"], o["p_away"]]
     blended, usa_mkt = blend.blend_final(mf_cal, prior_cal, market, veredicto.bajas_confirmadas)
     bh, bd, ba = (float(x) for x in blended)
-    resumen = blend.score_summary(blend.rescale_matrix(P, [bh, bd, ba]), 3)
+    P_score = dixon_coles.matrix_from_rates(lam * g, mu * g, model.rho)
+    resumen = blend.score_summary(blend.rescale_matrix(P_score, [bh, bd, ba]), 3)
 
     ctx["model_final"] = {"p_home": float(ph), "p_draw": float(pdr), "p_away": float(pa)}
     ctx["model_rates"] = {"lam": float(lam), "mu": float(mu), "rho": float(model.rho)}

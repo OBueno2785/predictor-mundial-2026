@@ -96,16 +96,16 @@ Clasifican los 2 primeros de cada grupo + los 8 mejores terceros.
 
 | Pos | Equipo | PJ | Pts | GF | GC | DG | Escenario |
 |---|---|---|---|---|---|---|---|
-| 1 | **Colombia** | 0 | 0 | 0 | 0 | +0 | próximo vs Uzbekistan: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
-| 2 | **DR Congo** | 0 | 0 | 0 | 0 | +0 | próximo vs Portugal: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
-| 3 | Portugal | 0 | 0 | 0 | 0 | +0 | próximo vs DR Congo: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
-| 4 | Uzbekistan | 0 | 0 | 0 | 0 | +0 | próximo vs Colombia: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
+| 1 | **Colombia** | 1 | 3 | 3 | 1 | +2 | próximo vs DR Congo: gana→clasifica seguro; empata→sigue con opciones; pierde→sigue con opciones |
+| 2 | **DR Congo** | 1 | 1 | 1 | 1 | +0 | próximo vs Colombia: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
+| 3 | Portugal | 1 | 1 | 1 | 1 | +0 | próximo vs Uzbekistan: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
+| 4 | Uzbekistan | 1 | 0 | 1 | 3 | -2 | próximo vs Portugal: gana→sigue con opciones; empata→sigue con opciones; pierde→queda fuera del top-2 |
 
 ## Group L
 
 | Pos | Equipo | PJ | Pts | GF | GC | DG | Escenario |
 |---|---|---|---|---|---|---|---|
-| 1 | **Croatia** | 0 | 0 | 0 | 0 | +0 | próximo vs England: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
-| 2 | **England** | 0 | 0 | 0 | 0 | +0 | próximo vs Croatia: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
-| 3 | Ghana | 0 | 0 | 0 | 0 | +0 | próximo vs Panama: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
-| 4 | Panama | 0 | 0 | 0 | 0 | +0 | próximo vs Ghana: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
+| 1 | **England** | 1 | 3 | 4 | 2 | +2 | próximo vs Ghana: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
+| 2 | **Ghana** | 1 | 3 | 1 | 0 | +1 | próximo vs England: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
+| 3 | Panama | 1 | 0 | 0 | 1 | -1 | próximo vs Croatia: gana→sigue con opciones; empata→sigue con opciones; pierde→queda fuera del top-2 |
+| 4 | Croatia | 1 | 0 | 2 | 4 | -2 | próximo vs Panama: gana→sigue con opciones; empata→sigue con opciones; pierde→queda fuera del top-2 |
