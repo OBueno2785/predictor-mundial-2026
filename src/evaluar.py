@@ -60,9 +60,11 @@ def main() -> None:
     filas = []
     for r in jugados.itertuples():
         real = outcome(r.home_score, r.away_score)
+        real_score = f"{int(r.home_score)}-{int(r.away_score)}"
         side = adv_side(r)
         fuente = "out-of-sample"
         prior = final = market = None
+        pred_score = None
 
         if r.match_number in debates and debates[r.match_number].get("prior"):
             d = debates[r.match_number]
@@ -72,6 +74,7 @@ def main() -> None:
                     d.get("veredicto", {}).get("resumen", "")).startswith("Degradado"):
                 f = d["final"]
                 final = np.array([f["p_home"], f["p_draw"], f["p_away"]])
+                pred_score = f.get("score_pred")
             o = d.get("odds")
             if o:
                 market = np.array([o["p_home"], o["p_draw"], o["p_away"]])
@@ -79,32 +82,32 @@ def main() -> None:
         else:
             if r.home_team in model_oos.attack and r.away_team in model_oos.attack:
                 P = model_oos.score_matrix(r.home_team, r.away_team, adv_side=side)
-                prior = np.array(model_oos.outcome_probs(P))
-                prior = temperature.apply(prior, T)
+                prior = temperature.apply(np.array(model_oos.outcome_probs(P)), T)
+                i, j, _ = model_oos.top_scores(P, 1)[0]
+                pred_score = f"{i}-{j}"
             else:
                 fuente = "sin datos pre-torneo"
 
         filas.append({
             "match": r.match_number,
             "partido": f"{r.home_team} {int(r.home_score)}-{int(r.away_score)} {r.away_team}",
-            "real": real, "prior": prior, "final": final, "market": market,
-            "fuente": fuente,
+            "real": real, "real_score": real_score, "pred_score": pred_score,
+            "prior": prior, "final": final, "market": market, "fuente": fuente,
         })
 
-    print(f"\n{'=' * 70}\nEVALUACIÓN — {len(filas)} partidos de grupos jugados\n{'=' * 70}\n")
-    print(f"{'#':<3} {'Partido':<34} {'pred 1X2':<10} {'acierto':<8} fuente")
+    print(f"\n{'=' * 72}\nEVALUACIÓN — {len(filas)} partidos de grupos jugados\n{'=' * 72}\n")
+    print(f"{'#':<3} {'Partido':<34} {'pred':<6} {'real':<6} {'marcador':<9} signo")
     etiquetas = ["1", "X", "2"]
     validos = [f for f in filas if f["prior"] is not None]
     for f in filas:
         if f["prior"] is None:
-            print(f"{f['match']:<3} {f['partido']:<34} {'—':<10} {'—':<8} {f['fuente']}")
+            print(f"{f['match']:<3} {f['partido']:<34} {'—':<6} {'—':<6} {'—':<9} —")
             continue
         usar = f["final"] if f["final"] is not None else f["prior"]
-        pred = int(usar.argmax())
-        ok = "sí" if pred == f["real"] else "no"
-        probs = "/".join(f"{x:.0%}" for x in usar)
-        print(f"{f['match']:<3} {f['partido']:<34} {probs:<10} "
-              f"{etiquetas[pred]}->{etiquetas[f['real']]} {ok:<4} {f['fuente']}")
+        signo_ok = "✓" if int(usar.argmax()) == f["real"] else "✗"
+        score_ok = "✓ marcador" if f["pred_score"] == f["real_score"] else "✗"
+        print(f"{f['match']:<3} {f['partido']:<34} {f['pred_score'] or '—':<6} "
+              f"{f['real_score']:<6} {score_ok:<9} {signo_ok}")
 
     if not validos:
         return
@@ -127,11 +130,22 @@ def main() -> None:
     outs_all = np.array([f["real"] for f in validos])
     clim = np.tile(base, (len(validos), 1))
 
-    print(f"\n{'-' * 70}\nMÉTRICAS (recordar: muestra MUY pequeña, alta varianza)\n{'-' * 70}")
+    # Acierto de MARCADOR EXACTO (la predicción que se publica)
+    con_score = [f for f in validos if f["pred_score"]]
+    score_hits = sum(f["pred_score"] == f["real_score"] for f in con_score)
+    signo_hits = sum(int((f["final"] if f["final"] is not None else f["prior"]).argmax())
+                     == f["real"] for f in validos)
+
+    print(f"\n{'-' * 72}\nMÉTRICAS (recordar: muestra MUY pequeña, alta varianza)\n{'-' * 72}")
+    print(f"\nACIERTO DE MARCADOR EXACTO: {score_hits}/{len(con_score)} = "
+          f"{score_hits / len(con_score):.0%}")
+    print(f"  (referencia: ~10-15% es bueno; el marcador exacto es intrínsecamente difícil)")
+    print(f"ACIERTO DE SIGNO (1X2):     {signo_hits}/{len(validos)} = "
+          f"{signo_hits / len(validos):.0%}")
+
     mp = metricas("prior")
-    print(f"\nPRIOR del modelo (n={mp['n']}):")
-    print(f"  Acierto 1X2: {mp['acc']:.0%}   RPS: {mp['rps']:.4f}   "
-          f"Brier: {mp['brier']:.3f}   LogLoss: {mp['logloss']:.3f}")
+    print(f"\nCalidad probabilística (1X2) — PRIOR del modelo (n={mp['n']}):")
+    print(f"  RPS: {mp['rps']:.4f}   Brier: {mp['brier']:.3f}   LogLoss: {mp['logloss']:.3f}")
     print(f"  RPS baseline climatológico: {metrics.rps(clim, outs_all):.4f} "
           f"(el modelo {'gana' if mp['rps'] < metrics.rps(clim, outs_all) else 'pierde'})")
 
