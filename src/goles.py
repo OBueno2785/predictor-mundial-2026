@@ -34,6 +34,7 @@ def main():
     model = dixon_coles.fit(pre, ref_date=WC_START)
 
     pred_tot, real_tot, altos = [], [], 0
+    casos = []  # (lam, mu, real_i, real_j) para validar aciertos de marcador
     for r in jug.itertuples():
         if r.home_team not in model.attack or r.away_team not in model.attack:
             continue
@@ -42,6 +43,7 @@ def main():
         real = int(r.home_score) + int(r.away_score)
         real_tot.append(real)
         altos += real >= 4
+        casos.append((lam, mu, int(r.home_score), int(r.away_score)))
 
     pred_tot, real_tot = np.array(pred_tot), np.array(real_tot)
     n = len(pred_tot)
@@ -56,6 +58,23 @@ def main():
     print(f"  Partidos con 4+ goles: {altos}/{n} ({altos / n:.0%})")
     print(f"  Contracción (n={n}, K={SHRINK_K}): {shrink:.2f}")
     print(f"  → goals_mult = ×{mult:.3f}  (ratio crudo ×{ratio:.2f} contraído hacia 1.0)")
+
+    # Validación: ¿el multiplicador mejora los aciertos de marcador? Barrido de g
+    print(f"\n  Barrido de validación (acierto de marcador modal, out-of-sample):")
+    print(f"  {'g':>5} {'exacto':>8} {'±1 c/lado':>11}  {'logL/p':>8}")
+    rho = model.rho
+    for gtest in [1.0, 1.10, 1.122, 1.20, 1.27, 1.35]:
+        exact = cerca = 0
+        ll = 0.0
+        for lam, mu, ri, rj in casos:
+            P = dixon_coles.matrix_from_rates(lam * gtest, mu * gtest, rho)
+            mi, mj, _ = max(((P[i, j], i, j) for i in range(P.shape[0])
+                             for j in range(P.shape[1])))
+            exact += (mi == ri and mj == rj)
+            cerca += (abs(mi - ri) <= 1 and abs(mj - rj) <= 1)
+            ll += np.log(max(P[ri, rj], 1e-12))
+        marca = "  ← elegido" if abs(gtest - mult) < 0.01 else ""
+        print(f"  {gtest:>5.3f} {exact}/{n:>5} {cerca}/{n:>8} {ll / n:>8.3f}{marca}")
 
     cal = json.loads((OUT / "calibration.json").read_text(encoding="utf-8"))
     cal["goals_mult"] = mult
