@@ -54,7 +54,8 @@ def main() -> None:
     hist_full = results.load_training(DATA / "results.csv")
     pre = hist_full[hist_full["date"] < WC_START]
     model_oos = dixon_coles.fit(pre, ref_date=WC_START)
-    T = json.loads((OUT / "calibration.json").read_text())["temperature"]
+    cal = json.loads((OUT / "calibration.json").read_text())
+    T, G = cal["temperature"], cal.get("goals_mult", 1.0)
     debates = cargar_debates()
 
     filas = []
@@ -83,7 +84,9 @@ def main() -> None:
             if r.home_team in model_oos.attack and r.away_team in model_oos.attack:
                 P = model_oos.score_matrix(r.home_team, r.away_team, adv_side=side)
                 prior = temperature.apply(np.array(model_oos.outcome_probs(P)), T)
-                i, j, _ = model_oos.top_scores(P, 1)[0]
+                lam, mu = model_oos.rates(r.home_team, r.away_team, adv_side=side)
+                Pg = dixon_coles.matrix_from_rates(lam * G, mu * G, model_oos.rho)
+                i, j, _ = model_oos.top_scores(Pg, 1)[0]
                 pred_score = f"{i}-{j}"
             else:
                 fuente = "sin datos pre-torneo"
@@ -130,17 +133,25 @@ def main() -> None:
     outs_all = np.array([f["real"] for f in validos])
     clim = np.tile(base, (len(validos), 1))
 
-    # Acierto de MARCADOR EXACTO (la predicción que se publica)
+    # Acierto de MARCADOR (la predicción que se publica)
+    def _par(s):
+        a, b = s.split("-")
+        return int(a), int(b)
+
     con_score = [f for f in validos if f["pred_score"]]
     score_hits = sum(f["pred_score"] == f["real_score"] for f in con_score)
+    cerca_hits = sum(abs(_par(f["pred_score"])[0] - _par(f["real_score"])[0]) <= 1
+                     and abs(_par(f["pred_score"])[1] - _par(f["real_score"])[1]) <= 1
+                     for f in con_score)
     signo_hits = sum(int((f["final"] if f["final"] is not None else f["prior"]).argmax())
                      == f["real"] for f in validos)
 
     print(f"\n{'-' * 72}\nMÉTRICAS (recordar: muestra MUY pequeña, alta varianza)\n{'-' * 72}")
-    print(f"\nACIERTO DE MARCADOR EXACTO: {score_hits}/{len(con_score)} = "
-          f"{score_hits / len(con_score):.0%}")
-    print(f"  (referencia: ~10-15% es bueno; el marcador exacto es intrínsecamente difícil)")
-    print(f"ACIERTO DE SIGNO (1X2):     {signo_hits}/{len(validos)} = "
+    print(f"\nACIERTO DE MARCADOR EXACTO:    {score_hits}/{len(con_score)} = "
+          f"{score_hits / len(con_score):.0%}  (techo realista ~10-15%)")
+    print(f"ACIERTO APROXIMADO (±1 c/lado): {cerca_hits}/{len(con_score)} = "
+          f"{cerca_hits / len(con_score):.0%}")
+    print(f"ACIERTO DE SIGNO (1X2):        {signo_hits}/{len(validos)} = "
           f"{signo_hits / len(validos):.0%}")
 
     mp = metricas("prior")
