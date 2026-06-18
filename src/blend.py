@@ -61,17 +61,32 @@ def blend_market(model_probs, market_probs, w_market: float = W_MARKET):
 
 def blend_final(model_cal, prior_cal, market_probs, bajas: bool = False):
     """Mezcla final. Normal: (1-W_MARKET)·modelo + W_MARKET·mercado.
-    Ante bajas confirmadas, suma el EFECTO del debate (modelo−prior) con peso
-    extra, de modo que el efecto de la ausencia pese W_DEBATE_OVERRIDE en vez de
-    (1−W_MARKET) — moviendo el final EN LA DIRECCIÓN que implica la baja."""
+
+    Override CONSCIENTE DEL MERCADO: ante bajas confirmadas, amplifica el efecto
+    del debate (d = modelo−prior) PERO solo la fracción que el mercado aún NO
+    refleja. Si el mercado ya se movió en la dirección del debate tanto o más que
+    el debate (proyección de m=mercado−prior sobre d ≥ |d|), la baja YA está
+    precificada → no se aplica override (evita doble conteo, como el caso Portugal
+    donde el mercado ya sabía de la baja). Si el mercado no se movió (o se movió en
+    contra), la señal es información no precificada → override pleno.
+
+    Devuelve (probs_finales, uso_mercado, override_aplicado).
+    """
     blended, usa = blend_market(model_cal, market_probs)
+    override_aplicado = False
     if usa and bajas and prior_cal is not None:
-        extra = max(W_DEBATE_OVERRIDE - (1 - W_MARKET), 0.0)
-        b = np.array(blended, float) + extra * (np.array(model_cal, float)
-                                                 - np.array(prior_cal, float))
-        b = np.clip(b, 1e-9, None)
-        blended = b / b.sum()
-    return blended, usa
+        d = np.array(model_cal, float) - np.array(prior_cal, float)
+        m = np.array(market_probs, float) - np.array(prior_cal, float)
+        dd = float(d @ d)
+        if dd > 1e-9:
+            residual = float(np.clip(1.0 - (m @ d) / dd, 0.0, 1.0))  # frac no precificada
+            extra = max(W_DEBATE_OVERRIDE - (1 - W_MARKET), 0.0)
+            if residual > 0.05 and extra > 0:
+                b = np.array(blended, float) + extra * residual * d
+                b = np.clip(b, 1e-9, None)
+                blended = b / b.sum()
+                override_aplicado = True
+    return blended, usa, override_aplicado
 
 
 def rescale_matrix(P, target_1x2) -> np.ndarray:

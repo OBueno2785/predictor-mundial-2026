@@ -55,7 +55,8 @@ def main() -> None:
     if ctx.get("odds"):
         o = ctx["odds"]
         market = [o["p_home"], o["p_draw"], o["p_away"]]
-    blended, usa_mkt = blend.blend_final(mf_cal, prior_cal, market, veredicto.bajas_confirmadas)
+    blended, usa_mkt, override_ap = blend.blend_final(
+        mf_cal, prior_cal, market, veredicto.bajas_confirmadas)
     bh, bd, ba = (float(x) for x in blended)
     P_score = dixon_coles.matrix_from_rates(lam * g, mu * g, model.rho)
     resumen = blend.score_summary(blend.rescale_matrix(P_score, [bh, bd, ba]), 3)
@@ -63,7 +64,7 @@ def main() -> None:
     ctx["model_final"] = {"p_home": float(ph), "p_draw": float(pdr), "p_away": float(pa)}
     ctx["model_rates"] = {"lam": float(lam), "mu": float(mu), "rho": float(model.rho)}
     ctx["blend_weight_market"] = blend.W_MARKET if usa_mkt else 0.0
-    ctx["override_bajas"] = bool(veredicto.bajas_confirmadas and usa_mkt)
+    ctx["override_bajas"] = bool(override_ap)
     ctx["final"] = {"p_home": bh, "p_draw": bd, "p_away": ba, **resumen}
 
     resultado = debate.ResultadoDebate(veredicto=veredicto, delta_home=dh, delta_away=da)

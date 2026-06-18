@@ -134,7 +134,7 @@ def main():
     if ctx.get("odds"):
         o = ctx["odds"]
         market = [o["p_home"], o["p_draw"], o["p_away"]]
-    blended, usa_mkt = blend.blend_final(mf_cal, prior_cal, market, bajas)
+    blended, usa_mkt, override_ap = blend.blend_final(mf_cal, prior_cal, market, bajas)
     bh, bd, ba = (float(x) for x in blended)
     ch, cd, ca = (float(x) for x in mf_cal)
 
@@ -151,7 +151,7 @@ def main():
     ctx_save["model_final"] = {"p_home": float(ph), "p_draw": float(pdr), "p_away": float(pa)}
     ctx_save["model_rates"] = {"lam": float(lam), "mu": float(mu), "rho": float(model.rho)}
     ctx_save["blend_weight_market"] = blend.W_MARKET if usa_mkt else 0.0
-    ctx_save["override_bajas"] = bool(bajas and usa_mkt)
+    ctx_save["override_bajas"] = bool(override_ap)
     ctx_save["final"] = {"p_home": bh, "p_draw": bd, "p_away": ba, **resumen}
     debate.guardar(resultado, ctx_save, dest)
 
@@ -164,8 +164,12 @@ def main():
     print(f"  Prior modelo:    {ctx['p_home']:.1%} / {ctx['p_draw']:.1%} / {ctx['p_away']:.1%}")
     print(f"  Modelo+debate:   {ch:.1%} / {cd:.1%} / {ca:.1%}")
     if usa_mkt:
-        ov = (f"  ⚑ OVERRIDE bajas (debate pesa {blend.W_DEBATE_OVERRIDE:.0%})"
-              if bajas else "")
+        if override_ap:
+            ov = f"  ⚑ OVERRIDE bajas no precificadas (debate pesa {blend.W_DEBATE_OVERRIDE:.0%})"
+        elif bajas:
+            ov = "  (bajas ya precificadas por el mercado → sin override)"
+        else:
+            ov = ""
         print(f"  Mercado (24c):   {market[0]:.1%} / {market[1]:.1%} / {market[2]:.1%}")
         print(f"  FINAL (mezcla):  {bh:.1%} / {bd:.1%} / {ba:.1%}  "
               f"(peso mercado {blend.W_MARKET:.0%}){ov}")

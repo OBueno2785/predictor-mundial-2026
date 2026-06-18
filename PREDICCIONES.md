@@ -1,6 +1,6 @@
 # Predicciones — Fase de Grupos Mundial 2026
 
-Generado: 2026-06-18 14:54 UTC · Modelo: Dixon-Coles (7937 partidos de entrenamiento, ventaja localía=0.226, rho=-0.0542)
+Generado: 2026-06-18 15:09 UTC · Modelo: Dixon-Coles (7937 partidos de entrenamiento, ventaja localía=0.226, rho=-0.0542)
 
 Probabilidades del prior estadístico calibrado. Los partidos marcados con **✓ panel** muestran la predicción final ajustada por el debate multiagente + cuotas de mercado (job T-60 min antes del kickoff).
 
@@ -118,7 +118,7 @@ Probabilidades del prior estadístico calibrado. Los partidos marcados con **✓
 
 | # | Fecha (UTC) | Partido | 1 | X | 2 | xG | Pred. | Top marcadores | Real | Panel |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 23 | 17-06 17:00 | Portugal vs DR Congo | 76% | 16% | 7% | 2.1-0.5 | 2-0 | 2-0 (16.7%); 1-0 (16.1%); 3-0 (11.2%) | 1-1 | ✓ panel |
+| 23 | 17-06 17:00 | Portugal vs DR Congo | 75% | 17% | 8% | 2.1-0.5 | 2-0 | 2-0 (16.4%); 1-0 (15.8%); 3-0 (11.0%) | 1-1 | ✓ panel |
 | 24 | 18-06 02:00 | Uzbekistan vs Colombia | 10% | 20% | 70% | 0.6-1.8 | 0-1 | 0-1 (17.8%); 0-2 (15.7%); 1-2 (9.7%) | 1-3 | ✓ panel |
 | 47 | 23-06 17:00 | Portugal vs Uzbekistan | 65% | 23% | 11% | 1.8-0.6 | 1-0 | 1-0 (16.1%); 2-0 (15.0%); 1-1 (10.1%) | — | — |
 | 48 | 24-06 02:00 | Colombia vs DR Congo | 59% | 28% | 14% | 1.5-0.6 | 1-0 | 1-0 (18.8%); 2-0 (14.4%); 0-0 (13.6%) | — | — |

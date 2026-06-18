@@ -62,12 +62,13 @@ def reblend(match: int, T: float, w: float) -> str | None:
     o = d.get("odds")
     if o:
         market = np.array([o["p_home"], o["p_draw"], o["p_away"]])
-        fin, _ = blend.blend_final(cal, prior_cal, market, bajas)
+        fin, _, override_ap = blend.blend_final(cal, prior_cal, market, bajas)
         d["blend_weight_market"] = blend.W_MARKET
-        d["override_bajas"] = bool(bajas)
+        d["override_bajas"] = bool(override_ap)
     else:
         fin = cal / cal.sum()
         d["blend_weight_market"] = 0.0
+        override_ap = False
     base = d.get("final") or {}
     base.update({"p_home": float(fin[0]), "p_draw": float(fin[1]), "p_away": float(fin[2])})
     # marcador consistente con la prob final; si no hay ritmos guardados,
@@ -88,7 +89,8 @@ def reblend(match: int, T: float, w: float) -> str | None:
     d["final"] = base
     d["reblend"] = {"T": T, "w_market": blend.W_MARKET, "override_bajas": bool(bajas)}
     f.write_text(json.dumps(d, ensure_ascii=False, indent=1), encoding="utf-8")
-    ov = "  ⚑ override bajas" if bajas else ""
+    ov = "  ⚑ override (baja no precificada)" if override_ap else (
+        "  (baja ya en el mercado)" if bajas else "")
     return (f"  {d['partido']}: final {fin[0]:.1%}/{fin[1]:.1%}/{fin[2]:.1%} "
             f"score {base.get('score_pred','?')}{ov}")
 
