@@ -1,6 +1,6 @@
 {
- "w_market": 0.8,
- "w_optimo_muestra": 0.95,
- "n_partidos": 12,
+ "w_market": 0.95,
+ "w_optimo_muestra": 1.0,
+ "n_partidos": 16,
  "tope_por_corrida": 0.15
 }
