@@ -6,19 +6,19 @@ Clasifican los 2 primeros de cada grupo + los 8 mejores terceros.
 
 | Pos | Equipo | PJ | Pts | GF | GC | DG | Escenario |
 |---|---|---|---|---|---|---|---|
-| 1 | **Mexico** | 1 | 3 | 2 | 0 | +2 | próximo vs South Korea: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
-| 2 | **South Korea** | 1 | 3 | 2 | 1 | +1 | próximo vs Mexico: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
-| 3 | Czech Republic | 1 | 0 | 1 | 2 | -1 | próximo vs South Africa: gana→sigue con opciones; empata→sigue con opciones; pierde→queda fuera del top-2 |
-| 4 | South Africa | 1 | 0 | 0 | 2 | -2 | próximo vs Czech Republic: gana→sigue con opciones; empata→sigue con opciones; pierde→queda fuera del top-2 |
+| 1 | **Mexico** | 2 | 6 | 3 | 0 | +3 | ya clasificado a 32avos (top-2 asegurado) |
+| 2 | **South Korea** | 2 | 3 | 2 | 2 | +0 | próximo vs South Africa: gana→clasifica seguro; empata→sigue con opciones; pierde→queda fuera del top-2 |
+| 3 | Czech Republic | 2 | 1 | 2 | 3 | -1 | sin opción de top-2; solo puede avanzar como mejor tercero (depende de otros grupos) |
+| 4 | South Africa | 2 | 1 | 1 | 3 | -2 | próximo vs South Korea: gana→sigue con opciones; empata→queda fuera del top-2; pierde→queda fuera del top-2 |
 
 ## Group B
 
 | Pos | Equipo | PJ | Pts | GF | GC | DG | Escenario |
 |---|---|---|---|---|---|---|---|
-| 1 | **Bosnia and Herzegovina** | 1 | 1 | 1 | 1 | +0 | próximo vs Switzerland: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
-| 2 | **Canada** | 1 | 1 | 1 | 1 | +0 | próximo vs Qatar: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
-| 3 | Qatar | 1 | 1 | 1 | 1 | +0 | próximo vs Canada: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
-| 4 | Switzerland | 1 | 1 | 1 | 1 | +0 | próximo vs Bosnia and Herzegovina: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
+| 1 | **Canada** | 2 | 4 | 7 | 1 | +6 | próximo vs Switzerland: gana→clasifica seguro; empata→clasifica seguro; pierde→sigue con opciones |
+| 2 | **Switzerland** | 2 | 4 | 5 | 2 | +3 | próximo vs Canada: gana→clasifica seguro; empata→clasifica seguro; pierde→sigue con opciones |
+| 3 | Bosnia and Herzegovina | 2 | 1 | 2 | 5 | -3 | sin opción de top-2; solo puede avanzar como mejor tercero (depende de otros grupos) |
+| 4 | Qatar | 2 | 1 | 1 | 7 | -6 | sin opción de top-2; solo puede avanzar como mejor tercero (depende de otros grupos) |
 
 ## Group C
 
