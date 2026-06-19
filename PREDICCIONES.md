@@ -1,6 +1,6 @@
 # Predicciones — Fase de Grupos Mundial 2026
 
-Generado: 2026-06-19 11:40 UTC · Modelo: Dixon-Coles (7941 partidos de entrenamiento, ventaja localía=0.228, rho=-0.0541)
+Generado: 2026-06-19 12:01 UTC · Modelo: Dixon-Coles (7941 partidos de entrenamiento, ventaja localía=0.228, rho=-0.0541)
 
 Probabilidades del prior estadístico calibrado. Los partidos marcados con **✓ panel** muestran la predicción final ajustada por el debate multiagente + cuotas de mercado (job T-60 min antes del kickoff).
 
@@ -32,8 +32,8 @@ Probabilidades del prior estadístico calibrado. Los partidos marcados con **✓
 |---|---|---|---|---|---|---|---|---|---|---|
 | 5 | 14-06 01:00 | Haiti vs Scotland | 9% | 17% | 74% | 0.7-2.2 | 0-2 | 0-2 (12.5%); 0-1 (10.1%); 0-3 (10.0%) | 0-1 | ✓ panel |
 | 7 | 13-06 22:00 | Brazil vs Morocco | 41% | 34% | 25% | 1.0-0.8 | 0-0 | 0-0 (17.4%); 1-0 (15.5%); 1-1 (14.0%) | 1-1 | ✓ panel |
-| 29 | 20-06 01:00 | Brazil vs Haiti | 90% | 8% | 2% | 3.5-0.5 | 3-0 | 3-0 (13.1%); 4-0 (11.5%); 2-0 (11.2%) | — | — |
-| 30 | 19-06 22:00 | Scotland vs Morocco | 19% | 33% | 48% | 0.6-1.2 | 0-1 | 0-1 (19.1%); 0-0 (17.5%); 1-1 (12.7%) | — | — |
+| 29 | 20-06 01:00 | Brazil vs Haiti | 90% | 7% | 2% | 3.9-0.6 | 3-0 | 3-0 (10.9%); 4-0 (10.8%); 5-0 (8.6%) | — | ✓ panel |
+| 30 | 19-06 22:00 | Scotland vs Morocco | 20% | 33% | 47% | 0.7-1.2 | 0-1 | 0-1 (15.9%); 0-0 (15.6%); 1-1 (14.3%) | — | ✓ panel |
 | 49 | 24-06 22:00 | Scotland vs Brazil | 16% | 24% | 60% | 0.8-1.8 | 0-1 | 0-1 (13.4%); 0-2 (12.4%); 1-1 (11.3%) | — | — |
 | 50 | 24-06 22:00 | Morocco vs Haiti | 80% | 15% | 5% | 2.3-0.4 | 2-0 | 2-0 (17.9%); 1-0 (15.0%); 3-0 (13.8%) | — | — |
 
@@ -43,8 +43,8 @@ Probabilidades del prior estadístico calibrado. Los partidos marcados con **✓
 |---|---|---|---|---|---|---|---|---|---|---|
 | 4 | 13-06 01:00 | United States vs Paraguay | 35% | 32% | 34% | 1.3-1.1 | 1-1 | 1-1 (14.2%); 0-0 (13.4%); 1-0 (12.6%) | 4-1 | ✓ panel |
 | 6 | 14-06 04:00 | Australia vs Turkey | 38% | 30% | 32% | 1.2-1.1 | 1-1 | 1-1 (13.9%); 1-0 (11.4%); 0-0 (10.6%) | 2-0 | — |
-| 31 | 20-06 04:00 | Turkey vs Paraguay | 40% | 30% | 31% | 1.2-1.1 | 1-1 | 1-1 (13.9%); 1-0 (11.7%); 0-0 (10.6%) | — | — |
-| 32 | 19-06 19:00 | United States vs Australia | 32% | 29% | 39% | 1.1-1.2 | 1-1 | 1-1 (13.8%); 0-1 (11.1%); 0-0 (10.1%) | — | — |
+| 31 | 20-06 04:00 | Turkey vs Paraguay | 40% | 30% | 31% | 1.4-1.2 | 1-1 | 1-1 (14.1%); 1-0 (9.3%); 0-0 (8.6%) | — | ✓ panel |
+| 32 | 19-06 19:00 | United States vs Australia | 30% | 30% | 40% | 1.2-1.4 | 1-1 | 1-1 (14.2%); 0-1 (9.4%); 0-0 (8.7%) | — | ✓ panel |
 | 59 | 26-06 02:00 | Turkey vs United States | 38% | 25% | 37% | 1.6-1.6 | 1-1 | 1-1 (11.3%); 2-1 (8.4%); 1-2 (8.4%) | — | — |
 | 60 | 26-06 02:00 | Paraguay vs Australia | 26% | 34% | 39% | 0.8-1.0 | 0-0 | 0-0 (18.0%); 0-1 (16.6%); 1-1 (13.8%) | — | — |
 
