@@ -1,0 +1,61 @@
+{
+ "partido": "Brazil vs Haiti",
+ "fecha": "2026-06-20 01:00:00+00:00",
+ "prior": {
+  "xg_home": 3.51119988843301,
+  "xg_away": 0.4947261470320887,
+  "p_home": 0.9077458245218835,
+  "p_draw": 0.07002763467651837,
+  "p_away": 0.02222654080159831
+ },
+ "odds": {
+  "p_home": 0.8680840511344268,
+  "p_draw": 0.08732799533003224,
+  "p_away": 0.04458795353554101,
+  "n_bookies": 24
+ },
+ "model_final": {
+  "p_home": 0.8979692000650106,
+  "p_draw": 0.07715228097331521,
+  "p_away": 0.024878518961674173
+ },
+ "blend_weight_market": 0.95,
+ "final": {
+  "p_home": 0.8690138536194043,
+  "p_draw": 0.08719457312414973,
+  "p_away": 0.04379157325644606,
+  "score_pred": "3-0",
+  "top_scores": "3-0 (11.2%); 4-0 (10.6%); 2-0 (8.9%)",
+  "xg_home": 3.62,
+  "xg_away": 0.61,
+  "p_home_by2": 0.7537,
+  "p_away_by2": 0.0094
+ },
+ "veredicto": {
+  "delta_log_xg_home": -0.04,
+  "delta_log_xg_away": 0.0,
+  "confianza": "media",
+  "bajas_confirmadas": false,
+  "factores": [
+   "Rotación confirmada por Ancelotti tras el 1-1 con Marruecos: Casemiro→Fabinho y cambios en ataque (Cunha/Thiago), XI efectivo distinto del histórico que usó el modelo — reduce marginalmente el ritmo ofensivo de Brasil",
+   "Baja muscular confirmada de Leverton Pierre (Haití), pero no es organizador principal: efecto leve, no justifica ajuste sobre xG visitante ya muy bajo"
+  ],
+  "resumen": "Sin lesiones sorpresa ni conflictos internos en ninguno de los dos. La única señal genuinamente nueva es la rotación confirmada de Brasil (Casemiro fuera, gestión de partido con clasificación encarrilada), que recorta levemente el extremo alto del xG local (3.51) sin alterar el 3-0 modal. Aplico -0.04 a Brasil por esa rotación. La presión mediática (Sentimiento) y la desesperación de Haití son factores blandos/contrapuestos que ya están en el prior o se cancelan; no ajusto la visita. No marco bajas_confirmadas porque el ajuste responde a una decisión táctica del DT, no a la baja de un titular clave."
+ },
+ "delta_aplicado": {
+  "home": -0.04,
+  "away": 0.0
+ },
+ "rondas": {
+  "ronda1": {
+   "Estadístico": "## Agente Estadístico — Brazil vs Haiti\n\n**Divergencia mercado-modelo**\n\nEl gap más llamativo: el mercado da a Haiti un 4.5% de victoria vs el 2.2% del modelo — prácticamente el doble. Antes de aceptar esa señal, conviene diseccionarla.\n\n**¿Qué podría estar precificando el mercado que el modelo no ve?**\n\n1. **Rotaciones de Brazil** — con clasificación casi garantizada, Brazil podría reservar titulares. Pero no hay confirmación de alineación, y el modelo ya trabaja con ratings de equipo, no de 11 específicos.\n2. **El 1-1 vs Marruecos** — resultado reciente que aparece en la forma. Ya está en los datos. No es información nueva.\n3. **Haiti 4-0 vs Nueva Zelanda** — el único resultado positivo reciente, contra la selección más débil del grupo. No es evidencia de capacidad ofensiva ante Brazil.\n\n**Lo que dicen los números sin narrativa**\n\n- Ratio xG 7.2:1 a favor de Brazil. No es un modelo que favorezca ligeramente — es dominancia estructural.\n- Haiti promedia 1.2 GF/partido, mayoritariamente vs rivales de nivel CONCACAF bajo o CAF medio.\n- Perder 0-1 vs Escocia y 1-2 vs Perú en partidos previos al Mundial no sugiere evolución positiva.\n- Brazil, incluso con el empate vs Marruecos, promedia 2.6 GF en sus últimos 5 contra rivales de calibre muy superior a Haiti.\n\n**Incentivos de grupo**\n\nHaiti necesita ganar para sobrevivir. Eso puede generar intensidad inicial, pero históricamente los equipos en modo \"todo o nada\" frente a rivales con xG 7x superior no mejoran resultados — los datos de este tipo de asimetría son consistentes en no mostrar efecto \"motivación\" estadísticamente significativo.\n\n**Veredicto**\n\nSin señal nueva cuantificable. La divergencia mercado-modelo en la victoria de Haiti (4.5% vs 2.2%) probablemente refleja narrativa de rotaciones no confirmadas y el sesgo de apostadores hacia el underdog en partidos con eliminación en juego. Nada de eso tiene sustento en los datos disponibles.\n\n---\n\n**POSICION: mantener prior — magnitud nula**",
+   "Plantel/Noticias": "Tengo suficiente material. Aquí mi análisis:\n\n---\n\n## Agente de Plantel y Noticias — Brazil vs Haiti (20 jun 2026)\n\n### Brasil\n\n**Bajas confirmadas de torneo:**\n- **Rodrygo** (Real Madrid, extremo): descartado por lesión antes del torneo\n- **Éder Militão** (defensa central): fuera del torneo\n- **Estêvão** (extremo/10): fuera del torneo\n\nEstas tres bajas son pre-torneo y ya quedaron reflejadas en el rendimiento contra Marruecos (1-1). El modelo las absorbe implícitamente en la forma reciente. **No son señal nueva.**\n\n**Neymar:** seguía siendo duda por su problema de gemelo (baja el 17 de mayo, hasta 3 semanas según el médico). No jugó contra Marruecos. Su ausencia ya está incorporada al prior.\n\n**Rotaciones confirmadas por Ancelotti (señal nueva):**\n- Casemiro fue retirado al descanso contra Marruecos y **no será titular** — entra Fabinho\n- Danilo entra en lateral derecho\n- Matheus Cunha puede entrar en el XI en lugar de algún atacante del primer partido\n- XI probable: Alisson; Danilo, Marquinhos, Gabriel, Douglas Santos; Fabinho, Bruno Guimarães; Raphinha, Vinícius Jr., Cunha/Thiago, Luiz Henrique\n\nFuente: [OneFootball / Yahoo Sports — Ancelotti confirms changes](https://sports.yahoo.com/articles/ancelotti-confirms-brazil-line-changes-114500975.html)\n\nEsta rotación **es información que el modelo no tiene**: el XI efectivo es distinto del XI de referencia histórico que usó el modelo para calcular xG.\n\n### Haití\n\n**Baja confirmada:**\n- **Leverton Pierre** (mediocampista): descartado del torneo por problema muscular\n\nPara un equipo con tan poco talento, la baja de un titular de mediocampo es relativamente significativa, pero Pierre no era el organizador principal. **Señal leve negativa para Haití.**\n\nXI probable Haiti: Placide; Arcus, Delcroix, Ade, Experience; Bellegarde, Jean; Deedson, Casimir, Providence; Isidor. Sin otros problemas físicos reportados.\n\nFuente: [Sports Mole — Team News](https://www.sportsmole.co.uk/football/brazil/world-cup-2026/team-news/brazil-vs-haiti-injury-suspension-list-predicted-xis_599464.html)\n\n### Conflictos internos / fatiga\n\nSin señal en ninguno de los dos equipos. Haití viene del mismo ciclo de partidos (jornada 1 el 13-14 de junio → jornada 2 el 19-20), días de descanso simétricos (~6 días). Sin nota sobre problemas de vestuario en ninguno de los dos bandos.\n\n### Incentivos de grupo\n\n| Equipo | Situación | Incentivo real |\n|---|---|---|\n| Brasil | 3.º con 1 pt | Ganar los pone 2.º o 1.º; no tiene urgencia existencial |\n| Haití | 4.º con 0 pts | **Perder = casi eliminado**; necesitan resultado |\n\nBrasil puede gestionar el partido con cierta comodidad, lo que abre riesgo de intensidad reducida o rotaciones a mitad de partido si la ventaja es cómoda. Haití, desesperado, puede salir con más audacia ofensiva → el partido podría abrirse más de lo que sugiere el xG de 0.49 de Haití, pero también los expone a más contraataques de Brasil.\n\n### Delta modelo vs mercado\n\nEl mercado da a Haití 4.5% (vs 2.2% del modelo) y al empate 8.7% (vs 7.0%). **El mercado está comprando ~4pp adicionales de incertidumbre sobre Brasil**, lo que es consistente con las rotaciones confirmadas por Ancelotti. El mercado parece estar ya procesando esta información.\n\n### Síntesis\n\nLa única señal genuinamente nueva (posterior al momento en que el modelo fijó el prior) es la **confirmación explícita de rotaciones por Ancelotti**: Casemiro → Fabinho, posibles cambios en ataque. Esto reduce marginalmente la capacidad ofensiva de Brasil, aunque contra Haití la diferencia de clase es tan enorme que el efecto sobre el marcador final es limitado. No hay señal de lesión inesperada grave ni conflicto interno en ninguno de los dos equipos.\n\n---\n\n**POSICION: mantener prior — magnitud leve** *(con sesgo de menos goles: la rotación confirmada de Brasil y la posible gestión de partido con ventaja apuntan a que el extremo alto del xG [3.51] sea menos probable de materializar; el 3-0 modal parece correcto pero el 4-0 y marcadores aún más abultados están ligeramente inflados)*\n\n---\n\nSources:\n- [Ancelotti confirms Brazil line-up changes — Yahoo Sports](https://sports.yahoo.com/articles/ancelotti-confirms-brazil-line-changes-114500975.html)\n- [Brazil vs Haiti Team News — Sports Mole](https://www.sportsmole.co.uk/football/brazil/world-cup-2026/team-news/brazil-vs-haiti-injury-suspension-list-predicted-xis_599464.html)\n- [Brazil vs Haiti Preview — Sports Mole](https://www.sportsmole.co.uk/football/brazil/world-cup-2026/preview/brazil-vs-haiti-prediction-team-news-lineups_599463.html)\n- [2026 World Cup Injuries Tracker — ESPN](https://www.espn.com/soccer/story/_/id/48572979/2026-fifa-world-cup-injuries-tracker-which-stars-miss-latest-info)\n- [Brazil vs Haiti Preview — Goal.com](https://www.goal.com/en/news/brazil-haiti-world-cup-preview/blte15b62338e20169d)",
+   "Sentimiento": "---\n\n## Análisis de Sentimiento — Brazil vs Haiti\n\n### Brasil: presión mediática real y verificable\n\nEl empate 1-1 con Marruecos disparó una reacción en cadena en la prensa brasileña que múltiples fuentes describen como \"sirenas de emergencia nacional\". Titulares como **\"Brazilian media turn up heat on Ancelotti after flat Morocco opener\"** (bdnews24) y **\"Just one World Cup game in, Brazil and Ancelotti are already under fire\"** (NBC News) muestran un clima de exigencia inusualmente alto para ser solo el partido 1. Ancelotti admitió públicamente que el equipo lució nervioso y que la estructura defensiva falla en transición. La narrativa dominante: *Brasil tiene que demostrar algo ante Haití, no solo ganar.*\n\nSeñal adicional: **Neymar no viajará a Filadelfia** — permanece en Nueva Jersey en recuperación. Fue noticia, pero no se percibe como desestabilizador; era esperado y el plantel lo asumió bien.\n\n### Haití: comunidad movilizada, equipo consciente de su techo\n\nLa derrota 1-0 ante Escocia fue descrita como una \"lucha valiente\" por la prensa y la comunidad haitiana. Fans en Boston y alrededor de Foxborough vivieron el partido con intensidad emotiva enorme — el primer Mundial desde 1974 para el país. Esa energía comunitaria es real, pero no hay señal de que el plantel esté en un estado anímico especialmente elevado; al contrario, saben que necesitan un resultado histórico para clasificar.\n\n### Síntesis de sentimiento\n\n| Dimensión | Señal |\n|---|---|\n| Presión sobre Brasil | Alta, verificable en múltiples medios internacionales |\n| Respuesta esperada de Brasil | Necesitan ganar con margen para callar críticas |\n| Moral de Haití | Neutra-baja; \"nada que perder\" pero sin momentum |\n| Neymar ausente | Neutro (esperado, no desestabilizador) |\n\nLa señal más relevante es la presión mediática sobre Brasil para una respuesta contundente. Esto sugiere un plantel motivado para ir más allá del mínimo necesario — lo que mildemente apunta a más goles totales del lado local. Sin embargo, el prior ya contempla 3.51 xG para Brasil, por lo que el margen de ajuste es estrecho.\n\n**POSICION: más goles — magnitud leve**\n\n---\n\nSources:\n- [Brazilian media turn up heat on Ancelotti after flat Morocco opener](https://bdnews24.com/sport/world-cup-2026/b86e81a59f83)\n- [Just one World Cup game in, Brazil and Ancelotti are already under fire](https://www.nbcnews.com/sports/soccer/brazil-ancelotti-under-fire-world-cup-rcna349976)\n- [Ancelotti admits Brazil struggled against Morocco](https://en.africatopsports.com/2026-fifa-world-cup-ancelotti-admits-brazil-struggled-against-morocco/)\n- [World Cup: Neymar injury gamble looms large — Brazil face Haiti](https://www.cbssports.com/soccer/news/world-cup-neymar-carlo-ancelotti-brazil-haiti/)\n- [Fans of Haiti and Scotland celebrate underdog teams — WBUR](https://www.wbur.org/news/2026/06/15/boston-world-cup-scotland-haiti-fans-reactions)\n- [Brazil must prove more than their Morocco draw — Sports Mole](https://www.sportsmole.co.uk/football/world-cup-2026/news/world-cup-2026-brazil-must-prove-they-are-more-than-their-morocco-draw-as-ancelotti-eyes-crucial-haiti-test_599561.html)"
+  }
+ },
+ "usage": {
+  "llamadas": 4,
+  "duracion_ms": 311389,
+  "turnos": 17
+ }
+}
