@@ -24,19 +24,19 @@ Clasifican los 2 primeros de cada grupo + los 8 mejores terceros.
 
 | Pos | Equipo | PJ | Pts | GF | GC | DG | Escenario |
 |---|---|---|---|---|---|---|---|
-| 1 | **Scotland** | 1 | 3 | 1 | 0 | +1 | próximo vs Morocco: gana→clasifica seguro; empata→sigue con opciones; pierde→sigue con opciones |
-| 2 | **Brazil** | 1 | 1 | 1 | 1 | +0 | próximo vs Haiti: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
-| 3 | Morocco | 1 | 1 | 1 | 1 | +0 | próximo vs Scotland: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
-| 4 | Haiti | 1 | 0 | 0 | 1 | -1 | próximo vs Brazil: gana→sigue con opciones; empata→sigue con opciones; pierde→queda fuera del top-2 |
+| 1 | **Brazil** | 2 | 4 | 4 | 1 | +3 | próximo vs Scotland: gana→clasifica seguro; empata→clasifica seguro; pierde→queda fuera del top-2 |
+| 2 | **Morocco** | 2 | 4 | 2 | 1 | +1 | próximo vs Haiti: gana→clasifica seguro; empata→clasifica seguro; pierde→sigue con opciones |
+| 3 | Scotland | 2 | 3 | 1 | 1 | +0 | próximo vs Brazil: gana→clasifica seguro; empata→queda fuera del top-2; pierde→queda fuera del top-2 |
+| 4 | Haiti | 2 | 0 | 0 | 4 | -4 | sin opción de top-2; solo puede avanzar como mejor tercero (depende de otros grupos) |
 
 ## Group D
 
 | Pos | Equipo | PJ | Pts | GF | GC | DG | Escenario |
 |---|---|---|---|---|---|---|---|
-| 1 | **United States** | 1 | 3 | 4 | 1 | +3 | próximo vs Australia: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
-| 2 | **Australia** | 1 | 3 | 2 | 0 | +2 | próximo vs United States: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
-| 3 | Turkey | 1 | 0 | 0 | 2 | -2 | próximo vs Paraguay: gana→sigue con opciones; empata→sigue con opciones; pierde→queda fuera del top-2 |
-| 4 | Paraguay | 1 | 0 | 1 | 4 | -3 | próximo vs Turkey: gana→sigue con opciones; empata→sigue con opciones; pierde→queda fuera del top-2 |
+| 1 | **United States** | 2 | 6 | 6 | 1 | +5 | ya clasificado a 32avos (top-2 asegurado) |
+| 2 | **Australia** | 2 | 3 | 2 | 2 | +0 | próximo vs Paraguay: gana→clasifica seguro; empata→queda fuera del top-2; pierde→queda fuera del top-2 |
+| 3 | Paraguay | 2 | 3 | 2 | 4 | -2 | próximo vs Australia: gana→clasifica seguro; empata→queda fuera del top-2; pierde→queda fuera del top-2 |
+| 4 | Turkey | 2 | 0 | 0 | 3 | -3 | sin opción de top-2; solo puede avanzar como mejor tercero (depende de otros grupos) |
 
 ## Group E
 
