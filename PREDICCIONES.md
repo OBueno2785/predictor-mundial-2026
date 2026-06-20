@@ -1,6 +1,6 @@
 # Predicciones — Fase de Grupos Mundial 2026
 
-Generado: 2026-06-20 19:08 UTC · Modelo: Dixon-Coles (7945 partidos de entrenamiento, ventaja localía=0.229, rho=-0.0525)
+Generado: 2026-06-20 19:21 UTC · Modelo: Dixon-Coles (7945 partidos de entrenamiento, ventaja localía=0.229, rho=-0.0525)
 
 Probabilidades del prior estadístico calibrado. Los partidos marcados con **✓ panel** muestran la predicción final ajustada por el debate multiagente + cuotas de mercado (job T-60 min antes del kickoff).
 
@@ -54,8 +54,8 @@ Probabilidades del prior estadístico calibrado. Los partidos marcados con **✓
 |---|---|---|---|---|---|---|---|---|---|---|
 | 9 | 14-06 23:00 | Ivory Coast vs Ecuador | 20% | 40% | 40% | 0.5-0.8 | 0-0 | 0-0 (27.3%); 0-1 (21.4%); 1-0 (12.7%) | 1-0 | — |
 | 10 | 14-06 17:00 | Germany vs Curaçao | 95% | 4% | 1% | 4.4-0.5 | 4-0 | 4-0 (12.0%); 3-0 (10.9%); 5-0 (10.6%) | 7-1 | — |
-| 33 | 20-06 20:00 | Germany vs Ivory Coast | 57% | 26% | 18% | 1.7-0.8 | 1-0 | 1-0 (13.7%); 1-1 (11.9%); 2-0 (11.8%) | — | — |
-| 34 | 21-06 00:00 | Ecuador vs Curaçao | 81% | 16% | 4% | 2.2-0.3 | 2-0 | 2-0 (20.0%); 1-0 (17.9%); 3-0 (14.6%) | — | — |
+| 33 | 20-06 20:00 | Germany vs Ivory Coast | 58% | 26% | 17% | 1.8-0.9 | 1-1 | 1-1 (12.2%); 1-0 (11.6%); 2-0 (11.1%) | — | ✓ panel |
+| 34 | 21-06 00:00 | Ecuador vs Curaçao | 81% | 16% | 4% | 2.4-0.3 | 2-0 | 2-0 (18.2%); 1-0 (14.7%); 3-0 (14.7%) | — | ✓ panel |
 | 55 | 25-06 20:00 | Curaçao vs Ivory Coast | 7% | 19% | 74% | 0.5-2.0 | 0-2 | 0-2 (17.1%); 0-1 (16.3%); 0-3 (11.7%) | — | — |
 | 56 | 25-06 20:00 | Ecuador vs Germany | 28% | 33% | 39% | 0.8-1.1 | 0-0 | 0-0 (15.3%); 0-1 (14.9%); 1-1 (14.0%) | — | — |
 
@@ -65,8 +65,8 @@ Probabilidades del prior estadístico calibrado. Los partidos marcados con **✓
 |---|---|---|---|---|---|---|---|---|---|---|
 | 11 | 14-06 20:00 | Netherlands vs Japan | 41% | 28% | 31% | 1.4-1.1 | 1-1 | 1-1 (13.4%); 1-0 (10.4%); 0-0 (8.8%) | 2-2 | — |
 | 12 | 15-06 02:00 | Sweden vs Tunisia | 49% | 28% | 23% | 1.6-1.0 | 1-1 | 1-1 (13.2%); 1-0 (13.1%); 0-0 (10.2%) | 5-1 | ✓ panel |
-| 35 | 20-06 17:00 | Netherlands vs Sweden | 58% | 22% | 20% | 2.2-1.2 | 2-1 | 2-1 (9.7%); 1-1 (9.5%); 2-0 (8.1%) | — | — |
-| 36 | 21-06 04:00 | Tunisia vs Japan | 15% | 27% | 57% | 0.6-1.5 | 0-1 | 0-1 (17.1%); 0-2 (13.3%); 0-0 (12.4%) | — | — |
+| 35 | 20-06 17:00 | Netherlands vs Sweden | 55% | 22% | 22% | 2.3-1.4 | 1-1 | 1-1 (9.1%); 2-1 (8.8%); 2-2 (6.9%) | — | ✓ panel |
+| 36 | 21-06 04:00 | Tunisia vs Japan | 16% | 29% | 56% | 0.7-1.5 | 0-1 | 0-1 (15.5%); 1-1 (12.8%); 0-2 (12.5%) | — | ✓ panel |
 | 57 | 25-06 23:00 | Japan vs Sweden | 49% | 26% | 25% | 1.7-1.1 | 1-1 | 1-1 (12.2%); 1-0 (9.9%); 2-1 (9.6%) | — | — |
 | 58 | 25-06 23:00 | Tunisia vs Netherlands | 12% | 22% | 66% | 0.7-1.9 | 0-2 | 0-2 (13.5%); 0-1 (13.4%); 1-1 (10.1%) | — | — |
 
