@@ -1,0 +1,53 @@
+{
+ "partido": "New Zealand vs Egypt",
+ "fecha": "2026-06-22 01:00:00+00:00",
+ "prior": {
+  "xg_home": 0.5478204582890313,
+  "xg_away": 1.1564976898002,
+  "p_home": 0.16891772685836667,
+  "p_draw": 0.32879566510890285,
+  "p_away": 0.5022866080327307
+ },
+ "odds": null,
+ "model_final": {
+  "p_home": 0.16891772685836667,
+  "p_draw": 0.32879566510890285,
+  "p_away": 0.5022866080327307
+ },
+ "blend_weight_market": 0.0,
+ "final": {
+  "p_home": 0.17177235557172651,
+  "p_draw": 0.3295071496382571,
+  "p_away": 0.49872049479001634,
+  "score_pred": "0-1",
+  "top_scores": "0-1 (17.8%); 0-0 (16.8%); 1-1 (13.4%)",
+  "xg_home": 0.62,
+  "xg_away": 1.25,
+  "p_home_by2": 0.0444,
+  "p_away_by2": 0.239
+ },
+ "veredicto": {
+  "delta_log_xg_home": 0.0,
+  "delta_log_xg_away": 0.0,
+  "confianza": "alta",
+  "bajas_confirmadas": false,
+  "factores": [],
+  "resumen": "El prior Dixon-Coles está bien anclado y es coherente con la forma reciente (Egypt 0.6 GC/p y puntos ante Brasil/Bélgica/España vs NZ 2.0 GC/p). No hay información concreta y reciente que el modelo no vea: la baja de Garbett (NZ) es previa al torneo y ya está en la forma; Salah y Marmoush titulares y en ritmo es el escenario base, no sorpresa. La 'desmentida del conflicto Salah' es un rumor de profundidad desconocida —el técnico la niega— y no califica como conflicto interno documentado. Los argumentos de moral, presión histórica y 'partido abierto' son blandos y no cuantificables. Sin señal nueva: delta 0."
+ },
+ "delta_aplicado": {
+  "home": 0.0,
+  "away": 0.0
+ },
+ "rondas": {
+  "ronda1": {
+   "Estadístico": "## Análisis Estadístico — New Zealand vs Egypt\n\n### Defensa del prior\n\nEl modelo produce xG 0.55–1.16 con Egypt al 50.2%. Antes de buscar ajustes, verifiquemos si los datos de forma reciente validan o contradicen esa distribución.\n\n**Métricas clave que el modelo ya captura:**\n\n| Indicador | New Zealand | Egypt |\n|---|---|---|\n| Pts/partido (últ. 5) | 0.80 | 1.60 |\n| GF/partido | 1.2 | 1.4 |\n| GC/partido | 2.0 | 0.6 |\n| Balance goles | −0.8 | +0.8 |\n\nLa asimetría defensiva es pronunciada y coherente con el xG del modelo. Egypt concede 0.6 GC/partido —incluyendo cero contra España y Brasil (que anotó solo en 90'+ mínutos)— mientras Nueva Zelanda cede 2.0 GC/partido. Eso solo ya justifica la brecha de xG.\n\n**Calidad de rivales como calibrador:**\n\nEgypt sumó puntos o empató contra Brasil, Bélgica y España. Esos rivales tienen capacidad ofensiva real; contenerlos con 0.6 GC/partido es señal estadística, no ruido. Nueva Zelanda ganó 4–1 a Chile (amistoso) pero perdió 0–4 contra Haití, lo que sugiere alta varianza y escasa consistencia defensiva.\n\n**El empate 2–2 de NZL vs Irán:**\n\nSuperficialmente parece señal positiva para Nueva Zelanda, pero Irán no es referencia de calibración alta. No actualizaría el prior material en base a ese resultado.\n\n### Señales que el modelo *podría* no ver completamente\n\n- **Contexto del estadio/clima:** BC Place es cubierto (techo retráctil), elimina factores meteorológicos. Sin señal diferencial.\n- **Incentivos de grupo:** Ambos tienen opciones vivas sea cual sea el resultado. Situación simétrica → sin distorsión táctica detectable.\n- **Rotaciones/lesiones:** Sin información disponible en este prompt. Es la única variable potencialmente no capturada, y requeriría dato concreto para ajustar.\n\n### Posición\n\nEl prior está bien anclado en la evidencia cuantitativa. La forma reciente de ambas selecciones es consistente con las probabilidades del modelo —no la contradice. Los ajustes narrativos (\"NZL empató con Irán, puede sorprender\") no tienen soporte cuantificable frente a una diferencia de 1.4 GC/partido entre ambas defensas.\n\n**Sin señal nueva que justifique mover el prior.**\n\n`POSICION: mantener prior — magnitud nula`",
+   "Plantel/Noticias": "---\n\n## Análisis de Plantel y Noticias — Nueva Zelanda vs Egipto (22 Jun, 01:00 UTC)\n\n### 1. Lesiones y Suspensiones\n\n**Nueva Zelanda**\n- **Matt Garbett (centrocampista):** Baja por rotura de isquiotibiales confirmada antes del torneo. Reemplazado por Logan Rogerson en la convocatoria. Impacto: moderado — era titular en el mediocampo organizador.\n- Sin nuevos problemas físicos tras el 2-2 vs Irán.\n- Sin suspendidos.\n\n**Egipto**\n- Plantel completo disponible. Sin lesiones ni suspensiones reportadas.\n- **Mohamed Salah (34 años):** Fue descansado preventivamente en el amistoso vs Rusia, pero jugó titular vs Bélgica (15 jun) y asistió el gol del empate en el minuto 79. En ritmo competitivo, sin problemas físicos. *(Fuente: World Soccer Talk / Al Jazeera)*\n\n### 2. Alineaciones Probables\n\n**NZ (4-2-3-1):** Crocombe – Payne, Surman, Boxall, Cacace – Bell, Stamenic – McCowatt, Singh, Just – Wood\n*(Fuente: Sports Mole / RotoWire)*\n\n**Egipto (4-2-3-1):** Shobeir – Hany, Ibrahim, Fathi, Abou El Fotouh – Ateya, Lasheen – Ziko, Salah, Ashour – Marmoush\n*(Fuente: Sports Mole)*\n\nLa dupla Salah–Marmoush (Liverpool + Manchester City) es la pareja atacante de mayor nivel individual en el partido. Sin señal de rotación para Egipto.\n\n### 3. Conflictos Internos\n\nSin información de disputas en vestuario, problemas con federación ni primas impagas en ninguno de los dos equipos en los últimos 7 días. **Sin señal nueva.**\n\n### 4. Fatiga y Descanso\n\n- Nueva Zelanda jugó el 16 de junio → 6 días de descanso hasta el 22 jun.\n- Egipto jugó el 15 de junio → 7 días de descanso hasta el 22 jun.\n- Ambos equipos llegaron en avión a Vancouver desde sus respectivas sedes; sin viajes excesivamente desgastantes reportados.\n- Ventaja marginal de descanso (+1 día) para Egipto.\n\n### 5. Incentivos de Grupo\n\nSituación idéntica para los cuatro equipos del Grupo G: todos con 1 punto tras la jornada 1 (Bélgica 1-1 Egipto; Irán 2-2 NZ). **Ambos equipos tienen urgencia real de ganar** — no hay ninguno \"ya clasificado\" que pueda rotar o bajar la intensidad. Esto sugiere partido abierto, con los dos equipos arriesgando.\n\nFactor emocional adicional para Egipto: Salah, con 34 años, ha declarado que este es su último Mundial. Motivación individual extraordinariamente alta en el capitán y líder técnico.\n\n### 6. Síntesis de Señales\n\n| Factor | Dirección | Magnitud |\n|---|---|---|\n| Salah fit + en ritmo (asistencia vs Bélgica) | Egipto | Moderada |\n| Marmoush disponible (dupla de élite) | Egipto | Leve |\n| Garbett baja para NZ (mediocampista organizador) | Egipto | Leve |\n| NZ mostró fragilidad defensiva vs Irán (cedió 2 en 2ª parte) | Más goles / Egipto | Leve |\n| Ambos equipos con necesidad de ganar → partido abierto | Más goles | Leve |\n| Sin conflictos, fatiga diferencial ni rotaciones | Neutro | Nula |\n\nEl prior del modelo (Egipto favorito ~50%) capta bien la diferencia de nivel. Las noticias refuerzan marginalmente a Egipto por disponibilidad de plantel y estado de Salah, y sugieren ligeramente un partido con más goles de lo que indican los xG base (0.55 vs 1.16 = 1.71 totales esperados), dado que ambos equipos mostraron vulnerabilidades defensivas en jornada 1 y los dos tienen obligación de atacar.\n\n---\n\n**POSICION: favorecer visita — magnitud leve** *(con señal secundaria de más goles — magnitud leve)*",
+   "Sentimiento": "---\n\n## Análisis de Sentimiento — Nueva Zelanda vs Egipto | 22 Jun 2026\n\n### Nueva Zelanda (\"All Whites\")\n\n**Señales positivas:**\n- El entrenador Darren Bazeley describió el empate 2-2 contra Irán como posiblemente su \"mejor actuación de todos los tiempos\" y usó la palabra \"telepatía\" para describir la cohesión del grupo. Tono inusualmente eufórico para un técnico neozelandés.\n- El capitán Chris Wood, en declaración pública post-Haití, fue brutalmente autocrítico (\"ellos jugaron un partido del Mundial, nosotros un amistoso\") — señal de madurez y honestidad grupal, no de crisis interna.\n- El empate contra Irán funcionó como catalizador de autoestima; el vestuario parece genuinamente convencido de que pertenece al torneo.\n\n**Señales negativas:**\n- La derrota 0-4 ante Haití expuso vulnerabilidades defensivas estructurales que el discurso positivo post-Irán puede estar tapando.\n- Sin historia ganadora en Mundiales; sin expectativa mediática real de clasificar → presión baja, lo que puede ser neutral o ligeramente positivo para la mentalidad.\n\n---\n\n### Egipto (\"Los Faraones\")\n\n**Señal más relevante — VERIFICABLE:**\n> Al Jazeera (21 jun 2026): *\"Egypt coach denies Salah rift before World Cup match against New Zealand\"*\n\nCuando un entrenador debe **negar públicamente** una fricción el día previo al partido, eso es, en sí mismo, ruido en el vestuario. No se sabe la profundidad del conflicto, pero la necesidad de la desmentida es un marcador clásico de tensión interna. Esta señal es la más concreta y verificable que encuentro.\n\n**Señales de presión institucional:**\n- 0 victorias en 7 partidos mundialistas históricos. El NZ Herald lo titula directamente: *\"Weight of a nation\"* — 120 millones de egipcios con expectativas.\n- El propio entrenador Hossam Hassan declaró que el objetivo es \"la primera victoria mundialista de Egipto\", cargando aún más el partido simbólicamente.\n- Egipto figura actualmente 4º en el grupo; la narrativa mediática local lo enmarca como partido \"de vida o muerte\".\n\n**Señales positivas:**\n- Salah rompió récord de 60 años en el debut vs Bélgica; el entorno del jugador aparece como positivo públicamente.\n- Hassan niega disensiones y enfatiza unidad — aunque la necesidad de negarlo siempre resta.\n\n---\n\n### Síntesis\n\nEl único dato genuinamente nuevo que el modelo Dixon-Coles no puede ver es la **desmentida pública de un conflicto Salah-cuerpo técnico**, confirmada por Al Jazeera en vísperas del partido. Esta fricción, aunque de profundidad desconocida, combinada con el peso histórico y la presión institucional extrema sobre Egipto, representa una señal blanda negativa para los faraones. En contraste, Nueva Zelanda llega con moral sorprendentemente alta tras el empate contra Irán y un vestuario que parece cohesionado y sin ruido externo.\n\nEl delta es pequeño — el modelo ya tiene a Egipto como favorito por calidad real — pero el sentimiento marginal apunta levemente hacia el lado neozelandés.\n\n**POSICION: favorecer local — magnitud leve**"
+  }
+ },
+ "usage": {
+  "llamadas": 4,
+  "duracion_ms": 310154,
+  "turnos": 9
+ }
+}

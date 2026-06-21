@@ -1,0 +1,58 @@
+{
+ "partido": "Belgium vs Iran",
+ "fecha": "2026-06-21 19:00:00+00:00",
+ "prior": {
+  "xg_home": 1.7068369455287076,
+  "xg_away": 0.9015571910169448,
+  "p_home": 0.5579581991705913,
+  "p_draw": 0.2506791301272167,
+  "p_away": 0.19136267070219193
+ },
+ "odds": null,
+ "model_final": {
+  "p_home": 0.5636761309813665,
+  "p_draw": 0.2589568024508372,
+  "p_away": 0.17736706656779638
+ },
+ "blend_weight_market": 0.0,
+ "final": {
+  "p_home": 0.558645919562894,
+  "p_draw": 0.261058391539341,
+  "p_away": 0.180295688897765,
+  "score_pred": "1-1",
+  "top_scores": "1-1 (12.4%); 1-0 (11.1%); 2-0 (10.5%)",
+  "xg_home": 1.77,
+  "xg_away": 0.91,
+  "p_home_by2": 0.3255,
+  "p_away_by2": 0.0602
+ },
+ "veredicto": {
+  "delta_log_xg_home": -0.05,
+  "delta_log_xg_away": -0.12,
+  "confianza": "media",
+  "bajas_confirmadas": true,
+  "factores": [
+   "Jérémy Doku (titular, máximo desequilibrante por banda) baja confirmada por infección respiratoria que empeoró la noche previa (ESPN, Arab News 21-jun) → reduce amenaza ofensiva belga",
+   "Sardar Azmoun excluido del plantel de Irán por conflicto con la federación → Irán sin delantero alternativo de nivel",
+   "Disrupción operacional severa y verificada de Irán: 11 de 15 técnicos con entrada denegada a EE.UU., base forzada en Tijuana con viajes de ~5h por partido, entrenamiento previo completado a la mitad y calambres generalizados por fatiga (Al Jazeera, NBC, Dawn) → factor invisible al modelo que degrada preparación física y táctica",
+   "Jahanbakhsh (capitán) y Torabi dudosos → pérdida de creatividad en mediocampo iraní"
+  ],
+  "resumen": "Dos señales nuevas reales que el modelo no ve. En Belgium, la baja confirmada de Doku (titular clave) justifica un ajuste leve a la baja; Lukaku saliendo del banco ya era rotación esperada y no añade. En Iran pesa más: la disrupción logística sistemática y multi-verificada (cuerpo técnico bloqueado, base en Tijuana, entrenamiento a media capacidad, fatiga de viaje) sumada a la ausencia de Azmoun y las dudas de Jahanbakhsh/Torabi degrada su rendimiento esperado por encima de la baja belga. Ajuste neto a favor de Belgium, moderado y no especulativo. bajas_confirmadas=true por la ausencia verificada de Doku como titular."
+ },
+ "delta_aplicado": {
+  "home": -0.05,
+  "away": -0.12
+ },
+ "rondas": {
+  "ronda1": {
+   "Estadístico": "## Análisis — Agente Estadístico\n\n### Defensa del prior\n\nEl modelo Dixon-Coles produce **Belgium 1.71 xG / Iran 0.90 xG** con una diferencia de 0.81 goles esperados. Eso ya es una señal fuerte y bien calibrada (RPS 0.176 en 244 partidos es un benchmark sólido). Mi carga de prueba exige que cualquier ajuste propuesto supere ese umbral de evidencia.\n\n---\n\n### Forma reciente: ¿señal nueva o ruido?\n\n**Belgium (2.8 GF / 0.8 GC)**\n- Los volúmenes de goles incluyen 5-0 vs Tunisia y 5-2 vs USA, partidos que inflan la media aritmética. Contra oposición comparable (Croatia 2-0: sólido; Egypt 1-1: última actuación, la más reciente y probablemente más representativa del estado actual).\n- Nada aquí indica un Belgium sistemáticamente *por encima* de lo que el modelo ya captura.\n\n**Iran (2.6 GF / 1.0 GC)**\n- Desglose de rivales: Gambia, Costa Rica, Mali, Nueva Zelanda, Nigeria. **Ninguno de rango comparable a Belgium.** El 5-0 vs Costa Rica y 3-1 vs Gambia distorsionan fuertemente los promedios de producción ofensiva.\n- El 2-2 vs Nueva Zelanda (partido más reciente, Jun-16) es la muestra más limpia de su nivel actual y no es un resultado que inspire confianza ofensiva.\n- El modelo casi con certeza no ve esa inflación por calidad de rival; los 0.90 xG asignados a Iran ya son un techo razonable.\n\n---\n\n### Incentivos de grupo\n\nAmbos equipos tienen 1 punto. **Simetría de incentivos:** ninguno tiene razón táctica para jugar más conservador o más abierto de lo que dicta su capacidad real. No hay efecto de \"partido trampa\" ni bloqueo deliberado. Este factor no mueve el prior.\n\n---\n\n### Lo que no veo y podría importar\n\n- Datos de bajas / suspensiones: **no provistos** → no puedo cuantificar impacto.\n- Cuotas de mercado: **no disponibles** → no hay señal de mispricing externo.\n- xG desagregado por partido (no solo promedios) para calcular varianza real de ambos equipos.\n\nSin esos datos, cualquier ajuste sería narrativo, no cuantitativo.\n\n---\n\n### Veredicto estadístico\n\nLa diferencia de calidad (1.71 vs 0.90 xG) está respaldada por:\n1. Historial de rendimiento que el modelo ya ha procesado.\n2. Forma reciente de Iran inflada por oposición débil → regresión esperada.\n3. Belgium con la mejor actuación defensiva reciente del dúo (0.8 GC/p vs 1.0 GC/p de Iran).\n\nNo hay señal cuantitativa nueva que justifique mover el prior. La narrativa \"Iran sorprendió\" carece de base contra rivales de nivel comparable.\n\n---\n\n**POSICION: mantener prior — magnitud nula**",
+   "Plantel/Noticias": "---\n\n## Análisis de Plantel y Noticias — Belgium vs Iran (21-jun-2026)\n\n### BELGIUM\n\n**Baja confirmada: Jérémy Doku (OUT — enfermedad respiratoria)**\nFuente: ESPN, Arab News (21-jun). Infección respiratoria recurrente que empeoró la noche del sábado. Es su atacante con mayor desborde; su ausencia reduce el peligro por banda izquierda de forma apreciable.\n\n**Romelu Lukaku: no arranca de titular**\nGarcía confirmó que no está para 90 minutos (solo ~1 hora competitiva en toda la temporada de club). Sale como opción desde el banco.\n\n**Zeno Debast (DEF): disponibilidad limitada** por lesión muscular de mayo con Sporting CP. No es crítica pero reduce opciones en defensa.\n\n**Probable XI Belgium (4-2-3-1):** Courtois — Castagne, Debast/Theate, ?, De Cuyper — Onana, Tielemans — Saelemaekers/CdK, De Bruyne, Trossard — Openda.\n\n**Sin conflictos internos ni viajes problemáticos relevantes.**\n\n---\n\n### IRAN — Señal fuerte, no visible en el modelo\n\n**Caos diplomático/logístico (mayor factor extraestadístico del partido):**\n- **11 de 15 miembros del cuerpo técnico con entrada denegada a EE.UU.** (solo 4 apelaciones aprobadas). FIFA recibió queja formal. Fuente: Al Jazeera, 19-20 jun.\n- Base de entrenamiento forzada a **Tijuana, México** → ~5 h de viaje + controles de seguridad para cada partido en suelo estadounidense.\n- Calambres musculares generalizados en el debut vs Nueva Zelanda, atribuidos a la fatiga de viaje.\n- Capitán Mehdi Taremi: *\"estamos cansados de esta situación; afecta al equipo\"* (NBC Sports, 16-jun).\n- Entrenador Ghalenoei: *\"somos el equipo más oprimido de todo el Mundial\"* (Sky Sports, 16-jun).\n\n**Bajas probables Iran:**\n- **Alireza Jahanbakhsh (capitán)** — dudoso. (Sports Mole)\n- **Mehdi Torabi** — dudoso.\n- **Sardar Azmoun** — excluido del plantel por conflicto con la federación (no disponible para el torneo).\n\n**Probable XI Iran (4-4-2):** Beiranvand — Rezaeian, Khalilzadeh, Kanaani, M. Mohammadi — Ghoddos, Ezatolahi, Ghayedi, Yousefi — Taremi, Alipour.\n\n---\n\n### SÍNTESIS Y CUANTIFICACIÓN\n\n| Factor | Dirección | Magnitud |\n|---|---|---|\n| Doku OUT (Belgium) | Reduce gol threat local | Leve-moderada negativa Belgium |\n| Lukaku no titular | Reduce penetración en área | Leve negativa Belgium |\n| 11 técnicos iraníes sin entrada + base en México | Disrupción preparación, morale, físico | **Fuerte negativa Iran** |\n| Jahanbakhsh + Torabi dudosos | Pierde creatividad en mediocampo | Moderada negativa Iran |\n| Azmoun ausente (rift federación) | Sin delantero alternativo de nivel | Moderada negativa Iran |\n\nEl factor que el modelo definitivamente no puede ver es la disrupción operacional de Iran: entrenar a 5 horas del estadio, con la mitad del cuerpo técnico bloqueado en la frontera, el capitán dudoso y el vestuario declaradamente \"cansado\". En conjunto esto supera con creces la baja de Doku para Belgium.\n\nLa situación de grupo (ambos en 1 pto, necesitan ganar) sugiere que los dos saldrán a buscar el partido, lo cual históricamente incrementa ligera pero realmente el total de goles en contextos de necesidad.\n\n---\n\n**POSICION: favorecer local (Belgium) — magnitud moderada**",
+   "Sentimiento": "## Análisis de Sentimiento · Belgium vs Iran · Grupo G · 21-Jun-2026\n\n---\n\n### Señales detectadas — Belgium\n\n**Narrativa \"must-win\" (verificada, múltiples fuentes)**\nRudi Garcia declaró explícitamente ante la prensa que el partido contra Irán \"hay que ganarlo\" tras el empate decepcionante con Egipto. Esta presión declarada es un arma de doble filo: genera motivación pero también carga emocional sobre el equipo. Tielemans reconoció que Lukaku \"todavía no está al 100% físicamente\". La prensa belga adopta tono pragmático-preocupado, no pánico, pero sí urgencia.\n\n**Reducción de presión estructural (señal amortiguadora)**\nEl colapso de la \"Generación Dorada\" en Qatar 2022 liberó a Bélgica de expectativas máximas. El ambiente en redes es más optimista y menos exigente que en torneos anteriores. Esto compensa parcialmente la presión del \"must-win\". Señal: **neutra a levemente positiva para Bélgica**.\n\n---\n\n### Señales detectadas — Iran\n\n**Preparación técnica severamente afectada (señal fuerte, verificada en 5+ fuentes)**\nEste es el hallazgo más concreto y accionable del análisis:\n- Irán está basado en **Tijuana, México**, por restricciones de visa de EEUU.\n- El protocolo impuesto: entrada al territorio estadounidense solo **24 horas antes** de cada partido, salida el mismo día del partido o inmediatamente después.\n- El técnico Ghalenoei confirmó que el entrenamiento previo al partido vs Bélgica se completó **a la mitad** del tiempo habitual. Irán presentará queja formal ante FIFA (anunciado el 19 de junio).\n- Fuentes: Al Jazeera, NBC News, Dawn, Sunday Guardian Live, múltiples coincidentes.\n\nEsta disrupción logística es **real, verificable y sistemática**. No es ruido de prensa: afecta recuperación física, trabajo táctico específico y ritmo de preparación. El modelo Dixon-Coles no puede capturar esto.\n\n**Dimensión política — señal mixta, no determinante tácticamente**\n+500 manifestantes en SoFi Stadium en el debut. La bandera Leono-Sol prohibida por FIFA creó tensión en accesos. La diáspora iraní en Los Ángeles (\"Tehrangeles\") está **dividida**: parte celebra al equipo, parte protesta contra el régimen. Durante el partido vs Nueva Zelanda, más de 70.000 aficionados animaron a Irán con intensidad, lo que amortiguó el impacto de las protestas externas. Señal: **ruido de fondo, no determina resultado**.\n\n**Moral del vestuario — resiliente a pesar de la adversidad**\nTaremi describió el ambiente como \"increíble\" y el equipo mostró carácter remontando dos veces ante Nueva Zelanda. El discurso del \"equipo más oprimido\" genera un chip de underdog que puede ser motivador. Contrarresta parcialmente la desventaja logística, pero no la elimina.\n\n---\n\n### Síntesis\n\nLa única señal suficientemente fuerte y multi-verificada para proponer ajuste es la **disrupción de preparación de Irán**: entrenamiento a media capacidad, fatiga logística acumulada (viajes Tijuana↔LA en cada jornada), y perturbación de la rutina técnica. Es información que el modelo estadístico no ve y está confirmada por múltiples fuentes independientes de calidad.\n\nLa presión \"must-win\" sobre Bélgica existe pero es gestionada: Garcia es un técnico experimentado, la expectativa del grupo es realista, y el ambiente mediático no es de crisis. No constituye señal suficiente para ajuste contrario.\n\n---\n\n**POSICION: favorecer local (Belgium) — magnitud leve**"
+  }
+ },
+ "usage": {
+  "llamadas": 4,
+  "duracion_ms": 222110,
+  "turnos": 6
+ }
+}
