@@ -42,19 +42,19 @@ Clasifican los 2 primeros de cada grupo + los 8 mejores terceros.
 
 | Pos | Equipo | PJ | Pts | GF | GC | DG | Escenario |
 |---|---|---|---|---|---|---|---|
-| 1 | **Germany** | 1 | 3 | 7 | 1 | +6 | próximo vs Ivory Coast: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
-| 2 | **Ivory Coast** | 1 | 3 | 1 | 0 | +1 | próximo vs Germany: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
-| 3 | Ecuador | 1 | 0 | 0 | 1 | -1 | próximo vs Curaçao: gana→sigue con opciones; empata→sigue con opciones; pierde→queda fuera del top-2 |
-| 4 | Curaçao | 1 | 0 | 1 | 7 | -6 | próximo vs Ecuador: gana→sigue con opciones; empata→sigue con opciones; pierde→queda fuera del top-2 |
+| 1 | **Germany** | 2 | 6 | 9 | 2 | +7 | ya clasificado a 32avos (top-2 asegurado) |
+| 2 | **Ivory Coast** | 2 | 3 | 2 | 2 | +0 | próximo vs Curaçao: gana→clasifica seguro; empata→sigue con opciones; pierde→queda fuera del top-2 |
+| 3 | Ecuador | 2 | 1 | 0 | 1 | -1 | sin opción de top-2; solo puede avanzar como mejor tercero (depende de otros grupos) |
+| 4 | Curaçao | 2 | 1 | 1 | 7 | -6 | próximo vs Ivory Coast: gana→sigue con opciones; empata→queda fuera del top-2; pierde→queda fuera del top-2 |
 
 ## Group F
 
 | Pos | Equipo | PJ | Pts | GF | GC | DG | Escenario |
 |---|---|---|---|---|---|---|---|
-| 1 | **Sweden** | 1 | 3 | 5 | 1 | +4 | próximo vs Netherlands: gana→clasifica seguro; empata→sigue con opciones; pierde→sigue con opciones |
-| 2 | **Japan** | 1 | 1 | 2 | 2 | +0 | próximo vs Tunisia: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
-| 3 | Netherlands | 1 | 1 | 2 | 2 | +0 | próximo vs Sweden: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
-| 4 | Tunisia | 1 | 0 | 1 | 5 | -4 | próximo vs Japan: gana→sigue con opciones; empata→sigue con opciones; pierde→queda fuera del top-2 |
+| 1 | **Netherlands** | 2 | 4 | 7 | 3 | +4 | próximo vs Tunisia: gana→clasifica seguro; empata→clasifica seguro; pierde→sigue con opciones |
+| 2 | **Japan** | 2 | 4 | 6 | 2 | +4 | próximo vs Sweden: gana→clasifica seguro; empata→clasifica seguro; pierde→queda fuera del top-2 |
+| 3 | Sweden | 2 | 3 | 6 | 6 | +0 | próximo vs Japan: gana→clasifica seguro; empata→queda fuera del top-2; pierde→queda fuera del top-2 |
+| 4 | Tunisia | 2 | 0 | 1 | 9 | -8 | sin opción de top-2; solo puede avanzar como mejor tercero (depende de otros grupos) |
 
 ## Group G
 
