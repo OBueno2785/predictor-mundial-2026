@@ -60,19 +60,19 @@ Clasifican los 2 primeros de cada grupo + los 8 mejores terceros.
 
 | Pos | Equipo | PJ | Pts | GF | GC | DG | Escenario |
 |---|---|---|---|---|---|---|---|
-| 1 | **Iran** | 1 | 1 | 2 | 2 | +0 | próximo vs Belgium: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
-| 2 | **New Zealand** | 1 | 1 | 2 | 2 | +0 | próximo vs Egypt: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
-| 3 | Belgium | 1 | 1 | 1 | 1 | +0 | próximo vs Iran: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
-| 4 | Egypt | 1 | 1 | 1 | 1 | +0 | próximo vs New Zealand: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
+| 1 | **Egypt** | 2 | 4 | 4 | 2 | +2 | próximo vs Iran: gana→clasifica seguro; empata→clasifica seguro; pierde→sigue con opciones |
+| 2 | **Iran** | 2 | 2 | 2 | 2 | +0 | próximo vs Egypt: gana→clasifica seguro; empata→queda fuera del top-2; pierde→queda fuera del top-2 |
+| 3 | Belgium | 2 | 2 | 1 | 1 | +0 | próximo vs New Zealand: gana→clasifica seguro; empata→sigue con opciones; pierde→queda fuera del top-2 |
+| 4 | New Zealand | 2 | 1 | 3 | 5 | -2 | próximo vs Belgium: gana→sigue con opciones; empata→queda fuera del top-2; pierde→queda fuera del top-2 |
 
 ## Group H
 
 | Pos | Equipo | PJ | Pts | GF | GC | DG | Escenario |
 |---|---|---|---|---|---|---|---|
-| 1 | **Saudi Arabia** | 1 | 1 | 1 | 1 | +0 | próximo vs Spain: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
-| 2 | **Uruguay** | 1 | 1 | 1 | 1 | +0 | próximo vs Cape Verde: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
-| 3 | Cape Verde | 1 | 1 | 0 | 0 | +0 | próximo vs Uruguay: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
-| 4 | Spain | 1 | 1 | 0 | 0 | +0 | próximo vs Saudi Arabia: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
+| 1 | **Spain** | 2 | 4 | 4 | 0 | +4 | próximo vs Uruguay: gana→clasifica seguro; empata→clasifica seguro; pierde→sigue con opciones |
+| 2 | **Uruguay** | 2 | 2 | 3 | 3 | +0 | próximo vs Spain: gana→clasifica seguro; empata→queda fuera del top-2; pierde→queda fuera del top-2 |
+| 3 | Cape Verde | 2 | 2 | 2 | 2 | +0 | próximo vs Saudi Arabia: gana→clasifica seguro; empata→sigue con opciones; pierde→queda fuera del top-2 |
+| 4 | Saudi Arabia | 2 | 1 | 1 | 5 | -4 | próximo vs Cape Verde: gana→sigue con opciones; empata→queda fuera del top-2; pierde→queda fuera del top-2 |
 
 ## Group I
 

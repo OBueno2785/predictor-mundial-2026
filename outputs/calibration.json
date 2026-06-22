@@ -1,6 +1,6 @@
 {
- "temperature": 1.0224072971075522,
- "n_matches": 280,
+ "temperature": 1.0256111065918567,
+ "n_matches": 284,
  "tournaments": [
   "Mundial 2022",
   "Copa Asia 2024",
@@ -14,8 +14,8 @@
  "rps_cal": 0.17557478434975657,
  "log_loss_raw": 0.9325194050167842,
  "log_loss_cal": 0.9325108558455204,
- "n_mundial": 36,
+ "n_mundial": 40,
  "fuente": "backtest + Mundial (out-of-sample)",
- "goals_mult": 1.1140451427412263,
- "goals_n": 36
+ "goals_mult": 1.1239689154232557,
+ "goals_n": 40
 }
