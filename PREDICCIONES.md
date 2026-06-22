@@ -1,6 +1,6 @@
 # Predicciones — Fase de Grupos Mundial 2026
 
-Generado: 2026-06-22 13:01 UTC · Modelo: Dixon-Coles (7953 partidos de entrenamiento, ventaja localía=0.227, rho=-0.0539)
+Generado: 2026-06-22 13:16 UTC · Modelo: Dixon-Coles (7953 partidos de entrenamiento, ventaja localía=0.227, rho=-0.0539)
 
 Probabilidades del prior estadístico calibrado. Los partidos marcados con **✓ panel** muestran la predicción final ajustada por el debate multiagente + cuotas de mercado (job T-60 min antes del kickoff).
 
@@ -98,8 +98,8 @@ Probabilidades del prior estadístico calibrado. Los partidos marcados con **✓
 |---|---|---|---|---|---|---|---|---|---|---|
 | 17 | 16-06 19:00 | France vs Senegal | 61% | 24% | 15% | 1.6-0.8 | 1-0 | 1-0 (14.9%); 1-1 (12.8%); 2-0 (11.4%) | 3-1 | ✓ panel |
 | 18 | 16-06 22:00 | Iraq vs Norway | 8% | 16% | 76% | 0.6-2.3 | 0-2 | 0-2 (14.8%); 0-1 (14.1%); 0-3 (10.1%) | 1-4 | ✓ panel |
-| 41 | 23-06 00:00 | Norway vs Senegal | 48% | 27% | 25% | 1.6-1.0 | 1-1 | 1-1 (12.8%); 1-0 (11.2%); 2-1 (9.4%) | — | — |
-| 42 | 22-06 21:00 | France vs Iraq | 78% | 16% | 6% | 2.3-0.5 | 2-0 | 2-0 (16.7%); 1-0 (14.0%); 3-0 (13.0%) | — | — |
+| 41 | 23-06 00:00 | Norway vs Senegal | 51% | 27% | 22% | 1.7-1.0 | 1-1 | 1-1 (12.9%); 1-0 (10.0%); 2-1 (9.3%) | — | ✓ panel |
+| 42 | 22-06 21:00 | France vs Iraq | 80% | 15% | 5% | 2.6-0.5 | 2-0 | 2-0 (14.0%); 3-0 (12.7%); 1-0 (10.0%) | — | ✓ panel |
 | 61 | 26-06 19:00 | Norway vs France | 27% | 26% | 46% | 1.2-1.6 | 1-1 | 1-1 (12.4%); 0-1 (9.5%); 1-2 (9.4%) | — | — |
 | 62 | 26-06 19:00 | Senegal vs Iraq | 58% | 27% | 15% | 1.5-0.6 | 1-0 | 1-0 (17.7%); 2-0 (13.7%); 0-0 (12.8%) | — | — |
 
@@ -109,8 +109,8 @@ Probabilidades del prior estadístico calibrado. Los partidos marcados con **✓
 |---|---|---|---|---|---|---|---|---|---|---|
 | 19 | 17-06 01:00 | Argentina vs Algeria | 67% | 22% | 11% | 1.8-0.5 | 1-0 | 1-0 (18.0%); 2-0 (16.1%); 0-0 (11.1%) | 3-0 | ✓ panel |
 | 20 | 17-06 04:00 | Austria vs Jordan | 67% | 20% | 12% | 1.9-0.8 | 1-0 | 1-0 (13.4%); 2-0 (12.3%); 1-1 (11.4%) | 3-1 | ✓ panel |
-| 43 | 22-06 17:00 | Argentina vs Austria | 59% | 27% | 13% | 1.5-0.6 | 1-0 | 1-0 (18.7%); 2-0 (14.4%); 0-0 (13.5%) | — | — |
-| 44 | 23-06 03:00 | Jordan vs Algeria | 20% | 24% | 56% | 1.0-1.8 | 1-1 | 1-1 (11.4%); 0-1 (10.5%); 0-2 (10.1%) | — | — |
+| 43 | 22-06 17:00 | Argentina vs Austria | 61% | 27% | 12% | 1.6-0.6 | 1-0 | 1-0 (16.2%); 2-0 (14.1%); 0-0 (12.3%) | — | ✓ panel |
+| 44 | 23-06 03:00 | Jordan vs Algeria | 18% | 23% | 59% | 1.1-2.1 | 1-1 | 1-1 (10.6%); 1-2 (9.4%); 0-2 (8.6%) | — | ✓ panel |
 | 69 | 28-06 02:00 | Algeria vs Austria | 29% | 29% | 42% | 1.1-1.3 | 1-1 | 1-1 (13.6%); 0-1 (11.5%); 0-0 (9.8%) | — | — |
 | 70 | 28-06 02:00 | Jordan vs Argentina | 4% | 13% | 83% | 0.4-2.6 | 0-2 | 0-2 (16.9%); 0-3 (14.5%); 0-1 (12.7%) | — | — |
 
