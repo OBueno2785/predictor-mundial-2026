@@ -1,0 +1,43 @@
+{
+ "partido": "Colombia vs Portugal",
+ "fecha": "2026-06-27 23:30:00+00:00",
+ "prior": {
+  "xg_home": 1.3603922615228659,
+  "xg_away": 1.5141773455808856,
+  "p_home": 0.3330015684744883,
+  "p_draw": 0.2651227514024887,
+  "p_away": 0.4018756801230231
+ },
+ "odds": null,
+ "model_final": {
+  "p_home": 0.3330015684744883,
+  "p_draw": 0.2651227514024887,
+  "p_away": 0.4018756801230231
+ },
+ "blend_weight_market": 0.0,
+ "final": {
+  "p_home": 0.3332094601089551,
+  "p_draw": 0.2679006967820902,
+  "p_away": 0.39888984310895464,
+  "score_pred": "1-2",
+  "top_scores": "1-1 (12.0%); 1-2 (8.5%); 2-1 (7.7%)",
+  "xg_home": 1.52,
+  "xg_away": 1.68,
+  "p_home_by2": 0.1623,
+  "p_away_by2": 0.2108
+ },
+ "veredicto": {
+  "delta_log_xg_home": 0.0,
+  "delta_log_xg_away": 0.0,
+  "confianza": "baja",
+  "bajas_confirmadas": false,
+  "factores": [],
+  "resumen": "Degradado: error en debate: GEMINI_API_KEY no encontrada en las variables de entorno. Por favor configúrala en tu archivo .env."
+ },
+ "delta_aplicado": {
+  "home": 0.0,
+  "away": 0.0
+ },
+ "rondas": {},
+ "usage": {}
+}

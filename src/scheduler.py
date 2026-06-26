@@ -75,29 +75,9 @@ def programar_t60(sched: BlockingScheduler) -> int:
 
 def main() -> None:
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
-    dry = "--dry-run" in sys.argv
-
-    try:
-        fixtures.download(DATA / "fixtures_wc2026.json")
-        log.info("fixture refrescado")
-    except Exception as e:
-        log.warning("no se pudo refrescar el fixture, uso caché (%s)", e)
-
-    executors = {"default": ThreadPoolExecutor(2)}
-    sched = BlockingScheduler(timezone=TZ, executors=executors,
-                              job_defaults={"coalesce": True})
-    n = programar_t60(sched)
-
-    if dry:
-        print("\n--- DRY RUN: jobs programados ---")
-        for j in sorted(sched.get_jobs(), key=lambda j: str(j.trigger)):
-            print(f"  {j.id:<12} -> {j.trigger}")
-        return
-
-    if n == 0:
-        log.info("No hay partidos pendientes; nada que programar.")
-        return
-    log.info("Scheduler activo: %d jobs T-60. Ctrl+C para salir.", n)
+    print("El scheduler T-60 ha sido desactivado/anulado.")
+    print("Los debates ahora se ejecutan dinámicamente de forma automática al correr el modelo (predict.py).")
+    sys.exit(0)
     sched.start()
 
 

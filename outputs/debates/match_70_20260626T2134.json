@@ -1,0 +1,57 @@
+{
+ "partido": "Jordan vs Argentina",
+ "fecha": "2026-06-28 02:00:00+00:00",
+ "prior": {
+  "xg_home": 0.34207204637078803,
+  "xg_away": 2.811950696648949,
+  "p_home": 0.023648508089093793,
+  "p_draw": 0.10072247713660204,
+  "p_away": 0.875629014774304
+ },
+ "odds": null,
+ "model_final": {
+  "p_home": 0.02217886266685832,
+  "p_draw": 0.09896700687656879,
+  "p_away": 0.878854130456573
+ },
+ "blend_weight_market": 0.0,
+ "final": {
+  "p_home": 0.02563254840422968,
+  "p_draw": 0.10725558422471289,
+  "p_away": 0.8671118673710575,
+  "score_pred": "0-3",
+  "top_scores": "0-3 (14.9%); 0-2 (14.2%); 0-4 (11.8%)",
+  "xg_home": 0.39,
+  "xg_away": 3.06,
+  "p_home_by2": 0.0043,
+  "p_away_by2": 0.7168
+ },
+ "veredicto": {
+  "delta_log_xg_home": -0.05,
+  "delta_log_xg_away": 0.0,
+  "confianza": "alta",
+  "bajas_confirmadas": true,
+  "factores": [
+   "Argentina ya clasificada, busca asegurar el primer puesto",
+   "Cristian Romero en duda en Argentina por molestia en la rodilla",
+   "Ibrahim Sabra baja confirmada en Jordania por lesión de ligamentos"
+  ],
+  "resumen": "Argentina saldrá con su once fuerte para asegurar el liderato, cuidando tal vez a Cristian Romero en defensa por precaución. Jordania cuenta con la baja definitiva de su atacante Sabra. Ajuste neutro para Argentina y leve a la baja para Jordania."
+ },
+ "delta_aplicado": {
+  "home": -0.05,
+  "away": 0.0
+ },
+ "rondas": {
+  "ronda1": {},
+  "ronda2": {}
+ },
+ "usage": {
+  "llamadas": 3,
+  "duracion_ms": 1500,
+  "turnos": 3,
+  "prompt_tokens": 1200,
+  "candidates_tokens": 400,
+  "total_tokens": 1600
+ }
+}

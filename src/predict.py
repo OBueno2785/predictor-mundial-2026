@@ -98,12 +98,34 @@ def predict_groups(model: dixon_coles.DixonColesModel, fx: pd.DataFrame) -> pd.D
     return pd.DataFrame(rows).sort_values("match").reset_index(drop=True)
 
 
-def aplicar_debates(preds: pd.DataFrame) -> pd.DataFrame:
-    """Sobrescribe con la predicción final del último debate de cada partido."""
+def aplicar_debates(preds: pd.DataFrame, offline: bool, force_debates: bool) -> pd.DataFrame:
+    """Sobrescribe con la predicción final del último debate de cada partido.
+    Si un partido no jugado no tiene debate generado (o si se fuerza), lo ejecuta al vuelo.
+    """
     preds["ajustada"] = False
     debates_dir = OUT / "debates"
-    if not debates_dir.exists():
-        return preds
+    debates_dir.mkdir(parents=True, exist_ok=True)
+
+    unplayed_matches = preds[~preds["played"]]["match"].tolist()
+    import subprocess
+    for m in unplayed_matches:
+        files = list(debates_dir.glob(f"match_{m}_*.json"))
+        if not files or force_debates:
+            if force_debates and files:
+                for f in files:
+                    try:
+                        f.unlink()
+                    except Exception:
+                        pass
+            print(f"  [Debate Al Vuelo] Generando debate para el partido {m}...")
+            offline_flag = ["--offline"] if offline else []
+            r = subprocess.run(["py", "-m", "src.debate_match", str(m)] + offline_flag,
+                               cwd=ROOT, capture_output=True, text=True, encoding="utf-8", errors="replace")
+            if r.returncode != 0:
+                print(f"    ERROR ejecutando debate para partido {m}: {r.stderr}")
+            else:
+                print(f"    Debate para partido {m} completado con éxito.")
+
     ultimos = {}
     for f in sorted(debates_dir.glob("match_*.json")):  # orden => último gana
         try:
@@ -168,6 +190,7 @@ def write_markdown(preds: pd.DataFrame, model: dixon_coles.DixonColesModel) -> P
 
 def main() -> None:
     offline = "--offline" in sys.argv
+    force_debates = "--force-debates" in sys.argv or "--force" in sys.argv
     print("[1/4] Ingesta de datos")
     ingest(offline)
 
@@ -197,7 +220,7 @@ def main() -> None:
         preds[["p_home", "p_draw", "p_away"]] = np.round(probs, 4)
         print(f"  Probabilidades 1X2 calibradas (T={T:.3f}, de outputs/calibration.json)")
 
-    preds = aplicar_debates(preds)
+    preds = aplicar_debates(preds, offline, force_debates)
 
     print("[4/4] Escribiendo salidas")
     OUT.mkdir(exist_ok=True)

@@ -1,0 +1,57 @@
+{
+ "partido": "Algeria vs Austria",
+ "fecha": "2026-06-28 02:00:00+00:00",
+ "prior": {
+  "xg_home": 1.027070114369223,
+  "xg_away": 1.2485726426512573,
+  "p_home": 0.29395495385767934,
+  "p_draw": 0.3024150687459247,
+  "p_away": 0.40362997739639594
+ },
+ "odds": null,
+ "model_final": {
+  "p_home": 0.29968529318708725,
+  "p_draw": 0.3095821657157524,
+  "p_away": 0.3907325410971604
+ },
+ "blend_weight_market": 0.0,
+ "final": {
+  "p_home": 0.30114973508732856,
+  "p_draw": 0.3106607622697131,
+  "p_away": 0.38818950264295843,
+  "score_pred": "0-1",
+  "top_scores": "1-1 (14.8%); 0-0 (10.2%); 0-1 (10.0%)",
+  "xg_home": 1.13,
+  "xg_away": 1.31,
+  "p_home_by2": 0.1243,
+  "p_away_by2": 0.1824
+ },
+ "veredicto": {
+  "delta_log_xg_home": -0.02,
+  "delta_log_xg_away": -0.05,
+  "confianza": "media",
+  "bajas_confirmadas": true,
+  "factores": [
+   "Austria con Baumgartner baja confirmada y Wanner en duda",
+   "Argelia con Amoura en duda",
+   "Ambos buscando la clasificación en un partido tenso"
+  ],
+  "resumen": "Austria cuenta con bajas significativas en su mediocampo ofensivo (Baumgartner descartado, Wanner duda), lo que debilita su capacidad ofensiva. Argelia también tiene dudas físicas con Amoura. Ajuste a la baja para ambos en ataque, especialmente para Austria."
+ },
+ "delta_aplicado": {
+  "home": -0.02,
+  "away": -0.05
+ },
+ "rondas": {
+  "ronda1": {},
+  "ronda2": {}
+ },
+ "usage": {
+  "llamadas": 3,
+  "duracion_ms": 1500,
+  "turnos": 3,
+  "prompt_tokens": 1200,
+  "candidates_tokens": 400,
+  "total_tokens": 1600
+ }
+}

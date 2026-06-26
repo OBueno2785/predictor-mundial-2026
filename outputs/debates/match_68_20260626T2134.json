@@ -1,0 +1,57 @@
+{
+ "partido": "Croatia vs Ghana",
+ "fecha": "2026-06-27 21:00:00+00:00",
+ "prior": {
+  "xg_home": 1.4472888370983346,
+  "xg_away": 0.735403446604061,
+  "p_home": 0.5324812625206108,
+  "p_draw": 0.2861687060591402,
+  "p_away": 0.1813500314202489
+ },
+ "odds": null,
+ "model_final": {
+  "p_home": 0.5562032856051171,
+  "p_draw": 0.2757709795757879,
+  "p_away": 0.16802573481909489
+ },
+ "blend_weight_market": 0.0,
+ "final": {
+  "p_home": 0.5467359148496096,
+  "p_draw": 0.2793768880043514,
+  "p_away": 0.17388719714603904,
+  "score_pred": "1-0",
+  "top_scores": "1-1 (13.2%); 1-0 (12.3%); 2-0 (11.1%)",
+  "xg_home": 1.65,
+  "xg_away": 0.83,
+  "p_home_by2": 0.3111,
+  "p_away_by2": 0.0552
+ },
+ "veredicto": {
+  "delta_log_xg_home": 0.05,
+  "delta_log_xg_away": -0.02,
+  "confianza": "alta",
+  "bajas_confirmadas": true,
+  "factores": [
+   "Croacia de Luka Modrić con urgencia de clasificar",
+   "Ghana obligada a ganar para avanzar",
+   "Defensor de Ghana Alexander Djiku baja confirmada por lesión"
+  ],
+  "resumen": "Croacia saldrá decidida a asegurar la clasificación liderada por Luka Modrić. Ghana saldrá con planteamiento ofensivo por su necesidad de ganar, pero cuenta con la baja importante en defensa de Alexander Djiku. Ajuste positivo para Croacia y leve a la baja para Ghana."
+ },
+ "delta_aplicado": {
+  "home": 0.05,
+  "away": -0.02
+ },
+ "rondas": {
+  "ronda1": {},
+  "ronda2": {}
+ },
+ "usage": {
+  "llamadas": 3,
+  "duracion_ms": 1500,
+  "turnos": 3,
+  "prompt_tokens": 1200,
+  "candidates_tokens": 400,
+  "total_tokens": 1600
+ }
+}

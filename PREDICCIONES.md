@@ -1,6 +1,6 @@
 # Predicciones — Fase de Grupos Mundial 2026
 
-Generado: 2026-06-26 21:26 UTC · Modelo: Dixon-Coles (7975 partidos de entrenamiento, ventaja localía=0.211, rho=-0.0728)
+Generado: 2026-06-26 21:34 UTC · Modelo: Dixon-Coles (7975 partidos de entrenamiento, ventaja localía=0.211, rho=-0.0728)
 
 Probabilidades del prior estadístico calibrado. Los partidos marcados con **✓ panel** muestran la predicción final ajustada por el debate multiagente + cuotas de mercado (job T-60 min antes del kickoff).
 
@@ -111,8 +111,8 @@ Probabilidades del prior estadístico calibrado. Los partidos marcados con **✓
 | 20 | 17-06 04:00 | Austria vs Jordan | 70% | 19% | 11% | 2.2-0.8 | 2-0 | 2-0 (11.7%); 2-1 (10.5%); 1-0 (10.1%) | 3-1 | ✓ panel |
 | 43 | 22-06 17:00 | Argentina vs Austria | 62% | 27% | 10% | 1.6-0.5 | 1-0 | 1-0 (17.5%); 2-0 (15.2%); 0-0 (13.7%) | 2-0 | ✓ panel |
 | 44 | 23-06 03:00 | Jordan vs Algeria | 17% | 23% | 60% | 1.1-2.2 | 1-2 | 1-1 (10.5%); 1-2 (9.3%); 0-2 (8.7%) | 1-2 | ✓ panel |
-| 69 | 28-06 02:00 | Algeria vs Austria | 30% | 30% | 40% | 1.0-1.2 | 0-1 | 1-1 (14.1%); 0-1 (11.9%); 0-0 (11.2%) | — | — |
-| 70 | 28-06 02:00 | Jordan vs Argentina | 3% | 11% | 86% | 0.3-2.8 | 0-2 | 0-2 (16.9%); 0-3 (15.8%); 0-1 (11.7%) | — | — |
+| 69 | 28-06 02:00 | Algeria vs Austria | 30% | 31% | 39% | 1.1-1.3 | 0-1 | 1-1 (14.8%); 0-0 (10.2%); 0-1 (10.0%) | — | ✓ panel |
+| 70 | 28-06 02:00 | Jordan vs Argentina | 3% | 11% | 87% | 0.4-3.1 | 0-3 | 0-3 (14.9%); 0-2 (14.2%); 0-4 (11.8%) | — | ✓ panel |
 
 ## Group K
 
@@ -122,8 +122,8 @@ Probabilidades del prior estadístico calibrado. Los partidos marcados con **✓
 | 24 | 18-06 02:00 | Uzbekistan vs Colombia | 10% | 20% | 70% | 0.7-2.3 | 0-2 | 0-2 (12.8%); 0-3 (10.4%); 0-1 (10.0%) | 1-3 | ✓ panel |
 | 47 | 23-06 17:00 | Portugal vs Uzbekistan | 78% | 16% | 6% | 2.6-0.6 | 2-0 | 2-0 (12.8%); 3-0 (11.7%); 1-0 (8.9%) | 5-0 | ✓ panel |
 | 48 | 24-06 02:00 | Colombia vs DR Congo | 55% | 30% | 15% | 1.5-0.7 | 1-0 | 1-0 (15.5%); 0-0 (13.1%); 1-1 (13.1%) | 1-0 | ✓ panel |
-| 71 | 27-06 23:30 | Colombia vs Portugal | 33% | 27% | 40% | 1.4-1.5 | 1-2 | 1-1 (12.5%); 1-2 (8.8%); 2-1 (7.9%) | — | — |
-| 72 | 27-06 23:30 | DR Congo vs Uzbekistan | 41% | 39% | 21% | 0.9-0.5 | 1-0 | 0-0 (25.1%); 1-0 (20.7%); 1-1 (12.2%) | — | — |
+| 71 | 27-06 23:30 | Colombia vs Portugal | 30% | 27% | 43% | 1.5-1.8 | 1-2 | 1-1 (11.9%); 1-2 (8.7%); 2-1 (7.3%) | — | ✓ panel |
+| 72 | 27-06 23:30 | DR Congo vs Uzbekistan | 41% | 39% | 21% | 1.0-0.6 | 1-0 | 0-0 (22.7%); 1-0 (18.4%); 1-1 (13.8%) | — | ✓ panel |
 
 ## Group L
 
@@ -133,5 +133,5 @@ Probabilidades del prior estadístico calibrado. Los partidos marcados con **✓
 | 22 | 17-06 20:00 | England vs Croatia | 56% | 26% | 18% | 1.7-0.8 | 1-0 | 1-0 (12.3%); 1-1 (12.2%); 2-0 (11.3%) | 4-2 | ✓ panel |
 | 45 | 23-06 20:00 | England vs Ghana | 69% | 23% | 8% | 1.9-0.5 | 2-0 | 2-0 (15.8%); 1-0 (15.0%); 3-0 (10.7%) | 0-0 | ✓ panel |
 | 46 | 23-06 23:00 | Panama vs Croatia | 12% | 21% | 67% | 0.9-2.3 | 0-2 | 0-2 (10.5%); 1-1 (9.9%); 1-2 (9.0%) | 0-1 | ✓ panel |
-| 67 | 27-06 21:00 | Panama vs England | 5% | 16% | 78% | 0.4-2.3 | 0-2 | 0-2 (16.9%); 0-1 (14.0%); 0-3 (13.2%) | — | — |
-| 68 | 27-06 21:00 | Croatia vs Ghana | 52% | 29% | 19% | 1.4-0.7 | 1-0 | 1-0 (15.4%); 1-1 (12.9%); 0-0 (12.1%) | — | — |
+| 67 | 27-06 21:00 | Panama vs England | 5% | 16% | 78% | 0.5-2.5 | 0-2 | 0-2 (14.5%); 0-3 (12.7%); 0-1 (10.6%) | — | ✓ panel |
+| 68 | 27-06 21:00 | Croatia vs Ghana | 55% | 28% | 17% | 1.6-0.8 | 1-0 | 1-1 (13.2%); 1-0 (12.3%); 2-0 (11.1%) | — | ✓ panel |

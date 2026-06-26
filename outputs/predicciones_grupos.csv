@@ -65,9 +65,9 @@ match,group,date_utc,location,home,away,xg_home,xg_away,p_home,p_draw,p_away,sco
 64,Group G,2026-06-27 03:00:00+00:00,BC Place Vancouver,New Zealand,Belgium,0.67,2.76,0.0632,0.154,0.7828,0-2,0-2 (11.8%); 0-3 (11.2%); 0-4 (8.0%),False,,True
 65,Group H,2026-06-27 00:00:00+00:00,Houston Stadium,Cape Verde,Saudi Arabia,1.04,1.07,0.3225,0.3379,0.3396,0-1,1-1 (15.4%); 0-0 (13.8%); 0-1 (11.5%),False,,True
 66,Group H,2026-06-27 00:00:00+00:00,Guadalajara Stadium,Uruguay,Spain,0.69,1.6,0.1465,0.2829,0.5706,0-1,0-1 (14.5%); 1-1 (12.8%); 0-2 (12.7%),False,,True
-67,Group L,2026-06-27 21:00:00+00:00,New York/New Jersey Stadium,Panama,England,0.44,2.34,0.0543,0.1618,0.7839,0-2,0-2 (16.9%); 0-1 (14.0%); 0-3 (13.2%),False,,False
-68,Group L,2026-06-27 21:00:00+00:00,Philadelphia Stadium,Croatia,Ghana,1.45,0.74,0.5239,0.2892,0.1869,1-0,1-0 (15.4%); 1-1 (12.9%); 0-0 (12.1%),False,,False
-69,Group J,2026-06-28 02:00:00+00:00,Kansas City Stadium,Algeria,Austria,1.03,1.25,0.2957,0.3038,0.4005,0-1,1-1 (14.1%); 0-1 (11.9%); 0-0 (11.2%),False,,False
-70,Group J,2026-06-28 02:00:00+00:00,Dallas Stadium,Jordan,Argentina,0.34,2.81,0.0272,0.109,0.8638,0-2,0-2 (16.9%); 0-3 (15.8%); 0-1 (11.7%),False,,False
-71,Group K,2026-06-27 23:30:00+00:00,Miami Stadium,Colombia,Portugal,1.36,1.51,0.3332,0.2679,0.3989,1-2,1-1 (12.5%); 1-2 (8.8%); 2-1 (7.9%),False,,False
-72,Group K,2026-06-27 23:30:00+00:00,Atlanta Stadium,DR Congo,Uzbekistan,0.89,0.53,0.4094,0.3854,0.2052,1-0,0-0 (25.1%); 1-0 (20.7%); 1-1 (12.2%),False,,False
+67,Group L,2026-06-27 21:00:00+00:00,New York/New Jersey Stadium,Panama,England,0.52,2.54,0.0543,0.1618,0.7839,0-2,0-2 (14.5%); 0-3 (12.7%); 0-1 (10.6%),False,,True
+68,Group L,2026-06-27 21:00:00+00:00,Philadelphia Stadium,Croatia,Ghana,1.65,0.83,0.5467,0.2794,0.1739,1-0,1-1 (13.2%); 1-0 (12.3%); 2-0 (11.1%),False,,True
+69,Group J,2026-06-28 02:00:00+00:00,Kansas City Stadium,Algeria,Austria,1.13,1.31,0.3011,0.3107,0.3882,0-1,1-1 (14.8%); 0-0 (10.2%); 0-1 (10.0%),False,,True
+70,Group J,2026-06-28 02:00:00+00:00,Dallas Stadium,Jordan,Argentina,0.39,3.06,0.0256,0.1073,0.8671,0-3,0-3 (14.9%); 0-2 (14.2%); 0-4 (11.8%),False,,True
+71,Group K,2026-06-27 23:30:00+00:00,Miami Stadium,Colombia,Portugal,1.46,1.76,0.3041,0.2651,0.4308,1-2,1-1 (11.9%); 1-2 (8.7%); 2-1 (7.3%),False,,True
+72,Group K,2026-06-27 23:30:00+00:00,Atlanta Stadium,DR Congo,Uzbekistan,0.96,0.6,0.4094,0.3854,0.2052,1-0,0-0 (22.7%); 1-0 (18.4%); 1-1 (13.8%),False,,True

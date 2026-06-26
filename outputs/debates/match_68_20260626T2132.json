@@ -1,0 +1,43 @@
+{
+ "partido": "Croatia vs Ghana",
+ "fecha": "2026-06-27 21:00:00+00:00",
+ "prior": {
+  "xg_home": 1.4472888370983346,
+  "xg_away": 0.735403446604061,
+  "p_home": 0.5324812625206108,
+  "p_draw": 0.2861687060591402,
+  "p_away": 0.1813500314202489
+ },
+ "odds": null,
+ "model_final": {
+  "p_home": 0.5324812625206108,
+  "p_draw": 0.2861687060591402,
+  "p_away": 0.1813500314202489
+ },
+ "blend_weight_market": 0.0,
+ "final": {
+  "p_home": 0.5239222131365125,
+  "p_draw": 0.28918633984388203,
+  "p_away": 0.18689144701960544,
+  "score_pred": "1-0",
+  "top_scores": "1-1 (13.6%); 1-0 (12.5%); 2-0 (10.8%)",
+  "xg_home": 1.57,
+  "xg_away": 0.84,
+  "p_home_by2": 0.2884,
+  "p_away_by2": 0.0605
+ },
+ "veredicto": {
+  "delta_log_xg_home": 0.0,
+  "delta_log_xg_away": 0.0,
+  "confianza": "baja",
+  "bajas_confirmadas": false,
+  "factores": [],
+  "resumen": "Degradado: error en debate: GEMINI_API_KEY no encontrada en las variables de entorno. Por favor configúrala en tu archivo .env."
+ },
+ "delta_aplicado": {
+  "home": 0.0,
+  "away": 0.0
+ },
+ "rondas": {},
+ "usage": {}
+}

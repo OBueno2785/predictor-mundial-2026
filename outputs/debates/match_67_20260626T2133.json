@@ -1,0 +1,57 @@
+{
+ "partido": "Panama vs England",
+ "fecha": "2026-06-27 21:00:00+00:00",
+ "prior": {
+  "xg_home": 0.4415454983172743,
+  "xg_away": 2.344215706184681,
+  "p_home": 0.04898148274003696,
+  "p_draw": 0.15338046898267915,
+  "p_away": 0.7976380482772839
+ },
+ "odds": null,
+ "model_final": {
+  "p_home": 0.04898148274003696,
+  "p_draw": 0.15338046898267915,
+  "p_away": 0.7976380482772839
+ },
+ "blend_weight_market": 0.0,
+ "final": {
+  "p_home": 0.054273306117197155,
+  "p_draw": 0.16181304106117775,
+  "p_away": 0.7839136528216251,
+  "score_pred": "0-2",
+  "top_scores": "0-2 (14.5%); 0-3 (12.7%); 0-1 (10.6%)",
+  "xg_home": 0.52,
+  "xg_away": 2.54,
+  "p_home_by2": 0.0116,
+  "p_away_by2": 0.589
+ },
+ "veredicto": {
+  "delta_log_xg_home": 0.0,
+  "delta_log_xg_away": 0.0,
+  "confianza": "alta",
+  "bajas_confirmadas": true,
+  "factores": [
+   "Panamá ya eliminada sin presión",
+   "Inglaterra busca consolidar pase a octavos",
+   "T. Livramento baja confirmada por lesión en Inglaterra"
+  ],
+  "resumen": "Inglaterra es muy superior y buscará cerrar el pase. Panamá jugará sin presión al estar ya eliminada. T. Livramento es baja por lesión en Inglaterra. Ajuste neutro."
+ },
+ "delta_aplicado": {
+  "home": 0.0,
+  "away": 0.0
+ },
+ "rondas": {
+  "ronda1": {},
+  "ronda2": {}
+ },
+ "usage": {
+  "llamadas": 3,
+  "duracion_ms": 1500,
+  "turnos": 3,
+  "prompt_tokens": 1200,
+  "candidates_tokens": 400,
+  "total_tokens": 1600
+ }
+}

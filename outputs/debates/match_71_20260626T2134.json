@@ -1,0 +1,57 @@
+{
+ "partido": "Colombia vs Portugal",
+ "fecha": "2026-06-27 23:30:00+00:00",
+ "prior": {
+  "xg_home": 1.3603922615228659,
+  "xg_away": 1.5141773455808856,
+  "p_home": 0.3330015684744883,
+  "p_draw": 0.2651227514024887,
+  "p_away": 0.4018756801230231
+ },
+ "odds": null,
+ "model_final": {
+  "p_home": 0.3025362069940589,
+  "p_draw": 0.2621473634215153,
+  "p_away": 0.43531642958442585
+ },
+ "blend_weight_market": 0.0,
+ "final": {
+  "p_home": 0.304098217204041,
+  "p_draw": 0.2651290077575961,
+  "p_away": 0.43077277503836287,
+  "score_pred": "1-2",
+  "top_scores": "1-1 (11.9%); 1-2 (8.7%); 2-1 (7.3%)",
+  "xg_home": 1.46,
+  "xg_away": 1.76,
+  "p_home_by2": 0.1425,
+  "p_away_by2": 0.2363
+ },
+ "veredicto": {
+  "delta_log_xg_home": -0.05,
+  "delta_log_xg_away": 0.05,
+  "confianza": "alta",
+  "bajas_confirmadas": false,
+  "factores": [
+   "Colombia asegura el liderato del grupo con un empate",
+   "Portugal obligado a ganar para quedar primero de grupo",
+   "Sin bajas por lesión o suspensión de última hora confirmadas"
+  ],
+  "resumen": "Colombia planteará un bloque ordenado buscando al menos el empate que le garantice el liderato. Portugal irá a proponer de forma agresiva buscando la victoria. Ajuste conservador para Colombia y ofensivo para Portugal."
+ },
+ "delta_aplicado": {
+  "home": -0.05,
+  "away": 0.05
+ },
+ "rondas": {
+  "ronda1": {},
+  "ronda2": {}
+ },
+ "usage": {
+  "llamadas": 3,
+  "duracion_ms": 1500,
+  "turnos": 3,
+  "prompt_tokens": 1200,
+  "candidates_tokens": 400,
+  "total_tokens": 1600
+ }
+}

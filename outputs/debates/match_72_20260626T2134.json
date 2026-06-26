@@ -1,0 +1,57 @@
+{
+ "partido": "DR Congo vs Uzbekistan",
+ "fecha": "2026-06-27 23:30:00+00:00",
+ "prior": {
+  "xg_home": 0.8866367629819779,
+  "xg_away": 0.5301690999021985,
+  "p_home": 0.41239109016130004,
+  "p_draw": 0.38718769439791795,
+  "p_away": 0.20042121544078187
+ },
+ "odds": null,
+ "model_final": {
+  "p_home": 0.41239109016130004,
+  "p_draw": 0.38718769439791795,
+  "p_away": 0.20042121544078187
+ },
+ "blend_weight_market": 0.0,
+ "final": {
+  "p_home": 0.4093759584046202,
+  "p_draw": 0.38540021778625877,
+  "p_away": 0.20522382380912105,
+  "score_pred": "1-0",
+  "top_scores": "0-0 (22.7%); 1-0 (18.4%); 1-1 (13.8%)",
+  "xg_home": 0.96,
+  "xg_away": 0.6,
+  "p_home_by2": 0.1632,
+  "p_away_by2": 0.0533
+ },
+ "veredicto": {
+  "delta_log_xg_home": 0.0,
+  "delta_log_xg_away": 0.0,
+  "confianza": "alta",
+  "bajas_confirmadas": false,
+  "factores": [
+   "Ambos luchando por la 3ª posición para aspirar a clasificar",
+   "Nivel de juego y planteles bastante parejos",
+   "Sin lesionados ni suspendidos confirmados"
+  ],
+  "resumen": "Encuentro muy disputado por la tercera posición. Nivel equilibrado y sin novedades de última hora en las plantillas. Ajuste neutro."
+ },
+ "delta_aplicado": {
+  "home": 0.0,
+  "away": 0.0
+ },
+ "rondas": {
+  "ronda1": {},
+  "ronda2": {}
+ },
+ "usage": {
+  "llamadas": 3,
+  "duracion_ms": 1500,
+  "turnos": 3,
+  "prompt_tokens": 1200,
+  "candidates_tokens": 400,
+  "total_tokens": 1600
+ }
+}
