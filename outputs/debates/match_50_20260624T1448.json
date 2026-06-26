@@ -1,0 +1,56 @@
+{
+ "partido": "Morocco vs Haiti",
+ "fecha": "2026-06-24 22:00:00+00:00",
+ "prior": {
+  "xg_home": 2.110510975661542,
+  "xg_away": 0.3340887884612906,
+  "p_home": 0.788712128269283,
+  "p_draw": 0.16844898055797877,
+  "p_away": 0.04283889117273809
+ },
+ "odds": null,
+ "model_final": {
+  "p_home": 0.8096851121990246,
+  "p_draw": 0.15365751251939372,
+  "p_away": 0.03665737528158166
+ },
+ "blend_weight_market": 0.0,
+ "final": {
+  "p_home": 0.8155822561935671,
+  "p_draw": 0.1417827114320764,
+  "p_away": 0.042635032374356605,
+  "score_pred": "2-0",
+  "top_scores": "2-0 (14.5%); 3-0 (13.6%); 1-0 (10.0%)",
+  "xg_home": 2.71,
+  "xg_away": 0.48,
+  "p_home_by2": 0.6354,
+  "p_away_by2": 0.0084
+ },
+ "veredicto": {
+  "delta_log_xg_home": 0.05,
+  "delta_log_xg_away": -0.05,
+  "confianza": "media",
+  "bajas_confirmadas": false,
+  "factores": [
+   "Superioridad individual de Marruecos",
+   "Moral baja de Haití tras dos derrotas duras"
+  ],
+  "resumen": "Marruecos busca asegurar el liderato del grupo y llega con la delantera en gran momento. Haití está virtualmente eliminado. Ajuste leve a favor de Marruecos."
+ },
+ "delta_aplicado": {
+  "home": 0.05,
+  "away": -0.05
+ },
+ "rondas": {
+  "ronda1": {},
+  "ronda2": {}
+ },
+ "usage": {
+  "llamadas": 3,
+  "duracion_ms": 1500,
+  "turnos": 3,
+  "prompt_tokens": 1200,
+  "candidates_tokens": 400,
+  "total_tokens": 1600
+ }
+}

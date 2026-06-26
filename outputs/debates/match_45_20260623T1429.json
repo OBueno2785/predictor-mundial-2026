@@ -1,0 +1,56 @@
+{
+ "partido": "England vs Ghana",
+ "fecha": "2026-06-23 20:00:00+00:00",
+ "prior": {
+  "xg_home": 2.082846011600685,
+  "xg_away": 0.4531426227169448,
+  "p_home": 0.7526599133623812,
+  "p_draw": 0.18428789820959648,
+  "p_away": 0.06305218842802235
+ },
+ "odds": null,
+ "model_final": {
+  "p_home": 0.7708283810804055,
+  "p_draw": 0.17152192843889516,
+  "p_away": 0.057649690480699255
+ },
+ "blend_weight_market": 0.0,
+ "final": {
+  "p_home": 0.694838252815761,
+  "p_draw": 0.22523981981772997,
+  "p_away": 0.07992192736650912,
+  "score_pred": "2-0",
+  "top_scores": "2-0 (15.8%); 1-0 (15.0%); 3-0 (10.7%)",
+  "xg_home": 1.95,
+  "xg_away": 0.5,
+  "p_home_by2": 0.4559,
+  "p_away_by2": 0.0169
+ },
+ "veredicto": {
+  "delta_log_xg_home": 0.05,
+  "delta_log_xg_away": 0.0,
+  "confianza": "media",
+  "bajas_confirmadas": false,
+  "factores": [
+   "Racha goleadora de Inglaterra (4 goles en la fecha 1)",
+   "Inglaterra busca asegurar la clasificación a octavos hoy mismo"
+  ],
+  "resumen": "Inglaterra viene en un gran momento ofensivo tras meterle 4 a Croacia. Kane y Saka se muestran sumamente acoplados. Se realiza un ligero ajuste a favor de Inglaterra para reflejar su poderío actual."
+ },
+ "delta_aplicado": {
+  "home": 0.05,
+  "away": 0.0
+ },
+ "rondas": {
+  "ronda1": {},
+  "ronda2": {}
+ },
+ "usage": {
+  "llamadas": 3,
+  "duracion_ms": 1500,
+  "turnos": 3,
+  "prompt_tokens": 1200,
+  "candidates_tokens": 400,
+  "total_tokens": 1600
+ }
+}

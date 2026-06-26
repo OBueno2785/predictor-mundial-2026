@@ -1,0 +1,56 @@
+{
+ "partido": "Ecuador vs Germany",
+ "fecha": "2026-06-25 20:00:00+00:00",
+ "prior": {
+  "xg_home": 0.6809669773005975,
+  "xg_away": 0.9235286411848144,
+  "p_home": 0.24774763920760717,
+  "p_draw": 0.366269408026244,
+  "p_away": 0.38598295276614875
+ },
+ "odds": null,
+ "model_final": {
+  "p_home": 0.26174895869450476,
+  "p_draw": 0.3568741422655252,
+  "p_away": 0.38137689903997
+ },
+ "blend_weight_market": 0.0,
+ "final": {
+  "p_home": 0.30564673839791995,
+  "p_draw": 0.34334834324197877,
+  "p_away": 0.3510049183601014,
+  "score_pred": "0-1",
+  "top_scores": "1-1 (15.4%); 0-0 (14.6%); 0-1 (12.3%)",
+  "xg_home": 0.98,
+  "xg_away": 1.07,
+  "p_home_by2": 0.1165,
+  "p_away_by2": 0.1443
+ },
+ "veredicto": {
+  "delta_log_xg_home": 0.08,
+  "delta_log_xg_away": 0.03,
+  "confianza": "media",
+  "bajas_confirmadas": false,
+  "factores": [
+   "Alemania rota titulares al estar clasificada",
+   "Ecuador obligado a ganar y expuesto a contras de Alemania"
+  ],
+  "resumen": "Alemania ya está clasificada como 1ª de grupo y rotará varios jugadores clave (penaliza su xG de ataque). Ecuador está obligado a ganar para clasificar y atacará desesperadamente. La desesperación de Ecuador los expone a contraataques letales de Alemania, lo que compensa la rotación alemana. Ajuste neto levemente positivo para el xG de ambos."
+ },
+ "delta_aplicado": {
+  "home": 0.08,
+  "away": 0.03
+ },
+ "rondas": {
+  "ronda1": {},
+  "ronda2": {}
+ },
+ "usage": {
+  "llamadas": 3,
+  "duracion_ms": 1500,
+  "turnos": 3,
+  "prompt_tokens": 1200,
+  "candidates_tokens": 400,
+  "total_tokens": 1600
+ }
+}

@@ -1,0 +1,56 @@
+{
+ "partido": "Japan vs Sweden",
+ "fecha": "2026-06-25 23:00:00+00:00",
+ "prior": {
+  "xg_home": 2.3158439648570117,
+  "xg_away": 1.0079091271741862,
+  "p_home": 0.6604226853530082,
+  "p_draw": 0.1955954745781529,
+  "p_away": 0.14398184006883885
+ },
+ "odds": null,
+ "model_final": {
+  "p_home": 0.6929688235356211,
+  "p_draw": 0.18245189403519638,
+  "p_away": 0.12457928242918256
+ },
+ "blend_weight_market": 0.0,
+ "final": {
+  "p_home": 0.6433464736140342,
+  "p_draw": 0.20779103656417455,
+  "p_away": 0.14886248982179134,
+  "score_pred": "2-1",
+  "top_scores": "1-1 (9.2%); 2-1 (8.9%); 2-0 (8.3%)",
+  "xg_home": 2.44,
+  "xg_away": 1.11,
+  "p_home_by2": 0.4434,
+  "p_away_by2": 0.0544
+ },
+ "veredicto": {
+  "delta_log_xg_home": 0.05,
+  "delta_log_xg_away": -0.05,
+  "confianza": "media",
+  "bajas_confirmadas": false,
+  "factores": [
+   "Japón busca el liderato de grupo para evitar cruces difíciles (ej. Brasil)",
+   "Suecia plantea bloque bajo para asegurar el empate de pase"
+  ],
+  "resumen": "Japón peleará el liderato del Grupo F con Países Bajos por diferencia de goles para evitar a Brasil en octavos, por lo que no rotará masivamente y atacará. Suecia se replegará en bloque bajo buscando el empate que les da el pase al 100%. Ajuste leve a favor de Japón y a la baja en la producción ofensiva sueca."
+ },
+ "delta_aplicado": {
+  "home": 0.05,
+  "away": -0.05
+ },
+ "rondas": {
+  "ronda1": {},
+  "ronda2": {}
+ },
+ "usage": {
+  "llamadas": 3,
+  "duracion_ms": 1500,
+  "turnos": 3,
+  "prompt_tokens": 1200,
+  "candidates_tokens": 400,
+  "total_tokens": 1600
+ }
+}

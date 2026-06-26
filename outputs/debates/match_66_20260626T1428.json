@@ -1,0 +1,56 @@
+{
+ "partido": "Uruguay vs Spain",
+ "fecha": "2026-06-27 00:00:00+00:00",
+ "prior": {
+  "xg_home": 0.6238512168544028,
+  "xg_away": 1.4798248211754645,
+  "p_home": 0.14808499416797177,
+  "p_draw": 0.2798363501492845,
+  "p_away": 0.5720786556827437
+ },
+ "odds": null,
+ "model_final": {
+  "p_home": 0.15989599711669242,
+  "p_draw": 0.30592443809878805,
+  "p_away": 0.5341795647845197
+ },
+ "blend_weight_market": 0.0,
+ "final": {
+  "p_home": 0.16576534265784174,
+  "p_draw": 0.308430449122975,
+  "p_away": 0.5258042082191833,
+  "score_pred": "0-1",
+  "top_scores": "0-1 (15.6%); 0-0 (13.8%); 1-1 (13.6%)",
+  "xg_home": 0.68,
+  "xg_away": 1.42,
+  "p_home_by2": 0.0461,
+  "p_away_by2": 0.2759
+ },
+ "veredicto": {
+  "delta_log_xg_home": -0.05,
+  "delta_log_xg_away": -0.12,
+  "confianza": "alta",
+  "bajas_confirmadas": false,
+  "factores": [
+   "España rota titulares tras clasificar",
+   "Uruguay juega compacto para asegurar el punto de clasificación"
+  ],
+  "resumen": "España está clasificada y rotará su plantilla para cuidar a sus figuras clave (penalización en su ataque). A Uruguay le sirve el empate para clasificar y planteará una postura táctica muy ordenada y cerrada. Ajuste a la baja en el xG ofensivo de ambos, especialmente de España."
+ },
+ "delta_aplicado": {
+  "home": -0.05,
+  "away": -0.12
+ },
+ "rondas": {
+  "ronda1": {},
+  "ronda2": {}
+ },
+ "usage": {
+  "llamadas": 3,
+  "duracion_ms": 1500,
+  "turnos": 3,
+  "prompt_tokens": 1200,
+  "candidates_tokens": 400,
+  "total_tokens": 1600
+ }
+}

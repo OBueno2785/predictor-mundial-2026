@@ -1,0 +1,57 @@
+{
+ "partido": "Scotland vs Brazil",
+ "fecha": "2026-06-24 22:00:00+00:00",
+ "prior": {
+  "xg_home": 0.8854470001808522,
+  "xg_away": 1.6666481676129146,
+  "p_home": 0.19045953789399117,
+  "p_draw": 0.25958776309730064,
+  "p_away": 0.5499526990087082
+ },
+ "odds": null,
+ "model_final": {
+  "p_home": 0.19056329807015865,
+  "p_draw": 0.2688020684591254,
+  "p_away": 0.540634633470716
+ },
+ "blend_weight_market": 0.0,
+ "final": {
+  "p_home": 0.1514512187053254,
+  "p_draw": 0.24928519509235134,
+  "p_away": 0.5992635862023233,
+  "score_pred": "0-2",
+  "top_scores": "1-1 (11.9%); 0-2 (11.1%); 0-1 (10.5%)",
+  "xg_home": 0.86,
+  "xg_away": 1.92,
+  "p_home_by2": 0.0483,
+  "p_away_by2": 0.3722
+ },
+ "veredicto": {
+  "delta_log_xg_home": -0.05,
+  "delta_log_xg_away": -0.05,
+  "confianza": "media",
+  "bajas_confirmadas": false,
+  "factores": [
+   "Scotland planteará un bloque bajo defensivo",
+   "A Escocia le sirve el empate para clasificar",
+   "Brasil cuidará la posesión de balón"
+  ],
+  "resumen": "Escocia saldrá con una táctica sumamente defensiva para asegurar el empate que los clasifica. Esto reducirá el ritmo de goles esperados para ambos equipos. Ajuste leve a la baja en xG (menos goles)."
+ },
+ "delta_aplicado": {
+  "home": -0.05,
+  "away": -0.05
+ },
+ "rondas": {
+  "ronda1": {},
+  "ronda2": {}
+ },
+ "usage": {
+  "llamadas": 3,
+  "duracion_ms": 1500,
+  "turnos": 3,
+  "prompt_tokens": 1200,
+  "candidates_tokens": 400,
+  "total_tokens": 1600
+ }
+}

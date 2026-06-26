@@ -1,0 +1,56 @@
+{
+ "partido": "France vs Iraq",
+ "fecha": "2026-06-22 21:00:00+00:00",
+ "prior": {
+  "xg_home": 2.29355363690272,
+  "xg_away": 0.47909532063246707,
+  "p_home": 0.7809897710091255,
+  "p_draw": 0.16237270677969787,
+  "p_away": 0.05663752221117657
+ },
+ "odds": null,
+ "model_final": {
+  "p_home": 0.803990439761679,
+  "p_draw": 0.14777386628095213,
+  "p_away": 0.04823569395736871
+ },
+ "blend_weight_market": 0.0,
+ "final": {
+  "p_home": 0.816126660076936,
+  "p_draw": 0.13988020845519983,
+  "p_away": 0.04399313146786414,
+  "score_pred": "2-0",
+  "top_scores": "2-0 (13.9%); 3-0 (13.2%); 4-0 (9.5%)",
+  "xg_home": 2.77,
+  "xg_away": 0.5,
+  "p_home_by2": 0.6393,
+  "p_away_by2": 0.009
+ },
+ "veredicto": {
+  "delta_log_xg_home": 0.05,
+  "delta_log_xg_away": -0.05,
+  "confianza": "media",
+  "bajas_confirmadas": false,
+  "factores": [
+   "Desesperación de Irak por evitar la eliminación",
+   "Mbappé sin bajas y en racha"
+  ],
+  "resumen": "Francia es muy superior. La urgencia de Irak por puntuar tras caer 1-4 ante Noruega los obligará a tomar riesgos, exponiendo su defensa ante un ataque francés completo."
+ },
+ "delta_aplicado": {
+  "home": 0.05,
+  "away": -0.05
+ },
+ "rondas": {
+  "ronda1": {},
+  "ronda2": {}
+ },
+ "usage": {
+  "llamadas": 3,
+  "duracion_ms": 1500,
+  "turnos": 3,
+  "prompt_tokens": 1200,
+  "candidates_tokens": 400,
+  "total_tokens": 1600
+ }
+}

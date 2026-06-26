@@ -1,0 +1,56 @@
+{
+ "partido": "Senegal vs Iraq",
+ "fecha": "2026-06-26 19:00:00+00:00",
+ "prior": {
+  "xg_home": 1.7384489432824313,
+  "xg_away": 0.6549718437810724,
+  "p_home": 0.6277523555302641,
+  "p_draw": 0.24402758440347222,
+  "p_away": 0.12822006006626366
+ },
+ "odds": null,
+ "model_final": {
+  "p_home": 0.6674455070487035,
+  "p_draw": 0.21758570025395094,
+  "p_away": 0.1149687926973455
+ },
+ "blend_weight_market": 0.0,
+ "final": {
+  "p_home": 0.6545056753892594,
+  "p_draw": 0.22389994421363754,
+  "p_away": 0.12159438039710303,
+  "score_pred": "2-0",
+  "top_scores": "2-0 (11.7%); 1-1 (10.7%); 1-0 (10.0%)",
+  "xg_home": 2.12,
+  "xg_away": 0.8,
+  "p_home_by2": 0.4343,
+  "p_away_by2": 0.0363
+ },
+ "veredicto": {
+  "delta_log_xg_home": 0.12,
+  "delta_log_xg_away": 0.05,
+  "confianza": "alta",
+  "bajas_confirmadas": false,
+  "factores": [
+   "Ambos con 0 puntos obligados a ganar por goleada",
+   "Exposición a contras de Irak ante rival superior (Senegal)"
+  ],
+  "resumen": "Senegal e Irak tienen 0 puntos y están obligados a ganar por buen margen para aspirar a clasificar como mejores terceros. Esto forzará un juego sumamente abierto. La desesperación de Irak dejará espacios enormes que serán explotados por la jerarquía de Senegal de contragolpe. Ajuste al alza para ambos, especialmente para Senegal."
+ },
+ "delta_aplicado": {
+  "home": 0.12,
+  "away": 0.05
+ },
+ "rondas": {
+  "ronda1": {},
+  "ronda2": {}
+ },
+ "usage": {
+  "llamadas": 3,
+  "duracion_ms": 1500,
+  "turnos": 3,
+  "prompt_tokens": 1200,
+  "candidates_tokens": 400,
+  "total_tokens": 1600
+ }
+}

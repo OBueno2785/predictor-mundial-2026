@@ -1,0 +1,56 @@
+{
+ "partido": "Norway vs Senegal",
+ "fecha": "2026-06-23 00:00:00+00:00",
+ "prior": {
+  "xg_home": 1.8632690835193948,
+  "xg_away": 1.0670521767468792,
+  "p_home": 0.552212797216686,
+  "p_draw": 0.24073325033762988,
+  "p_away": 0.2070539524456842
+ },
+ "odds": null,
+ "model_final": {
+  "p_home": 0.5736844468239088,
+  "p_draw": 0.23153655688458835,
+  "p_away": 0.19477899629150305
+ },
+ "blend_weight_market": 0.0,
+ "final": {
+  "p_home": 0.570485493774175,
+  "p_draw": 0.2242907966211857,
+  "p_away": 0.2052237096046393,
+  "score_pred": "2-1",
+  "top_scores": "1-1 (9.3%); 2-1 (8.7%); 3-1 (6.9%)",
+  "xg_home": 2.32,
+  "xg_away": 1.36,
+  "p_home_by2": 0.3726,
+  "p_away_by2": 0.0867
+ },
+ "veredicto": {
+  "delta_log_xg_home": 0.05,
+  "delta_log_xg_away": 0.0,
+  "confianza": "media",
+  "bajas_confirmadas": false,
+  "factores": [
+   "Poderío ofensivo de Haaland ante debilidades defensivas de Senegal",
+   "Senegal obligado a buscar el resultado abrirá espacios"
+  ],
+  "resumen": "Noruega llega con la moral alta tras el 4-1 del debut. Aunque Senegal es un rival competitivo, su necesidad de ganar les obligará a atacar, lo que favorece las contras letales de Haaland. Ajuste leve a favor de Noruega."
+ },
+ "delta_aplicado": {
+  "home": 0.05,
+  "away": 0.0
+ },
+ "rondas": {
+  "ronda1": {},
+  "ronda2": {}
+ },
+ "usage": {
+  "llamadas": 3,
+  "duracion_ms": 1500,
+  "turnos": 3,
+  "prompt_tokens": 1200,
+  "candidates_tokens": 400,
+  "total_tokens": 1600
+ }
+}

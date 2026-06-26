@@ -1,0 +1,56 @@
+{
+ "partido": "South Africa vs South Korea",
+ "fecha": "2026-06-25 01:00:00+00:00",
+ "prior": {
+  "xg_home": 0.8146821692855671,
+  "xg_away": 1.4119058010638421,
+  "p_home": 0.20761967412735022,
+  "p_draw": 0.2905400674305061,
+  "p_away": 0.501840258442144
+ },
+ "odds": null,
+ "model_final": {
+  "p_home": 0.21795224555380133,
+  "p_draw": 0.2994432463463512,
+  "p_away": 0.4826045080998475
+ },
+ "blend_weight_market": 0.0,
+ "final": {
+  "p_home": 0.2559520575703556,
+  "p_draw": 0.32291354504426717,
+  "p_away": 0.4211343973853773,
+  "score_pred": "0-1",
+  "top_scores": "1-1 (15.0%); 0-0 (12.5%); 0-1 (12.4%)",
+  "xg_home": 0.94,
+  "xg_away": 1.28,
+  "p_home_by2": 0.0926,
+  "p_away_by2": 0.1986
+ },
+ "veredicto": {
+  "delta_log_xg_home": 0.0,
+  "delta_log_xg_away": -0.05,
+  "confianza": "alta",
+  "bajas_confirmadas": false,
+  "factores": [
+   "Corea del Sur busca un empate conservador para clasificar",
+   "Sudáfrica obligado a ganar pero de nivel similar"
+  ],
+  "resumen": "Corea del Sur clasifica con el empate y saldrá con un planteamiento prudente de bloque medio-bajo, reduciendo el xG del partido. Se penaliza levemente el ataque coreano por su postura cautelosa."
+ },
+ "delta_aplicado": {
+  "home": 0.0,
+  "away": -0.05
+ },
+ "rondas": {
+  "ronda1": {},
+  "ronda2": {}
+ },
+ "usage": {
+  "llamadas": 3,
+  "duracion_ms": 1500,
+  "turnos": 3,
+  "prompt_tokens": 1200,
+  "candidates_tokens": 400,
+  "total_tokens": 1600
+ }
+}

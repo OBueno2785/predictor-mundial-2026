@@ -1,0 +1,53 @@
+{
+ "partido": "Argentina vs Austria",
+ "fecha": "2026-06-22 17:00:00+00:00",
+ "prior": {
+  "xg_home": 1.4973817139682326,
+  "xg_away": 0.5520511428336172,
+  "p_home": 0.5992932927288066,
+  "p_draw": 0.2709062179246707,
+  "p_away": 0.1298004893465227
+ },
+ "odds": null,
+ "model_final": {
+  "p_home": 0.5992932927288066,
+  "p_draw": 0.2709062179246707,
+  "p_away": 0.1298004893465227
+ },
+ "blend_weight_market": 0.0,
+ "final": {
+  "p_home": 0.6205675030993089,
+  "p_draw": 0.27469077465367314,
+  "p_away": 0.10474172224701797,
+  "score_pred": "1-0",
+  "top_scores": "1-0 (17.5%); 2-0 (15.2%); 0-0 (13.7%)",
+  "xg_home": 1.61,
+  "xg_away": 0.51,
+  "p_home_by2": 0.3614,
+  "p_away_by2": 0.0226
+ },
+ "veredicto": {
+  "delta_log_xg_home": 0.0,
+  "delta_log_xg_away": 0.0,
+  "confianza": "alta",
+  "bajas_confirmadas": false,
+  "factores": [],
+  "resumen": "Sin novedades significativas. Montiel es baja en Argentina pero Molina es un reemplazo de nivel equivalente. Se mantiene el prior."
+ },
+ "delta_aplicado": {
+  "home": 0.0,
+  "away": 0.0
+ },
+ "rondas": {
+  "ronda1": {},
+  "ronda2": {}
+ },
+ "usage": {
+  "llamadas": 3,
+  "duracion_ms": 1500,
+  "turnos": 3,
+  "prompt_tokens": 1200,
+  "candidates_tokens": 400,
+  "total_tokens": 1600
+ }
+}

@@ -1,0 +1,43 @@
+{
+ "partido": "Norway vs Senegal",
+ "fecha": "2026-06-23 00:00:00+00:00",
+ "prior": {
+  "xg_home": 1.8632690835193948,
+  "xg_away": 1.0670521767468792,
+  "p_home": 0.552212797216686,
+  "p_draw": 0.24073325033762988,
+  "p_away": 0.2070539524456842
+ },
+ "odds": null,
+ "model_final": {
+  "p_home": 0.552212797216686,
+  "p_draw": 0.24073325033762988,
+  "p_away": 0.2070539524456842
+ },
+ "blend_weight_market": 0.0,
+ "final": {
+  "p_home": 0.5492450179312197,
+  "p_draw": 0.23286934901151224,
+  "p_away": 0.21788563305726807,
+  "score_pred": "2-1",
+  "top_scores": "1-1 (9.9%); 2-1 (8.9%); 2-2 (6.9%)",
+  "xg_home": 2.21,
+  "xg_away": 1.35,
+  "p_home_by2": 0.3492,
+  "p_away_by2": 0.0928
+ },
+ "veredicto": {
+  "delta_log_xg_home": 0.0,
+  "delta_log_xg_away": 0.0,
+  "confianza": "baja",
+  "bajas_confirmadas": false,
+  "factores": [],
+  "resumen": "Degradado: error en debate: GEMINI_API_KEY no encontrada en las variables de entorno. Por favor configúrala en tu archivo .env."
+ },
+ "delta_aplicado": {
+  "home": 0.0,
+  "away": 0.0
+ },
+ "rondas": {},
+ "usage": {}
+}

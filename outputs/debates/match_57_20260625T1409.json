@@ -1,0 +1,56 @@
+{
+ "partido": "Japan vs Sweden",
+ "fecha": "2026-06-25 23:00:00+00:00",
+ "prior": {
+  "xg_home": 2.3158439648570117,
+  "xg_away": 1.0079091271741862,
+  "p_home": 0.6604226853530082,
+  "p_draw": 0.1955954745781529,
+  "p_away": 0.14398184006883885
+ },
+ "odds": null,
+ "model_final": {
+  "p_home": 0.6072277660438752,
+  "p_draw": 0.2250497000111291,
+  "p_away": 0.16772253394499562
+ },
+ "blend_weight_market": 0.0,
+ "final": {
+  "p_home": 0.5604955491223567,
+  "p_draw": 0.2471763183266352,
+  "p_away": 0.19232813255100822,
+  "score_pred": "2-1",
+  "top_scores": "1-1 (11.5%); 2-1 (9.4%); 2-0 (8.7%)",
+  "xg_home": 2.0,
+  "xg_away": 1.1,
+  "p_home_by2": 0.3465,
+  "p_away_by2": 0.0727
+ },
+ "veredicto": {
+  "delta_log_xg_home": -0.15,
+  "delta_log_xg_away": -0.05,
+  "confianza": "media",
+  "bajas_confirmadas": false,
+  "factores": [
+   "Japón rota titulares tras asegurar clasificación",
+   "Suecia plantea un bloque bajo conservador para asegurar el empate"
+  ],
+  "resumen": "Japón está clasificado y rotará su plantilla para descansar. A Suecia le basta un empate para pasar a la siguiente ronda 100% y saldrá con un planteamiento defensivo cerrado en bloque bajo. Partido de ritmo lento y pocas opciones ofensivas. Ajuste a la baja en el xG de ambos."
+ },
+ "delta_aplicado": {
+  "home": -0.15,
+  "away": -0.05
+ },
+ "rondas": {
+  "ronda1": {},
+  "ronda2": {}
+ },
+ "usage": {
+  "llamadas": 3,
+  "duracion_ms": 1500,
+  "turnos": 3,
+  "prompt_tokens": 1200,
+  "candidates_tokens": 400,
+  "total_tokens": 1600
+ }
+}

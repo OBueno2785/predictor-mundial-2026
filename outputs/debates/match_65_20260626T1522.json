@@ -1,0 +1,57 @@
+{
+ "partido": "Cape Verde vs Saudi Arabia",
+ "fecha": "2026-06-27 00:00:00+00:00",
+ "prior": {
+  "xg_home": 0.9795778231971317,
+  "xg_away": 0.9181448230983276,
+  "p_home": 0.3475057694543278,
+  "p_draw": 0.3378559236583703,
+  "p_away": 0.3146383068873019
+ },
+ "odds": null,
+ "model_final": {
+  "p_home": 0.32201220386050355,
+  "p_draw": 0.33809260094928273,
+  "p_away": 0.33989519519021344
+ },
+ "blend_weight_market": 0.0,
+ "final": {
+  "p_home": 0.32249475555368995,
+  "p_draw": 0.33789068398912286,
+  "p_away": 0.33961456045718713,
+  "score_pred": "0-1",
+  "top_scores": "1-1 (15.4%); 0-0 (13.8%); 0-1 (11.5%)",
+  "xg_home": 1.04,
+  "xg_away": 1.07,
+  "p_home_by2": 0.1285,
+  "p_away_by2": 0.1392
+ },
+ "veredicto": {
+  "delta_log_xg_home": -0.05,
+  "delta_log_xg_away": 0.05,
+  "confianza": "media",
+  "bajas_confirmadas": false,
+  "factores": [
+   "Cabo Verde busca asegurar el empate",
+   "Arabia Saudita obligada a ganar por descarte",
+   "No hay lesionados ni suspendidos reportados; ambos con su base titular"
+  ],
+  "resumen": "Cabo Verde (2 pts, +0 DG) sabe que el empate le da 3 puntos y +0 DG, lo que le garantiza el pase. Plantearán un juego cauteloso con su equipo titular. Arabia Saudita (1 pt) está obligada a ganar e irá con todo con su equipo titular bajo Georgios Donis. Ajuste leve a la baja para Cabo Verde y al alza para Arabia."
+ },
+ "delta_aplicado": {
+  "home": -0.05,
+  "away": 0.05
+ },
+ "rondas": {
+  "ronda1": {},
+  "ronda2": {}
+ },
+ "usage": {
+  "llamadas": 3,
+  "duracion_ms": 1500,
+  "turnos": 3,
+  "prompt_tokens": 1200,
+  "candidates_tokens": 400,
+  "total_tokens": 1600
+ }
+}

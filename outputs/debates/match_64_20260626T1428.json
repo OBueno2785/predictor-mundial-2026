@@ -1,0 +1,56 @@
+{
+ "partido": "New Zealand vs Belgium",
+ "fecha": "2026-06-27 03:00:00+00:00",
+ "prior": {
+  "xg_home": 0.5400042139090152,
+  "xg_away": 2.299761781695739,
+  "p_home": 0.0653938626423317,
+  "p_draw": 0.16746247764306896,
+  "p_away": 0.7671436597145992
+ },
+ "odds": null,
+ "model_final": {
+  "p_home": 0.05515643053822569,
+  "p_draw": 0.14097981505895085,
+  "p_away": 0.8038637544028233
+ },
+ "blend_weight_market": 0.0,
+ "final": {
+  "p_home": 0.06081378047816297,
+  "p_draw": 0.14929404323102793,
+  "p_away": 0.7898921762908091,
+  "score_pred": "0-2",
+  "top_scores": "0-2 (11.6%); 0-3 (11.3%); 0-4 (8.2%)",
+  "xg_home": 0.67,
+  "xg_away": 2.81,
+  "p_home_by2": 0.0153,
+  "p_away_by2": 0.6128
+ },
+ "veredicto": {
+  "delta_log_xg_home": 0.05,
+  "delta_log_xg_away": 0.12,
+  "confianza": "alta",
+  "bajas_confirmadas": false,
+  "factores": [
+   "Nueva Zelanda obligado a ganar e irá con todo",
+   "Bélgica busca el triunfo y explotará contras ante rival más débil"
+  ],
+  "resumen": "Nueva Zelanda está obligada a ganar para clasificar (el empate la elimina) y saldrá de forma agresiva. Esto dejará su línea defensiva muy vulnerable ante los contraataques de Bélgica, que cuenta con una diferencia de nivel considerable. Ajuste al alza para ambos, con claro beneficio para Bélgica."
+ },
+ "delta_aplicado": {
+  "home": 0.05,
+  "away": 0.12
+ },
+ "rondas": {
+  "ronda1": {},
+  "ronda2": {}
+ },
+ "usage": {
+  "llamadas": 3,
+  "duracion_ms": 1500,
+  "turnos": 3,
+  "prompt_tokens": 1200,
+  "candidates_tokens": 400,
+  "total_tokens": 1600
+ }
+}

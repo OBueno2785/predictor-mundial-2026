@@ -59,12 +59,110 @@ def build_context(match_number: int, offline: bool):
     def _f5(team):
         f = groups.last5(hist, team)
         return f"{f['racha']} · {f['ppg']:.2f} pts/p · {f['gf']:.1f} GF / {f['ga']:.1f} GC por partido"
+    def _wc_stats(team):
+        played = fx[fx["played"] & ((fx["home_team"] == team) | (fx["away_team"] == team))]
+        if played.empty:
+            return "Aún no ha jugado partidos en este Mundial"
+        gf = gc = 0
+        for r in played.itertuples():
+            if r.home_team == team:
+                gf += r.home_score
+                gc += r.away_score
+            else:
+                gf += r.away_score
+                gc += r.home_score
+        pj = len(played)
+        return f"{gf / pj:.1f} GF / {gc / pj:.1f} GC por partido (en {pj} partidos)"
+
+    def _capacidad_delantera(team):
+        played = fx[fx["played"] & ((fx["home_team"] == team) | (fx["away_team"] == team))]
+        gf = 0
+        for r in played.itertuples():
+            if r.home_team == team:
+                gf += r.home_score
+            else:
+                gf += r.away_score
+        pj = len(played)
+        
+        delanteras = {
+            "Argentina": "Lionel Messi, Lautaro Martínez, Julián Álvarez",
+            "Austria": "Michael Gregoritsch, Marko Arnautović",
+            "France": "Kylian Mbappé, Marcus Thuram, Bradley Barcola",
+            "Iraq": "Aymen Hussein, Mohanad Ali",
+            "Norway": "Erling Haaland, Alexander Sørloth",
+            "Senegal": "Nicolas Jackson, Sadio Mané",
+            "Jordan": "Yazan Al-Naimat, Mousa Al-Tamari",
+            "Algeria": "Amine Gouiri, Baghdad Bounedjah",
+            "Mexico": "Santiago Giménez, Alexis Vega",
+            "South Africa": "Lyle Foster, Percy Tau",
+            "South Korea": "Heung-min Son, Gue-sung Cho",
+            "Czech Republic": "Patrik Schick, Adam Hložek",
+            "Czechia": "Patrik Schick, Adam Hložek",
+            "Canada": "Jonathan David, Cyle Larin",
+            "Bosnia and Herzegovina": "Edin Džeko, Ermedin Demirović",
+            "Qatar": "Akram Afif, Almoez Ali",
+            "Switzerland": "Breel Embolo, Zeki Amdouni",
+            "Haiti": "Frantzdy Pierrot, Duckens Nazon",
+            "Scotland": "Che Adams, Lyndon Dykes",
+            "Brazil": "Vinícius Júnior, Rodrygo, Richarlison",
+            "Morocco": "Youssef En-Nesyri, Ayoub El Kaabi",
+            "United States": "Folarin Balogun, Christian Pulisic",
+            "Paraguay": "Antonio Sanabria, Julio Enciso",
+            "Australia": "Mitchell Duke, Kusini Yengi",
+            "Turkey": "Barış Alper Yılmaz, Kenan Yıldız",
+            "Ivory Coast": "Sébastien Haller, Oumar Diakité",
+            "Ecuador": "Enner Valencia, Kevin Rodríguez",
+            "Germany": "Niclas Füllkrug, Kai Havertz, Deniz Undav",
+            "Netherlands": "Cody Gakpo, Memphis Depay, Wout Weghorst",
+            "Japan": "Ayase Ueda, Takuma Asano",
+            "Sweden": "Viktor Gyökeres, Alexander Isak",
+            "Tunisia": "Youssef Msakni, Elias Achouri",
+            "Iran": "Mehdi Taremi, Sardar Azmoun",
+            "New Zealand": "Chris Wood, Ben Waine",
+            "Belgium": "Romelu Lukaku, Loïs Openda",
+            "Egypt": "Mohamed Salah, Mostafa Mohamed",
+            "Saudi Arabia": "Firas Al-Buraikan, Saleh Al-Shehri",
+            "Uruguay": "Darwin Núñez, Luis Suárez",
+            "Spain": "Alvaro Morata, Nico Williams, Lamine Yamal",
+            "Cape Verde": "Ryan Mendes, Garry Rodrigues",
+            "Portugal": "Cristiano Ronaldo, Gonçalo Ramos, Rafael Leão",
+            "DR Congo": "Yoane Wissa, Cédric Bakambu",
+            "Uzbekistan": "Eldor Shomurodov, Igor Sergeev",
+            "Colombia": "Luis Díaz, Jhon Durán, Rafael Borré",
+            "Ghana": "Inaki Williams, Antoine Semenyo",
+            "Panama": "José Fajardo, Cecilio Waterman",
+            "England": "Harry Kane, Bukayo Saka, Ollie Watkins",
+            "Croatia": "Andrej Kramarić, Bruno Petković",
+        }
+        
+        del_list = delanteras.get(team, "Delanteros de la plantilla nacional")
+        if pj == 0:
+            return f"{del_list} — Aún sin partidos jugados en el torneo"
+        
+        promedio = gf / pj
+        if promedio >= 2.0:
+            status = "Alta Eficacia (en racha)"
+        elif promedio >= 1.0:
+            status = "Regular"
+        else:
+            status = "Baja Eficacia (apagada)"
+            
+        return f"{del_list} ({gf} goles anotados en {pj} partidos, prom {promedio:.1f} GF/partido) — Capacidad en el torneo: {status}"
+
+    q_home = groups.qualification(fx, m["home_team"])
+    q_away = groups.qualification(fx, m["away_team"])
+    
+    prob_clasificar_home = q_home.get("prob_clasificar", 0.0) if q_home else 0.0
+    prob_clasificar_away = q_away.get("prob_clasificar", 0.0) if q_away else 0.0
+    
+    necesidad_goles_home = q_home.get("necesidad_goles", "sin datos") if q_home else "sin datos"
+    necesidad_goles_away = q_away.get("necesidad_goles", "sin datos") if q_away else "sin datos"
 
     ventaja = m["home_team"] if side == 1 else (m["away_team"] if side == -1 else None)
     ctx = {
         "match_number": match_number,
         "home": m["home_team"], "away": m["away_team"],
-        "group": m["group"], "fecha": m["date_utc"],
+        "group": m["group"], "round": int(m["round"]), "fecha": m["date_utc"],
         "estadio": m["location"], "sede_pais": m["venue_country"],
         "ventaja": ventaja,
         "xg_home": float(lam), "xg_away": float(mu),
@@ -73,9 +171,18 @@ def build_context(match_number: int, offline: bool):
         "form_home": results.recent_form(hist, m["home_team"]),
         "form_away": results.recent_form(hist, m["away_team"]),
         "form5_home": _f5(m["home_team"]), "form5_away": _f5(m["away_team"]),
+        "wc_stats_home": _wc_stats(m["home_team"]), "wc_stats_away": _wc_stats(m["away_team"]),
+        "capacidad_goleadora_delanteras_home": _capacidad_delantera(m["home_team"]),
+        "capacidad_goleadora_delanteras_away": _capacidad_delantera(m["away_team"]),
         "pos_home": _pos(m["home_team"]), "pos_away": _pos(m["away_team"]),
         "outlook_home": groups.outlook_text(fx, m["home_team"]),
         "outlook_away": groups.outlook_text(fx, m["away_team"]),
+        "necesidad_goles_home": necesidad_goles_home,
+        "necesidad_goles_away": necesidad_goles_away,
+        "prob_clasificar_home": prob_clasificar_home,
+        "prob_clasificar_away": prob_clasificar_away,
+        "q_home": q_home,
+        "q_away": q_away,
         "odds": cuotas,
     }
     return ctx, model, side
@@ -142,7 +249,7 @@ def main():
     # prob FINAL (debate + mercado): el 1X2 no cambia, solo el reparto de goles.
     P_score = dixon_coles.matrix_from_rates(lam * g, mu * g, model.rho)
     P_final = blend.rescale_matrix(P_score, [bh, bd, ba])
-    resumen = blend.score_summary(P_final, 3)
+    resumen = blend.score_summary(P_final, 3, ctx.get("q_home"), ctx.get("q_away"))
 
     DEBATES.mkdir(parents=True, exist_ok=True)
     ts = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M")
@@ -180,8 +287,9 @@ def main():
           f"gana local por 2+: {resumen['p_home_by2']:.0%} · "
           f"visita por 2+: {resumen['p_away_by2']:.0%}")
     u = resultado.usage
-    print(f"  {u.get('llamadas', 0)} llamadas a claude · "
-          f"{u.get('duracion_ms', 0) / 60000:.1f} min acumulados de agentes")
+    print(f"  {u.get('llamadas', 0)} llamadas a Gemini · "
+          f"{u.get('duracion_ms', 0) / 60000:.1f} min acumulados de agentes · "
+          f"Tokens: {u.get('total_tokens', 0)} ({u.get('prompt_tokens', 0)} entrada, {u.get('candidates_tokens', 0)} salida)")
     print(f"  Guardado: {dest}")
 
 

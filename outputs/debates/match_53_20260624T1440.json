@@ -1,0 +1,56 @@
+{
+ "partido": "Czech Republic vs Mexico",
+ "fecha": "2026-06-25 01:00:00+00:00",
+ "prior": {
+  "xg_home": 0.7849626141129762,
+  "xg_away": 1.7545478872200517,
+  "p_home": 0.1560981556774881,
+  "p_draw": 0.2469533107813396,
+  "p_away": 0.5969485335411722
+ },
+ "odds": null,
+ "model_final": {
+  "p_home": 0.16599497607850588,
+  "p_draw": 0.2575553631637821,
+  "p_away": 0.5764496607577121
+ },
+ "blend_weight_market": 0.0,
+ "final": {
+  "p_home": 0.12753310516092617,
+  "p_draw": 0.22881984009684944,
+  "p_away": 0.6436470547422244,
+  "score_pred": "0-2",
+  "top_scores": "0-2 (11.6%); 1-1 (10.9%); 0-1 (10.1%)",
+  "xg_home": 0.82,
+  "xg_away": 2.09,
+  "p_home_by2": 0.0387,
+  "p_away_by2": 0.422
+ },
+ "veredicto": {
+  "delta_log_xg_home": 0.0,
+  "delta_log_xg_away": -0.05,
+  "confianza": "media",
+  "bajas_confirmadas": false,
+  "factores": [
+   "México rotará titulares tras asegurar clasificación",
+   "República Checa obligado a ganar expuesto a contras"
+  ],
+  "resumen": "México ya está clasificado y rotará jugadores clave para cuidarlos. República Checa atacará desesperadamente pero la diferencia de nivel generará contras para México. Ajuste neto levemente a la baja para el xG de México por las rotaciones."
+ },
+ "delta_aplicado": {
+  "home": 0.0,
+  "away": -0.05
+ },
+ "rondas": {
+  "ronda1": {},
+  "ronda2": {}
+ },
+ "usage": {
+  "llamadas": 3,
+  "duracion_ms": 1500,
+  "turnos": 3,
+  "prompt_tokens": 1200,
+  "candidates_tokens": 400,
+  "total_tokens": 1600
+ }
+}

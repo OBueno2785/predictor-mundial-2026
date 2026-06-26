@@ -1,0 +1,56 @@
+{
+ "partido": "Curaçao vs Ivory Coast",
+ "fecha": "2026-06-25 20:00:00+00:00",
+ "prior": {
+  "xg_home": 0.44642455719948265,
+  "xg_away": 2.0037052423388033,
+  "p_home": 0.06639907991453665,
+  "p_draw": 0.1932594483230244,
+  "p_away": 0.7403414717624389
+ },
+ "odds": null,
+ "model_final": {
+  "p_home": 0.056969447518828376,
+  "p_draw": 0.16486586455801155,
+  "p_away": 0.7781646879231601
+ },
+ "blend_weight_market": 0.0,
+ "final": {
+  "p_home": 0.05832472267906378,
+  "p_draw": 0.17171671640088165,
+  "p_away": 0.7699585609200547,
+  "score_pred": "0-2",
+  "top_scores": "0-2 (14.8%); 0-3 (12.4%); 0-1 (11.3%)",
+  "xg_home": 0.52,
+  "xg_away": 2.43,
+  "p_home_by2": 0.0124,
+  "p_away_by2": 0.5671
+ },
+ "veredicto": {
+  "delta_log_xg_home": 0.05,
+  "delta_log_xg_away": 0.12,
+  "confianza": "alta",
+  "bajas_confirmadas": false,
+  "factores": [
+   "Curaçao obligado a ganar y volcado al ataque",
+   "Exposición a contras de Curaçao ante rival superior (Costa de Marfil)"
+  ],
+  "resumen": "Curaçao está obligado a ganar e irá con todo al ataque. Esto aumentará levemente su peligro pero dejará espacios enormes atrás. Costa de Marfil (nivel superior) aprovechará los contraataques letales. Ajuste positivo para ambos, especialmente para Costa de Marfil."
+ },
+ "delta_aplicado": {
+  "home": 0.05,
+  "away": 0.12
+ },
+ "rondas": {
+  "ronda1": {},
+  "ronda2": {}
+ },
+ "usage": {
+  "llamadas": 3,
+  "duracion_ms": 1500,
+  "turnos": 3,
+  "prompt_tokens": 1200,
+  "candidates_tokens": 400,
+  "total_tokens": 1600
+ }
+}

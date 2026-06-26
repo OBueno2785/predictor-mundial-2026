@@ -1,0 +1,58 @@
+{
+ "partido": "Uruguay vs Spain",
+ "fecha": "2026-06-27 00:00:00+00:00",
+ "prior": {
+  "xg_home": 0.6238512168544028,
+  "xg_away": 1.4798248211754645,
+  "p_home": 0.14808499416797177,
+  "p_draw": 0.2798363501492845,
+  "p_away": 0.5720786556827437
+ },
+ "odds": null,
+ "model_final": {
+  "p_home": 0.14023471571027357,
+  "p_draw": 0.27903199657425104,
+  "p_away": 0.5807332877154753
+ },
+ "blend_weight_market": 0.0,
+ "final": {
+  "p_home": 0.14646600897669207,
+  "p_draw": 0.28293749664161955,
+  "p_away": 0.5705964943816885,
+  "score_pred": "0-1",
+  "top_scores": "0-1 (14.5%); 1-1 (12.8%); 0-2 (12.7%)",
+  "xg_home": 0.69,
+  "xg_away": 1.6,
+  "p_home_by2": 0.0404,
+  "p_away_by2": 0.3239
+ },
+ "veredicto": {
+  "delta_log_xg_home": -0.05,
+  "delta_log_xg_away": 0.0,
+  "confianza": "alta",
+  "bajas_confirmadas": false,
+  "factores": [
+   "Luis de la Fuente confirmó que NO rotará para asegurar liderato y evitar a Argentina",
+   "España busca evitar a la Argentina de Messi en octavos",
+   "Uruguay plantea bloque defensivo ordenado",
+   "Mathías Olivera y Rodrigo Bentancur apercibidos en Uruguay pero juegan titulares"
+  ],
+  "resumen": "Luis de la Fuente saldrá con sus mejores hombres para evitar una derrota que los condene al segundo lugar y a chocar contra Argentina en dieciseisavos. Uruguay también saldrá con su equipo estelar y un esquema táctico muy ordenado. No hay rotaciones ni bajas confirmadas en ambos. Ajuste neutro para España y levemente conservador para Uruguay."
+ },
+ "delta_aplicado": {
+  "home": -0.05,
+  "away": 0.0
+ },
+ "rondas": {
+  "ronda1": {},
+  "ronda2": {}
+ },
+ "usage": {
+  "llamadas": 3,
+  "duracion_ms": 1500,
+  "turnos": 3,
+  "prompt_tokens": 1200,
+  "candidates_tokens": 400,
+  "total_tokens": 1600
+ }
+}

@@ -107,7 +107,50 @@ def rescale_matrix(P, target_1x2) -> np.ndarray:
     return out / out.sum()
 
 
-def score_summary(P, n_top: int = 3) -> dict:
+def get_predicted_score(P, q_home=None, q_away=None) -> str:
+    """Devuelve el marcador más probable dentro de la clase de resultado (1X2) más probable.
+    
+    Si el análisis de escenarios indica que un equipo está obligado a ganar por diferencia de 2+ goles
+    y ese equipo es el favorito para ganar el partido, el marcador predicho se ajustará para reflejar
+    una victoria por un margen de al menos 2 goles.
+    """
+    P = np.array(P, dtype=float)
+    dim = P.shape[0]
+    p_home = float(np.tril(P, -1).sum())
+    p_draw = float(np.trace(P))
+    p_away = float(np.triu(P, 1).sum())
+    
+    flat = sorted(((P[i, j], i, j) for i in range(dim) for j in range(dim)), reverse=True)
+    
+    # Identificar si existe necesidad táctica de ganar por 2+ goles (prob_if_w2 > prob_if_w1 + 15%)
+    needs_w2_home = q_home and q_home.get("prob_if_w2", 0.0) > q_home.get("prob_if_w1", 0.0) + 0.15
+    needs_w2_away = q_away and q_away.get("prob_if_w2", 0.0) > q_away.get("prob_if_w1", 0.0) + 0.15
+    
+    if p_home >= p_draw and p_home >= p_away:
+        # Victoria Local (i > j)
+        if needs_w2_home:
+            # Forzar/filtrar marcadores con margen de 2+ goles (i - j >= 2)
+            winning_flat = sorted(((P[i, j], i, j) for i in range(dim) for j in range(dim) if i - j >= 2), reverse=True)
+        else:
+            winning_flat = sorted(((P[i, j], i, j) for i in range(dim) for j in range(dim) if i > j), reverse=True)
+        return f"{winning_flat[0][1]}-{winning_flat[0][2]}" if winning_flat else f"{flat[0][1]}-{flat[0][2]}"
+        
+    elif p_away >= p_home and p_away >= p_draw:
+        # Victoria Visitante (i < j)
+        if needs_w2_away:
+            # Forzar/filtrar marcadores con margen de 2+ goles (j - i >= 2)
+            winning_flat = sorted(((P[i, j], i, j) for i in range(dim) for j in range(dim) if j - i >= 2), reverse=True)
+        else:
+            winning_flat = sorted(((P[i, j], i, j) for i in range(dim) for j in range(dim) if i < j), reverse=True)
+        return f"{winning_flat[0][1]}-{winning_flat[0][2]}" if winning_flat else f"{flat[0][1]}-{flat[0][2]}"
+        
+    else:
+        # Empate (i == j)
+        draw_flat = sorted(((P[i, j], i, j) for i in range(dim) for j in range(dim) if i == j), reverse=True)
+        return f"{draw_flat[0][1]}-{draw_flat[0][2]}" if draw_flat else f"{flat[0][1]}-{flat[0][2]}"
+
+
+def score_summary(P, n_top: int = 3, q_home=None, q_away=None) -> dict:
     """Resumen de marcadores de una matriz: marcador modal, top-n, goles
     esperados y P(el favorito gana por 2+)."""
     P = np.array(P, dtype=float)
@@ -121,7 +164,7 @@ def score_summary(P, n_top: int = 3) -> dict:
     p_home_2 = float(P[margen >= 2].sum())
     p_away_2 = float(P[margen <= -2].sum())
     return {
-        "score_pred": f"{top[0][0]}-{top[0][1]}",
+        "score_pred": get_predicted_score(P, q_home, q_away),
         "top_scores": "; ".join(f"{i}-{j} ({p:.1%})" for i, j, p in top),
         "xg_home": round(xg_home, 2), "xg_away": round(xg_away, 2),
         "p_home_by2": round(p_home_2, 4), "p_away_by2": round(p_away_2, 4),

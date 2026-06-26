@@ -6,106 +6,106 @@ Clasifican los 2 primeros de cada grupo + los 8 mejores terceros.
 
 | Pos | Equipo | PJ | Pts | GF | GC | DG | Escenario |
 |---|---|---|---|---|---|---|---|
-| 1 | **Mexico** | 2 | 6 | 3 | 0 | +3 | ya clasificado a 32avos (top-2 asegurado) |
-| 2 | **South Korea** | 2 | 3 | 2 | 2 | +0 | próximo vs South Africa: gana→clasifica seguro; empata→sigue con opciones; pierde→queda fuera del top-2 |
-| 3 | Czech Republic | 2 | 1 | 2 | 3 | -1 | sin opción de top-2; solo puede avanzar como mejor tercero (depende de otros grupos) |
-| 4 | South Africa | 2 | 1 | 1 | 3 | -2 | próximo vs South Korea: gana→sigue con opciones; empata→queda fuera del top-2; pierde→queda fuera del top-2 |
+| 1 | **Mexico** | 3 | 9 | 6 | 0 | +6 | Clasificado |
+| 2 | **South Africa** | 3 | 4 | 2 | 3 | -1 | Clasificado |
+| 3 | South Korea | 3 | 3 | 2 | 3 | -1 | Pendiente de otros grupos |
+| 4 | Czech Republic | 3 | 1 | 2 | 6 | -4 | Eliminado |
 
 ## Group B
 
 | Pos | Equipo | PJ | Pts | GF | GC | DG | Escenario |
 |---|---|---|---|---|---|---|---|
-| 1 | **Canada** | 2 | 4 | 7 | 1 | +6 | próximo vs Switzerland: gana→clasifica seguro; empata→clasifica seguro; pierde→sigue con opciones |
-| 2 | **Switzerland** | 2 | 4 | 5 | 2 | +3 | próximo vs Canada: gana→clasifica seguro; empata→clasifica seguro; pierde→sigue con opciones |
-| 3 | Bosnia and Herzegovina | 2 | 1 | 2 | 5 | -3 | sin opción de top-2; solo puede avanzar como mejor tercero (depende de otros grupos) |
-| 4 | Qatar | 2 | 1 | 1 | 7 | -6 | sin opción de top-2; solo puede avanzar como mejor tercero (depende de otros grupos) |
+| 1 | **Switzerland** | 3 | 7 | 7 | 3 | +4 | Clasificado |
+| 2 | **Canada** | 3 | 4 | 8 | 3 | +5 | Clasificado |
+| 3 | Bosnia and Herzegovina | 3 | 4 | 5 | 6 | -1 | Clasificado |
+| 4 | Qatar | 3 | 1 | 2 | 10 | -8 | Eliminado |
 
 ## Group C
 
 | Pos | Equipo | PJ | Pts | GF | GC | DG | Escenario |
 |---|---|---|---|---|---|---|---|
-| 1 | **Scotland** | 1 | 3 | 1 | 0 | +1 | próximo vs Morocco: gana→clasifica seguro; empata→sigue con opciones; pierde→sigue con opciones |
-| 2 | **Brazil** | 1 | 1 | 1 | 1 | +0 | próximo vs Haiti: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
-| 3 | Morocco | 1 | 1 | 1 | 1 | +0 | próximo vs Scotland: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
-| 4 | Haiti | 1 | 0 | 0 | 1 | -1 | próximo vs Brazil: gana→sigue con opciones; empata→sigue con opciones; pierde→queda fuera del top-2 |
+| 1 | **Brazil** | 3 | 7 | 7 | 1 | +6 | Clasificado |
+| 2 | **Morocco** | 3 | 7 | 6 | 3 | +3 | Clasificado |
+| 3 | Scotland | 3 | 3 | 1 | 4 | -3 | Pendiente de otros grupos |
+| 4 | Haiti | 3 | 0 | 2 | 8 | -6 | Eliminado |
 
 ## Group D
 
 | Pos | Equipo | PJ | Pts | GF | GC | DG | Escenario |
 |---|---|---|---|---|---|---|---|
-| 1 | **United States** | 1 | 3 | 4 | 1 | +3 | próximo vs Australia: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
-| 2 | **Australia** | 1 | 3 | 2 | 0 | +2 | próximo vs United States: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
-| 3 | Turkey | 1 | 0 | 0 | 2 | -2 | próximo vs Paraguay: gana→sigue con opciones; empata→sigue con opciones; pierde→queda fuera del top-2 |
-| 4 | Paraguay | 1 | 0 | 1 | 4 | -3 | próximo vs Turkey: gana→sigue con opciones; empata→sigue con opciones; pierde→queda fuera del top-2 |
+| 1 | **United States** | 3 | 6 | 8 | 4 | +4 | Clasificado |
+| 2 | **Australia** | 3 | 4 | 2 | 2 | +0 | Clasificado |
+| 3 | Paraguay | 3 | 4 | 2 | 4 | -2 | Clasificado |
+| 4 | Turkey | 3 | 3 | 3 | 5 | -2 | Eliminado |
 
 ## Group E
 
 | Pos | Equipo | PJ | Pts | GF | GC | DG | Escenario |
 |---|---|---|---|---|---|---|---|
-| 1 | **Germany** | 1 | 3 | 7 | 1 | +6 | próximo vs Ivory Coast: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
-| 2 | **Ivory Coast** | 1 | 3 | 1 | 0 | +1 | próximo vs Germany: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
-| 3 | Ecuador | 1 | 0 | 0 | 1 | -1 | próximo vs Curaçao: gana→sigue con opciones; empata→sigue con opciones; pierde→queda fuera del top-2 |
-| 4 | Curaçao | 1 | 0 | 1 | 7 | -6 | próximo vs Ecuador: gana→sigue con opciones; empata→sigue con opciones; pierde→queda fuera del top-2 |
+| 1 | **Germany** | 3 | 6 | 10 | 4 | +6 | Clasificado |
+| 2 | **Ivory Coast** | 3 | 6 | 4 | 2 | +2 | Clasificado |
+| 3 | Ecuador | 3 | 4 | 2 | 2 | +0 | Clasificado |
+| 4 | Curaçao | 3 | 1 | 1 | 9 | -8 | Eliminado |
 
 ## Group F
 
 | Pos | Equipo | PJ | Pts | GF | GC | DG | Escenario |
 |---|---|---|---|---|---|---|---|
-| 1 | **Sweden** | 1 | 3 | 5 | 1 | +4 | próximo vs Netherlands: gana→clasifica seguro; empata→sigue con opciones; pierde→sigue con opciones |
-| 2 | **Japan** | 1 | 1 | 2 | 2 | +0 | próximo vs Tunisia: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
-| 3 | Netherlands | 1 | 1 | 2 | 2 | +0 | próximo vs Sweden: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
-| 4 | Tunisia | 1 | 0 | 1 | 5 | -4 | próximo vs Japan: gana→sigue con opciones; empata→sigue con opciones; pierde→queda fuera del top-2 |
+| 1 | **Netherlands** | 3 | 7 | 10 | 4 | +6 | Clasificado |
+| 2 | **Japan** | 3 | 5 | 7 | 3 | +4 | Clasificado |
+| 3 | Sweden | 3 | 4 | 7 | 7 | +0 | Clasificado |
+| 4 | Tunisia | 3 | 0 | 2 | 12 | -10 | Eliminado |
 
 ## Group G
 
 | Pos | Equipo | PJ | Pts | GF | GC | DG | Escenario |
 |---|---|---|---|---|---|---|---|
-| 1 | **Iran** | 1 | 1 | 2 | 2 | +0 | próximo vs Belgium: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
-| 2 | **New Zealand** | 1 | 1 | 2 | 2 | +0 | próximo vs Egypt: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
-| 3 | Belgium | 1 | 1 | 1 | 1 | +0 | próximo vs Iran: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
-| 4 | Egypt | 1 | 1 | 1 | 1 | +0 | próximo vs New Zealand: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
+| 1 | **Egypt** | 2 | 4 | 4 | 2 | +2 | Prob: 100% | Clasificación asegurada (el empate o la victoria lo clasifican). Si pierde por 1 gol, aún conserva 100% de opciones como mejor tercero. |
+| 2 | **Iran** | 2 | 2 | 2 | 2 | +0 | Prob: 56% | Un empate le basta (82%); ganar asegura el pase. Perder lo elimina prácticamente. |
+| 3 | Belgium | 2 | 2 | 1 | 1 | +0 | Prob: 56% | Un empate le basta (90%); ganar asegura el pase. Perder lo elimina prácticamente. |
+| 4 | New Zealand | 2 | 1 | 3 | 5 | -2 | Prob: 43% | Obligado a ganar. El empate le da pocas opciones (1%); perder lo elimina. Perder lo elimina prácticamente. |
 
 ## Group H
 
 | Pos | Equipo | PJ | Pts | GF | GC | DG | Escenario |
 |---|---|---|---|---|---|---|---|
-| 1 | **Saudi Arabia** | 1 | 1 | 1 | 1 | +0 | próximo vs Spain: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
-| 2 | **Uruguay** | 1 | 1 | 1 | 1 | +0 | próximo vs Cape Verde: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
-| 3 | Cape Verde | 1 | 1 | 0 | 0 | +0 | próximo vs Uruguay: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
-| 4 | Spain | 1 | 1 | 0 | 0 | +0 | próximo vs Saudi Arabia: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
+| 1 | **Spain** | 2 | 4 | 4 | 0 | +4 | Prob: 100% | Clasificación asegurada (el empate o la victoria lo clasifican). Si pierde por 1 gol, aún conserva 100% de opciones como mejor tercero. |
+| 2 | **Uruguay** | 2 | 2 | 3 | 3 | +0 | Prob: 56% | Un empate le basta (82%); ganar asegura el pase. Perder lo elimina prácticamente. |
+| 3 | Cape Verde | 2 | 2 | 2 | 2 | +0 | Prob: 56% | Un empate le basta (90%); ganar asegura el pase. Perder lo elimina prácticamente. |
+| 4 | Saudi Arabia | 2 | 1 | 1 | 5 | -4 | Prob: 43% | Obligado a ganar. El empate le da pocas opciones (0%); perder lo elimina. Perder lo elimina prácticamente. |
 
 ## Group I
 
 | Pos | Equipo | PJ | Pts | GF | GC | DG | Escenario |
 |---|---|---|---|---|---|---|---|
-| 1 | **Norway** | 1 | 3 | 4 | 1 | +3 | próximo vs Senegal: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
-| 2 | **France** | 1 | 3 | 3 | 1 | +2 | próximo vs Iraq: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
-| 3 | Senegal | 1 | 0 | 1 | 3 | -2 | próximo vs Norway: gana→sigue con opciones; empata→sigue con opciones; pierde→queda fuera del top-2 |
-| 4 | Iraq | 1 | 0 | 1 | 4 | -3 | próximo vs France: gana→sigue con opciones; empata→sigue con opciones; pierde→queda fuera del top-2 |
+| 1 | **France** | 3 | 9 | 10 | 2 | +8 | Clasificado |
+| 2 | **Norway** | 3 | 6 | 8 | 7 | +1 | Clasificado |
+| 3 | Senegal | 3 | 3 | 7 | 6 | +1 | Pendiente de otros grupos |
+| 4 | Iraq | 3 | 0 | 1 | 11 | -10 | Eliminado |
 
 ## Group J
 
 | Pos | Equipo | PJ | Pts | GF | GC | DG | Escenario |
 |---|---|---|---|---|---|---|---|
-| 1 | **Argentina** | 1 | 3 | 3 | 0 | +3 | próximo vs Austria: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
-| 2 | **Austria** | 1 | 3 | 3 | 1 | +2 | próximo vs Argentina: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
-| 3 | Jordan | 1 | 0 | 1 | 3 | -2 | próximo vs Algeria: gana→sigue con opciones; empata→sigue con opciones; pierde→queda fuera del top-2 |
-| 4 | Algeria | 1 | 0 | 0 | 3 | -3 | próximo vs Jordan: gana→sigue con opciones; empata→sigue con opciones; pierde→queda fuera del top-2 |
+| 1 | **Argentina** | 2 | 6 | 5 | 0 | +5 | Prob: 100% | Clasificación asegurada (el empate o la victoria lo clasifican). Si pierde por 1 gol, aún conserva 100% de opciones como mejor tercero. |
+| 2 | **Austria** | 2 | 3 | 3 | 3 | +0 | Prob: 66% | Clasificación asegurada (el empate o la victoria lo clasifican). Si pierde por 1 gol, aún conserva 23% de opciones como mejor tercero. |
+| 3 | Algeria | 2 | 3 | 2 | 4 | -2 | Prob: 64% | Clasificación asegurada (el empate o la victoria lo clasifican). Si pierde por 1 gol, aún conserva 17% de opciones como mejor tercero. |
+| 4 | Jordan | 2 | 0 | 2 | 5 | -3 | Prob: 17% | Obligado a ganar por diferencia de goles. Ganar por 2+ goles le da 51% de pase; ganar por 1 gol solo 20%. Perder lo elimina prácticamente. |
 
 ## Group K
 
 | Pos | Equipo | PJ | Pts | GF | GC | DG | Escenario |
 |---|---|---|---|---|---|---|---|
-| 1 | **Colombia** | 1 | 3 | 3 | 1 | +2 | próximo vs DR Congo: gana→clasifica seguro; empata→sigue con opciones; pierde→sigue con opciones |
-| 2 | **DR Congo** | 1 | 1 | 1 | 1 | +0 | próximo vs Colombia: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
-| 3 | Portugal | 1 | 1 | 1 | 1 | +0 | próximo vs Uzbekistan: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
-| 4 | Uzbekistan | 1 | 0 | 1 | 3 | -2 | próximo vs Portugal: gana→sigue con opciones; empata→sigue con opciones; pierde→queda fuera del top-2 |
+| 1 | **Colombia** | 2 | 6 | 4 | 1 | +3 | Prob: 100% | Clasificación asegurada (el empate o la victoria lo clasifican). Si pierde por 1 gol, aún conserva 100% de opciones como mejor tercero. |
+| 2 | **Portugal** | 2 | 4 | 6 | 1 | +5 | Prob: 100% | Clasificación asegurada (el empate o la victoria lo clasifican). Si pierde por 1 gol, aún conserva 100% de opciones como mejor tercero. |
+| 3 | DR Congo | 2 | 1 | 1 | 2 | -1 | Prob: 44% | Obligado a ganar. El empate le da pocas opciones (5%); perder lo elimina. Perder lo elimina prácticamente. |
+| 4 | Uzbekistan | 2 | 0 | 1 | 8 | -7 | Prob: 13% | Ganar le da 30%-30% de opciones. El empate da 0%. Perder lo elimina prácticamente. |
 
 ## Group L
 
 | Pos | Equipo | PJ | Pts | GF | GC | DG | Escenario |
 |---|---|---|---|---|---|---|---|
-| 1 | **England** | 1 | 3 | 4 | 2 | +2 | próximo vs Ghana: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
-| 2 | **Ghana** | 1 | 3 | 1 | 0 | +1 | próximo vs England: gana→sigue con opciones; empata→sigue con opciones; pierde→sigue con opciones |
-| 3 | Panama | 1 | 0 | 0 | 1 | -1 | próximo vs Croatia: gana→sigue con opciones; empata→sigue con opciones; pierde→queda fuera del top-2 |
-| 4 | Croatia | 1 | 0 | 2 | 4 | -2 | próximo vs Panama: gana→sigue con opciones; empata→sigue con opciones; pierde→queda fuera del top-2 |
+| 1 | **England** | 2 | 4 | 4 | 2 | +2 | Prob: 100% | Clasificación asegurada (el empate o la victoria lo clasifican). Si pierde por 1 gol, aún conserva 100% de opciones como mejor tercero. |
+| 2 | **Ghana** | 2 | 4 | 1 | 0 | +1 | Prob: 100% | Clasificación asegurada (el empate o la victoria lo clasifican). Si pierde por 1 gol, aún conserva 100% de opciones como mejor tercero. |
+| 3 | Croatia | 2 | 3 | 3 | 4 | -1 | Prob: 64% | Clasificación asegurada (el empate o la victoria lo clasifican). Si pierde por 1 gol, aún conserva 17% de opciones como mejor tercero. |
+| 4 | Panama | 2 | 0 | 0 | 2 | -2 | Prob: 12% | Ganar le da 13%-34% de opciones. El empate da 0%. Perder lo elimina prácticamente. |

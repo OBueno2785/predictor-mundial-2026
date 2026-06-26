@@ -1,0 +1,56 @@
+{
+ "partido": "Bosnia and Herzegovina vs Qatar",
+ "fecha": "2026-06-24 19:00:00+00:00",
+ "prior": {
+  "xg_home": 1.8661202970003945,
+  "xg_away": 0.9023934945468433,
+  "p_home": 0.5927500898496555,
+  "p_draw": 0.23746487738560823,
+  "p_away": 0.16978503276473622
+ },
+ "odds": null,
+ "model_final": {
+  "p_home": 0.6138835064368697,
+  "p_draw": 0.22710290139164416,
+  "p_away": 0.15901359217148608
+ },
+ "blend_weight_market": 0.0,
+ "final": {
+  "p_home": 0.6329732888556108,
+  "p_draw": 0.21675922139957118,
+  "p_away": 0.15026748974481804,
+  "score_pred": "2-1",
+  "top_scores": "1-1 (9.9%); 2-1 (9.1%); 2-0 (8.9%)",
+  "xg_home": 2.31,
+  "xg_away": 1.05,
+  "p_home_by2": 0.4269,
+  "p_away_by2": 0.0535
+ },
+ "veredicto": {
+  "delta_log_xg_home": 0.05,
+  "delta_log_xg_away": 0.0,
+  "confianza": "media",
+  "bajas_confirmadas": false,
+  "factores": [
+   "Urgencia de Bosnia por mejorar diferencia de goles",
+   "Superioridad física e individual de Bosnia frente a Qatar"
+  ],
+  "resumen": "Bosnia (1 pt, DG -3) necesita ganar por varios goles para aspirar a ser uno de los mejores terceros. Se realiza un ligero ajuste positivo en ataque para Bosnia por la urgencia del escenario."
+ },
+ "delta_aplicado": {
+  "home": 0.05,
+  "away": 0.0
+ },
+ "rondas": {
+  "ronda1": {},
+  "ronda2": {}
+ },
+ "usage": {
+  "llamadas": 3,
+  "duracion_ms": 1500,
+  "turnos": 3,
+  "prompt_tokens": 1200,
+  "candidates_tokens": 400,
+  "total_tokens": 1600
+ }
+}

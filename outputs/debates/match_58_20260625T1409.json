@@ -1,0 +1,56 @@
+{
+ "partido": "Tunisia vs Netherlands",
+ "fecha": "2026-06-25 23:00:00+00:00",
+ "prior": {
+  "xg_home": 0.6605246442873406,
+  "xg_away": 2.76429218416679,
+  "p_home": 0.05936817322369669,
+  "p_draw": 0.13358902887677185,
+  "p_away": 0.8070427978995314
+ },
+ "odds": null,
+ "model_final": {
+  "p_home": 0.0596704373837618,
+  "p_draw": 0.12947426070632645,
+  "p_away": 0.8108553019099117
+ },
+ "blend_weight_market": 0.0,
+ "final": {
+  "p_home": 0.06617202302018563,
+  "p_draw": 0.13620363422902645,
+  "p_away": 0.7976243427507879,
+  "score_pred": "0-3",
+  "top_scores": "0-3 (9.5%); 0-2 (8.7%); 0-4 (7.7%)",
+  "xg_home": 0.84,
+  "xg_away": 3.15,
+  "p_home_by2": 0.0191,
+  "p_away_by2": 0.6381
+ },
+ "veredicto": {
+  "delta_log_xg_home": 0.05,
+  "delta_log_xg_away": 0.03,
+  "confianza": "media",
+  "bajas_confirmadas": false,
+  "factores": [
+   "Países Bajos rota titulares",
+   "Túnez desesperado por ganar expuesto a contragolpes de nivel superior"
+  ],
+  "resumen": "Países Bajos está clasificado y rotará suplentes. Túnez saldrá desesperado al ataque por su remota opción de clasificación. Esto generará contras para la velocidad de los neerlandeses, balanceando la rotación de Países Bajos. Ajuste al alza para ambos."
+ },
+ "delta_aplicado": {
+  "home": 0.05,
+  "away": 0.03
+ },
+ "rondas": {
+  "ronda1": {},
+  "ronda2": {}
+ },
+ "usage": {
+  "llamadas": 3,
+  "duracion_ms": 1500,
+  "turnos": 3,
+  "prompt_tokens": 1200,
+  "candidates_tokens": 400,
+  "total_tokens": 1600
+ }
+}

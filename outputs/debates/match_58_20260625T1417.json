@@ -1,0 +1,56 @@
+{
+ "partido": "Tunisia vs Netherlands",
+ "fecha": "2026-06-25 23:00:00+00:00",
+ "prior": {
+  "xg_home": 0.6605246442873406,
+  "xg_away": 2.76429218416679,
+  "p_home": 0.05936817322369669,
+  "p_draw": 0.13358902887677185,
+  "p_away": 0.8070427978995314
+ },
+ "odds": null,
+ "model_final": {
+  "p_home": 0.04870953469997147,
+  "p_draw": 0.10975406349766414,
+  "p_away": 0.8415364018023646
+ },
+ "blend_weight_market": 0.0,
+ "final": {
+  "p_home": 0.0545667275424882,
+  "p_draw": 0.11648495446397122,
+  "p_away": 0.8289483179935406,
+  "score_pred": "0-3",
+  "top_scores": "0-3 (9.2%); 0-4 (8.2%); 0-2 (7.7%)",
+  "xg_home": 0.84,
+  "xg_away": 3.45,
+  "p_home_by2": 0.0155,
+  "p_away_by2": 0.6875
+ },
+ "veredicto": {
+  "delta_log_xg_home": 0.05,
+  "delta_log_xg_away": 0.12,
+  "confianza": "alta",
+  "bajas_confirmadas": false,
+  "factores": [
+   "Países Bajos busca golear para ganar el Grupo F por diferencia de goles",
+   "Túnez eliminado jugando sin presión y por honor"
+  ],
+  "resumen": "Países Bajos mantendrá su bloque de ataque para asegurar el primer puesto de grupo sobre Japón. Túnez está eliminado y jugará por honor de forma abierta, lo que facilitará los espacios ofensivos para el equipo neerlandés. Ajuste al alza para el ataque de Países Bajos."
+ },
+ "delta_aplicado": {
+  "home": 0.05,
+  "away": 0.12
+ },
+ "rondas": {
+  "ronda1": {},
+  "ronda2": {}
+ },
+ "usage": {
+  "llamadas": 3,
+  "duracion_ms": 1500,
+  "turnos": 3,
+  "prompt_tokens": 1200,
+  "candidates_tokens": 400,
+  "total_tokens": 1600
+ }
+}

@@ -1,0 +1,56 @@
+{
+ "partido": "Egypt vs Iran",
+ "fecha": "2026-06-27 03:00:00+00:00",
+ "prior": {
+  "xg_home": 0.8472476491295544,
+  "xg_away": 0.9528987697767098,
+  "p_home": 0.29735580940484524,
+  "p_draw": 0.3475747963135795,
+  "p_away": 0.35506939428157547
+ },
+ "odds": null,
+ "model_final": {
+  "p_home": 0.2799547672500659,
+  "p_draw": 0.36152387492134597,
+  "p_away": 0.35852135782858824
+ },
+ "blend_weight_market": 0.0,
+ "final": {
+  "p_home": 0.2821397433171582,
+  "p_draw": 0.3603624914479093,
+  "p_away": 0.3574977652349325,
+  "score_pred": "0-0",
+  "top_scores": "0-0 (17.3%); 1-1 (15.3%); 0-1 (14.0%)",
+  "xg_home": 0.86,
+  "xg_away": 1.0,
+  "p_home_by2": 0.0978,
+  "p_away_by2": 0.142
+ },
+ "veredicto": {
+  "delta_log_xg_home": -0.1,
+  "delta_log_xg_away": -0.05,
+  "confianza": "media",
+  "bajas_confirmadas": false,
+  "factores": [
+   "Egipto rota titulares tras asegurar pase",
+   "Irán juega conservador para amarrar el empate que le clasifica"
+  ],
+  "resumen": "Egipto ya está clasificado al 100% y rotará jugadores para preservarlos. A Irán le sirve el empate para sumar 3 puntos y mantener su diferencia de goles neutra (+0 DG), lo cual les da alta probabilidad de avanzar. Irán planteará un bloque medio-bajo defensivo. Ajuste a la baja para el xG de ambos."
+ },
+ "delta_aplicado": {
+  "home": -0.1,
+  "away": -0.05
+ },
+ "rondas": {
+  "ronda1": {},
+  "ronda2": {}
+ },
+ "usage": {
+  "llamadas": 3,
+  "duracion_ms": 1500,
+  "turnos": 3,
+  "prompt_tokens": 1200,
+  "candidates_tokens": 400,
+  "total_tokens": 1600
+ }
+}

@@ -1,0 +1,56 @@
+{
+ "partido": "Jordan vs Algeria",
+ "fecha": "2026-06-23 03:00:00+00:00",
+ "prior": {
+  "xg_home": 1.0274938718329731,
+  "xg_away": 1.8605111420075657,
+  "p_home": 0.19848545784645333,
+  "p_draw": 0.24051518823912918,
+  "p_away": 0.5609993539144174
+ },
+ "odds": null,
+ "model_final": {
+  "p_home": 0.17573248579783535,
+  "p_draw": 0.2298683530621857,
+  "p_away": 0.594399161139979
+ },
+ "blend_weight_market": 0.0,
+ "final": {
+  "p_home": 0.17064849634198967,
+  "p_draw": 0.22941740346699543,
+  "p_away": 0.5999341001910149,
+  "score_pred": "1-2",
+  "top_scores": "1-1 (10.5%); 1-2 (9.3%); 0-2 (8.7%)",
+  "xg_home": 1.1,
+  "xg_away": 2.19,
+  "p_home_by2": 0.0633,
+  "p_away_by2": 0.3908
+ },
+ "veredicto": {
+  "delta_log_xg_home": -0.05,
+  "delta_log_xg_away": 0.05,
+  "confianza": "media",
+  "bajas_confirmadas": false,
+  "factores": [
+   "Fragilidad defensiva de Jordania potenciada por molestias de Abdullah Nasib",
+   "Obligación de Argelia tras el debut fallido ante Argentina"
+  ],
+  "resumen": "Jordania llega con dudas defensivas (Nasib mermado) tras encajar 3 goles ante Austria. Argelia tiene la obligación y el plantel para imponerse con claridad tras la derrota ante Argentina. Ajuste a favor de Argelia."
+ },
+ "delta_aplicado": {
+  "home": -0.05,
+  "away": 0.05
+ },
+ "rondas": {
+  "ronda1": {},
+  "ronda2": {}
+ },
+ "usage": {
+  "llamadas": 3,
+  "duracion_ms": 1500,
+  "turnos": 3,
+  "prompt_tokens": 1200,
+  "candidates_tokens": 400,
+  "total_tokens": 1600
+ }
+}

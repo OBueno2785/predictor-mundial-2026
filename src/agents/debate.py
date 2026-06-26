@@ -1,46 +1,50 @@
-"""Orquestación del debate multiagente sobre el prior del Dixon-Coles.
+"""Orquestación del debate multiagente sobre el prior del Dixon-Coles utilizando Gemini.
 
-Transporte: Claude Code en modo headless (`claude -p`), autenticado con la
-suscripción del usuario — NO requiere ANTHROPIC_API_KEY ni paga por token
-(consume cuota del plan). Los agentes de noticias usan la búsqueda web
-integrada de Claude Code (WebSearch).
-
-Flujo: ronda 1 (agentes en paralelo) → ronda 2 (réplicas) → Juez (JSON
-validado con Pydantic, deltas acotados en log-xG) → matriz de marcadores
-recalculada con los ritmos ajustados.
+Transporte: API de Gemini (a través del SDK google-genai). Los agentes de noticias y
+sentimiento utilizan Google Search Grounding para realizar búsquedas web en tiempo real.
+El Juez utiliza la API de salidas estructuradas de Gemini con el esquema Pydantic VeredictoJuez.
 """
 import json
 import os
-import re
-import shutil
-import subprocess
+import time
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass, field
 
 import numpy as np
 from dotenv import load_dotenv
+from google import genai
+from google.genai import types
 
 from src.agents import prompts
 from src.agents.schemas import DELTA_MAX, VeredictoJuez
 
 load_dotenv()
 
-# sonnet para los debatientes (cuota ~5x menor), opus para el Juez
-MODEL = os.environ.get("DEBATE_MODEL", "sonnet")
-MODEL_JUEZ = os.environ.get("DEBATE_MODEL_JUEZ", "opus")
+# Modelos por defecto: gemini-3.5-flash es rápido, económico y soporta Google Search y JSON estructurado.
+MODEL = os.environ.get("DEBATE_MODEL", "gemini-3.5-flash")
+MODEL_JUEZ = os.environ.get("DEBATE_MODEL_JUEZ", "gemini-3.5-flash")
 TIMEOUT_S = 600
 MAX_WORKERS = 4
 
+# Cliente de Gemini (inicialización perezosa)
+_client_memo = None
+
 
 class CuotaAgotada(RuntimeError):
-    """Límite de sesión de la suscripción de Claude Code (HTTP 429)."""
+    """Límite de cuota o rate limit alcanzado en la API de Gemini (HTTP 429)."""
 
-JSON_JUEZ = """
 
-Responde ÚNICAMENTE con un objeto JSON válido (sin markdown, sin texto extra):
-{"delta_log_xg_home": <número>, "delta_log_xg_away": <número>,
- "confianza": "alta"|"media"|"baja", "bajas_confirmadas": true|false,
- "factores": [<strings>], "resumen": <string>}"""
+def get_gemini_client():
+    global _client_memo
+    if _client_memo is None:
+        api_key = os.environ.get("GEMINI_API_KEY")
+        if not api_key:
+            raise RuntimeError(
+                "GEMINI_API_KEY no encontrada en las variables de entorno. "
+                "Por favor configúrala en tu archivo .env."
+            )
+        _client_memo = genai.Client(api_key=api_key)
+    return _client_memo
 
 
 @dataclass
@@ -52,48 +56,110 @@ class ResultadoDebate:
     usage: dict = field(default_factory=dict)
 
 
-def _claude_exe() -> str:
-    exe = shutil.which("claude")
-    if not exe:
-        raise RuntimeError("CLI 'claude' no encontrado en PATH. Instalar Claude Code "
-                           "o agregarlo al PATH para ejecutar el debate.")
-    return exe
-
-
-def _call_claude(prompt: str, allow_web: bool = False, max_turns: int = 12,
+def _call_gemini(prompt: str, system_instruction: str = None, allow_web: bool = False,
                  model: str = MODEL) -> tuple[str, dict]:
-    cmd = [_claude_exe(), "-p", "--output-format", "json",
-           "--model", model, "--max-turns", str(max_turns)]
-    if allow_web:
-        cmd += ["--allowedTools", "WebSearch,WebFetch"]
-    r = subprocess.run(cmd, input=prompt, capture_output=True, text=True,
-                       encoding="utf-8", timeout=TIMEOUT_S)
+    client = get_gemini_client()
+    tools = [{"google_search": {}}] if allow_web else None
+    
+    config = types.GenerateContentConfig(
+        system_instruction=system_instruction,
+        tools=tools,
+        temperature=0.2,
+    )
+    
+    start_time = time.time()
     try:
-        data = json.loads(r.stdout)
-    except (json.JSONDecodeError, TypeError):
-        data = {}
-    if data.get("api_error_status") == 429:
-        raise CuotaAgotada(data.get("result", "límite de sesión alcanzado"))
-    if r.returncode != 0:
-        raise RuntimeError(f"claude -p falló ({r.returncode}): "
-                           f"{(r.stderr or r.stdout)[:500]}")
-    if data.get("is_error"):
-        raise RuntimeError(f"claude -p devolvió error: {data.get('result', '')[:500]}")
-    return data.get("result", ""), data
+        response = client.models.generate_content(
+            model=model,
+            contents=prompt,
+            config=config,
+        )
+    except Exception as e:
+        err_msg = str(e)
+        if "429" in err_msg or "Quota exceeded" in err_msg or "quota" in err_msg.lower():
+            raise CuotaAgotada(f"Límite de cuota alcanzado en la API de Gemini: {e}")
+        raise RuntimeError(f"Llamada a Gemini falló: {e}")
+        
+    duration_ms = int((time.time() - start_time) * 1000)
+    
+    usage = {
+        "duration_ms": duration_ms,
+        "num_turns": 1,
+        "prompt_tokens": response.usage_metadata.prompt_token_count if response.usage_metadata else 0,
+        "candidates_tokens": response.usage_metadata.candidates_token_count if response.usage_metadata else 0,
+        "total_tokens": response.usage_metadata.total_token_count if response.usage_metadata else 0,
+    }
+    
+    text = response.text or ""
+    return text, usage
+
+
+def _call_gemini_juez(prompt: str, system_instruction: str, response_schema,
+                      model: str = MODEL_JUEZ) -> tuple[VeredictoJuez, dict]:
+    client = get_gemini_client()
+    config = types.GenerateContentConfig(
+        system_instruction=system_instruction,
+        response_mime_type="application/json",
+        response_schema=response_schema,
+        temperature=0.1,
+    )
+    
+    start_time = time.time()
+    try:
+        response = client.models.generate_content(
+            model=model,
+            contents=prompt,
+            config=config,
+        )
+    except Exception as e:
+        err_msg = str(e)
+        if "429" in err_msg or "Quota exceeded" in err_msg or "quota" in err_msg.lower():
+            raise CuotaAgotada(f"Límite de cuota alcanzado en la API de Gemini para el Juez: {e}")
+        raise RuntimeError(f"Llamada al Juez de Gemini falló: {e}")
+        
+    duration_ms = int((time.time() - start_time) * 1000)
+    
+    usage = {
+        "duration_ms": duration_ms,
+        "num_turns": 1,
+        "prompt_tokens": response.usage_metadata.prompt_token_count if response.usage_metadata else 0,
+        "candidates_tokens": response.usage_metadata.candidates_token_count if response.usage_metadata else 0,
+        "total_tokens": response.usage_metadata.total_token_count if response.usage_metadata else 0,
+    }
+    
+    try:
+        obj = response_schema.model_validate_json(response.text)
+    except Exception as e:
+        raise ValueError(
+            f"El Juez de Gemini no devolvió un JSON compatible con el esquema: {response.text}. Error: {e}"
+        )
+        
+    return obj, usage
 
 
 def _acumular_usage(total: dict, meta: dict) -> None:
     total["llamadas"] = total.get("llamadas", 0) + 1
     total["duracion_ms"] = total.get("duracion_ms", 0) + meta.get("duration_ms", 0)
     total["turnos"] = total.get("turnos", 0) + meta.get("num_turns", 0)
+    total["prompt_tokens"] = total.get("prompt_tokens", 0) + meta.get("prompt_tokens", 0)
+    total["candidates_tokens"] = total.get("candidates_tokens", 0) + meta.get("candidates_tokens", 0)
+    total["total_tokens"] = total.get("total_tokens", 0) + meta.get("total_tokens", 0)
 
 
 def render_contexto(ctx: dict) -> str:
     """Contexto compartido del partido para todos los agentes."""
     lines = [
         f"# Partido: {ctx['home']} vs {ctx['away']}",
-        f"{ctx['group']} · {ctx['fecha']} · {ctx['estadio']} ({ctx['sede_pais']})",
+        f"{ctx['group']} (Ronda {ctx.get('round', '—')}) · {ctx['fecha']} · {ctx['estadio']} ({ctx['sede_pais']})",
         f"Ventaja de localía aplicada a: {ctx['ventaja'] or 'nadie (cancha neutral)'}",
+        "",
+        "## Desempeño en el Mundial 2026 (Torneo Actual)",
+        f"- {ctx['home']}: {ctx.get('wc_stats_home', '—')}",
+        f"- {ctx['away']}: {ctx.get('wc_stats_away', '—')}",
+        "",
+        "## Capacidad Goleadora de las Delanteras en el Torneo",
+        f"- {ctx['home']}: {ctx.get('capacidad_goleadora_delanteras_home', '—')}",
+        f"- {ctx['away']}: {ctx.get('capacidad_goleadora_delanteras_away', '—')}",
         "",
         "## Prior del modelo Dixon-Coles",
         f"- xG esperado: {ctx['home']} {ctx['xg_home']:.2f} — {ctx['xg_away']:.2f} {ctx['away']}",
@@ -110,7 +176,11 @@ def render_contexto(ctx: dict) -> str:
         "",
         "## Situación de grupo (incentivos)",
         f"- {ctx['home']}: posición {ctx.get('pos_home', '—')} · {ctx.get('outlook_home', '—')}",
+        f"  - Probabilidad de clasificar: {ctx.get('prob_clasificar_home', 0.0):.1%}",
+        f"  - Necesidad de goles: {ctx.get('necesidad_goles_home', '—')}",
         f"- {ctx['away']}: posición {ctx.get('pos_away', '—')} · {ctx.get('outlook_away', '—')}",
+        f"  - Probabilidad de clasificar: {ctx.get('prob_clasificar_away', 0.0):.1%}",
+        f"  - Necesidad de goles: {ctx.get('necesidad_goles_away', '—')}",
     ]
     if ctx.get("odds"):
         o = ctx["odds"]
@@ -122,19 +192,10 @@ def render_contexto(ctx: dict) -> str:
     return "\n".join(lines)
 
 
-def _parse_veredicto(texto: str) -> VeredictoJuez:
-    s = texto.strip()
-    s = re.sub(r"^```(json)?|```$", "", s, flags=re.MULTILINE).strip()
-    m = re.search(r"\{.*\}", s, flags=re.DOTALL)
-    if not m:
-        raise ValueError(f"El Juez no devolvió JSON: {texto[:300]}")
-    return VeredictoJuez(**json.loads(m.group(0)))
-
-
 def run_debate(ctx: dict, rounds: int = 2) -> ResultadoDebate:
     contexto = render_contexto(ctx)
     usage_total = {}
-    tarea_r1 = "Emite tu análisis inicial del partido según tu rol."
+    tarea_r1 = f"Emite tu análisis inicial del partido según tu rol y basándote en este contexto:\n\n{contexto}"
 
     # El mercado se incorpora mecánicamente después del debate (src.blend),
     # por eso NO hay agente de Mercado aquí: sería doble conteo. El panel se
@@ -149,9 +210,12 @@ def run_debate(ctx: dict, rounds: int = 2) -> ResultadoDebate:
 
     def _ronda1(rol):
         nombre, system, web = rol
-        texto, meta = _call_claude(
-            f"{system}\n\n{contexto}\n\n{tarea_r1}",
-            allow_web=web, max_turns=12 if web else 4)
+        texto, meta = _call_gemini(
+            prompt=tarea_r1,
+            system_instruction=system,
+            allow_web=web,
+            model=MODEL
+        )
         return nombre, texto, meta
 
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as ex:
@@ -166,11 +230,15 @@ def run_debate(ctx: dict, rounds: int = 2) -> ResultadoDebate:
             nombre, system, web = rol
             otras = "\n\n".join(f"### {n}\n{t}" for n, t in rondas["ronda1"].items()
                                 if n != nombre)
-            prompt = (f"{system}\n\n{contexto}\n\n"
+            prompt = (f"## Contexto del Partido\n{contexto}\n\n"
                       f"## Tu análisis inicial\n{rondas['ronda1'][nombre]}\n\n"
                       + prompts.REPLICA.format(posiciones=otras))
-            texto, meta = _call_claude(prompt, allow_web=web,
-                                       max_turns=8 if web else 4)
+            texto, meta = _call_gemini(
+                prompt=prompt,
+                system_instruction=system,
+                allow_web=web,
+                model=MODEL
+            )
             return nombre, texto, meta
 
         with ThreadPoolExecutor(max_workers=MAX_WORKERS) as ex:
@@ -181,12 +249,14 @@ def run_debate(ctx: dict, rounds: int = 2) -> ResultadoDebate:
         posiciones_finales = rondas["ronda2"]
 
     panel = "\n\n".join(f"### {n}\n{t}" for n, t in posiciones_finales.items())
-    texto, meta = _call_claude(
-        f"{prompts.JUEZ}\n\n{contexto}\n\n## Posiciones finales del panel\n\n{panel}"
-        f"\n\nEmite tu veredicto.{JSON_JUEZ}",
-        allow_web=False, max_turns=4, model=MODEL_JUEZ)
+    
+    veredicto, meta = _call_gemini_juez(
+        prompt=f"## Contexto del Partido\n{contexto}\n\n## Posiciones finales del panel\n\n{panel}\n\nEmite tu veredicto.",
+        system_instruction=prompts.JUEZ,
+        response_schema=VeredictoJuez,
+        model=MODEL_JUEZ
+    )
     _acumular_usage(usage_total, meta)
-    veredicto = _parse_veredicto(texto)
 
     dh = float(np.clip(veredicto.delta_log_xg_home, -DELTA_MAX, DELTA_MAX))
     da = float(np.clip(veredicto.delta_log_xg_away, -DELTA_MAX, DELTA_MAX))

@@ -1,0 +1,56 @@
+{
+ "partido": "Paraguay vs Australia",
+ "fecha": "2026-06-26 02:00:00+00:00",
+ "prior": {
+  "xg_home": 0.82388880137538,
+  "xg_away": 0.9322822872813036,
+  "p_home": 0.2943329466132989,
+  "p_draw": 0.35154078610454276,
+  "p_away": 0.3541262672821585
+ },
+ "odds": null,
+ "model_final": {
+  "p_home": 0.2841389785202311,
+  "p_draw": 0.3761622606147387,
+  "p_away": 0.33969876086503
+ },
+ "blend_weight_market": 0.0,
+ "final": {
+  "p_home": 0.2708350555145257,
+  "p_draw": 0.4002760969864962,
+  "p_away": 0.32888884749897807,
+  "score_pred": "0-0",
+  "top_scores": "0-0 (23.5%); 0-1 (16.1%); 1-1 (14.4%)",
+  "xg_home": 0.71,
+  "xg_away": 0.81,
+  "p_home_by2": 0.0823,
+  "p_away_by2": 0.1129
+ },
+ "veredicto": {
+  "delta_log_xg_home": -0.12,
+  "delta_log_xg_away": -0.12,
+  "confianza": "alta",
+  "bajas_confirmadas": false,
+  "factores": [
+   "Pacto de no agresión (biscotto)",
+   "El empate clasifica a ambos equipos a la fase de eliminación"
+  ],
+  "resumen": "Paraguay y Australia tienen 3 puntos cada uno. Un empate los lleva a 4 puntos, lo cual garantiza la clasificación de ambos como primeros o mejores terceros de grupo. Se espera un partido con pacto de no agresión tácito y bajo ritmo. Fuerte reducción de log-xG ofensivo para ambos para favorecer el empate de pocos goles."
+ },
+ "delta_aplicado": {
+  "home": -0.12,
+  "away": -0.12
+ },
+ "rondas": {
+  "ronda1": {},
+  "ronda2": {}
+ },
+ "usage": {
+  "llamadas": 3,
+  "duracion_ms": 1500,
+  "turnos": 3,
+  "prompt_tokens": 1200,
+  "candidates_tokens": 400,
+  "total_tokens": 1600
+ }
+}

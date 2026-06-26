@@ -70,21 +70,27 @@ def adv_side(row) -> int:
 
 
 def predict_groups(model: dixon_coles.DixonColesModel, fx: pd.DataFrame) -> pd.DataFrame:
-    groups = fx[fx["group"].str.startswith("Group", na=False)].copy()
+    from src.blend import get_predicted_score
+    from src import groups
+    groups_df = fx[fx["group"].str.startswith("Group", na=False)].copy()
     rows = []
-    for r in groups.itertuples():
+    for r in groups_df.itertuples():
         side = adv_side(r)
         P = model.score_matrix(r.home_team, r.away_team, adv_side=side)
         ph, pd_, pa = model.outcome_probs(P)
         lam, mu = model.rates(r.home_team, r.away_team, adv_side=side)
         top = model.top_scores(P, 3)
+        
+        q_home = groups.qualification(fx, r.home_team)
+        q_away = groups.qualification(fx, r.away_team)
+        
         rows.append({
             "match": r.match_number, "group": r.group,
             "date_utc": r.date_utc, "location": r.location,
             "home": r.home_team, "away": r.away_team,
             "xg_home": round(lam, 2), "xg_away": round(mu, 2),
             "p_home": round(ph, 4), "p_draw": round(pd_, 4), "p_away": round(pa, 4),
-            "score_pred": f"{top[0][0]}-{top[0][1]}",
+            "score_pred": get_predicted_score(P, q_home, q_away),
             "top_scores": "; ".join(f"{i}-{j} ({p:.1%})" for i, j, p in top),
             "played": r.played,
             "real": f"{int(r.home_score)}-{int(r.away_score)}" if r.played else "",

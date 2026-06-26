@@ -1,0 +1,56 @@
+{
+ "partido": "Portugal vs Uzbekistan",
+ "fecha": "2026-06-23 17:00:00+00:00",
+ "prior": {
+  "xg_home": 1.7487039118505805,
+  "xg_away": 0.6008592328839049,
+  "p_home": 0.6450059001865585,
+  "p_draw": 0.23972785806454128,
+  "p_away": 0.11526624174890021
+ },
+ "odds": null,
+ "model_final": {
+  "p_home": 0.6729466192881042,
+  "p_draw": 0.22568767247227875,
+  "p_away": 0.10136570823961692
+ },
+ "blend_weight_market": 0.0,
+ "final": {
+  "p_home": 0.7783131026759771,
+  "p_draw": 0.159626000811792,
+  "p_away": 0.062060896512231,
+  "score_pred": "2-0",
+  "top_scores": "2-0 (12.8%); 3-0 (11.7%); 1-0 (8.9%)",
+  "xg_home": 2.65,
+  "xg_away": 0.62,
+  "p_home_by2": 0.5905,
+  "p_away_by2": 0.0149
+ },
+ "veredicto": {
+  "delta_log_xg_home": 0.05,
+  "delta_log_xg_away": -0.05,
+  "confianza": "media",
+  "bajas_confirmadas": false,
+  "factores": [
+   "Presión extrema sobre Portugal tras empatar con Congo",
+   "Superioridad individual ofensiva liderada por Cristiano Ronaldo y Leão"
+  ],
+  "resumen": "Portugal necesita la victoria con urgencia tras el tropiezo inicial. Con su delantera al completo (Ronaldo, Ramos, Leão), se espera que superen la defensa de Uzbekistán. Ajuste a favor de Portugal."
+ },
+ "delta_aplicado": {
+  "home": 0.05,
+  "away": -0.05
+ },
+ "rondas": {
+  "ronda1": {},
+  "ronda2": {}
+ },
+ "usage": {
+  "llamadas": 3,
+  "duracion_ms": 1500,
+  "turnos": 3,
+  "prompt_tokens": 1200,
+  "candidates_tokens": 400,
+  "total_tokens": 1600
+ }
+}

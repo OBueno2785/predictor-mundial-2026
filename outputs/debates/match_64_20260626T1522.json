@@ -1,0 +1,59 @@
+{
+ "partido": "New Zealand vs Belgium",
+ "fecha": "2026-06-27 03:00:00+00:00",
+ "prior": {
+  "xg_home": 0.5400042139090152,
+  "xg_away": 2.299761781695739,
+  "p_home": 0.0653938626423317,
+  "p_draw": 0.16746247764306896,
+  "p_away": 0.7671436597145992
+ },
+ "odds": null,
+ "model_final": {
+  "p_home": 0.057457258028300956,
+  "p_draw": 0.14570682685858793,
+  "p_away": 0.7968359151131109
+ },
+ "blend_weight_market": 0.0,
+ "final": {
+  "p_home": 0.06320130931918996,
+  "p_draw": 0.15398841240607491,
+  "p_away": 0.7828102782747351,
+  "score_pred": "0-2",
+  "top_scores": "0-2 (11.8%); 0-3 (11.2%); 0-4 (8.0%)",
+  "xg_home": 0.67,
+  "xg_away": 2.76,
+  "p_home_by2": 0.016,
+  "p_away_by2": 0.6018
+ },
+ "veredicto": {
+  "delta_log_xg_home": 0.05,
+  "delta_log_xg_away": 0.1,
+  "confianza": "alta",
+  "bajas_confirmadas": true,
+  "factores": [
+   "Nueva Zelanda obligado a ganar e irá con todo",
+   "Bélgica busca el triunfo para asegurar el pase y explotará contras",
+   "Zeno Debast baja confirmada en Bélgica por molestia muscular",
+   "Leandro Trossard recuperado y disponible en el ataque de Bélgica",
+   "Bélgica sale con su XI estelar bajo Rudi Garcia (Courtois, De Bruyne, Lukaku)"
+  ],
+  "resumen": "Nueva Zelanda está obligada a ganar para clasificar (el empate la elimina) y saldrá de forma agresiva. Esto dejará su línea defensiva muy vulnerable ante los contraataques de Bélgica. Bélgica busca ganar y golear con su XI estelar bajo Rudi Garcia, aunque cuenta con la baja defensiva de Zeno Debast. Ajuste al alza para ambos."
+ },
+ "delta_aplicado": {
+  "home": 0.05,
+  "away": 0.1
+ },
+ "rondas": {
+  "ronda1": {},
+  "ronda2": {}
+ },
+ "usage": {
+  "llamadas": 3,
+  "duracion_ms": 1500,
+  "turnos": 3,
+  "prompt_tokens": 1200,
+  "candidates_tokens": 400,
+  "total_tokens": 1600
+ }
+}

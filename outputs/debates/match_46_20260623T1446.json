@@ -1,0 +1,57 @@
+{
+ "partido": "Panama vs Croatia",
+ "fecha": "2026-06-23 23:00:00+00:00",
+ "prior": {
+  "xg_home": 0.8039719735810132,
+  "xg_away": 2.189475107926224,
+  "p_home": 0.11758939229774734,
+  "p_draw": 0.19835661533856092,
+  "p_away": 0.6840539923636917
+ },
+ "odds": null,
+ "model_final": {
+  "p_home": 0.10315043945045066,
+  "p_draw": 0.1799176420535518,
+  "p_away": 0.7169319184959975
+ },
+ "blend_weight_market": 0.0,
+ "final": {
+  "p_home": 0.12134417300674925,
+  "p_draw": 0.20920385931079996,
+  "p_away": 0.6694519676824509,
+  "score_pred": "0-2",
+  "top_scores": "0-2 (10.5%); 1-1 (9.9%); 1-2 (9.0%)",
+  "xg_home": 0.88,
+  "xg_away": 2.31,
+  "p_home_by2": 0.0384,
+  "p_away_by2": 0.4603
+ },
+ "veredicto": {
+  "delta_log_xg_home": 0.0,
+  "delta_log_xg_away": 0.08,
+  "confianza": "media",
+  "bajas_confirmadas": false,
+  "factores": [
+   "Urgencia de Croacia tras caer ante Inglaterra",
+   "Liderazgo y experiencia croata en partidos de alta presión",
+   "Baja eficacia goleadora de Panamá"
+  ],
+  "resumen": "Croacia se juega la vida tras perder el debut. Con Modric comandando el medio y Kramaric en ataque, se espera que impongan condiciones ante una Panamá que se mostró ineficaz arriba en su primer encuentro. Ajuste a favor de Croacia."
+ },
+ "delta_aplicado": {
+  "home": 0.0,
+  "away": 0.08
+ },
+ "rondas": {
+  "ronda1": {},
+  "ronda2": {}
+ },
+ "usage": {
+  "llamadas": 3,
+  "duracion_ms": 1500,
+  "turnos": 3,
+  "prompt_tokens": 1200,
+  "candidates_tokens": 400,
+  "total_tokens": 1600
+ }
+}

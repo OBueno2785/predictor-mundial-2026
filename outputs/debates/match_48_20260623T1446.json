@@ -1,0 +1,56 @@
+{
+ "partido": "Colombia vs DR Congo",
+ "fecha": "2026-06-24 02:00:00+00:00",
+ "prior": {
+  "xg_home": 1.4026877700272196,
+  "xg_away": 0.6144987856086865,
+  "p_home": 0.5538478197694766,
+  "p_draw": 0.291425084312468,
+  "p_away": 0.15472709591805528
+ },
+ "odds": null,
+ "model_final": {
+  "p_home": 0.5734065905317578,
+  "p_draw": 0.2802641277869643,
+  "p_away": 0.14632928168127785
+ },
+ "blend_weight_market": 0.0,
+ "final": {
+  "p_home": 0.5531609736762022,
+  "p_draw": 0.296313580116889,
+  "p_away": 0.15052544620690889,
+  "score_pred": "1-0",
+  "top_scores": "1-0 (15.5%); 0-0 (13.1%); 1-1 (13.1%)",
+  "xg_home": 1.5,
+  "xg_away": 0.66,
+  "p_home_by2": 0.3022,
+  "p_away_by2": 0.0405
+ },
+ "veredicto": {
+  "delta_log_xg_home": 0.05,
+  "delta_log_xg_away": 0.0,
+  "confianza": "media",
+  "bajas_confirmadas": false,
+  "factores": [
+   "Racha ofensiva de Colombia liderada por Luis Díaz",
+   "Gran momento de forma colectiva de Colombia"
+  ],
+  "resumen": "Colombia mostró un juego muy fluido ante Uzbekistán. Aunque Congo demostró solidez defensiva ante Portugal, la dinámica colectiva de Colombia y el desequilibrio de Luis Díaz justifican un ajuste leve a favor de los cafeteros."
+ },
+ "delta_aplicado": {
+  "home": 0.05,
+  "away": 0.0
+ },
+ "rondas": {
+  "ronda1": {},
+  "ronda2": {}
+ },
+ "usage": {
+  "llamadas": 3,
+  "duracion_ms": 1500,
+  "turnos": 3,
+  "prompt_tokens": 1200,
+  "candidates_tokens": 400,
+  "total_tokens": 1600
+ }
+}

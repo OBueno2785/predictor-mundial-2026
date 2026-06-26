@@ -1,0 +1,58 @@
+{
+ "partido": "Norway vs France",
+ "fecha": "2026-06-26 19:00:00+00:00",
+ "prior": {
+  "xg_home": 1.375901857741178,
+  "xg_away": 1.6537151644922303,
+  "p_home": 0.3117859229025636,
+  "p_draw": 0.25513869192122696,
+  "p_away": 0.4330753851762093
+ },
+ "odds": null,
+ "model_final": {
+  "p_home": 0.3175238425872785,
+  "p_draw": 0.25736764197575696,
+  "p_away": 0.42510851543696454
+ },
+ "blend_weight_market": 0.0,
+ "final": {
+  "p_home": 0.31846798715404606,
+  "p_draw": 0.2604742953571848,
+  "p_away": 0.4210577174887692,
+  "score_pred": "1-2",
+  "top_scores": "1-1 (11.3%); 1-2 (8.5%); 2-2 (7.4%)",
+  "xg_home": 1.55,
+  "xg_away": 1.8,
+  "p_home_by2": 0.1545,
+  "p_away_by2": 0.2314
+ },
+ "veredicto": {
+  "delta_log_xg_home": 0.0,
+  "delta_log_xg_away": -0.02,
+  "confianza": "alta",
+  "bajas_confirmadas": true,
+  "factores": [
+   "Ambos clasificados peleando por el liderato de grupo",
+   "No hay noticias de rotación masiva de titulares (ambos salen con su once base)",
+   "William Saliba lesionado por molestia en la espalda (baja confirmada)",
+   "Didier Deschamps ausente por luto familiar; Guy Stéphan dirige interinamente"
+  ],
+  "resumen": "Ambas selecciones saldrán con sus equipos titulares para pelear por el liderato de grupo y evitar a Costa de Marfil. Francia no rotará en gran medida, pero cuenta con la baja obligada por lesión del central William Saliba. Guy Stéphan dirige por ausencia familiar de Deschamps. Ajuste mínimo en el xG ofensivo de Francia por la baja defensiva."
+ },
+ "delta_aplicado": {
+  "home": 0.0,
+  "away": -0.02
+ },
+ "rondas": {
+  "ronda1": {},
+  "ronda2": {}
+ },
+ "usage": {
+  "llamadas": 3,
+  "duracion_ms": 1500,
+  "turnos": 3,
+  "prompt_tokens": 1200,
+  "candidates_tokens": 400,
+  "total_tokens": 1600
+ }
+}

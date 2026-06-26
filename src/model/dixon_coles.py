@@ -11,7 +11,8 @@ import pandas as pd
 from scipy.optimize import minimize, minimize_scalar
 from scipy.stats import poisson
 
-XI_DAILY = 0.00095     # decaimiento temporal: vida media ~2 años
+import os
+XI_DAILY = float(os.environ.get("XI_DAILY", 0.0019))     # decaimiento temporal: default vida media ~1 año para priorizar forma reciente
 L2_PENALTY = 1.0e-3
 MAX_GOALS = 10
 MIN_MATCHES = 8        # equipos con menos partidos en la ventana quedan fuera

@@ -1,0 +1,57 @@
+{
+ "partido": "Norway vs France",
+ "fecha": "2026-06-26 19:00:00+00:00",
+ "prior": {
+  "xg_home": 1.375901857741178,
+  "xg_away": 1.6537151644922303,
+  "p_home": 0.3117859229025636,
+  "p_draw": 0.25513869192122696,
+  "p_away": 0.4330753851762093
+ },
+ "odds": null,
+ "model_final": {
+  "p_home": 0.30949340588383556,
+  "p_draw": 0.2630110308731957,
+  "p_away": 0.42749556324296856
+ },
+ "blend_weight_market": 0.0,
+ "final": {
+  "p_home": 0.310751485281214,
+  "p_draw": 0.2659341263311773,
+  "p_away": 0.42331438838760876,
+  "score_pred": "1-2",
+  "top_scores": "1-1 (11.9%); 1-2 (8.7%); 2-1 (7.4%)",
+  "xg_home": 1.47,
+  "xg_away": 1.74,
+  "p_home_by2": 0.1469,
+  "p_away_by2": 0.2301
+ },
+ "veredicto": {
+  "delta_log_xg_home": -0.05,
+  "delta_log_xg_away": -0.05,
+  "confianza": "alta",
+  "bajas_confirmadas": false,
+  "factores": [
+   "Ambos clasificados",
+   "Especulación de cruces y cuidado de titulares",
+   "El empate les asegura 1º y 2º puesto"
+  ],
+  "resumen": "Francia y Noruega ya están clasificadas a octavos y juegan por el 1º puesto de grupo. Un empate favorece a ambos y les permite evitar riesgos de lesiones o tarjetas. Se espera un ritmo defensivo prudente con rotación parcial. Ajuste a la baja en el xG ofensivo de ambos."
+ },
+ "delta_aplicado": {
+  "home": -0.05,
+  "away": -0.05
+ },
+ "rondas": {
+  "ronda1": {},
+  "ronda2": {}
+ },
+ "usage": {
+  "llamadas": 3,
+  "duracion_ms": 1500,
+  "turnos": 3,
+  "prompt_tokens": 1200,
+  "candidates_tokens": 400,
+  "total_tokens": 1600
+ }
+}

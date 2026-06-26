@@ -1,73 +1,73 @@
 match,group,date_utc,location,home,away,xg_home,xg_away,p_home,p_draw,p_away,score_pred,top_scores,played,real,ajustada
-1,Group A,2026-06-11 19:00:00+00:00,Mexico City Stadium,Mexico,South Africa,1.68,0.61,0.6154,0.2521,0.1326,1-0,1-0 (16.5%); 2-0 (14.3%); 1-1 (11.0%),True,2-0,False
-2,Group A,2026-06-12 02:00:00+00:00,Guadalajara Stadium,South Korea,Czech Republic,1.26,1.18,0.3719,0.2896,0.3385,1-1,1-1 (13.7%); 1-0 (10.2%); 0-1 (9.6%),True,2-1,False
-3,Group B,2026-06-12 19:00:00+00:00,Toronto Stadium,Canada,Bosnia and Herzegovina,1.88,0.75,0.6249,0.2322,0.1429,1-0,1-0 (13.0%); 2-0 (12.8%); 1-1 (10.7%),True,1-1,False
-4,Group D,2026-06-13 01:00:00+00:00,Los Angeles Stadium,United States,Paraguay,1.27,1.08,0.3481,0.3168,0.3351,1-1,1-1 (14.2%); 0-0 (13.4%); 1-0 (12.6%),True,4-1,True
-5,Group C,2026-06-14 01:00:00+00:00,Boston Stadium,Haiti,Scotland,0.71,2.19,0.0925,0.1702,0.7372,0-2,0-2 (12.5%); 0-1 (10.1%); 0-3 (10.0%),True,0-1,True
-6,Group D,2026-06-14 04:00:00+00:00,BC Place Vancouver,Australia,Turkey,1.23,1.09,0.3829,0.2975,0.3196,1-1,1-1 (13.9%); 1-0 (11.4%); 0-0 (10.6%),True,2-0,False
-7,Group C,2026-06-13 22:00:00+00:00,New York/New Jersey Stadium,Brazil,Morocco,0.98,0.82,0.4099,0.3366,0.2535,0-0,0-0 (17.4%); 1-0 (15.5%); 1-1 (14.0%),True,1-1,True
-8,Group B,2026-06-13 19:00:00+00:00,San Francisco Bay Area Stadium,Qatar,Switzerland,0.67,3.05,0.0548,0.119,0.8262,0-3,0-3 (11.5%); 0-2 (11.3%); 0-4 (8.7%),True,1-1,False
-9,Group E,2026-06-14 23:00:00+00:00,Philadelphia Stadium,Ivory Coast,Ecuador,0.5,0.82,0.2066,0.3984,0.395,0-0,0-0 (27.4%); 0-1 (21.3%); 1-0 (12.8%),True,1-0,False
-10,Group E,2026-06-14 17:00:00+00:00,Houston Stadium,Germany,Curaçao,4.43,0.47,0.9481,0.0402,0.0117,4-0,4-0 (12.0%); 3-0 (10.9%); 5-0 (10.7%),True,7-1,False
-11,Group F,2026-06-14 20:00:00+00:00,Dallas Stadium,Netherlands,Japan,1.36,1.15,0.408,0.2834,0.3086,1-1,1-1 (13.4%); 1-0 (10.4%); 0-0 (8.8%),True,2-2,False
-12,Group F,2026-06-15 02:00:00+00:00,Monterrey Stadium,Sweden,Tunisia,1.57,1.0,0.4853,0.2813,0.2334,1-1,1-1 (13.2%); 1-0 (13.1%); 0-0 (10.2%),True,5-1,True
-13,Group H,2026-06-15 22:00:00+00:00,Miami Stadium,Saudi Arabia,Uruguay,0.43,1.37,0.119,0.2625,0.6185,0-1,0-1 (22.3%); 0-0 (18.4%); 0-2 (14.6%),True,1-1,True
-14,Group H,2026-06-15 16:00:00+00:00,Atlanta Stadium,Spain,Cape Verde,2.64,0.39,0.8911,0.081,0.0279,2-0,2-0 (15.2%); 3-0 (14.9%); 4-0 (11.0%),True,0-0,True
-15,Group G,2026-06-16 01:00:00+00:00,Los Angeles Stadium,Iran,New Zealand,1.5,0.63,0.5503,0.2801,0.1696,1-0,1-0 (18.8%); 0-0 (14.5%); 2-0 (13.6%),True,2-2,True
-16,Group G,2026-06-15 19:00:00+00:00,Seattle Stadium,Belgium,Egypt,1.49,0.69,0.5769,0.2581,0.165,1-0,1-0 (16.6%); 2-0 (12.5%); 0-0 (12.5%),True,1-1,True
-17,Group I,2026-06-16 19:00:00+00:00,New York/New Jersey Stadium,France,Senegal,1.6,0.78,0.6118,0.2356,0.1527,1-0,1-0 (14.9%); 1-1 (12.8%); 2-0 (11.4%),True,3-1,True
-18,Group I,2026-06-16 22:00:00+00:00,Boston Stadium,Iraq,Norway,0.6,2.27,0.0764,0.1586,0.765,0-2,0-2 (14.8%); 0-1 (14.1%); 0-3 (10.1%),True,1-4,True
-19,Group J,2026-06-17 01:00:00+00:00,Kansas City Stadium,Argentina,Algeria,1.81,0.52,0.6696,0.219,0.1114,1-0,1-0 (18.0%); 2-0 (16.1%); 0-0 (11.1%),True,3-0,True
-20,Group J,2026-06-17 04:00:00+00:00,San Francisco Bay Area Stadium,Austria,Jordan,1.94,0.81,0.67,0.205,0.125,1-0,1-0 (13.4%); 2-0 (12.3%); 1-1 (11.4%),True,3-1,True
-21,Group L,2026-06-17 23:00:00+00:00,Toronto Stadium,Ghana,Panama,1.31,1.15,0.3937,0.3032,0.3031,1-1,1-1 (14.4%); 1-0 (10.6%); 0-0 (9.7%),True,1-0,True
-22,Group L,2026-06-17 20:00:00+00:00,Dallas Stadium,England,Croatia,1.58,0.8,0.5586,0.2587,0.1827,1-0,1-0 (14.4%); 1-1 (12.0%); 2-0 (11.7%),True,4-2,True
-23,Group K,2026-06-17 17:00:00+00:00,Houston Stadium,Portugal,DR Congo,2.07,0.53,0.7475,0.1721,0.0803,2-0,2-0 (16.4%); 1-0 (15.8%); 3-0 (11.0%),True,1-1,True
-24,Group K,2026-06-18 02:00:00+00:00,Mexico City Stadium,Uzbekistan,Colombia,0.57,1.81,0.1024,0.2025,0.6951,0-1,0-1 (17.8%); 0-2 (15.7%); 1-2 (9.7%),True,1-3,True
-25,Group A,2026-06-18 16:00:00+00:00,Atlanta Stadium,Czech Republic,South Africa,1.61,0.89,0.5259,0.2714,0.2027,1-1,1-1 (12.9%); 1-0 (11.9%); 2-0 (10.4%),True,1-1,True
-26,Group B,2026-06-18 19:00:00+00:00,Los Angeles Stadium,Switzerland,Bosnia and Herzegovina,2.02,0.81,0.6185,0.2309,0.1506,2-0,2-0 (11.4%); 1-1 (11.0%); 1-0 (10.0%),True,4-1,True
-27,Group B,2026-06-18 22:00:00+00:00,BC Place Vancouver,Canada,Qatar,2.64,0.87,0.7392,0.1721,0.0887,2-0,2-0 (10.2%); 3-0 (9.1%); 2-1 (8.8%),True,6-0,True
-28,Group A,2026-06-19 01:00:00+00:00,Guadalajara Stadium,Mexico,South Korea,1.54,1.09,0.4586,0.292,0.2494,1-1,1-1 (13.9%); 1-0 (10.0%); 2-1 (9.1%),True,1-0,True
-29,Group C,2026-06-20 01:00:00+00:00,Philadelphia Stadium,Brazil,Haiti,3.62,0.61,0.869,0.0872,0.0438,3-0,3-0 (11.2%); 4-0 (10.6%); 2-0 (8.9%),False,,True
-30,Group C,2026-06-19 22:00:00+00:00,Boston Stadium,Scotland,Morocco,0.65,1.36,0.1675,0.2721,0.5604,0-1,0-1 (19.7%); 0-0 (13.0%); 0-2 (12.7%),False,,True
-31,Group D,2026-06-20 04:00:00+00:00,San Francisco Bay Area Stadium,Turkey,Paraguay,1.49,1.1,0.4628,0.2833,0.2539,1-1,1-1 (13.5%); 1-0 (11.0%); 2-1 (9.8%),False,,True
-32,Group D,2026-06-19 19:00:00+00:00,Seattle Stadium,United States,Australia,1.11,1.25,0.3189,0.2941,0.3869,1-1,1-1 (13.8%); 0-1 (11.1%); 0-0 (10.1%),False,,False
-33,Group E,2026-06-20 20:00:00+00:00,Toronto Stadium,Germany,Ivory Coast,1.66,0.79,0.5638,0.259,0.1771,1-0,1-0 (13.6%); 1-1 (11.9%); 2-0 (11.8%),False,,False
-34,Group E,2026-06-21 00:00:00+00:00,Kansas City Stadium,Ecuador,Curaçao,2.18,0.29,0.7977,0.1621,0.0402,2-0,2-0 (20.0%); 1-0 (18.1%); 3-0 (14.5%),False,,False
-35,Group F,2026-06-20 17:00:00+00:00,Houston Stadium,Netherlands,Sweden,2.16,1.2,0.576,0.2183,0.2057,2-1,2-1 (9.7%); 1-1 (9.5%); 2-0 (8.1%),False,,False
-36,Group F,2026-06-21 04:00:00+00:00,Monterrey Stadium,Tunisia,Japan,0.63,1.5,0.1564,0.2767,0.5669,0-1,0-1 (17.1%); 0-2 (13.3%); 0-0 (12.4%),False,,False
-37,Group H,2026-06-21 22:00:00+00:00,Miami Stadium,Uruguay,Cape Verde,1.43,0.42,0.6094,0.2821,0.1085,1-0,1-0 (22.0%); 0-0 (16.3%); 2-0 (16.1%),False,,False
-38,Group H,2026-06-21 16:00:00+00:00,Atlanta Stadium,Spain,Saudi Arabia,2.53,0.41,0.8185,0.1379,0.0436,2-0,2-0 (17.0%); 3-0 (14.3%); 1-0 (13.1%),False,,False
-39,Group G,2026-06-21 19:00:00+00:00,Los Angeles Stadium,Belgium,Iran,1.72,0.9,0.5512,0.2541,0.1947,1-0,1-0 (11.9%); 1-1 (11.9%); 2-0 (10.8%),False,,False
-40,Group G,2026-06-22 01:00:00+00:00,BC Place Vancouver,New Zealand,Egypt,0.55,1.16,0.1738,0.3307,0.4955,0-1,0-1 (20.5%); 0-0 (18.8%); 0-2 (12.2%),False,,False
-41,Group I,2026-06-23 00:00:00+00:00,New York/New Jersey Stadium,Norway,Senegal,1.56,1.02,0.4835,0.27,0.2466,1-1,1-1 (12.7%); 1-0 (11.1%); 2-1 (9.4%),False,,False
-42,Group I,2026-06-22 21:00:00+00:00,Philadelphia Stadium,France,Iraq,2.33,0.46,0.7792,0.1623,0.0585,2-0,2-0 (16.7%); 1-0 (14.0%); 3-0 (13.0%),False,,False
-43,Group J,2026-06-22 17:00:00+00:00,Dallas Stadium,Argentina,Austria,1.49,0.55,0.5875,0.2762,0.1363,1-0,1-0 (18.8%); 2-0 (14.4%); 0-0 (13.6%),False,,False
-44,Group J,2026-06-23 03:00:00+00:00,San Francisco Bay Area Stadium,Jordan,Algeria,0.98,1.83,0.1996,0.244,0.5564,1-1,1-1 (11.4%); 0-1 (10.4%); 0-2 (10.1%),False,,False
-45,Group L,2026-06-23 20:00:00+00:00,Boston Stadium,England,Ghana,2.26,0.44,0.7733,0.1681,0.0586,2-0,2-0 (17.3%); 1-0 (14.9%); 3-0 (13.0%),False,,False
-46,Group L,2026-06-23 23:00:00+00:00,Toronto Stadium,Panama,Croatia,0.71,2.23,0.1063,0.1926,0.7011,0-2,0-2 (13.1%); 0-1 (11.3%); 0-3 (9.7%),False,,False
-47,Group K,2026-06-23 17:00:00+00:00,Houston Stadium,Portugal,Uzbekistan,1.82,0.57,0.6571,0.2315,0.1114,1-0,1-0 (16.2%); 2-0 (15.1%); 1-1 (10.0%),False,,False
-48,Group K,2026-06-24 02:00:00+00:00,Guadalajara Stadium,Colombia,DR Congo,1.49,0.55,0.5874,0.2761,0.1364,1-0,1-0 (18.8%); 2-0 (14.4%); 0-0 (13.5%),False,,False
-49,Group C,2026-06-24 22:00:00+00:00,Miami Stadium,Scotland,Brazil,0.77,1.77,0.1592,0.2459,0.5949,0-1,0-1 (13.4%); 0-2 (12.4%); 1-1 (11.3%),False,,False
-50,Group C,2026-06-24 22:00:00+00:00,Atlanta Stadium,Morocco,Haiti,2.32,0.39,0.7943,0.1565,0.0491,2-0,2-0 (17.9%); 1-0 (15.0%); 3-0 (13.8%),False,,False
-51,Group B,2026-06-24 19:00:00+00:00,BC Place Vancouver,Switzerland,Canada,1.46,1.19,0.4236,0.274,0.3024,1-1,1-1 (12.9%); 1-0 (9.7%); 2-1 (9.0%),False,,False
-52,Group B,2026-06-24 19:00:00+00:00,Seattle Stadium,Bosnia and Herzegovina,Qatar,1.56,1.06,0.4757,0.2693,0.255,1-1,1-1 (12.7%); 1-0 (10.7%); 2-1 (9.4%),False,,False
-53,Group A,2026-06-25 01:00:00+00:00,Mexico City Stadium,Czech Republic,Mexico,0.91,1.54,0.2216,0.2733,0.5052,1-1,1-1 (12.8%); 0-1 (12.6%); 0-2 (10.2%),False,,False
-54,Group A,2026-06-25 01:00:00+00:00,Monterrey Stadium,South Africa,South Korea,0.79,1.37,0.215,0.2944,0.4906,0-1,0-1 (15.1%); 1-1 (13.2%); 0-0 (12.2%),False,,False
-55,Group E,2026-06-25 20:00:00+00:00,Philadelphia Stadium,Curaçao,Ivory Coast,0.46,2.05,0.0724,0.1935,0.734,0-2,0-2 (17.2%); 0-1 (16.3%); 0-3 (11.7%),False,,False
-56,Group E,2026-06-25 20:00:00+00:00,New York/New Jersey Stadium,Ecuador,Germany,0.84,1.08,0.2771,0.3281,0.3948,0-0,0-0 (15.4%); 0-1 (15.1%); 1-1 (14.0%),False,,False
-57,Group F,2026-06-25 23:00:00+00:00,Dallas Stadium,Japan,Sweden,1.66,1.1,0.4905,0.2596,0.2498,1-1,1-1 (12.2%); 1-0 (9.9%); 2-1 (9.6%),False,,False
-58,Group F,2026-06-25 23:00:00+00:00,Kansas City Stadium,Tunisia,Netherlands,0.69,1.95,0.1247,0.2217,0.6535,0-2,0-2 (13.6%); 0-1 (13.4%); 1-1 (10.1%),False,,False
-59,Group D,2026-06-26 02:00:00+00:00,Los Angeles Stadium,Turkey,United States,1.57,1.56,0.3761,0.2524,0.3715,1-1,1-1 (11.3%); 2-1 (8.4%); 1-2 (8.4%),False,,False
-60,Group D,2026-06-26 02:00:00+00:00,San Francisco Bay Area Stadium,Paraguay,Australia,0.75,1.0,0.2628,0.3441,0.3931,0-0,0-0 (18.0%); 0-1 (16.6%); 1-1 (13.8%),False,,False
-61,Group I,2026-06-26 19:00:00+00:00,Boston Stadium,Norway,France,1.17,1.59,0.2773,0.2642,0.4585,1-1,1-1 (12.4%); 0-1 (9.4%); 1-2 (9.4%),False,,False
-62,Group I,2026-06-26 19:00:00+00:00,Toronto Stadium,Senegal,Iraq,1.5,0.61,0.5738,0.2764,0.1498,1-0,1-0 (17.6%); 2-0 (13.7%); 0-0 (12.8%),False,,False
-63,Group G,2026-06-27 03:00:00+00:00,Seattle Stadium,Egypt,Iran,0.92,1.03,0.3079,0.3269,0.3651,0-0,0-0 (14.9%); 1-1 (14.2%); 0-1 (13.9%),False,,False
-64,Group G,2026-06-27 03:00:00+00:00,BC Place Vancouver,New Zealand,Belgium,0.47,2.16,0.0699,0.1828,0.7473,0-2,0-2 (16.7%); 0-1 (15.1%); 0-3 (12.0%),False,,False
-65,Group H,2026-06-27 00:00:00+00:00,Houston Stadium,Cape Verde,Saudi Arabia,0.81,0.87,0.3056,0.3555,0.3389,0-0,0-0 (19.3%); 0-1 (15.5%); 1-0 (14.3%),False,,False
-66,Group H,2026-06-27 00:00:00+00:00,Guadalajara Stadium,Uruguay,Spain,0.67,1.31,0.1888,0.3044,0.5068,0-1,0-1 (17.5%); 0-0 (14.5%); 1-1 (12.8%),False,,False
-67,Group L,2026-06-27 21:00:00+00:00,New York/New Jersey Stadium,Panama,England,0.45,2.71,0.0428,0.1263,0.8308,0-2,0-2 (15.5%); 0-3 (14.0%); 0-1 (11.2%),False,,False
-68,Group L,2026-06-27 21:00:00+00:00,Philadelphia Stadium,Croatia,Ghana,1.86,0.69,0.6352,0.2326,0.1323,1-0,1-0 (14.1%); 2-0 (13.6%); 1-1 (10.6%),False,,False
-69,Group J,2026-06-28 02:00:00+00:00,Kansas City Stadium,Algeria,Austria,1.05,1.35,0.287,0.2886,0.4244,1-1,1-1 (13.6%); 0-1 (11.5%); 0-0 (9.7%),False,,False
-70,Group J,2026-06-28 02:00:00+00:00,Dallas Stadium,Jordan,Argentina,0.4,2.59,0.0407,0.1319,0.8274,0-2,0-2 (16.9%); 0-3 (14.6%); 0-1 (12.8%),False,,False
-71,Group K,2026-06-27 23:30:00+00:00,Miami Stadium,Colombia,Portugal,1.23,1.37,0.3278,0.2791,0.3931,1-1,1-1 (13.2%); 0-1 (9.5%); 1-2 (8.6%),False,,False
-72,Group K,2026-06-27 23:30:00+00:00,Atlanta Stadium,DR Congo,Uzbekistan,0.73,0.7,0.3149,0.3895,0.2956,0-0,0-0 (24.7%); 1-0 (16.9%); 0-1 (16.1%),False,,False
+1,Group A,2026-06-11 19:00:00+00:00,Mexico City Stadium,Mexico,South Africa,1.73,0.52,0.6527,0.2428,0.1045,1-0,1-0 (17.6%); 2-0 (15.8%); 0-0 (11.2%),True,2-0,False
+2,Group A,2026-06-12 02:00:00+00:00,Guadalajara Stadium,South Korea,Czech Republic,1.41,1.14,0.418,0.2845,0.2976,1-0,1-1 (13.5%); 1-0 (10.1%); 2-1 (8.8%),True,2-1,False
+3,Group B,2026-06-12 19:00:00+00:00,Toronto Stadium,Canada,Bosnia and Herzegovina,1.88,0.75,0.6217,0.2361,0.1422,1-0,1-0 (12.8%); 2-0 (12.7%); 1-1 (10.9%),True,1-1,False
+4,Group D,2026-06-13 01:00:00+00:00,Los Angeles Stadium,United States,Paraguay,1.49,1.11,0.4535,0.2983,0.2482,1-0,1-1 (14.2%); 1-0 (10.6%); 2-1 (9.9%),True,4-1,True
+5,Group C,2026-06-14 01:00:00+00:00,Boston Stadium,Haiti,Scotland,0.97,2.24,0.1591,0.2122,0.6287,0-2,1-1 (10.0%); 0-2 (9.7%); 1-2 (8.6%),True,0-1,True
+6,Group D,2026-06-14 04:00:00+00:00,BC Place Vancouver,Australia,Turkey,1.14,1.02,0.3711,0.3142,0.3148,1-0,1-1 (14.4%); 0-0 (12.5%); 1-0 (12.1%),True,2-0,False
+7,Group C,2026-06-13 22:00:00+00:00,New York/New Jersey Stadium,Brazil,Morocco,1.42,0.75,0.5662,0.2561,0.1778,1-0,1-0 (18.7%); 2-0 (11.8%); 1-1 (11.6%),True,1-1,True
+8,Group B,2026-06-13 19:00:00+00:00,San Francisco Bay Area Stadium,Qatar,Switzerland,0.57,3.63,0.0278,0.0779,0.8942,0-3,0-3 (12.0%); 0-4 (10.9%); 0-2 (9.9%),True,1-1,False
+9,Group E,2026-06-14 23:00:00+00:00,Philadelphia Stadium,Ivory Coast,Ecuador,0.4,0.67,0.1909,0.4504,0.3587,0-0,0-0 (35.0%); 0-1 (22.2%); 1-0 (13.2%),True,1-0,False
+10,Group E,2026-06-14 17:00:00+00:00,Houston Stadium,Germany,Curaçao,4.67,0.5,0.9534,0.0361,0.0105,4-0,4-0 (11.3%); 5-0 (10.6%); 3-0 (9.7%),True,7-1,False
+11,Group F,2026-06-14 20:00:00+00:00,Dallas Stadium,Netherlands,Japan,1.28,1.26,0.3587,0.2881,0.3532,1-0,1-1 (13.7%); 1-0 (9.1%); 0-1 (9.1%),True,2-2,False
+12,Group F,2026-06-15 02:00:00+00:00,Monterrey Stadium,Sweden,Tunisia,3.27,0.91,0.9179,0.0624,0.0197,2-1,2-1 (11.0%); 3-1 (10.4%); 2-0 (9.5%),True,5-1,True
+13,Group H,2026-06-15 22:00:00+00:00,Miami Stadium,Saudi Arabia,Uruguay,0.53,1.59,0.1158,0.2235,0.6607,0-1,0-1 (20.7%); 0-2 (15.8%); 0-0 (10.9%),True,1-1,True
+14,Group H,2026-06-15 16:00:00+00:00,Atlanta Stadium,Spain,Cape Verde,3.02,0.46,0.901,0.0698,0.0292,2-0,2-0 (14.9%); 3-0 (14.4%); 4-0 (10.5%),True,0-0,True
+15,Group G,2026-06-16 01:00:00+00:00,Los Angeles Stadium,Iran,New Zealand,1.6,0.82,0.536,0.2736,0.1905,1-0,1-1 (12.8%); 1-0 (12.5%); 2-0 (11.2%),True,2-2,True
+16,Group G,2026-06-15 19:00:00+00:00,Seattle Stadium,Belgium,Egypt,1.58,0.73,0.5968,0.24,0.1632,1-0,1-0 (16.6%); 2-0 (12.9%); 1-1 (11.0%),True,1-1,True
+17,Group I,2026-06-16 19:00:00+00:00,New York/New Jersey Stadium,France,Senegal,2.14,0.94,0.6536,0.2132,0.1332,2-1,2-1 (10.7%); 2-0 (10.7%); 1-1 (10.0%),True,3-1,True
+18,Group I,2026-06-16 22:00:00+00:00,Boston Stadium,Iraq,Norway,0.7,2.91,0.0667,0.1368,0.7965,0-3,0-3 (11.0%); 0-2 (11.0%); 0-4 (8.3%),True,1-4,True
+19,Group J,2026-06-17 01:00:00+00:00,Kansas City Stadium,Argentina,Algeria,1.89,0.51,0.6709,0.2123,0.1167,2-0,2-0 (15.6%); 1-0 (14.6%); 3-0 (10.8%),True,3-0,True
+20,Group J,2026-06-17 04:00:00+00:00,San Francisco Bay Area Stadium,Austria,Jordan,2.25,0.85,0.7021,0.1873,0.1106,2-0,2-0 (11.7%); 2-1 (10.5%); 1-0 (10.1%),True,3-1,True
+21,Group L,2026-06-17 23:00:00+00:00,Toronto Stadium,Ghana,Panama,1.18,0.96,0.4064,0.3013,0.2923,1-0,1-1 (13.7%); 1-0 (13.4%); 0-0 (12.4%),True,1-0,True
+22,Group L,2026-06-17 20:00:00+00:00,Dallas Stadium,England,Croatia,1.69,0.84,0.5604,0.2579,0.1817,1-0,1-0 (12.3%); 1-1 (12.2%); 2-0 (11.3%),True,4-2,True
+23,Group K,2026-06-17 17:00:00+00:00,Houston Stadium,Portugal,DR Congo,1.87,0.51,0.7435,0.1746,0.0819,1-0,1-0 (19.6%); 2-0 (17.2%); 2-1 (10.1%),True,1-1,True
+24,Group K,2026-06-18 02:00:00+00:00,Mexico City Stadium,Uzbekistan,Colombia,0.67,2.29,0.0992,0.198,0.7027,0-2,0-2 (12.8%); 0-3 (10.4%); 0-1 (10.0%),True,1-3,True
+25,Group A,2026-06-18 16:00:00+00:00,Atlanta Stadium,Czech Republic,South Africa,1.58,0.99,0.5171,0.2723,0.2106,1-0,1-1 (13.0%); 1-0 (12.2%); 2-1 (10.5%),True,1-1,True
+26,Group B,2026-06-18 19:00:00+00:00,Los Angeles Stadium,Switzerland,Bosnia and Herzegovina,2.19,0.9,0.6194,0.2302,0.1505,2-0,1-1 (10.9%); 2-0 (10.1%); 3-0 (8.1%),True,4-1,True
+27,Group B,2026-06-18 22:00:00+00:00,BC Place Vancouver,Canada,Qatar,3.21,0.8,0.7467,0.168,0.0853,3-0,3-0 (9.3%); 4-0 (8.4%); 1-1 (7.7%),True,6-0,True
+28,Group A,2026-06-19 01:00:00+00:00,Guadalajara Stadium,Mexico,South Korea,1.5,0.92,0.4697,0.2923,0.2381,1-0,1-1 (13.8%); 1-0 (10.6%); 0-0 (10.5%),True,1-0,True
+29,Group C,2026-06-20 00:30:00+00:00,Philadelphia Stadium,Brazil,Haiti,3.71,0.67,0.8688,0.0873,0.0439,3-0,3-0 (10.3%); 4-0 (10.0%); 2-0 (8.0%),True,3-0,True
+30,Group C,2026-06-19 22:00:00+00:00,Boston Stadium,Scotland,Morocco,0.65,1.39,0.1664,0.2724,0.5612,0-1,0-1 (18.7%); 0-2 (12.8%); 0-0 (12.8%),True,0-1,True
+31,Group D,2026-06-20 03:00:00+00:00,San Francisco Bay Area Stadium,Turkey,Paraguay,1.41,1.06,0.4606,0.2841,0.2553,1-0,1-1 (13.5%); 1-0 (12.4%); 2-1 (10.2%),True,0-1,True
+32,Group D,2026-06-19 19:00:00+00:00,Seattle Stadium,United States,Australia,1.17,1.26,0.3307,0.2952,0.3741,0-1,1-1 (13.9%); 0-1 (10.2%); 0-0 (9.8%),True,2-0,False
+33,Group E,2026-06-20 20:00:00+00:00,Toronto Stadium,Germany,Ivory Coast,1.64,0.85,0.5415,0.2666,0.1918,1-0,1-0 (12.7%); 1-1 (12.4%); 2-0 (11.1%),True,2-1,False
+34,Group E,2026-06-21 00:00:00+00:00,Kansas City Stadium,Ecuador,Curaçao,1.9,0.24,0.7668,0.1938,0.0394,1-0,1-0 (22.0%); 2-0 (21.3%); 3-0 (13.5%),True,0-0,False
+35,Group F,2026-06-20 17:00:00+00:00,Houston Stadium,Netherlands,Sweden,2.78,1.3,0.6646,0.1773,0.1581,2-1,2-1 (8.5%); 3-1 (7.9%); 1-1 (6.6%),True,5-1,False
+36,Group F,2026-06-21 04:00:00+00:00,Monterrey Stadium,Tunisia,Japan,0.53,2.14,0.0787,0.1919,0.7294,0-2,0-2 (15.8%); 0-1 (14.2%); 0-3 (11.3%),True,0-4,False
+37,Group H,2026-06-21 22:00:00+00:00,Miami Stadium,Uruguay,Cape Verde,1.41,0.54,0.5686,0.2925,0.139,1-0,1-0 (19.4%); 0-0 (15.1%); 2-0 (14.2%),True,2-2,False
+38,Group H,2026-06-21 16:00:00+00:00,Atlanta Stadium,Spain,Saudi Arabia,2.71,0.4,0.8402,0.1236,0.0362,2-0,2-0 (16.3%); 3-0 (14.8%); 1-0 (11.7%),True,4-0,False
+39,Group G,2026-06-21 19:00:00+00:00,Los Angeles Stadium,Belgium,Iran,1.45,0.82,0.5018,0.2887,0.2096,1-0,1-0 (14.0%); 1-1 (13.2%); 0-0 (11.2%),True,0-0,False
+40,Group G,2026-06-22 01:00:00+00:00,BC Place Vancouver,New Zealand,Egypt,0.62,1.36,0.1662,0.3015,0.5323,0-1,0-1 (18.0%); 0-0 (14.7%); 0-2 (12.8%),True,1-3,False
+41,Group I,2026-06-23 00:00:00+00:00,New York/New Jersey Stadium,Norway,Senegal,1.9,1.45,0.4703,0.2406,0.2891,2-1,1-1 (10.4%); 2-1 (9.2%); 1-2 (7.0%),True,3-2,False
+42,Group I,2026-06-22 21:00:00+00:00,Philadelphia Stadium,France,Iraq,2.77,0.5,0.8161,0.1399,0.044,2-0,2-0 (13.9%); 3-0 (13.2%); 4-0 (9.5%),True,3-0,True
+43,Group J,2026-06-22 17:00:00+00:00,Dallas Stadium,Argentina,Austria,1.61,0.51,0.6206,0.2747,0.1047,1-0,1-0 (17.5%); 2-0 (15.2%); 0-0 (13.7%),True,2-0,True
+44,Group J,2026-06-23 03:00:00+00:00,San Francisco Bay Area Stadium,Jordan,Algeria,1.1,2.19,0.1706,0.2294,0.5999,1-2,1-1 (10.5%); 1-2 (9.3%); 0-2 (8.7%),True,1-2,True
+45,Group L,2026-06-23 20:00:00+00:00,Boston Stadium,England,Ghana,1.95,0.5,0.6948,0.2252,0.0799,2-0,2-0 (15.8%); 1-0 (15.0%); 3-0 (10.7%),True,0-0,True
+46,Group L,2026-06-23 23:00:00+00:00,Toronto Stadium,Panama,Croatia,0.88,2.31,0.1213,0.2092,0.6695,0-2,0-2 (10.5%); 1-1 (9.9%); 1-2 (9.0%),True,0-1,True
+47,Group K,2026-06-23 17:00:00+00:00,Houston Stadium,Portugal,Uzbekistan,2.65,0.62,0.7783,0.1596,0.0621,2-0,2-0 (12.8%); 3-0 (11.7%); 1-0 (8.9%),True,5-0,True
+48,Group K,2026-06-24 02:00:00+00:00,Guadalajara Stadium,Colombia,DR Congo,1.5,0.66,0.5532,0.2963,0.1505,1-0,1-0 (15.5%); 0-0 (13.1%); 1-1 (13.1%),True,1-0,True
+49,Group C,2026-06-24 22:00:00+00:00,Miami Stadium,Scotland,Brazil,0.83,1.86,0.152,0.2549,0.5931,0-2,1-1 (12.1%); 0-2 (11.4%); 0-1 (11.1%),True,0-3,True
+50,Group C,2026-06-24 22:00:00+00:00,Atlanta Stadium,Morocco,Haiti,2.71,0.48,0.8156,0.1418,0.0426,2-0,2-0 (14.5%); 3-0 (13.6%); 1-0 (10.0%),True,4-2,True
+51,Group B,2026-06-24 19:00:00+00:00,BC Place Vancouver,Switzerland,Canada,1.43,1.25,0.3928,0.2953,0.3119,1-0,1-1 (14.1%); 1-0 (8.5%); 2-1 (8.5%),True,2-1,True
+52,Group B,2026-06-24 19:00:00+00:00,Seattle Stadium,Bosnia and Herzegovina,Qatar,2.31,1.05,0.633,0.2168,0.1503,2-1,1-1 (9.9%); 2-1 (9.1%); 2-0 (8.9%),True,3-1,True
+53,Group A,2026-06-25 01:00:00+00:00,Mexico City Stadium,Czech Republic,Mexico,0.86,2.31,0.1173,0.2082,0.6745,0-2,0-2 (10.8%); 1-1 (9.8%); 1-2 (9.0%),True,0-3,True
+54,Group A,2026-06-25 01:00:00+00:00,Monterrey Stadium,South Africa,South Korea,0.94,1.28,0.256,0.3229,0.4211,0-1,1-1 (15.0%); 0-0 (12.5%); 0-1 (12.4%),True,1-0,True
+55,Group E,2026-06-25 20:00:00+00:00,Philadelphia Stadium,Curaçao,Ivory Coast,0.52,2.43,0.0583,0.1717,0.77,0-2,0-2 (14.8%); 0-3 (12.4%); 0-1 (11.3%),True,0-2,True
+56,Group E,2026-06-25 20:00:00+00:00,New York/New Jersey Stadium,Ecuador,Germany,0.98,1.2,0.2822,0.3296,0.3882,0-1,1-1 (15.2%); 0-0 (12.9%); 0-1 (12.0%),True,2-1,True
+57,Group F,2026-06-25 23:00:00+00:00,Dallas Stadium,Japan,Sweden,2.44,1.11,0.6433,0.2078,0.1489,2-1,1-1 (9.2%); 2-1 (8.9%); 2-0 (8.3%),True,1-1,True
+58,Group F,2026-06-25 23:00:00+00:00,Kansas City Stadium,Tunisia,Netherlands,0.84,3.45,0.0546,0.1165,0.8289,0-3,0-3 (9.2%); 0-4 (8.2%); 0-2 (7.7%),True,1-3,True
+59,Group D,2026-06-26 02:00:00+00:00,Los Angeles Stadium,Turkey,United States,2.04,2.0,0.3907,0.2352,0.374,2-1,1-1 (8.3%); 2-2 (8.0%); 2-1 (7.1%),True,3-2,True
+60,Group D,2026-06-26 02:00:00+00:00,San Francisco Bay Area Stadium,Paraguay,Australia,0.71,0.81,0.2708,0.4003,0.3289,0-0,0-0 (23.5%); 0-1 (16.1%); 1-1 (14.4%),True,0-0,True
+61,Group I,2026-06-26 19:00:00+00:00,Boston Stadium,Norway,France,1.55,1.8,0.3185,0.2605,0.4211,1-2,1-1 (11.3%); 1-2 (8.5%); 2-2 (7.4%),True,1-4,True
+62,Group I,2026-06-26 19:00:00+00:00,Toronto Stadium,Senegal,Iraq,2.12,0.8,0.6545,0.2239,0.1216,2-0,2-0 (11.7%); 1-1 (10.7%); 1-0 (10.0%),True,4-0,True
+63,Group G,2026-06-27 03:00:00+00:00,Seattle Stadium,Egypt,Iran,0.94,1.0,0.3081,0.3524,0.3395,0-0,0-0 (15.9%); 1-1 (15.4%); 0-1 (12.8%),False,,True
+64,Group G,2026-06-27 03:00:00+00:00,BC Place Vancouver,New Zealand,Belgium,0.67,2.76,0.0632,0.154,0.7828,0-2,0-2 (11.8%); 0-3 (11.2%); 0-4 (8.0%),False,,True
+65,Group H,2026-06-27 00:00:00+00:00,Houston Stadium,Cape Verde,Saudi Arabia,1.04,1.07,0.3225,0.3379,0.3396,0-1,1-1 (15.4%); 0-0 (13.8%); 0-1 (11.5%),False,,True
+66,Group H,2026-06-27 00:00:00+00:00,Guadalajara Stadium,Uruguay,Spain,0.69,1.6,0.1465,0.2829,0.5706,0-1,0-1 (14.5%); 1-1 (12.8%); 0-2 (12.7%),False,,True
+67,Group L,2026-06-27 21:00:00+00:00,New York/New Jersey Stadium,Panama,England,0.44,2.34,0.0543,0.1618,0.7839,0-2,0-2 (16.9%); 0-1 (14.0%); 0-3 (13.2%),False,,False
+68,Group L,2026-06-27 21:00:00+00:00,Philadelphia Stadium,Croatia,Ghana,1.45,0.74,0.5239,0.2892,0.1869,1-0,1-0 (15.4%); 1-1 (12.9%); 0-0 (12.1%),False,,False
+69,Group J,2026-06-28 02:00:00+00:00,Kansas City Stadium,Algeria,Austria,1.03,1.25,0.2957,0.3038,0.4005,0-1,1-1 (14.1%); 0-1 (11.9%); 0-0 (11.2%),False,,False
+70,Group J,2026-06-28 02:00:00+00:00,Dallas Stadium,Jordan,Argentina,0.34,2.81,0.0272,0.109,0.8638,0-2,0-2 (16.9%); 0-3 (15.8%); 0-1 (11.7%),False,,False
+71,Group K,2026-06-27 23:30:00+00:00,Miami Stadium,Colombia,Portugal,1.36,1.51,0.3332,0.2679,0.3989,1-2,1-1 (12.5%); 1-2 (8.8%); 2-1 (7.9%),False,,False
+72,Group K,2026-06-27 23:30:00+00:00,Atlanta Stadium,DR Congo,Uzbekistan,0.89,0.53,0.4094,0.3854,0.2052,1-0,0-0 (25.1%); 1-0 (20.7%); 1-1 (12.2%),False,,False

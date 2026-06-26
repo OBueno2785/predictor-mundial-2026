@@ -1,0 +1,56 @@
+{
+ "partido": "Switzerland vs Canada",
+ "fecha": "2026-06-24 19:00:00+00:00",
+ "prior": {
+  "xg_home": 1.332143985054893,
+  "xg_away": 1.1612131053545702,
+  "p_home": 0.39686071463652045,
+  "p_draw": 0.28773955294280074,
+  "p_away": 0.3153997324206789
+ },
+ "odds": null,
+ "model_final": {
+  "p_home": 0.39686071463652045,
+  "p_draw": 0.28773955294280074,
+  "p_away": 0.3153997324206789
+ },
+ "blend_weight_market": 0.0,
+ "final": {
+  "p_home": 0.39799085549704305,
+  "p_draw": 0.2871878961461514,
+  "p_away": 0.31482124835680564,
+  "score_pred": "2-1",
+  "top_scores": "1-1 (13.6%); 2-1 (8.6%); 1-0 (7.8%)",
+  "xg_home": 1.5,
+  "xg_away": 1.32,
+  "p_home_by2": 0.2005,
+  "p_away_by2": 0.1417
+ },
+ "veredicto": {
+  "delta_log_xg_home": 0.0,
+  "delta_log_xg_away": 0.0,
+  "confianza": "alta",
+  "bajas_confirmadas": false,
+  "factores": [
+   "Ambos equipos clasificados",
+   "Rotaciones probables en ambas selecciones"
+  ],
+  "resumen": "Tanto Suiza como Canadá están clasificadas al 100%. Se espera un partido con rotaciones para cuidar piernas de cara a octavos. Sin señal nueva clara, se mantiene el prior."
+ },
+ "delta_aplicado": {
+  "home": 0.0,
+  "away": 0.0
+ },
+ "rondas": {
+  "ronda1": {},
+  "ronda2": {}
+ },
+ "usage": {
+  "llamadas": 3,
+  "duracion_ms": 1500,
+  "turnos": 3,
+  "prompt_tokens": 1200,
+  "candidates_tokens": 400,
+  "total_tokens": 1600
+ }
+}

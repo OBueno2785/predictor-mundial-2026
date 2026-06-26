@@ -70,8 +70,28 @@ def _ranks(points: dict) -> dict:
     return out
 
 
+REPRESENTATIVE_SCORES = [
+    # Victorias Locales (15 marcadores)
+    (1, 0), (2, 0), (2, 1), (3, 0), (3, 1), (3, 2),
+    (4, 0), (4, 1), (4, 2), (4, 3),
+    (5, 0), (5, 1), (5, 2), (5, 3), (5, 4),
+    
+    # Empates (5 marcadores)
+    (0, 0), (1, 1), (2, 2), (3, 3), (4, 4),
+    
+    # Victorias Visitantes (15 marcadores)
+    (0, 1), (0, 2), (1, 2), (0, 3), (1, 3), (2, 3),
+    (0, 4), (1, 4), (2, 4), (3, 4),
+    (0, 5), (1, 5), (2, 5), (3, 5), (4, 5)
+]
+
+
 def qualification(fx: pd.DataFrame, team: str) -> dict:
-    """Escenarios de top-2 por fuerza bruta sobre los resultados restantes."""
+    """Calcula escenarios y probabilidad de clasificación para el equipo.
+    
+    Si quedan <= 2 partidos en el grupo (Ronda 3), usa simulación por marcadores (35 marcadores).
+    Si quedan > 2 partidos (Rondas 1 y 2), usa simulación por W/D/L.
+    """
     grp = fx[(fx["home_team"] == team) | (fx["away_team"] == team)]
     grp = grp[grp["group"].str.startswith("Group", na=False)]
     if grp.empty:
@@ -79,71 +99,238 @@ def qualification(fx: pd.DataFrame, team: str) -> dict:
     group = grp.iloc[0]["group"]
     g = _group_matches(fx, group)
 
-    base = {t: 0 for t in set(g["home_team"]) | set(g["away_team"])}
+    teams = sorted(set(g["home_team"]) | set(g["away_team"]))
+    
+    # Calcular estadísticas base de partidos jugados
+    base_stats = {t: {"pts": 0, "gf": 0, "gc": 0} for t in teams}
     for r in g[g["played"]].itertuples():
         hs, as_ = int(r.home_score), int(r.away_score)
-        base[r.home_team] += PTS["W" if hs > as_ else ("D" if hs == as_ else "L")]
-        base[r.away_team] += PTS["W" if as_ > hs else ("D" if as_ == hs else "L")]
+        base_stats[r.home_team]["gf"] += hs
+        base_stats[r.home_team]["gc"] += as_
+        base_stats[r.home_team]["pts"] += 3 if hs > as_ else (1 if hs == as_ else 0)
+        
+        base_stats[r.away_team]["gf"] += as_
+        base_stats[r.away_team]["gc"] += hs
+        base_stats[r.away_team]["pts"] += 3 if as_ > hs else (1 if hs == as_ else 0)
 
     restantes = list(g[~g["played"]].itertuples())
-    # próximo partido del equipo (el más cercano sin jugar)
+    n_restantes = len(restantes)
+    
+    # Próximo partido de nuestro equipo
     prox = next((r for r in sorted(restantes, key=lambda x: x.date_utc)
                  if team in (r.home_team, r.away_team)), None)
-
-    def top2(points, res_equipo_prox):
-        """¿el equipo termina top-2? worst-case por empates de puntos."""
-        peor = sum(1 for q in points.values() if q >= points[team])  # peor posición
-        return peor <= 2
-
-    cond = {"W": [], "D": [], "L": []}
-    todos = []
-    for combo in product("WDL", repeat=len(restantes)):
-        pts = dict(base)
-        prox_res = None
-        for m, r in zip(combo, restantes):
-            if m == "W":
-                pts[r.home_team] += 3
-            elif m == "D":
-                pts[r.home_team] += 1
-                pts[r.away_team] += 1
-            else:
-                pts[r.away_team] += 3
-            if prox is not None and r.Index == prox.Index:
-                if m == "D":
-                    prox_res = "D"
-                else:
-                    ganador = r.home_team if m == "W" else r.away_team
-                    prox_res = "W" if ganador == team else "L"
-        peor = sum(1 for q in pts.values() if q >= pts[team])
-        es_top2 = peor <= 2
-        todos.append(es_top2)
-        if prox_res:
-            cond[prox_res].append(es_top2)
-
-    n = len(todos)
-    asegurado = all(todos)
-    imposible = not any(todos)
+    
     rival_prox = None
     if prox is not None:
         rival_prox = prox.away_team if prox.home_team == team else prox.home_team
 
-    def resumen_cond(res):
-        v = cond[res]
-        if not v:
-            return None
-        if all(v):
-            return "clasifica seguro"
-        if any(v):
-            return "sigue con opciones"
-        return "queda fuera del top-2"
+    # Heurística de clasificación para terceros lugares
+    def p_third_place(pts, dg):
+        if pts >= 4:
+            return 1.0
+        elif pts == 3:
+            return 0.8 if dg >= 0 else 0.3
+        elif pts == 2:
+            return 0.05
+        else:
+            return 0.0
+
+    # Inicializar contadores
+    total_prob = 0.0
+    count_scenarios = 0
+    
+    # Para condicionales del próximo partido
+    cond_stats = {
+        "W2": {"prob_sum": 0.0, "count": 0},
+        "W1": {"prob_sum": 0.0, "count": 0},
+        "D": {"prob_sum": 0.0, "count": 0},
+        "L1": {"prob_sum": 0.0, "count": 0},
+        "L2": {"prob_sum": 0.0, "count": 0},
+    }
+
+    if n_restantes == 0:
+        table_teams = sorted(teams, key=lambda x: (
+            base_stats[x]["pts"],
+            base_stats[x]["gf"] - base_stats[x]["gc"],
+            base_stats[x]["gf"]
+        ), reverse=True)
+        pos = table_teams.index(team) + 1
+        if pos <= 2:
+            p_qual = 1.0
+        elif pos == 3:
+            p_qual = p_third_place(base_stats[team]["pts"], base_stats[team]["gf"] - base_stats[team]["gc"])
+        else:
+            p_qual = 0.0
+        
+        return {
+            "group": group,
+            "prob_clasificar": p_qual,
+            "necesidad_goles": "Fase de grupos finalizada." if p_qual > 0 else "Eliminado.",
+            "outlook": "Clasificado" if p_qual >= 0.95 else ("Eliminado" if p_qual < 0.05 else "Pendiente de otros grupos"),
+            "restantes": 0,
+            "rival_prox": None,
+            "prob_if_w": p_qual, "prob_if_d": p_qual, "prob_if_l": p_qual,
+            "prob_if_w2": p_qual, "prob_if_w1": p_qual, "prob_if_l1": p_qual, "prob_if_l2": p_qual,
+            "asegurado": p_qual >= 0.99,
+            "imposible_top2": p_qual < 0.01
+        }
+
+    elif n_restantes <= 3:
+        # Simulación detallada por marcadores
+        for combo in product(REPRESENTATIVE_SCORES, repeat=n_restantes):
+            stats = {t: dict(s) for t, s in base_stats.items()}
+            
+            for score, r in zip(combo, restantes):
+                hs, as_ = score
+                stats[r.home_team]["gf"] += hs
+                stats[r.home_team]["gc"] += as_
+                stats[r.home_team]["pts"] += 3 if hs > as_ else (1 if hs == as_ else 0)
+                
+                stats[r.away_team]["gf"] += as_
+                stats[r.away_team]["gc"] += hs
+                stats[r.away_team]["pts"] += 3 if as_ > hs else (1 if hs == as_ else 0)
+            
+            table_teams = sorted(teams, key=lambda x: (
+                stats[x]["pts"],
+                stats[x]["gf"] - stats[x]["gc"],
+                stats[x]["gf"]
+            ), reverse=True)
+            
+            pos = table_teams.index(team) + 1
+            if pos <= 2:
+                p_qual = 1.0
+            elif pos == 3:
+                p_qual = p_third_place(stats[team]["pts"], stats[team]["gf"] - stats[team]["gc"])
+            else:
+                p_qual = 0.0
+            
+            total_prob += p_qual
+            count_scenarios += 1
+            
+            if prox is not None:
+                prox_idx = restantes.index(prox)
+                prox_score = combo[prox_idx]
+                hs, as_ = prox_score
+                is_home = (prox.home_team == team)
+                our_goals = hs if is_home else as_
+                opp_goals = as_ if is_home else hs
+                diff = our_goals - opp_goals
+                
+                if diff >= 2:
+                    cat = "W2"
+                elif diff == 1:
+                    cat = "W1"
+                elif diff == 0:
+                    cat = "D"
+                elif diff == -1:
+                    cat = "L1"
+                else:
+                    cat = "L2"
+                
+                cond_stats[cat]["prob_sum"] += p_qual
+                cond_stats[cat]["count"] += 1
+
+    else:
+        # Simulación simplificada por W/D/L
+        for combo in product("WDL", repeat=n_restantes):
+            stats = {t: dict(s) for t, s in base_stats.items()}
+            
+            for outcome, r in zip(combo, restantes):
+                if outcome == "W":
+                    stats[r.home_team]["pts"] += 3
+                elif outcome == "D":
+                    stats[r.home_team]["pts"] += 1
+                    stats[r.away_team]["pts"] += 1
+                else:
+                    stats[r.away_team]["pts"] += 3
+            
+            table_teams = sorted(teams, key=lambda x: (
+                stats[x]["pts"],
+                stats[x]["gf"] - stats[x]["gc"],
+                stats[x]["gf"]
+            ), reverse=True)
+            
+            pos = table_teams.index(team) + 1
+            if pos <= 2:
+                p_qual = 1.0
+            elif pos == 3:
+                p_qual = p_third_place(stats[team]["pts"], stats[team]["gf"] - stats[team]["gc"])
+            else:
+                p_qual = 0.0
+                
+            total_prob += p_qual
+            count_scenarios += 1
+            
+            if prox is not None:
+                prox_idx = restantes.index(prox)
+                prox_outcome = combo[prox_idx]
+                is_home = (prox.home_team == team)
+                if prox_outcome == "D":
+                    cat = "D"
+                elif (prox_outcome == "W" and is_home) or (prox_outcome == "L" and not is_home):
+                    cat = "W1"
+                else:
+                    cat = "L1"
+                
+                cond_stats[cat]["prob_sum"] += p_qual
+                cond_stats[cat]["count"] += 1
+                
+                # Mapear a W2/L2 también para mantener coherencia en las llaves
+                if cat == "W1":
+                    cond_stats["W2"]["prob_sum"] += p_qual
+                    cond_stats["W2"]["count"] += 1
+                elif cat == "L1":
+                    cond_stats["L2"]["prob_sum"] += p_qual
+                    cond_stats["L2"]["count"] += 1
+
+    prob_clasificar = total_prob / count_scenarios if count_scenarios > 0 else 0.0
+    
+    p_w2 = cond_stats["W2"]["prob_sum"] / cond_stats["W2"]["count"] if cond_stats["W2"]["count"] > 0 else prob_clasificar
+    p_w1 = cond_stats["W1"]["prob_sum"] / cond_stats["W1"]["count"] if cond_stats["W1"]["count"] > 0 else prob_clasificar
+    p_d  = cond_stats["D"]["prob_sum"]  / cond_stats["D"]["count"]  if cond_stats["D"]["count"]  > 0 else prob_clasificar
+    p_l1 = cond_stats["L1"]["prob_sum"] / cond_stats["L1"]["count"] if cond_stats["L1"]["count"] > 0 else prob_clasificar
+    p_l2 = cond_stats["L2"]["prob_sum"] / cond_stats["L2"]["count"] if cond_stats["L2"]["count"] > 0 else prob_clasificar
+    
+    if n_restantes <= 3:
+        if p_w2 > 0.95 and p_w1 > 0.95 and p_d > 0.95:
+            desc = "Clasificación asegurada (el empate o la victoria lo clasifican)."
+        elif p_w2 > 0.95 and p_w1 > 0.95 and p_d > 0.5:
+            desc = f"Un empate le basta ({p_d:.0%}); ganar asegura el pase."
+        elif p_w2 > 0.95 and p_w1 > 0.95 and p_d <= 0.5:
+            desc = f"Obligado a ganar. El empate le da pocas opciones ({p_d:.0%}); perder lo elimina."
+        elif p_w2 > 0.95 and p_w1 <= 0.95:
+            desc = f"Necesita ganar, preferiblemente por 2+ goles ({p_w2:.0%} de pase vs {p_w1:.0%} si gana por 1)."
+        elif p_w2 > 0.5 and p_w2 > p_w1 + 0.15:
+            desc = f"Obligado a ganar por diferencia de goles. Ganar por 2+ goles le da {p_w2:.0%} de pase; ganar por 1 gol solo {p_w1:.0%}."
+        elif p_w2 <= 0.2:
+            desc = f"Situación muy crítica. Incluso ganando por 2+ goles sus opciones son bajas ({p_w2:.0%})."
+        else:
+            desc = f"Ganar le da {p_w1:.0%}-{p_w2:.0%} de opciones. El empate da {p_d:.0%}."
+            
+        if p_l1 > 0.05:
+            desc += f" Si pierde por 1 gol, aún conserva {p_l1:.0%} de opciones como mejor tercero."
+        else:
+            desc += " Perder lo elimina prácticamente."
+    else:
+        desc = f"Fase temprana del torneo. Probabilidad actual de clasificación: {prob_clasificar:.0%}."
+        if p_w1 > prob_clasificar + 0.1:
+            desc += " El próximo partido es muy importante para encaminar el pase."
 
     return {
         "group": group,
-        "asegurado": asegurado,
-        "imposible_top2": imposible,
+        "prob_clasificar": prob_clasificar,
+        "necesidad_goles": desc,
+        "restantes": n_restantes,
         "rival_prox": rival_prox,
-        "cond": {k: resumen_cond(k) for k in ("W", "D", "L") if resumen_cond(k)},
-        "restantes": len(restantes),
+        "prob_if_w": (p_w1 + p_w2) / 2.0,
+        "prob_if_d": p_d,
+        "prob_if_l": (p_l1 + p_l2) / 2.0,
+        "prob_if_w2": p_w2,
+        "prob_if_w1": p_w1,
+        "prob_if_l1": p_l1,
+        "prob_if_l2": p_l2,
+        "asegurado": prob_clasificar >= 0.99,
+        "imposible_top2": p_w2 < 0.01
     }
 
 
@@ -152,20 +339,10 @@ def outlook_text(fx: pd.DataFrame, team: str) -> str:
     if not q:
         return "sin datos de grupo"
     if q["restantes"] == 0:
-        return "clasificado a 32avos (top-2)" if q["asegurado"] else \
-            "fuera del top-2 (puede entrar como mejor tercero según otros grupos)"
-    if q["asegurado"]:
-        return "ya clasificado a 32avos (top-2 asegurado)"
-    partes = []
-    if q["rival_prox"]:
-        etq = {"W": "gana", "D": "empata", "L": "pierde"}
-        for res, txt in q["cond"].items():
-            partes.append(f"{etq[res]}→{txt}")
-    base = f"próximo vs {q['rival_prox']}: " + "; ".join(partes) if partes else ""
-    if q["imposible_top2"]:
-        return ("sin opción de top-2; solo puede avanzar como mejor tercero "
-                "(depende de otros grupos)")
-    return base or "en disputa"
+        return q.get("outlook", "grupo terminado")
+    prob = q.get("prob_clasificar", 0.0)
+    desc = q.get("necesidad_goles", "")
+    return f"Prob: {prob:.0%} | {desc}"
 
 
 def standings_markdown(fx: pd.DataFrame) -> str:

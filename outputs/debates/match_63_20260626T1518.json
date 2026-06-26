@@ -1,0 +1,57 @@
+{
+ "partido": "Egypt vs Iran",
+ "fecha": "2026-06-27 03:00:00+00:00",
+ "prior": {
+  "xg_home": 0.8472476491295544,
+  "xg_away": 0.9528987697767098,
+  "p_home": 0.29735580940484524,
+  "p_draw": 0.3475747963135795,
+  "p_away": 0.35506939428157547
+ },
+ "odds": null,
+ "model_final": {
+  "p_home": 0.3070418295248001,
+  "p_draw": 0.3532396036294269,
+  "p_away": 0.3397185668457731
+ },
+ "blend_weight_market": 0.0,
+ "final": {
+  "p_home": 0.30814985199484857,
+  "p_draw": 0.3523846936289286,
+  "p_away": 0.33946545437622294,
+  "score_pred": "0-0",
+  "top_scores": "0-0 (15.9%); 1-1 (15.4%); 0-1 (12.8%)",
+  "xg_home": 0.94,
+  "xg_away": 1.0,
+  "p_home_by2": 0.1152,
+  "p_away_by2": 0.134
+ },
+ "veredicto": {
+  "delta_log_xg_home": 0.0,
+  "delta_log_xg_away": -0.05,
+  "confianza": "media",
+  "bajas_confirmadas": false,
+  "factores": [
+   "No hay noticias de rotación en Egipto",
+   "Hamdy Fathy y Hossam Abdelmaguid con molestias en Egipto",
+   "Irán plantea bloque 5-4-1 muy conservador"
+  ],
+  "resumen": "Egipto saldrá con su equipo titular (salvo molestias de Fathy y Abdelmaguid) para asegurar el primer puesto y evitar a Australia. Irán plantea un esquema táctico 5-4-1 extremadamente cerrado, priorizando el empate de clasificación. Ajuste neutro para Egipto y leve a la baja para Irán en ataque por su bloque defensivo."
+ },
+ "delta_aplicado": {
+  "home": 0.0,
+  "away": -0.05
+ },
+ "rondas": {
+  "ronda1": {},
+  "ronda2": {}
+ },
+ "usage": {
+  "llamadas": 3,
+  "duracion_ms": 1500,
+  "turnos": 3,
+  "prompt_tokens": 1200,
+  "candidates_tokens": 400,
+  "total_tokens": 1600
+ }
+}

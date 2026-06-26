@@ -1,0 +1,56 @@
+{
+ "partido": "Turkey vs United States",
+ "fecha": "2026-06-26 02:00:00+00:00",
+ "prior": {
+  "xg_home": 1.5418611555835648,
+  "xg_away": 1.634229721673471,
+  "p_home": 0.3553993376016708,
+  "p_draw": 0.2496163953999174,
+  "p_away": 0.3949842669984117
+ },
+ "odds": null,
+ "model_final": {
+  "p_home": 0.3762319871336524,
+  "p_draw": 0.2417975774856814,
+  "p_away": 0.3819704353806661
+ },
+ "blend_weight_market": 0.0,
+ "final": {
+  "p_home": 0.39072134918758783,
+  "p_draw": 0.23524953269818114,
+  "p_away": 0.37402911811423106,
+  "score_pred": "2-1",
+  "top_scores": "1-1 (8.3%); 2-2 (8.0%); 2-1 (7.1%)",
+  "xg_home": 2.04,
+  "xg_away": 2.0,
+  "p_home_by2": 0.2207,
+  "p_away_by2": 0.2076
+ },
+ "veredicto": {
+  "delta_log_xg_home": 0.08,
+  "delta_log_xg_away": 0.03,
+  "confianza": "media",
+  "bajas_confirmadas": false,
+  "factores": [
+   "Estados Unidos rota titulares",
+   "Turquía obligado a ganar expuesto a contras por desbalance de nivel"
+  ],
+  "resumen": "Estados Unidos está clasificado y rotará su once inicial. Turquía está obligada a ganar y se volcará al ataque de forma muy agresiva. La diferencia de nivel hará que los contraataques estadounidenses sean muy peligrosos, compensando la rotación de EE.UU. Ajuste al alza para ambos."
+ },
+ "delta_aplicado": {
+  "home": 0.08,
+  "away": 0.03
+ },
+ "rondas": {
+  "ronda1": {},
+  "ronda2": {}
+ },
+ "usage": {
+  "llamadas": 3,
+  "duracion_ms": 1500,
+  "turnos": 3,
+  "prompt_tokens": 1200,
+  "candidates_tokens": 400,
+  "total_tokens": 1600
+ }
+}
